@@ -1,0 +1,43 @@
+name: lab08
+topology:
+  kinds:
+    linux:
+      image: netbook-services:20260916
+      cmd: sleep infinity
+  nodes:
+    rtr:
+      kind: linux
+      binds:
+      - .:/lab:ro
+      exec:
+      - ip link set eth1 up
+      - ip link set eth2 up
+      - ip address replace 10.10.0.1/22 dev eth1
+      - ip address replace 10.10.14.1/24 dev eth2
+      - sysctl -w net.ipv4.ip_forward=1
+      - bash /lab/service.sh start relay
+    svc:
+      kind: linux
+      binds:
+      - .:/lab:ro
+      exec:
+      - ip link set eth1 up
+      - ip address replace 10.10.14.10/24 dev eth1
+      - ip route replace 10.10.0.0/22 via 10.10.14.1
+      - bash /lab/service.sh start dns
+      - bash /lab/service.sh start dhcp
+      - bash /lab/service.sh start ntp
+      - bash /lab/service.sh start log
+    client:
+      kind: linux
+      binds:
+      - .:/lab:ro
+      exec:
+      - ip link set eth1 up
+  links:
+  - endpoints:
+    - rtr:eth1
+    - client:eth1
+  - endpoints:
+    - rtr:eth2
+    - svc:eth1

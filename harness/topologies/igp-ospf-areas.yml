@@ -1,0 +1,153 @@
+# Four routers: a two-router backbone (area 0) and a stub-side ABR pair.
+# One topology supplies the evidence for most of the OSPF tasks: adjacency,
+# point-to-point network type, cost, areas and summarisation, authentication,
+# passive interfaces, and the loopback/router-id distinction.
+#
+#   r1 ---- r2 ---- r3 ---- r4
+#   area 0  area 0  area 1  area 1
+#   (r2 is the ABR)
+name: rtnwb-ospf-areas
+settle: 4
+converge: 70
+nodes:
+  r1:
+    image: quay.io/frrouting/frr:10.2.1
+    daemons: [ospfd]
+    pre:
+      - ip address replace 10.0.12.0/31 dev eth1
+      - ip address replace 10.255.0.1/32 dev lo
+    config:
+      - configure terminal
+      - interface eth1
+      - ip ospf area 0
+      - ip ospf network point-to-point
+      - ip ospf authentication message-digest
+      - ip ospf message-digest-key 1 md5 lab-key-one
+      - exit
+      - interface lo
+      - ip ospf area 0
+      - exit
+      - router ospf
+      - ospf router-id 10.255.0.1
+      - passive-interface lo
+  r2:
+    image: quay.io/frrouting/frr:10.2.1
+    daemons: [ospfd]
+    pre:
+      - ip address replace 10.0.12.1/31 dev eth1
+      - ip address replace 10.0.23.0/31 dev eth2
+      - ip address replace 10.255.0.2/32 dev lo
+    config:
+      - configure terminal
+      - interface eth1
+      - ip ospf area 0
+      - ip ospf network point-to-point
+      - ip ospf authentication message-digest
+      - ip ospf message-digest-key 1 md5 lab-key-one
+      - exit
+      - interface eth2
+      - ip ospf area 1
+      - ip ospf network point-to-point
+      - ip ospf cost 40
+      - exit
+      - interface lo
+      - ip ospf area 0
+      - exit
+      - router ospf
+      - ospf router-id 10.255.0.2
+      - area 1 range 10.255.1.0/24
+      - passive-interface lo
+  r3:
+    image: quay.io/frrouting/frr:10.2.1
+    daemons: [ospfd]
+    pre:
+      - ip address replace 10.0.23.1/31 dev eth1
+      - ip address replace 10.0.34.0/31 dev eth2
+      - ip address replace 10.255.1.3/32 dev lo
+    config:
+      - configure terminal
+      - interface eth1
+      - ip ospf area 1
+      - ip ospf network point-to-point
+      - exit
+      - interface eth2
+      - ip ospf area 1
+      - ip ospf network point-to-point
+      - exit
+      - interface lo
+      - ip ospf area 1
+      - exit
+      - router ospf
+      - ospf router-id 10.255.1.3
+      - passive-interface lo
+  r4:
+    image: quay.io/frrouting/frr:10.2.1
+    daemons: [ospfd]
+    pre:
+      - ip address replace 10.0.34.1/31 dev eth1
+      - ip address replace 10.255.1.4/32 dev lo
+    config:
+      - configure terminal
+      - interface eth1
+      - ip ospf area 1
+      - ip ospf network point-to-point
+      - exit
+      - interface lo
+      - ip ospf area 1
+      - exit
+      - router ospf
+      - ospf router-id 10.255.1.4
+      - passive-interface lo
+links:
+  - endpoints: ["r1:eth1", "r2:eth1"]
+  - endpoints: ["r2:eth2", "r3:eth1"]
+  - endpoints: ["r3:eth2", "r4:eth1"]
+capture:
+  - id: adjacency-full-p2p
+    node: r1
+    cmd: show ip ospf neighbor
+    expect: "Full/-"
+  - id: p2p-has-no-designated-router
+    node: r1
+    cmd: show ip ospf interface eth1
+    expect: "Network Type POINTOPOINT"
+  - id: md5-authentication-in-effect
+    node: r1
+    cmd: show ip ospf interface eth1
+    expect: "Cryptographic authentication"
+  - id: passive-loopback-not-advertised-as-adjacency
+    node: r1
+    cmd: show ip ospf interface lo
+    expect: "Passive"
+  - id: abr-sees-both-areas
+    node: r2
+    cmd: show ip ospf
+    expect: "This router is an ABR"
+  - id: cost-40-applied
+    node: r2
+    cmd: show ip ospf interface eth2
+    expect: "Cost: 40"
+  - id: summary-prefix-is-in-the-table
+    node: r1
+    cmd: show ip route 10.255.1.0/24
+    expect: "Known via \"ospf\""
+  # The negative half of the same claim. Configuring an area range does not
+  # add a route beside the components -- it REPLACES them, and a reader who
+  # only checks that the summary appeared will not notice.
+  - id: component-prefix-is-absent
+    node: r1
+    cmd: show ip route 10.255.1.4/32
+    expect: "Network not in table"
+  - id: end-to-end-forwarding
+    node: r1
+    cli: shell
+    cmd: ping -c 3 -W 2 -I 10.255.0.1 10.255.1.4
+    expect: "0% packet loss"
+  - id: router-id-is-not-the-loopback-address
+    node: r1
+    cmd: show ip ospf
+    expect: "Router ID"
+  - id: database-has-the-summary-lsa
+    node: r1
+    cmd: show ip ospf database summary
+    expect: "Summary"

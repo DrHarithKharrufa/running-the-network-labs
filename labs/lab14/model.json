@@ -1,0 +1,13 @@
+{
+  "scope": "Illustrative payload/airtime arithmetic, not measurements or an RF simulation.",
+  "groups": [
+    {"name":"laptops","population":300,"active_fraction":0.4,"payload_mbps_per_active":4,"six_ghz_fraction":0.5},
+    {"name":"phones","population":300,"active_fraction":0.1,"payload_mbps_per_active":1,"six_ghz_fraction":0}
+  ],
+  "utilisation_budget":0.6,
+  "bands": {
+    "5GHz":{"width_mhz":20,"useful_payload_capacity_mbps":100,"qualified_channel_opportunities":9},
+    "6GHz":{"width_mhz":40,"useful_payload_capacity_mbps":150,"qualified_channel_opportunities":4}
+  },
+  "physical_assumption":"At most one independently usable radio of each band per AP; placement and reassociation not modelled."
+}

@@ -1,0 +1,38 @@
+# Linux teaching topology; consult README for validation scope.
+name: lab07
+topology:
+  kinds:
+    linux:
+      image: nicolaka/netshoot:latest
+  nodes:
+    client:
+      kind: linux
+      cmd: sleep infinity
+      exec:
+      - ip link set eth1 up
+      - ip address replace 10.0.10.10/24 dev eth1
+      - ip route replace 10.0.20.0/24 via 10.0.10.1
+    rtr:
+      kind: linux
+      cmd: sleep infinity
+      exec:
+      - ip link set eth1 up
+      - ip link set eth2 up
+      - sysctl -w net.ipv4.ip_forward=1
+      - ip address replace 10.0.10.1/24 dev eth1
+      - ip address replace 10.0.20.1/24 dev eth2
+    server:
+      kind: linux
+      cmd: sleep infinity
+      exec:
+      - ip link set eth1 up
+      - ip address replace 10.0.20.10/24 dev eth1
+      - sh -c "iperf3 -s -D"
+      - ip route replace 10.0.10.0/24 via 10.0.20.1
+  links:
+  - endpoints:
+    - client:eth1
+    - rtr:eth1
+  - endpoints:
+    - rtr:eth2
+    - server:eth1

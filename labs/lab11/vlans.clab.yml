@@ -1,0 +1,81 @@
+name: lab11
+topology:
+  kinds:
+    linux:
+      image: netbook-services:20260916
+      cmd: sleep infinity
+  nodes:
+    sw1:
+      kind: linux
+      exec:
+      - ip link add br0 type bridge vlan_filtering 1 vlan_default_pvid 0
+      - ip link set br0 up
+      - ip link set eth1 master br0
+      - ip link set eth1 up
+      - ip link set eth2 master br0
+      - ip link set eth2 up
+      - ip link set eth3 master br0
+      - ip link set eth3 up
+      - bridge vlan add dev eth1 vid 110 pvid untagged
+      - bridge vlan add dev eth2 vid 120 pvid untagged
+      - bridge vlan add dev eth3 vid 110
+      - bridge vlan add dev eth3 vid 120
+    sw2:
+      kind: linux
+      exec:
+      - ip link add br0 type bridge vlan_filtering 1 vlan_default_pvid 0
+      - ip link set br0 up
+      - ip link set eth1 master br0
+      - ip link set eth1 up
+      - ip link set eth2 master br0
+      - ip link set eth2 up
+      - ip link set eth3 master br0
+      - ip link set eth3 up
+      - bridge vlan add dev eth1 vid 110 pvid untagged
+      - bridge vlan add dev eth2 vid 120 pvid untagged
+      - bridge vlan add dev eth3 vid 110
+      - bridge vlan add dev eth3 vid 120
+    h1-v110:
+      kind: linux
+      binds:
+      - .:/lab:ro
+      exec:
+      - ip link set eth1 up
+      - ip address replace 10.10.0.11/22 dev eth1
+    h2-v120:
+      kind: linux
+      binds:
+      - .:/lab:ro
+      exec:
+      - ip link set eth1 up
+      - ip address replace 10.10.4.12/22 dev eth1
+    h3-v110:
+      kind: linux
+      binds:
+      - .:/lab:ro
+      exec:
+      - ip link set eth1 up
+      - ip address replace 10.10.0.13/22 dev eth1
+    attacker:
+      kind: linux
+      binds:
+      - .:/lab:ro
+      exec:
+      - ip link set eth1 up
+      - ip address replace 10.10.4.99/22 dev eth1
+  links:
+  - endpoints:
+    - h1-v110:eth1
+    - sw1:eth1
+  - endpoints:
+    - h2-v120:eth1
+    - sw1:eth2
+  - endpoints:
+    - sw1:eth3
+    - sw2:eth3
+  - endpoints:
+    - h3-v110:eth1
+    - sw2:eth1
+  - endpoints:
+    - attacker:eth1
+    - sw2:eth2

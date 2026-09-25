@@ -1,0 +1,276 @@
+{
+  "name": "lab29",
+  "topology": {
+    "nodes": {
+      "pe1": {
+        "kind": "linux",
+        "image": "netbook-frr:10.5.1",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab"
+        ],
+        "exec": [
+          "sysctl -qw net.ipv4.ip_forward=1",
+          "sysctl -qw net.ipv4.conf.all.rp_filter=0",
+          "sysctl -qw net.ipv4.conf.default.rp_filter=0",
+          "sysctl -qw net.mpls.platform_labels=65536",
+          "sysctl -qw net.mpls.conf.lo.input=1",
+          "ip address add 10.255.0.1/32 dev lo",
+          "ip link set eth1 mtu 2000 up",
+          "ip address add 10.254.29.0/31 dev eth1",
+          "sysctl -qw net.ipv4.conf.eth1.rp_filter=0",
+          "sysctl -qw net.mpls.conf.eth1.input=1",
+          "ip link add site1 type vrf table 100",
+          "ip link set site1 up",
+          "ip route add table 100 unreachable default metric 4278198272",
+          "ip link set eth2 master site1",
+          "ip link set eth2 mtu 2000 up",
+          "ip address add 10.29.255.0/31 dev eth2",
+          "sysctl -qw net.ipv4.conf.eth2.rp_filter=0",
+          "ip link add hub-return type vrf table 101",
+          "ip link set hub-return up",
+          "ip route add table 101 unreachable default metric 4278198272",
+          "ip link set eth3 master hub-return",
+          "ip link set eth3 mtu 2000 up",
+          "ip address add 10.29.255.6/31 dev eth3",
+          "sysctl -qw net.ipv4.conf.eth3.rp_filter=0"
+        ]
+      },
+      "p1": {
+        "kind": "linux",
+        "image": "netbook-frr:10.5.1",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab"
+        ],
+        "exec": [
+          "sysctl -qw net.ipv4.ip_forward=1",
+          "sysctl -qw net.ipv4.conf.all.rp_filter=0",
+          "sysctl -qw net.ipv4.conf.default.rp_filter=0",
+          "sysctl -qw net.mpls.platform_labels=65536",
+          "sysctl -qw net.mpls.conf.lo.input=1",
+          "ip address add 10.255.0.9/32 dev lo",
+          "ip link set eth1 mtu 2000 up",
+          "ip address add 10.254.29.1/31 dev eth1",
+          "sysctl -qw net.ipv4.conf.eth1.rp_filter=0",
+          "sysctl -qw net.mpls.conf.eth1.input=1",
+          "ip link set eth2 mtu 2000 up",
+          "ip address add 10.254.29.2/31 dev eth2",
+          "sysctl -qw net.ipv4.conf.eth2.rp_filter=0",
+          "sysctl -qw net.mpls.conf.eth2.input=1"
+        ]
+      },
+      "pe2": {
+        "kind": "linux",
+        "image": "netbook-frr:10.5.1",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab"
+        ],
+        "exec": [
+          "sysctl -qw net.ipv4.ip_forward=1",
+          "sysctl -qw net.ipv4.conf.all.rp_filter=0",
+          "sysctl -qw net.ipv4.conf.default.rp_filter=0",
+          "sysctl -qw net.mpls.platform_labels=65536",
+          "sysctl -qw net.mpls.conf.lo.input=1",
+          "ip address add 10.255.0.2/32 dev lo",
+          "ip link set eth1 mtu 2000 up",
+          "ip address add 10.254.29.3/31 dev eth1",
+          "sysctl -qw net.ipv4.conf.eth1.rp_filter=0",
+          "sysctl -qw net.mpls.conf.eth1.input=1",
+          "ip link add site2 type vrf table 200",
+          "ip link set site2 up",
+          "ip route add table 200 unreachable default metric 4278198272",
+          "ip link set eth2 master site2",
+          "ip link set eth2 mtu 2000 up",
+          "ip address add 10.29.255.2/31 dev eth2",
+          "sysctl -qw net.ipv4.conf.eth2.rp_filter=0",
+          "ip link add site3 type vrf table 300",
+          "ip link set site3 up",
+          "ip route add table 300 unreachable default metric 4278198272",
+          "ip link set eth3 master site3",
+          "ip link set eth3 mtu 2000 up",
+          "ip address add 10.29.255.4/31 dev eth3",
+          "sysctl -qw net.ipv4.conf.eth3.rp_filter=0"
+        ]
+      },
+      "ce1": {
+        "kind": "linux",
+        "image": "netbook-frr:10.5.1",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab"
+        ],
+        "exec": [
+          "sysctl -qw net.ipv4.ip_forward=1",
+          "sysctl -qw net.ipv4.conf.all.rp_filter=0",
+          "sysctl -qw net.ipv4.conf.default.rp_filter=0",
+          "ip link set eth1 mtu 2000 up",
+          "ip address add 10.29.255.1/31 dev eth1",
+          "sysctl -qw net.ipv4.conf.eth1.rp_filter=0",
+          "ip link set eth2 mtu 1500 up",
+          "ip address add 10.29.1.1/24 dev eth2",
+          "sysctl -qw net.ipv4.conf.eth2.rp_filter=0",
+          "ip link set eth3 mtu 2000 up",
+          "ip address add 10.29.255.7/31 dev eth3",
+          "sysctl -qw net.ipv4.conf.eth3.rp_filter=0",
+          "ip link set eth4 mtu 1500 up",
+          "ip address add 198.51.100.1/30 dev eth4",
+          "sysctl -qw net.ipv4.conf.eth4.rp_filter=0"
+        ]
+      },
+      "ce2": {
+        "kind": "linux",
+        "image": "netbook-frr:10.5.1",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab"
+        ],
+        "exec": [
+          "sysctl -qw net.ipv4.ip_forward=1",
+          "sysctl -qw net.ipv4.conf.all.rp_filter=0",
+          "sysctl -qw net.ipv4.conf.default.rp_filter=0",
+          "ip link set eth1 mtu 2000 up",
+          "ip address add 10.29.255.3/31 dev eth1",
+          "sysctl -qw net.ipv4.conf.eth1.rp_filter=0",
+          "ip link set eth2 mtu 1500 up",
+          "ip address add 10.29.2.1/24 dev eth2",
+          "sysctl -qw net.ipv4.conf.eth2.rp_filter=0"
+        ]
+      },
+      "ce3": {
+        "kind": "linux",
+        "image": "netbook-frr:10.5.1",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab"
+        ],
+        "exec": [
+          "sysctl -qw net.ipv4.ip_forward=1",
+          "sysctl -qw net.ipv4.conf.all.rp_filter=0",
+          "sysctl -qw net.ipv4.conf.default.rp_filter=0",
+          "ip link set eth1 mtu 2000 up",
+          "ip address add 10.29.255.5/31 dev eth1",
+          "sysctl -qw net.ipv4.conf.eth1.rp_filter=0",
+          "ip link set eth2 mtu 1500 up",
+          "ip address add 10.29.3.1/24 dev eth2",
+          "sysctl -qw net.ipv4.conf.eth2.rp_filter=0"
+        ]
+      },
+      "host1": {
+        "kind": "linux",
+        "image": "netbook-frr:10.5.1",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab"
+        ],
+        "exec": [
+          "ip link set eth1 mtu 1500 up",
+          "ip address add 10.29.1.10/24 dev eth1",
+          "ip route add default via 10.29.1.1"
+        ]
+      },
+      "host2": {
+        "kind": "linux",
+        "image": "netbook-frr:10.5.1",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab"
+        ],
+        "exec": [
+          "ip link set eth1 mtu 1500 up",
+          "ip address add 10.29.2.10/24 dev eth1",
+          "ip route add default via 10.29.2.1"
+        ]
+      },
+      "host3": {
+        "kind": "linux",
+        "image": "netbook-frr:10.5.1",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab"
+        ],
+        "exec": [
+          "ip link set eth1 mtu 1500 up",
+          "ip address add 10.29.3.10/24 dev eth1",
+          "ip route add default via 10.29.3.1"
+        ]
+      },
+      "external": {
+        "kind": "linux",
+        "image": "netbook-frr:10.5.1",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab"
+        ],
+        "exec": [
+          "ip link set eth1 mtu 1500 up",
+          "ip address add 198.51.100.2/30 dev eth1",
+          "ip route add 10.29.0.0/16 via 198.51.100.1"
+        ]
+      }
+    },
+    "links": [
+      {
+        "endpoints": [
+          "pe1:eth1",
+          "p1:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "p1:eth2",
+          "pe2:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "pe1:eth2",
+          "ce1:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "pe1:eth3",
+          "ce1:eth3"
+        ]
+      },
+      {
+        "endpoints": [
+          "pe2:eth2",
+          "ce2:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "pe2:eth3",
+          "ce3:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "ce1:eth2",
+          "host1:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "ce2:eth2",
+          "host2:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "ce3:eth2",
+          "host3:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "ce1:eth4",
+          "external:eth1"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+# Offline teaching fixture. Exact action predicates and limits are in verifier.py.
+# This file is NOT a generic interpreted policy language.
+version: 5
+freeze_windows:
+ - start: '2026-09-28T00:00:00Z'
+   end: '2026-10-02T23:59:59Z'

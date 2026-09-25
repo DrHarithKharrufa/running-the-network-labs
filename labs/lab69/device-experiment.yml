@@ -1,0 +1,48 @@
+---
+# Optional isolated IOS XE lab experiment; not part of offline verification.
+# Explicit guards prevent accidental execution against a general inventory.
+- name: Review one owned description on an explicitly approved lab switch
+  hosts: iosxe_lab
+  gather_facts: false
+  connection: ansible.netcommon.network_cli
+  serial: 1
+  any_errors_fatal: true
+  vars:
+    ansible_network_os: cisco.ios.ios
+    ansible_host_key_checking: true
+    lab_interface: GigabitEthernet1/0/8
+    lab_description: RTN-LAB69-OWNED
+  pre_tasks:
+    - name: Require one approved isolated target and input revision
+      ansible.builtin.assert:
+        that:
+          - lab_authorised | default(false) | bool
+          - lookup('ansible.builtin.env', 'ANSIBLE_HOST_KEY_AUTO_ADD') | lower == 'false'
+          - ansible_play_hosts_all | length == 1
+          - inventory_hostname == approved_target | default('')
+          - intent_revision == approved_revision
+          - lab_interface is match('^GigabitEthernet[1-9][0-9]*/0/[1-9][0-9]*$')
+          - lab_description is match('^[A-Za-z0-9 ._:/-]{1,80}$')
+          - "'\n' not in lab_interface and '\r' not in lab_interface"
+          - "'\n' not in lab_description and '\r' not in lab_description"
+  tasks:
+    - name: Compare or apply the owned description only
+      cisco.ios.ios_config:
+        parents: "interface {{ lab_interface }}"
+        lines:
+          - "description {{ lab_description }}"
+        match: line
+        save_when: never
+      register: description_result
+    - name: Read back the configuration section
+      cisco.ios.ios_command:
+        commands:
+          - "show running-config interface {{ lab_interface }} | include description"
+      register: readback
+      when: not ansible_check_mode
+    - name: Show the lab description evidence
+      ansible.builtin.debug:
+        msg:
+          changed: "{{ description_result.changed }}"
+          readback: "{{ readback.stdout }}"
+      when: not ansible_check_mode

@@ -1,0 +1,98 @@
+# The same job as OSPF, a different model: IS-IS runs on CLNS, the router is
+# named by a NET rather than an IPv4 router-id, and levels replace areas.
+#   r1 (L2) ---- r2 (L2) ---- r3 (L1)
+name: rtnwb-isis-flat
+settle: 4
+converge: 60
+nodes:
+  r1:
+    image: quay.io/frrouting/frr:10.2.1
+    daemons: [isisd]
+    pre:
+      - ip address replace 10.0.12.0/31 dev eth1
+      - ip address replace 10.255.0.1/32 dev lo
+    config:
+      - configure terminal
+      - interface lo
+      - ip router isis CORE
+      - isis passive
+      - exit
+      - interface eth1
+      - ip router isis CORE
+      - isis network point-to-point
+      - isis circuit-type level-2-only
+      - exit
+      - router isis CORE
+      - net 49.0001.0102.5500.0001.00
+      - is-type level-2-only
+      - metric-style wide
+  r2:
+    image: quay.io/frrouting/frr:10.2.1
+    daemons: [isisd]
+    pre:
+      - ip address replace 10.0.12.1/31 dev eth1
+      - ip address replace 10.0.23.0/31 dev eth2
+      - ip address replace 10.255.0.2/32 dev lo
+    config:
+      - configure terminal
+      - interface lo
+      - ip router isis CORE
+      - isis passive
+      - exit
+      - interface eth1
+      - ip router isis CORE
+      - isis network point-to-point
+      - isis circuit-type level-2-only
+      - exit
+      - interface eth2
+      - ip router isis CORE
+      - isis network point-to-point
+      - isis circuit-type level-2-only
+      - isis metric 25
+      - exit
+      - router isis CORE
+      - net 49.0001.0102.5500.0002.00
+      - is-type level-2-only
+      - metric-style wide
+  r3:
+    image: quay.io/frrouting/frr:10.2.1
+    daemons: [isisd]
+    pre:
+      - ip address replace 10.0.23.1/31 dev eth1
+      - ip address replace 10.255.0.3/32 dev lo
+    config:
+      - configure terminal
+      - interface lo
+      - ip router isis CORE
+      - isis passive
+      - exit
+      - interface eth1
+      - ip router isis CORE
+      - isis network point-to-point
+      - isis circuit-type level-2-only
+      - exit
+      - router isis CORE
+      - net 49.0001.0102.5500.0003.00
+      - is-type level-2-only
+      - metric-style wide
+links:
+  - endpoints: ["r1:eth1", "r2:eth1"]
+  - endpoints: ["r2:eth2", "r3:eth1"]
+capture:
+  - id: level-2-adjacencies-up
+    node: r2
+    cmd: show isis neighbor
+    expect: "Up"
+  - id: every-loopback-is-in-every-table
+    node: r1
+    cmd: show ip route isis
+    expect: "10.255.0.3/32"
+  - id: wide-metric-25-is-carried
+    node: r1
+    cmd: show isis database detail
+    expect: "10.0.23.0/31 \\(Metric: 25\\)"
+  - id: end-to-end-forwarding
+    node: r1
+    cli: shell
+    cmd: ping -c 3 -W 2 -I 10.255.0.1 10.255.0.3
+    expect: "0% packet loss"

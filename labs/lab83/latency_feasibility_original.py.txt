@@ -1,0 +1,64 @@
+#!/usr/bin/env python3
+"""
+Lab 83.1 -- latency is the physics that decides the architecture.
+
+Chapter 83 sec 1: latency is distance / speed-of-light-in-fibre, ~1 ms round-trip per
+100 km, and you cannot buy it down. So distance -- not bandwidth -- decides which
+multi-site architectures are even possible (sec 4: active-active needs a consistent
+data layer, which needs low latency). This computes best-case and realistic RTT for a
+set of site pairs and checks each against the requirements of common patterns.
+
+    python3 latency_feasibility.py
+"""
+
+# RTT floor: fibre carries light at ~200,000 km/s (200 km/ms one way), and RTT covers
+# 2 x distance, so RTT_ms = distance_km / 100. Real paths are ~1.5x (fibre isn't
+# straight) plus device latency.
+FIBRE_FACTOR = 1.5
+
+# Pattern -> max tolerable RTT (ms). None = tolerates any latency. (ch83 sec 1, sec 4)
+PATTERNS = [
+    ("synchronous DB replication", 2),
+    ("active-active stateful DB",  2),     # needs synchronous consistency (sec 4)
+    ("chatty / LAN-like app",      10),
+    ("interactive user experience",50),
+    ("asynchronous replication",   None),  # tolerates distance (sec 4)
+]
+
+PAIRS = [
+    ("metro pair",        50),
+    ("regional (Aldergate two-DC)", 800),
+    ("continental",       8000),
+]
+
+def rtt_ms(km, realistic=True):
+    floor = km / 100.0
+    return floor * FIBRE_FACTOR if realistic else floor
+
+def check(km):
+    r = rtt_ms(km, realistic=True)
+    print(f"[{'':2}] {km} km  ->  RTT floor {rtt_ms(km, False):.1f} ms, "
+          f"realistic ~{r:.1f} ms")
+    for name, limit in PATTERNS:
+        if limit is None:
+            verdict = "OK  (tolerates any latency)"
+        else:
+            verdict = "OK " if r <= limit else "FAIL"
+            verdict += f"  (needs <= {limit} ms)"
+        print(f"       {name:30} {verdict}")
+    print()
+
+if __name__ == "__main__":
+    print("Latency dictates multi-site architecture (ch83 sec 1)\n")
+    print("RTT = distance / 100  (ms), x1.5 for real fibre. Cannot be bought down.\n")
+    for label, km in PAIRS:
+        print(f"=== {label} ===")
+        check(km)
+
+    print("The metro pair supports everything, including synchronous replication and a")
+    print("stateful active-active DB. At 800 km (~12 ms) synchronous replication and")
+    print("active-active already FAIL -- the honest design is active-passive with async")
+    print("(ch83 sec 4). At continental distance only async replication and coarse")
+    print("interactive use survive. No budget changes this: distance, not bandwidth,")
+    print("ruled out the impossible before any technology was chosen. Establish the")
+    print("latency matrix first (ch83 sec 1).")

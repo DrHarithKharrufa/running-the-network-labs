@@ -1,0 +1,9 @@
+vlan {{ vlan }}
+ name {{ service_name }}
+!
+interface {{ interface }}
+ description {{ description }}
+ switchport
+ switchport mode access
+ switchport access vlan {{ vlan }}
+!

@@ -1,0 +1,94 @@
+{
+  "name": "lab21-selection",
+  "topology": {
+    "nodes": {
+      "sel-a1": {
+        "kind": "linux",
+        "image": "netbook-frr:10.5.1",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab"
+        ],
+        "exec": [
+          "sysctl -qw net.ipv4.ip_forward=1",
+          "ip link set lo up",
+          "ip address add 10.96.0.3/32 dev lo",
+          "ip address add 198.18.10.1/32 dev lo",
+          "ip link set eth1 up",
+          "ip address add 192.0.2.17/31 dev eth1"
+        ]
+      },
+      "sel-a2": {
+        "kind": "linux",
+        "image": "netbook-frr:10.5.1",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab"
+        ],
+        "exec": [
+          "sysctl -qw net.ipv4.ip_forward=1",
+          "ip link set lo up",
+          "ip address add 10.96.0.1/32 dev lo",
+          "ip address add 198.18.10.1/32 dev lo",
+          "ip link set eth1 up",
+          "ip address add 192.0.2.19/31 dev eth1"
+        ]
+      },
+      "sel-b": {
+        "kind": "linux",
+        "image": "netbook-frr:10.5.1",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab"
+        ],
+        "exec": [
+          "sysctl -qw net.ipv4.ip_forward=1",
+          "ip link set lo up",
+          "ip address add 10.96.0.2/32 dev lo",
+          "ip address add 198.18.10.1/32 dev lo",
+          "ip link set eth1 up",
+          "ip address add 192.0.2.21/31 dev eth1"
+        ]
+      },
+      "select": {
+        "kind": "linux",
+        "image": "netbook-frr:10.5.1",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab"
+        ],
+        "exec": [
+          "sysctl -qw net.ipv4.ip_forward=1",
+          "ip link set lo up",
+          "ip address add 10.255.21.1/32 dev lo",
+          "ip link set eth1 up",
+          "ip address add 192.0.2.16/31 dev eth1",
+          "ip link set eth2 up",
+          "ip address add 192.0.2.18/31 dev eth2",
+          "ip link set eth3 up",
+          "ip address add 192.0.2.20/31 dev eth3"
+        ]
+      }
+    },
+    "links": [
+      {
+        "endpoints": [
+          "select:eth1",
+          "sel-a1:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "select:eth2",
+          "sel-a2:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "select:eth3",
+          "sel-b:eth1"
+        ]
+      }
+    ]
+  }
+}

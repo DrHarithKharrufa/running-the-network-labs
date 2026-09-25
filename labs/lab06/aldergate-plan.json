@@ -1,0 +1,21 @@
+{
+  "scope": "Teaching address plan, not an allocation or reachability claim",
+  "ipv4": {
+    "parent": "10.10.0.0/16",
+    "site_blocks": {
+      "London": "10.10.0.0/19",
+      "Manchester": "10.10.32.0/20",
+      "Reading": "10.10.48.0/20"
+    },
+    "unallocated": ["10.10.64.0/18", "10.10.128.0/17"],
+    "London_growth_reservation": "10.10.16.0/20"
+  },
+  "ipv6": {
+    "parent": "2001:db8:a1de::/48",
+    "site_blocks": {
+      "London": "2001:db8:a1de::/56",
+      "Manchester": "2001:db8:a1de:100::/56",
+      "Reading": "2001:db8:a1de:200::/56"
+    }
+  }
+}

@@ -1,0 +1,75 @@
+name: lab06
+topology:
+  kinds:
+    linux:
+      image: netbook-services:20260916
+      cmd: sleep infinity
+  nodes:
+    rtr:
+      kind: linux
+      binds:
+      - dnsmasq.conf:/lab/dnsmasq.conf:ro
+      exec:
+      - sysctl -w net.ipv6.conf.all.forwarding=1
+      - ip link set eth1 up
+      - ip link set eth2 up
+      - ip link set eth3 up
+      - ip -6 address replace 2001:db8:a1de:10::1/64 dev eth1
+      - ip -6 address replace 2001:db8:a1de:20::1/64 dev eth2
+      - ip -6 address replace 2001:db8:a1de:ff::/127 dev eth3
+      - dnsmasq --test --conf-file=/lab/dnsmasq.conf
+      - sh -c "dnsmasq --keep-in-foreground --conf-file=/lab/dnsmasq.conf --pid-file=/tmp/lab06-dnsmasq.pid
+        --dhcp-leasefile=/tmp/lab06.leases >/tmp/lab06-dnsmasq.log 2>&1 &"
+    lan:
+      kind: linux
+      exec:
+      - ip link add br0 type bridge
+      - ip link set br0 up
+      - ip link set eth1 master br0
+      - ip link set eth1 up
+      - ip link set eth2 master br0
+      - ip link set eth2 up
+      - ip link set eth3 master br0
+      - ip link set eth3 up
+    client-slaac:
+      kind: linux
+      exec:
+      - sysctl -w net.ipv6.conf.eth1.accept_ra=2
+      - sysctl -w net.ipv6.conf.eth1.autoconf=1
+      - ip link set eth1 up
+    client-dhcp:
+      kind: linux
+      binds:
+      - dhcp6-hook.sh:/lab/dhcp6-hook.sh:ro
+      exec:
+      - sysctl -w net.ipv6.conf.eth1.accept_ra=2
+      - sysctl -w net.ipv6.conf.eth1.autoconf=0
+      - ip link set eth1 up
+    rogue:
+      kind: linux
+      binds:
+      - rogue.conf:/lab/rogue.conf:ro
+      exec:
+      - ip link set eth1 up
+      - ip -6 address replace 2001:db8:a1de:ee::1/64 dev eth1
+    peer:
+      kind: linux
+      exec:
+      - ip link set eth1 up
+      - ip -6 address replace 2001:db8:a1de:ff::1/127 dev eth1
+  links:
+  - endpoints:
+    - rtr:eth1
+    - lan:eth1
+  - endpoints:
+    - lan:eth2
+    - client-slaac:eth1
+  - endpoints:
+    - lan:eth3
+    - rogue:eth1
+  - endpoints:
+    - rtr:eth2
+    - client-dhcp:eth1
+  - endpoints:
+    - rtr:eth3
+    - peer:eth1

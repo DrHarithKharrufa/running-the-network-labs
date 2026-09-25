@@ -1,0 +1,33 @@
+# Local example only: replace names AND verify actual adapter/port inventories.
+# No appliance or management-adapter convention is validated by this file.
+# An explicit map is mandatory for breakout/multi-slot names. If port_map is
+# present, every used source interface must be present; omissions fail preflight.
+# Do not assume an appliance can expose eight data adapters.
+kinds:
+  nokia_srlinux:
+    template: "REPLACE_WITH_QUALIFIED_ROUTER_TEMPLATE"
+    port_map:
+      e1-1: [1, 0]
+      e1-2: [2, 0]
+      e1-3: [3, 0]
+      e1-4: [4, 0]
+      e1-5: [5, 0]
+      e1-6: [6, 0]
+      e1-29: [7, 0]
+      e1-30: [8, 0]
+      e1-49: [7, 0]
+      e1-50: [8, 0]
+  linux:
+    template: "REPLACE_WITH_QUALIFIED_FRR_TEMPLATE"
+    scheme: port
+    first_index: 1
+    offset: 0
+nodes:
+  host-cust:
+    template: "REPLACE_WITH_QUALIFIED_HOST_TEMPLATE"
+    port_map: {eth1: [0, 0]}
+  host-sub:
+    template: "REPLACE_WITH_QUALIFIED_HOST_TEMPLATE"
+    port_map: {eth1: [0, 0]}
+# Add host-specific overrides for Aldergate/Anvil; kind alone cannot distinguish
+# their Alpine hosts from FRR positions. Dry-run is wiring only, never boot proof.

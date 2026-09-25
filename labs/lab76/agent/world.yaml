@@ -1,0 +1,102 @@
+now: '2026-09-15T14:05:00Z'
+
+principals:
+  noc-operator:
+    tools: [shut_interface, clear_bgp_session_soft, announce_blackhole]
+    devices: [lon-pe-01, lon-pe-02, lon-pr-01, man-pr-01, lds-p-01, edi-pe-01]
+    blackhole_prefixes: [198.51.100.0/24, '2001:db8:4000::/48']
+approvers: [engineer-1]
+blackhole_peers:
+  lon-pr-01:
+    192.0.2.1:
+      afis: [4, 6]
+devices:
+  lon-pe-01:
+    role: pe
+    region: uk-south
+  lon-pe-02:
+    role: pe
+    region: uk-south
+  lon-pr-01:
+    role: border
+    region: uk-south
+  man-pr-01:
+    role: border
+    region: uk-north
+  lds-p-01:
+    role: p
+    region: uk-north
+  edi-pe-01:
+    role: pe
+    region: uk-scotland
+interfaces:
+  lon-pe-01:
+    ethernet-1/2:
+      type: customer-facing
+      admin_state: enable
+      mac_flaps_5m: 214
+    ethernet-1/1:
+      type: core-facing
+      admin_state: enable
+      mac_flaps_5m: 0
+  lon-pe-02:
+    ethernet-1/2:
+      type: customer-facing
+      admin_state: enable
+      mac_flaps_5m: 0
+bgp:
+  lon-pe-01:
+    192.0.2.5:
+      type: customer
+      state: established
+      uptime_s: 91422
+  lon-pr-01:
+    192.0.2.1:
+      type: transit
+      state: established
+      uptime_s: 400111
+    198.51.100.1:
+      type: peer
+      state: established
+      uptime_s: 200000
+observations:
+  obs-1:
+    tool: get_interface_state
+    device: lon-pe-01
+    interface: ethernet-1/2
+    at: '2026-09-15T14:03:30Z'
+    mac_flaps_5m: 214
+    source: collector
+  obs-2:
+    tool: get_interface_state
+    device: lon-pe-02
+    interface: ethernet-1/2
+    at: '2026-09-15T14:03:30Z'
+    mac_flaps_5m: 0
+    source: collector
+  obs-3:
+    tool: get_interface_state
+    device: lon-pe-01
+    interface: ethernet-1/1
+    at: '2026-09-15T14:03:30Z'
+    mac_flaps_5m: 0
+    source: collector
+  obs-stale:
+    tool: get_interface_state
+    device: lon-pe-01
+    interface: ethernet-1/2
+    at: '2026-09-15T11:40:00Z'
+    mac_flaps_5m: 198
+    source: collector
+revision: 1
+observed_at: '2026-09-15T14:04:30Z'
+tickets:
+- INC-4471
+authorised_blackholes:
+  lon-pr-01:
+  - 198.51.100.0/24
+  - 2001:db8:4000::/48
+attacks:
+  lon-pr-01:
+  - 198.51.100.7/32
+  - 2001:db8:4000::7/128

@@ -1,0 +1,39 @@
+# =====================================================================
+# Lab 10.1 / 10.2 -- Configuration state and bounded rollback trials
+# Running the Network, Chapter 10
+#
+#   sudo containerlab deploy -t rosetta.clab.yml
+#
+# Two network operating systems side by side:
+#   nokia_srlinux  candidate + commit, YANG-native
+#   frr            immediate-apply, IOS-flavoured
+#
+# Add a GNS3 build with IOS-XR, SR OS, VRP and FortiOS if you have the
+# images -- see ../gns3/.
+# =====================================================================
+name: lab10
+
+topology:
+  nodes:
+    srl:
+      kind: nokia_srlinux
+      image: ghcr.io/nokia/srlinux:24.10.1
+      type: ixrd3
+      startup-config: |
+        set / system name host-name rosetta-srl
+        set / interface ethernet-1/1 admin-state enable
+        set / interface ethernet-1/1 description "LAB10-BASELINE"
+        set / interface ethernet-1/1 subinterface 0 ipv4 admin-state enable
+        set / interface ethernet-1/1 subinterface 0 ipv4 address 10.0.0.1/31
+        set / network-instance default type default
+        set / network-instance default interface ethernet-1/1.0
+
+    frr:
+      kind: linux
+      image: quay.io/frrouting/frr:10.2.1
+      exec:
+        - ip addr add 10.0.0.0/31 dev eth1
+        - ip link set eth1 up
+
+  links:
+    - endpoints: ["frr:eth1", "srl:e1-1"]

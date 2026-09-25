@@ -1,0 +1,6 @@
+# Documentation/syntax target for the OPTIONAL device experiment only.
+collections:
+  - name: cisco.ios
+    version: 11.5.1
+  - name: ansible.netcommon
+    version: 8.6.2

@@ -1,0 +1,10 @@
+{
+  "provenance": "Synthetic teaching cases. Powers are illustrative average-power limits from the chapter's cited 10G module data sheet; losses and margins are assumptions. No optical measurements were made.",
+  "cases": [
+    {"name":"LR 8 km, 2 dB allowance","distance_km":8,"rated_reach_km":10,"loss_db_per_km":0.35,"connector_pairs":2,"loss_db_per_pair":0.5,"splices":4,"loss_db_per_splice":0.1,"minimum_loss_db":0,"tx_min_dbm":-8.2,"tx_max_dbm":0.5,"rx_sensitivity_dbm":-14.4,"rx_max_dbm":0.5,"required_margin_db":2,"expected_screen_pass":true},
+    {"name":"LR 8 km, 2.5 dB allowance","distance_km":8,"rated_reach_km":10,"loss_db_per_km":0.35,"connector_pairs":2,"loss_db_per_pair":0.5,"splices":4,"loss_db_per_splice":0.1,"minimum_loss_db":0,"tx_min_dbm":-8.2,"tx_max_dbm":0.5,"rx_sensitivity_dbm":-14.4,"rx_max_dbm":0.5,"required_margin_db":2.5,"expected_screen_pass":false},
+    {"name":"LR 11.8 km exceeds rated reach","distance_km":11.8,"rated_reach_km":10,"loss_db_per_km":0.35,"connector_pairs":2,"loss_db_per_pair":0.5,"splices":2,"loss_db_per_splice":0.1,"minimum_loss_db":0,"tx_min_dbm":-8.2,"tx_max_dbm":0.5,"rx_sensitivity_dbm":-14.4,"rx_max_dbm":0.5,"required_margin_db":0,"expected_screen_pass":false},
+    {"name":"ER short path overload","distance_km":0.01,"rated_reach_km":40,"loss_db_per_km":0.25,"connector_pairs":2,"loss_db_per_pair":0.5,"splices":0,"loss_db_per_splice":0.1,"minimum_loss_db":0,"tx_min_dbm":-4.7,"tx_max_dbm":4,"rx_sensitivity_dbm":-15.8,"rx_max_dbm":-1,"required_margin_db":2,"expected_screen_pass":false},
+    {"name":"ER 40 km insufficient budget","distance_km":40,"rated_reach_km":40,"loss_db_per_km":0.25,"connector_pairs":6,"loss_db_per_pair":0.5,"splices":4,"loss_db_per_splice":0.1,"minimum_loss_db":5,"tx_min_dbm":-4.7,"tx_max_dbm":4,"rx_sensitivity_dbm":-15.8,"rx_max_dbm":-1,"required_margin_db":3,"expected_screen_pass":false}
+  ]
+}

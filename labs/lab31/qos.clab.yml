@@ -1,0 +1,68 @@
+{
+  "name": "lab31",
+  "topology": {
+    "nodes": {
+      "h1": {
+        "kind": "linux",
+        "image": "netbook-linux:1",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab"
+        ],
+        "exec": [
+          "sysctl -qw net.ipv6.conf.all.disable_ipv6=1",
+          "sysctl -qw net.ipv6.conf.default.disable_ipv6=1",
+          "ip link set eth1 mtu 1500 up",
+          "ip address add 10.0.1.10/24 dev eth1",
+          "ip route replace default via 10.0.1.1"
+        ]
+      },
+      "rtr": {
+        "kind": "linux",
+        "image": "netbook-linux:1",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab"
+        ],
+        "exec": [
+          "sysctl -qw net.ipv6.conf.all.disable_ipv6=1",
+          "sysctl -qw net.ipv6.conf.default.disable_ipv6=1",
+          "sysctl -qw net.ipv4.ip_forward=1",
+          "ip link set eth1 mtu 1500 up",
+          "ip link set eth2 mtu 1500 up",
+          "ip address add 10.0.1.1/24 dev eth1",
+          "ip address add 10.0.2.1/24 dev eth2"
+        ]
+      },
+      "h2": {
+        "kind": "linux",
+        "image": "netbook-linux:1",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab"
+        ],
+        "exec": [
+          "sysctl -qw net.ipv6.conf.all.disable_ipv6=1",
+          "sysctl -qw net.ipv6.conf.default.disable_ipv6=1",
+          "ip link set eth1 mtu 1500 up",
+          "ip address add 10.0.2.10/24 dev eth1",
+          "ip route replace default via 10.0.2.1"
+        ]
+      }
+    },
+    "links": [
+      {
+        "endpoints": [
+          "h1:eth1",
+          "rtr:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "rtr:eth2",
+          "h2:eth1"
+        ]
+      }
+    ]
+  }
+}

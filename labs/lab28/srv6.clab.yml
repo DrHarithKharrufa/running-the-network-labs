@@ -1,0 +1,221 @@
+{
+  "name": "lab28",
+  "topology": {
+    "nodes": {
+      "r1": {
+        "kind": "linux",
+        "image": "netbook-frr:10.5.1",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab"
+        ],
+        "exec": [
+          "sysctl -qw net.ipv4.ip_forward=1",
+          "sysctl -qw net.ipv6.conf.all.forwarding=1",
+          "sysctl -qw net.ipv4.conf.all.rp_filter=0",
+          "sysctl -qw net.ipv4.conf.default.rp_filter=0",
+          "sysctl -qw net.ipv6.conf.all.accept_dad=0",
+          "sysctl -qw net.ipv6.conf.default.accept_dad=0",
+          "ip -6 address add 2001:db8:4500:1::1/64 dev lo nodad",
+          "ip link set eth1 mtu 2000 up",
+          "ip -6 address add 2001:db8:4500:ff12::0/127 dev eth1 nodad",
+          "sysctl -qw net.ipv6.conf.eth1.seg6_enabled=1",
+          "ip link set eth2 mtu 2000 up",
+          "ip -6 address add 2001:db8:4500:ff14::0/127 dev eth2 nodad",
+          "sysctl -qw net.ipv6.conf.eth2.seg6_enabled=1",
+          "ip link add blue type vrf table 100",
+          "ip link set blue up",
+          "ip link set eth3 master blue",
+          "ip link set eth3 up",
+          "ip address add 10.28.1.1/24 dev eth3",
+          "sysctl -qw net.ipv4.conf.eth3.rp_filter=0",
+          "ip route add table 100 unreachable default metric 4278198272",
+          "ip link add red type vrf table 200",
+          "ip link set red up",
+          "ip link set eth4 master red",
+          "ip link set eth4 up",
+          "ip address add 10.28.1.1/24 dev eth4",
+          "sysctl -qw net.ipv4.conf.eth4.rp_filter=0",
+          "ip route add table 200 unreachable default metric 4278198272",
+          "sysctl -qw net.vrf.strict_mode=1",
+          "ip sr tunsrc set 2001:db8:4500:1::1"
+        ]
+      },
+      "r2": {
+        "kind": "linux",
+        "image": "netbook-frr:10.5.1",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab"
+        ],
+        "exec": [
+          "sysctl -qw net.ipv4.ip_forward=1",
+          "sysctl -qw net.ipv6.conf.all.forwarding=1",
+          "sysctl -qw net.ipv4.conf.all.rp_filter=0",
+          "sysctl -qw net.ipv4.conf.default.rp_filter=0",
+          "sysctl -qw net.ipv6.conf.all.accept_dad=0",
+          "sysctl -qw net.ipv6.conf.default.accept_dad=0",
+          "ip -6 address add 2001:db8:4500:2::1/64 dev lo nodad",
+          "ip link set eth1 mtu 2000 up",
+          "ip -6 address add 2001:db8:4500:ff12::1/127 dev eth1 nodad",
+          "sysctl -qw net.ipv6.conf.eth1.seg6_enabled=1",
+          "ip link set eth2 mtu 2000 up",
+          "ip -6 address add 2001:db8:4500:ff23::0/127 dev eth2 nodad",
+          "sysctl -qw net.ipv6.conf.eth2.seg6_enabled=1"
+        ]
+      },
+      "r3": {
+        "kind": "linux",
+        "image": "netbook-frr:10.5.1",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab"
+        ],
+        "exec": [
+          "sysctl -qw net.ipv4.ip_forward=1",
+          "sysctl -qw net.ipv6.conf.all.forwarding=1",
+          "sysctl -qw net.ipv4.conf.all.rp_filter=0",
+          "sysctl -qw net.ipv4.conf.default.rp_filter=0",
+          "sysctl -qw net.ipv6.conf.all.accept_dad=0",
+          "sysctl -qw net.ipv6.conf.default.accept_dad=0",
+          "ip -6 address add 2001:db8:4500:3::1/64 dev lo nodad",
+          "ip link set eth1 mtu 2000 up",
+          "ip -6 address add 2001:db8:4500:ff23::1/127 dev eth1 nodad",
+          "sysctl -qw net.ipv6.conf.eth1.seg6_enabled=1",
+          "ip link set eth2 mtu 2000 up",
+          "ip -6 address add 2001:db8:4500:ff34::0/127 dev eth2 nodad",
+          "sysctl -qw net.ipv6.conf.eth2.seg6_enabled=1"
+        ]
+      },
+      "r4": {
+        "kind": "linux",
+        "image": "netbook-frr:10.5.1",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab"
+        ],
+        "exec": [
+          "sysctl -qw net.ipv4.ip_forward=1",
+          "sysctl -qw net.ipv6.conf.all.forwarding=1",
+          "sysctl -qw net.ipv4.conf.all.rp_filter=0",
+          "sysctl -qw net.ipv4.conf.default.rp_filter=0",
+          "sysctl -qw net.ipv6.conf.all.accept_dad=0",
+          "sysctl -qw net.ipv6.conf.default.accept_dad=0",
+          "ip -6 address add 2001:db8:4500:4::1/64 dev lo nodad",
+          "ip link set eth1 mtu 2000 up",
+          "ip -6 address add 2001:db8:4500:ff34::1/127 dev eth1 nodad",
+          "sysctl -qw net.ipv6.conf.eth1.seg6_enabled=1",
+          "ip link set eth2 mtu 2000 up",
+          "ip -6 address add 2001:db8:4500:ff14::1/127 dev eth2 nodad",
+          "sysctl -qw net.ipv6.conf.eth2.seg6_enabled=1",
+          "ip link add blue type vrf table 100",
+          "ip link set blue up",
+          "ip link set eth3 master blue",
+          "ip link set eth3 up",
+          "ip address add 10.28.2.1/24 dev eth3",
+          "sysctl -qw net.ipv4.conf.eth3.rp_filter=0",
+          "ip route add table 100 unreachable default metric 4278198272",
+          "ip link add red type vrf table 200",
+          "ip link set red up",
+          "ip link set eth4 master red",
+          "ip link set eth4 up",
+          "ip address add 10.28.2.1/24 dev eth4",
+          "sysctl -qw net.ipv4.conf.eth4.rp_filter=0",
+          "ip route add table 200 unreachable default metric 4278198272",
+          "sysctl -qw net.vrf.strict_mode=1",
+          "ip sr tunsrc set 2001:db8:4500:4::1"
+        ]
+      },
+      "blue-1": {
+        "kind": "linux",
+        "image": "netbook-frr:10.5.1",
+        "cmd": "sleep infinity",
+        "exec": [
+          "ip link set eth1 up",
+          "ip address add 10.28.1.10/24 dev eth1",
+          "ip route add 10.28.2.0/24 via 10.28.1.1 dev eth1"
+        ]
+      },
+      "red-1": {
+        "kind": "linux",
+        "image": "netbook-frr:10.5.1",
+        "cmd": "sleep infinity",
+        "exec": [
+          "ip link set eth1 up",
+          "ip address add 10.28.1.10/24 dev eth1",
+          "ip route add 10.28.2.0/24 via 10.28.1.1 dev eth1"
+        ]
+      },
+      "blue-2": {
+        "kind": "linux",
+        "image": "netbook-frr:10.5.1",
+        "cmd": "sleep infinity",
+        "exec": [
+          "ip link set eth1 up",
+          "ip address add 10.28.2.10/24 dev eth1",
+          "ip route add 10.28.1.0/24 via 10.28.2.1 dev eth1"
+        ]
+      },
+      "red-2": {
+        "kind": "linux",
+        "image": "netbook-frr:10.5.1",
+        "cmd": "sleep infinity",
+        "exec": [
+          "ip link set eth1 up",
+          "ip address add 10.28.2.10/24 dev eth1",
+          "ip route add 10.28.1.0/24 via 10.28.2.1 dev eth1"
+        ]
+      }
+    },
+    "links": [
+      {
+        "endpoints": [
+          "r1:eth1",
+          "r2:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "r2:eth2",
+          "r3:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "r3:eth2",
+          "r4:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "r1:eth2",
+          "r4:eth2"
+        ]
+      },
+      {
+        "endpoints": [
+          "r1:eth3",
+          "blue-1:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "r1:eth4",
+          "red-1:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "r4:eth3",
+          "blue-2:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "r4:eth4",
+          "red-2:eth1"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "name": "lab27",
+  "topology": {
+    "nodes": {
+      "lon-p-01": {
+        "kind": "linux",
+        "image": "netbook-frr:10.5.1",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab"
+        ],
+        "exec": [
+          "sysctl -qw net.ipv4.ip_forward=1",
+          "sysctl -qw net.ipv4.conf.all.rp_filter=0",
+          "sysctl -qw net.ipv4.conf.default.rp_filter=0",
+          "sysctl -qw net.mpls.platform_labels=65536",
+          "sysctl -qw net.mpls.conf.lo.input=1",
+          "ip address add 10.255.0.11/32 dev lo",
+          "ip link set eth1 mtu 2000 up",
+          "ip address add 10.254.0.0/31 dev eth1",
+          "sysctl -qw net.ipv4.conf.eth1.rp_filter=0",
+          "sysctl -qw net.mpls.conf.eth1.input=1",
+          "ip link set eth2 mtu 2000 up",
+          "ip address add 10.254.0.2/31 dev eth2",
+          "sysctl -qw net.ipv4.conf.eth2.rp_filter=0",
+          "sysctl -qw net.mpls.conf.eth2.input=1",
+          "ip link set eth3 mtu 2000 up",
+          "ip address add 10.27.1.1/24 dev eth3",
+          "sysctl -qw net.ipv4.conf.eth3.rp_filter=0"
+        ]
+      },
+      "man-p-01": {
+        "kind": "linux",
+        "image": "netbook-frr:10.5.1",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab"
+        ],
+        "exec": [
+          "sysctl -qw net.ipv4.ip_forward=1",
+          "sysctl -qw net.ipv4.conf.all.rp_filter=0",
+          "sysctl -qw net.ipv4.conf.default.rp_filter=0",
+          "sysctl -qw net.mpls.platform_labels=65536",
+          "sysctl -qw net.mpls.conf.lo.input=1",
+          "ip address add 10.255.0.12/32 dev lo",
+          "ip link set eth1 mtu 2000 up",
+          "ip address add 10.254.0.1/31 dev eth1",
+          "sysctl -qw net.ipv4.conf.eth1.rp_filter=0",
+          "sysctl -qw net.mpls.conf.eth1.input=1",
+          "ip link set eth2 mtu 2000 up",
+          "ip address add 10.254.0.4/31 dev eth2",
+          "sysctl -qw net.ipv4.conf.eth2.rp_filter=0",
+          "sysctl -qw net.mpls.conf.eth2.input=1"
+        ]
+      },
+      "bhm-p-01": {
+        "kind": "linux",
+        "image": "netbook-frr:10.5.1",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab"
+        ],
+        "exec": [
+          "sysctl -qw net.ipv4.ip_forward=1",
+          "sysctl -qw net.ipv4.conf.all.rp_filter=0",
+          "sysctl -qw net.ipv4.conf.default.rp_filter=0",
+          "sysctl -qw net.mpls.platform_labels=65536",
+          "sysctl -qw net.mpls.conf.lo.input=1",
+          "ip address add 10.255.0.13/32 dev lo",
+          "ip link set eth1 mtu 2000 up",
+          "ip address add 10.254.0.3/31 dev eth1",
+          "sysctl -qw net.ipv4.conf.eth1.rp_filter=0",
+          "sysctl -qw net.mpls.conf.eth1.input=1",
+          "ip link set eth2 mtu 2000 up",
+          "ip address add 10.254.0.6/31 dev eth2",
+          "sysctl -qw net.ipv4.conf.eth2.rp_filter=0",
+          "sysctl -qw net.mpls.conf.eth2.input=1"
+        ]
+      },
+      "lds-p-01": {
+        "kind": "linux",
+        "image": "netbook-frr:10.5.1",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab"
+        ],
+        "exec": [
+          "sysctl -qw net.ipv4.ip_forward=1",
+          "sysctl -qw net.ipv4.conf.all.rp_filter=0",
+          "sysctl -qw net.ipv4.conf.default.rp_filter=0",
+          "sysctl -qw net.mpls.platform_labels=65536",
+          "sysctl -qw net.mpls.conf.lo.input=1",
+          "ip address add 10.255.0.14/32 dev lo",
+          "ip link set eth1 mtu 2000 up",
+          "ip address add 10.254.0.5/31 dev eth1",
+          "sysctl -qw net.ipv4.conf.eth1.rp_filter=0",
+          "sysctl -qw net.mpls.conf.eth1.input=1",
+          "ip link set eth2 mtu 2000 up",
+          "ip address add 10.254.0.7/31 dev eth2",
+          "sysctl -qw net.ipv4.conf.eth2.rp_filter=0",
+          "sysctl -qw net.mpls.conf.eth2.input=1",
+          "ip link set eth3 mtu 2000 up",
+          "ip address add 10.27.2.1/24 dev eth3",
+          "sysctl -qw net.ipv4.conf.eth3.rp_filter=0"
+        ]
+      },
+      "host-a": {
+        "kind": "linux",
+        "image": "netbook-frr:10.5.1",
+        "cmd": "sleep infinity",
+        "exec": [
+          "ip link set eth1 up",
+          "ip address add 10.27.1.10/24 dev eth1",
+          "ip route add 10.27.2.0/24 via 10.27.1.1"
+        ]
+      },
+      "host-b": {
+        "kind": "linux",
+        "image": "netbook-frr:10.5.1",
+        "cmd": "sleep infinity",
+        "exec": [
+          "ip link set eth1 up",
+          "ip address add 10.27.2.10/24 dev eth1",
+          "ip route add 10.27.1.0/24 via 10.27.2.1"
+        ]
+      }
+    },
+    "links": [
+      {
+        "endpoints": [
+          "lon-p-01:eth1",
+          "man-p-01:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "lon-p-01:eth2",
+          "bhm-p-01:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "man-p-01:eth2",
+          "lds-p-01:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "bhm-p-01:eth2",
+          "lds-p-01:eth2"
+        ]
+      },
+      {
+        "endpoints": [
+          "lon-p-01:eth3",
+          "host-a:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "lds-p-01:eth3",
+          "host-b:eth1"
+        ]
+      }
+    ]
+  }
+}

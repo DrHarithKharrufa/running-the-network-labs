@@ -1,0 +1,19 @@
+{
+  "scope": "Synthetic, projected response fields for a NetBox 4.3.7 teaching example. Not a captured server response.",
+  "exported_at": "2026-09-24T09:00:00Z",
+  "intent_version": "git-example-7",
+  "pages": {
+    "https://netbox.example/api/dcim/interfaces/?device_id=1&limit=1&ordering=id": {
+      "count": 2,
+      "next": "https://netbox.example/api/dcim/interfaces/?device_id=1&limit=1&ordering=id&offset=1",
+      "previous": null,
+      "results": [{"id": 11, "device": {"id": 1, "name": "ald-leaf-01"}, "name": "Ethernet1", "type": {"value": "1000base-t", "label": "1000BASE-T (1GE)"}, "enabled": true, "description": "to-spine-1", "mode": null, "untagged_vlan": null, "last_updated": "2026-09-24T08:30:00Z", "custom_fields": {"interface_role": "uplink"}}]
+    },
+    "https://netbox.example/api/dcim/interfaces/?device_id=1&limit=1&ordering=id&offset=1": {
+      "count": 2,
+      "next": null,
+      "previous": "https://netbox.example/api/dcim/interfaces/?device_id=1&limit=1&ordering=id",
+      "results": [{"id": 18, "device": {"id": 1, "name": "ald-leaf-01"}, "name": "Ethernet8", "type": {"value": "1000base-t", "label": "1000BASE-T (1GE)"}, "enabled": true, "description": "server-07", "mode": {"value": "access", "label": "Access"}, "untagged_vlan": {"id": 30, "vid": 30, "name": "Servers"}, "last_updated": "2026-09-24T08:31:00Z", "custom_fields": {"interface_role": "server"}}]
+    }
+  }
+}

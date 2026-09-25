@@ -1,0 +1,116 @@
+{
+  "captured_utc": "2026-09-25T23:41:10+00:00",
+  "captures": [
+    {
+      "cli": "vtysh",
+      "cmd": "show ip route 10.255.0.2/32",
+      "elapsed_s": 0.071,
+      "expect": "10.0.12.1",
+      "id": "primary-static-is-selected",
+      "matched": true,
+      "node": "r1",
+      "output": "Routing entry for 10.255.0.2/32\n  Known via \"static\", distance 200, metric 0\n  Last update 00:00:25 ago\n    10.0.13.1, via eth2, weight 1\n\nRouting entry for 10.255.0.2/32\n  Known via \"static\", distance 1, metric 0, best\n  Last update 00:00:25 ago\n  * 10.0.12.1, via eth1, weight 1",
+      "returncode": 0,
+      "sha256": "21d6b068636e3ef9421855b9256f1660bfec2f18d28c795fbbeeff7d2aed3d42",
+      "stderr": "",
+      "stdout": "Routing entry for 10.255.0.2/32\n  Known via \"static\", distance 200, metric 0\n  Last update 00:00:25 ago\n    10.0.13.1, via eth2, weight 1\n\nRouting entry for 10.255.0.2/32\n  Known via \"static\", distance 1, metric 0, best\n  Last update 00:00:25 ago\n  * 10.0.12.1, via eth1, weight 1"
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show ip route static",
+      "elapsed_s": 0.066,
+      "expect": "S>\\* 10\\.255\\.0\\.2/32 \\[1/0\\] via 10\\.0\\.12\\.1",
+      "id": "the-floating-static-is-present-but-not-selected",
+      "matched": true,
+      "node": "r1",
+      "output": "Codes: K - kernel route, C - connected, L - local, S - static,\n       R - RIP, O - OSPF, I - IS-IS, B - BGP, E - EIGRP, N - NHRP,\n       T - Table, v - VNC, V - VNC-Direct, A - Babel, F - PBR,\n       f - OpenFabric, t - Table-Direct,\n       > - selected route, * - FIB route, q - queued, r - rejected, b - backup\n       t - trapped, o - offload failure\n\nS   10.255.0.2/32 [200/0] via 10.0.13.1, eth2, weight 1, 00:00:25\nS>* 10.255.0.2/32 [1/0] via 10.0.12.1, eth1, weight 1, 00:00:25",
+      "returncode": 0,
+      "sha256": "c69f1ff00cf17d0758912a904d276f7b84878df373ccb2663561fbed14be0b1f",
+      "stderr": "",
+      "stdout": "Codes: K - kernel route, C - connected, L - local, S - static,\n       R - RIP, O - OSPF, I - IS-IS, B - BGP, E - EIGRP, N - NHRP,\n       T - Table, v - VNC, V - VNC-Direct, A - Babel, F - PBR,\n       f - OpenFabric, t - Table-Direct,\n       > - selected route, * - FIB route, q - queued, r - rejected, b - backup\n       t - trapped, o - offload failure\n\nS   10.255.0.2/32 [200/0] via 10.0.13.1, eth2, weight 1, 00:00:25\nS>* 10.255.0.2/32 [1/0] via 10.0.12.1, eth1, weight 1, 00:00:25"
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show ip route static",
+      "elapsed_s": 0.058,
+      "expect": "\\n *S   10\\.255\\.0\\.2/32 \\[200/0\\] via 10\\.0\\.13\\.1",
+      "id": "the-backup-is-present-at-distance-200-and-not-selected",
+      "matched": true,
+      "node": "r1",
+      "output": "Codes: K - kernel route, C - connected, L - local, S - static,\n       R - RIP, O - OSPF, I - IS-IS, B - BGP, E - EIGRP, N - NHRP,\n       T - Table, v - VNC, V - VNC-Direct, A - Babel, F - PBR,\n       f - OpenFabric, t - Table-Direct,\n       > - selected route, * - FIB route, q - queued, r - rejected, b - backup\n       t - trapped, o - offload failure\n\nS   10.255.0.2/32 [200/0] via 10.0.13.1, eth2, weight 1, 00:00:25\nS>* 10.255.0.2/32 [1/0] via 10.0.12.1, eth1, weight 1, 00:00:25",
+      "returncode": 0,
+      "sha256": "c69f1ff00cf17d0758912a904d276f7b84878df373ccb2663561fbed14be0b1f",
+      "stderr": "",
+      "stdout": "Codes: K - kernel route, C - connected, L - local, S - static,\n       R - RIP, O - OSPF, I - IS-IS, B - BGP, E - EIGRP, N - NHRP,\n       T - Table, v - VNC, V - VNC-Direct, A - Babel, F - PBR,\n       f - OpenFabric, t - Table-Direct,\n       > - selected route, * - FIB route, q - queued, r - rejected, b - backup\n       t - trapped, o - offload failure\n\nS   10.255.0.2/32 [200/0] via 10.0.13.1, eth2, weight 1, 00:00:25\nS>* 10.255.0.2/32 [1/0] via 10.0.12.1, eth1, weight 1, 00:00:25"
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show ip route 10.255.0.2/32",
+      "elapsed_s": 0.064,
+      "expect": "distance 1",
+      "id": "distance-is-what-decides",
+      "matched": true,
+      "node": "r1",
+      "output": "Routing entry for 10.255.0.2/32\n  Known via \"static\", distance 200, metric 0\n  Last update 00:00:25 ago\n    10.0.13.1, via eth2, weight 1\n\nRouting entry for 10.255.0.2/32\n  Known via \"static\", distance 1, metric 0, best\n  Last update 00:00:25 ago\n  * 10.0.12.1, via eth1, weight 1",
+      "returncode": 0,
+      "sha256": "21d6b068636e3ef9421855b9256f1660bfec2f18d28c795fbbeeff7d2aed3d42",
+      "stderr": "",
+      "stdout": "Routing entry for 10.255.0.2/32\n  Known via \"static\", distance 200, metric 0\n  Last update 00:00:25 ago\n    10.0.13.1, via eth2, weight 1\n\nRouting entry for 10.255.0.2/32\n  Known via \"static\", distance 1, metric 0, best\n  Last update 00:00:25 ago\n  * 10.0.12.1, via eth1, weight 1"
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show bfd peers brief",
+      "elapsed_s": 0.054,
+      "expect": "up",
+      "id": "bfd-session-is-up",
+      "matched": true,
+      "node": "r1",
+      "output": "Session count: 1\nSessionId  LocalAddress                             PeerAddress                             Status         \n=========  ============                             ===========                             ======         \n426494049  0.0.0.0                                  10.0.12.1                               up             ",
+      "returncode": 0,
+      "sha256": "72520ca68ce0a958c60c5454fb0b0dde7440bc7ff88910c25d78d54869ce482f",
+      "stderr": "",
+      "stdout": "Session count: 1\nSessionId  LocalAddress                             PeerAddress                             Status         \n=========  ============                             ===========                             ======         \n426494049  0.0.0.0                                  10.0.12.1                               up             "
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show bfd peer 10.0.12.1",
+      "elapsed_s": 0.06,
+      "expect": "Detect-multiplier",
+      "id": "bfd-detection-time-is-sub-second",
+      "matched": true,
+      "node": "r1",
+      "output": "BFD Peer:\n\tpeer 10.0.12.1 vrf default\n\t\tID: 426494049\n\t\tRemote ID: 3571933281\n\t\tActive mode\n\t\tStatus: up\n\t\tUptime: 24 second(s)\n\t\tDiagnostics: ok\n\t\tRemote diagnostics: ok\n\t\tPeer Type: configured\n\t\tRTT min/avg/max: 0/0/0 usec\n\t\tLocal timers:\n\t\t\tDetect-multiplier: 3\n\t\t\tReceive interval: 300ms\n\t\t\tTransmission interval: 300ms\n\t\t\tEcho receive interval: 50ms\n\t\t\tEcho transmission interval: disabled\n\t\tRemote timers:\n\t\t\tDetect-multiplier: 3\n\t\t\tReceive interval: 300ms\n\t\t\tTransmission interval: 300ms\n\t\t\tEcho receive interval: 50ms",
+      "returncode": 0,
+      "sha256": "e0789234966e694cb9e36e277a69ec228ff2350a979c832cd85861a88cc8df90",
+      "stderr": "",
+      "stdout": "BFD Peer:\n\tpeer 10.0.12.1 vrf default\n\t\tID: 426494049\n\t\tRemote ID: 3571933281\n\t\tActive mode\n\t\tStatus: up\n\t\tUptime: 24 second(s)\n\t\tDiagnostics: ok\n\t\tRemote diagnostics: ok\n\t\tPeer Type: configured\n\t\tRTT min/avg/max: 0/0/0 usec\n\t\tLocal timers:\n\t\t\tDetect-multiplier: 3\n\t\t\tReceive interval: 300ms\n\t\t\tTransmission interval: 300ms\n\t\t\tEcho receive interval: 50ms\n\t\t\tEcho transmission interval: disabled\n\t\tRemote timers:\n\t\t\tDetect-multiplier: 3\n\t\t\tReceive interval: 300ms\n\t\t\tTransmission interval: 300ms\n\t\t\tEcho receive interval: 50ms"
+    },
+    {
+      "cli": "shell",
+      "cmd": "ping -c 3 -W 2 -I 10.255.0.1 10.255.0.2",
+      "elapsed_s": 2.059,
+      "expect": "0% packet loss",
+      "id": "forwarding-over-the-primary",
+      "matched": true,
+      "node": "r1",
+      "output": "PING 10.255.0.2 (10.255.0.2) from 10.255.0.1: 56 data bytes\n64 bytes from 10.255.0.2: seq=0 ttl=64 time=0.280 ms\n64 bytes from 10.255.0.2: seq=1 ttl=64 time=0.060 ms\n64 bytes from 10.255.0.2: seq=2 ttl=64 time=0.057 ms\n\n--- 10.255.0.2 ping statistics ---\n3 packets transmitted, 3 packets received, 0% packet loss\nround-trip min/avg/max = 0.057/0.132/0.280 ms",
+      "returncode": 0,
+      "sha256": "f6e1edc4d7e34908c13779f1c8d9d5d0cd1d66e6aa3f60eef708240f8f1cc12c",
+      "stderr": "",
+      "stdout": "PING 10.255.0.2 (10.255.0.2) from 10.255.0.1: 56 data bytes\n64 bytes from 10.255.0.2: seq=0 ttl=64 time=0.280 ms\n64 bytes from 10.255.0.2: seq=1 ttl=64 time=0.060 ms\n64 bytes from 10.255.0.2: seq=2 ttl=64 time=0.057 ms\n\n--- 10.255.0.2 ping statistics ---\n3 packets transmitted, 3 packets received, 0% packet loss\nround-trip min/avg/max = 0.057/0.132/0.280 ms"
+    }
+  ],
+  "captures_failed": 0,
+  "captures_total": 7,
+  "harness": "harness/netlab.py",
+  "images": {
+    "quay.io/frrouting/frr:10.2.1": {
+      "image_created": "2024-12-31T08:27:55.792462405Z",
+      "image_id": "sha256:e47e67bd612030cb1bedee2bde85b73913f2ea021573b749deb21d94940f03c1",
+      "repo_digest": "quay.io/frrouting/frr@sha256:e47e67bd612030cb1bedee2bde85b73913f2ea021573b749deb21d94940f03c1"
+    }
+  },
+  "kernel": "Linux-6.18.44-fc-v37-x86_64-with-glibc2.39",
+  "scope": "Commands accepted and output produced by these container images on this kernel at this time. Not hardware execution, not a claim about any NOS not run here, not a scale result.",
+  "topology": "rtnwb-static-bfd"
+}

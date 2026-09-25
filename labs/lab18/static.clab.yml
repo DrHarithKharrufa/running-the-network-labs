@@ -1,0 +1,153 @@
+{
+  "name": "lab18",
+  "topology": {
+    "kinds": {
+      "linux": {
+        "image": "netbook-linux:local"
+      }
+    },
+    "nodes": {
+      "h1": {
+        "kind": "linux",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab:ro"
+        ],
+        "exec": [
+          "sysctl -w net.ipv4.conf.all.rp_filter=0",
+          "sysctl -w net.ipv4.conf.default.rp_filter=0",
+          "sysctl -w net.ipv4.conf.all.send_redirects=0",
+          "ip link set eth1 up",
+          "ip addr add 198.18.0.10/24 dev eth1",
+          "sysctl -w net.ipv4.conf.eth1.rp_filter=0",
+          "sysctl -w net.ipv4.conf.eth1.send_redirects=0",
+          "ip route add default via 198.18.0.1"
+        ]
+      },
+      "site": {
+        "kind": "linux",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab:ro"
+        ],
+        "exec": [
+          "sysctl -w net.ipv4.conf.all.rp_filter=0",
+          "sysctl -w net.ipv4.conf.default.rp_filter=0",
+          "sysctl -w net.ipv4.conf.all.send_redirects=0",
+          "sysctl -w net.ipv4.ip_forward=1",
+          "ip link set eth1 up",
+          "ip addr add 198.18.0.1/24 dev eth1",
+          "sysctl -w net.ipv4.conf.eth1.rp_filter=0",
+          "sysctl -w net.ipv4.conf.eth1.send_redirects=0",
+          "ip link set eth2 up",
+          "ip addr add 192.0.2.1/30 dev eth2",
+          "sysctl -w net.ipv4.conf.eth2.rp_filter=0",
+          "sysctl -w net.ipv4.conf.eth2.send_redirects=0",
+          "ip link set eth3 up",
+          "ip addr add 198.51.100.1/30 dev eth3",
+          "sysctl -w net.ipv4.conf.eth3.rp_filter=0",
+          "sysctl -w net.ipv4.conf.eth3.send_redirects=0",
+          "ip route add 203.0.113.0/24 via 192.0.2.2 dev eth2 metric 10",
+          "ip route add 203.0.113.0/24 via 198.51.100.2 dev eth3 metric 200",
+          "ip route add 198.19.0.20/32 via 192.0.2.2 dev eth2 metric 10",
+          "ip route add blackhole 198.19.0.20/32 metric 250"
+        ]
+      },
+      "provider": {
+        "kind": "linux",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab:ro"
+        ],
+        "exec": [
+          "ip link add br0 type bridge stp_state 0",
+          "ip link set eth1 master br0",
+          "ip link set eth2 master br0",
+          "ip link set eth1 up",
+          "ip link set eth2 up",
+          "ip link set br0 up"
+        ]
+      },
+      "core": {
+        "kind": "linux",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab:ro"
+        ],
+        "exec": [
+          "sysctl -w net.ipv4.conf.all.rp_filter=0",
+          "sysctl -w net.ipv4.conf.default.rp_filter=0",
+          "sysctl -w net.ipv4.conf.all.send_redirects=0",
+          "sysctl -w net.ipv4.ip_forward=1",
+          "ip link set eth1 up",
+          "ip addr add 192.0.2.2/30 dev eth1",
+          "sysctl -w net.ipv4.conf.eth1.rp_filter=0",
+          "sysctl -w net.ipv4.conf.eth1.send_redirects=0",
+          "ip link set eth2 up",
+          "ip addr add 198.51.100.2/30 dev eth2",
+          "sysctl -w net.ipv4.conf.eth2.rp_filter=0",
+          "sysctl -w net.ipv4.conf.eth2.send_redirects=0",
+          "ip link set eth3 up",
+          "ip addr add 203.0.113.1/24 dev eth3",
+          "sysctl -w net.ipv4.conf.eth3.rp_filter=0",
+          "sysctl -w net.ipv4.conf.eth3.send_redirects=0",
+          "ip route add 198.18.0.0/24 via 198.51.100.1",
+          "ip route add 198.19.0.20/32 via 203.0.113.20"
+        ]
+      },
+      "server": {
+        "kind": "linux",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab:ro"
+        ],
+        "exec": [
+          "sysctl -w net.ipv4.conf.all.rp_filter=0",
+          "sysctl -w net.ipv4.conf.default.rp_filter=0",
+          "sysctl -w net.ipv4.conf.all.send_redirects=0",
+          "ip link set eth1 up",
+          "ip addr add 203.0.113.20/24 dev eth1",
+          "sysctl -w net.ipv4.conf.eth1.rp_filter=0",
+          "sysctl -w net.ipv4.conf.eth1.send_redirects=0",
+          "ip link set lo up",
+          "ip addr add 198.19.0.20/32 dev lo",
+          "sysctl -w net.ipv4.conf.lo.rp_filter=0",
+          "sysctl -w net.ipv4.conf.lo.send_redirects=0",
+          "ip route add default via 203.0.113.1"
+        ]
+      }
+    },
+    "links": [
+      {
+        "endpoints": [
+          "h1:eth1",
+          "site:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "site:eth2",
+          "provider:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "provider:eth2",
+          "core:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "site:eth3",
+          "core:eth2"
+        ]
+      },
+      {
+        "endpoints": [
+          "core:eth3",
+          "server:eth1"
+        ]
+      }
+    ]
+  }
+}

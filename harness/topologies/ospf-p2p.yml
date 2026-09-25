@@ -1,0 +1,60 @@
+# Two routers, one link. The unit this record supports is "bring up an IGP
+# adjacency and prove a remote loopback is reachable through it".
+name: rtnwb-ospf
+settle: 3
+converge: 50
+nodes:
+  r1:
+    image: quay.io/frrouting/frr:10.2.1
+    daemons: [ospfd]
+    pre:
+      - ip address replace 10.0.0.1/30 dev eth1
+      - ip address replace 10.255.0.1/32 dev lo
+    config:
+      - configure terminal
+      - interface eth1
+      - ip ospf area 0
+      - ip ospf network point-to-point
+      - exit
+      - interface lo
+      - ip ospf area 0
+      - exit
+      - router ospf
+      - ospf router-id 10.255.0.1
+  r2:
+    image: quay.io/frrouting/frr:10.2.1
+    daemons: [ospfd]
+    pre:
+      - ip address replace 10.0.0.2/30 dev eth1
+      - ip address replace 10.255.0.2/32 dev lo
+    config:
+      - configure terminal
+      - interface eth1
+      - ip ospf area 0
+      - ip ospf network point-to-point
+      - exit
+      - interface lo
+      - ip ospf area 0
+      - exit
+      - router ospf
+      - ospf router-id 10.255.0.2
+links:
+  - endpoints: ["r1:eth1", "r2:eth1"]
+capture:
+  - id: adjacency-is-full
+    node: r1
+    cmd: show ip ospf neighbor
+    expect: "Full/"
+  - id: interface-is-point-to-point
+    node: r1
+    cmd: show ip ospf interface eth1
+    expect: "Network Type POINTOPOINT"
+  - id: remote-loopback-in-rib
+    node: r1
+    cmd: show ip route 10.255.0.2/32
+    expect: "10\\.0\\.0\\.2"
+  - id: forwarding-actually-works
+    node: r1
+    cli: shell
+    cmd: ping -c 3 -W 2 -I 10.255.0.1 10.255.0.2
+    expect: "0% packet loss"

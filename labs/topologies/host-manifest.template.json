@@ -1,0 +1,11 @@
+{
+  "status": "UNVERIFIED template; null means unrecorded, never zero or passed",
+  "run_id": null,
+  "start_utc": null,
+  "host": {"os": null, "kernel": null, "architecture": null, "cpu": null, "available_ram_bytes": null, "available_storage_bytes": null, "hypervisor": null, "nested_virtualisation": null, "privilege_model": null},
+  "tools": {"runtime": null, "orchestrator": null, "versions": null},
+  "images": [{"reference": null, "digest": null, "architecture": null, "licence_route": null, "feature_restrictions": null}],
+  "inputs": {"topology_sha256": null, "configuration_manifest_sha256": null, "generator_sha256": null, "port_map_sha256": null},
+  "tests": [{"claim": null, "evidence_level": null, "initial_state": null, "expected": null, "observed": null, "timeout_seconds": null, "exit_status": null, "evidence_path": null, "status": "UNVERIFIED"}],
+  "cleanup": {"owned_objects": null, "restored_baseline": null, "residual_objects": null, "status": "UNVERIFIED"}
+}

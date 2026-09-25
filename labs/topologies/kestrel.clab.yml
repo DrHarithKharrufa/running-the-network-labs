@@ -1,0 +1,126 @@
+# =====================================================================
+# Kestrel Telecom -- the operator reference network
+# Running the Network, Appendix A
+#
+# IPv4 teaching candidate: IS-IS, full-mesh iBGP, strict external policy.
+# STATIC REVIEW ONLY: no SR Linux / Containerlab runtime qualification.
+# No MPLS, VPN, IPv6 service, CGNAT, subscriber sessions or Internet gateway.
+# Obtain image rights and record digests; see README.md and Appendix A.
+# The historical lon-pe/bhm-bng names are logical labels, not cable locations.
+# =====================================================================
+name: kestrel
+
+mgmt:
+  network: kestrel-mgmt
+  ipv4-subnet: 172.20.20.0/24
+
+topology:
+  kinds:
+    nokia_srlinux:
+      image: ghcr.io/nokia/srlinux:24.10.1
+      type: ixr-d3
+    linux:
+      image: quay.io/frrouting/frr:10.2.1
+
+  nodes:
+    # ---------- Kestrel core, AS 64500 ----------
+    lon-p-01:
+      kind: nokia_srlinux
+      mgmt-ipv4: 172.20.20.11
+      startup-config: configs/lon-p-01.cfg
+    man-p-01:
+      kind: nokia_srlinux
+      mgmt-ipv4: 172.20.20.12
+      startup-config: configs/man-p-01.cfg
+    bhm-p-01:
+      kind: nokia_srlinux
+      mgmt-ipv4: 172.20.20.13
+      startup-config: configs/bhm-p-01.cfg
+    lds-p-01:
+      kind: nokia_srlinux
+      mgmt-ipv4: 172.20.20.14
+      startup-config: configs/lds-p-01.cfg
+
+    # ---------- Kestrel edge ----------
+    lon-pr-01:                       # peering / transit border
+      kind: nokia_srlinux
+      mgmt-ipv4: 172.20.20.21
+      startup-config: configs/lon-pr-01.cfg
+    man-pr-01:
+      kind: nokia_srlinux
+      mgmt-ipv4: 172.20.20.22
+      startup-config: configs/man-pr-01.cfg
+    lon-pe-01:                       # business customer PE
+      kind: nokia_srlinux
+      mgmt-ipv4: 172.20.20.23
+      startup-config: configs/lon-pe-01.cfg
+    bhm-bng-01:                      # subscriber edge stand-in
+      kind: linux
+      mgmt-ipv4: 172.20.20.24
+      binds:
+        - configs/bhm-bng-01/frr.conf:/etc/frr/frr.conf
+        - configs/frr-daemons:/etc/frr/daemons
+
+    # ---------- The outside world ----------
+    transit-a:                       # AS 64496
+      kind: linux
+      mgmt-ipv4: 172.20.20.31
+      binds:
+        - configs/transit-a/frr.conf:/etc/frr/frr.conf
+        - configs/frr-daemons:/etc/frr/daemons
+    transit-b:                       # AS 64497
+      kind: linux
+      mgmt-ipv4: 172.20.20.32
+      binds:
+        - configs/transit-b/frr.conf:/etc/frr/frr.conf
+        - configs/frr-daemons:/etc/frr/daemons
+    ix-peer:                         # AS 64498, settlement-free peer
+      kind: linux
+      mgmt-ipv4: 172.20.20.33
+      binds:
+        - configs/ix-peer/frr.conf:/etc/frr/frr.conf
+        - configs/frr-daemons:/etc/frr/daemons
+    cust-a:                          # AS 64501, transit customer
+      kind: linux
+      mgmt-ipv4: 172.20.20.34
+      binds:
+        - configs/cust-a/frr.conf:/etc/frr/frr.conf
+        - configs/frr-daemons:/etc/frr/daemons
+
+    # ---------- Hosts ----------
+    host-cust:
+      kind: linux
+      image: alpine:3.20
+      mgmt-ipv4: 172.20.20.41
+      exec:
+        - ip link set eth1 up
+        - ip addr replace 203.0.113.10/24 dev eth1
+        - ip route replace default via 203.0.113.1
+    host-sub:
+      kind: linux
+      image: alpine:3.20
+      mgmt-ipv4: 172.20.20.42
+      exec:
+        - ip link set eth1 up
+        - ip addr replace 100.64.0.10/24 dev eth1
+        - ip route replace default via 100.64.0.1
+
+  links:
+    # ----- core ring, 10.254.0.0/16 as /31 -----
+    - endpoints: ["lon-p-01:e1-1", "man-p-01:e1-1"]   # 10.254.0.0/31
+    - endpoints: ["lon-p-01:e1-2", "bhm-p-01:e1-1"]   # 10.254.0.2/31
+    - endpoints: ["man-p-01:e1-2", "lds-p-01:e1-1"]   # 10.254.0.4/31
+    - endpoints: ["bhm-p-01:e1-2", "lds-p-01:e1-2"]   # 10.254.0.6/31
+    # ----- edge into core -----
+    - endpoints: ["lon-pr-01:e1-1", "lon-p-01:e1-3"]  # 10.254.1.0/31
+    - endpoints: ["man-pr-01:e1-1", "man-p-01:e1-3"]  # 10.254.1.2/31
+    - endpoints: ["lon-pe-01:e1-1", "bhm-p-01:e1-3"]  # 10.254.1.4/31
+    - endpoints: ["bhm-bng-01:eth1", "lds-p-01:e1-3"] # 10.254.1.6/31
+    # ----- external, 192.0.2.0/24 and 198.51.100.0/24 -----
+    - endpoints: ["lon-pr-01:e1-2", "transit-a:eth1"] # 192.0.2.0/31
+    - endpoints: ["man-pr-01:e1-2", "transit-b:eth1"] # 192.0.2.2/31
+    - endpoints: ["lon-pr-01:e1-3", "ix-peer:eth1"]   # 198.51.100.0/31
+    - endpoints: ["lon-pe-01:e1-2", "cust-a:eth1"]    # 192.0.2.4/31 (customer LAN is 203.0.113.0/24, behind cust-a)
+    # ----- hosts -----
+    - endpoints: ["cust-a:eth2", "host-cust:eth1"]
+    - endpoints: ["bhm-bng-01:eth2", "host-sub:eth1"]

@@ -1,0 +1,64 @@
+{
+  "topology": {
+    "nodes": {
+      "s24": {
+        "exec": [
+          "ip link add br0 type bridge stp_state 0 mcast_snooping 1 mcast_querier 0 mcast_igmp_version 3 mcast_query_use_ifaddr 1 mcast_query_interval 200 mcast_query_response_interval 100 mcast_membership_interval 500 mcast_startup_query_interval 100",
+          "ip link set br0 up",
+          "ip address add 10.24.0.254/24 dev br0",
+          "ip link set eth1 master br0",
+          "ip link set eth1 up",
+          "bridge link set dev eth1 mcast_router 0",
+          "ip link set eth2 master br0",
+          "ip link set eth2 up",
+          "bridge link set dev eth2 mcast_router 0",
+          "ip link set eth3 master br0",
+          "ip link set eth3 up",
+          "bridge link set dev eth3 mcast_router 0",
+          "ip link set br0 type bridge mcast_querier 1"
+        ]
+      },
+      "m24-source": {
+        "exec": [
+          "ip link set eth1 up",
+          "ip address add 10.24.0.10/24 dev eth1",
+          "sysctl -qw net.ipv4.conf.eth1.force_igmp_version=3"
+        ]
+      },
+      "m24-rx": {
+        "exec": [
+          "ip link set eth1 up",
+          "ip address add 10.24.0.11/24 dev eth1",
+          "sysctl -qw net.ipv4.conf.eth1.force_igmp_version=3"
+        ]
+      },
+      "m24-observer": {
+        "exec": [
+          "ip link set eth1 up",
+          "ip address add 10.24.0.12/24 dev eth1",
+          "sysctl -qw net.ipv4.conf.eth1.force_igmp_version=3"
+        ]
+      }
+    },
+    "links": [
+      {
+        "endpoints": [
+          "s24:eth1",
+          "m24-source:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "s24:eth2",
+          "m24-rx:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "s24:eth3",
+          "m24-observer:eth1"
+        ]
+      }
+    ]
+  }
+}

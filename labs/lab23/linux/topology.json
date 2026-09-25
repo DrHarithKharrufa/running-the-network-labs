@@ -1,0 +1,115 @@
+{
+  "scope": "Linux VRF-lite with explicit static cross-context routes. No BGP, RD, RT or MPLS execution.",
+  "topology": {
+    "nodes": {
+      "pe23": {
+        "exec": [
+          "sysctl -w net.ipv4.ip_forward=1",
+          "sysctl -w net.ipv4.conf.all.rp_filter=0",
+          "sysctl -w net.ipv4.conf.default.rp_filter=0",
+          "sysctl -w net.ipv4.conf.all.send_redirects=0",
+          "ip link add CUST-A type vrf table 1001",
+          "ip link set CUST-A up",
+          "ip link set eth1 master CUST-A",
+          "ip link set eth1 up",
+          "ip address add 10.101.0.1/24 dev eth1",
+          "ip route add table 1001 unreachable default metric 4278198272",
+          "sysctl -w net.ipv4.conf.eth1.rp_filter=0",
+          "sysctl -w net.ipv4.conf.eth1.send_redirects=0",
+          "ip link add CUST-B type vrf table 1002",
+          "ip link set CUST-B up",
+          "ip link set eth2 master CUST-B",
+          "ip link set eth2 up",
+          "ip address add 10.102.0.1/24 dev eth2",
+          "ip route add table 1002 unreachable default metric 4278198272",
+          "sysctl -w net.ipv4.conf.eth2.rp_filter=0",
+          "sysctl -w net.ipv4.conf.eth2.send_redirects=0",
+          "ip link add CUST-C type vrf table 1003",
+          "ip link set CUST-C up",
+          "ip link set eth3 master CUST-C",
+          "ip link set eth3 up",
+          "ip address add 10.103.0.1/24 dev eth3",
+          "ip route add table 1003 unreachable default metric 4278198272",
+          "sysctl -w net.ipv4.conf.eth3.rp_filter=0",
+          "sysctl -w net.ipv4.conf.eth3.send_redirects=0",
+          "ip link add SERVICES type vrf table 9000",
+          "ip link set SERVICES up",
+          "ip link set eth4 master SERVICES",
+          "ip link set eth4 up",
+          "ip address add 10.109.0.1/24 dev eth4",
+          "ip route add table 9000 unreachable default metric 4278198272",
+          "sysctl -w net.ipv4.conf.eth4.rp_filter=0",
+          "sysctl -w net.ipv4.conf.eth4.send_redirects=0",
+          "ip route add table 1001 10.109.0.0/24 dev eth4",
+          "ip route add table 9000 10.101.0.0/24 dev eth1",
+          "ip route add table 1002 10.109.0.0/24 dev eth4",
+          "ip route add table 9000 10.102.0.0/24 dev eth2",
+          "ip route add table 1003 10.109.0.0/24 dev eth4",
+          "ip route add table 9000 10.103.0.0/24 dev eth3"
+        ]
+      },
+      "t23-a": {
+        "exec": [
+          "ip link set eth1 up",
+          "ip address add 10.101.0.10/24 dev eth1",
+          "ip route add default via 10.101.0.1",
+          "sysctl -w net.ipv4.conf.all.rp_filter=0",
+          "sysctl -w net.ipv4.conf.default.rp_filter=0"
+        ]
+      },
+      "t23-b": {
+        "exec": [
+          "ip link set eth1 up",
+          "ip address add 10.102.0.10/24 dev eth1",
+          "ip route add default via 10.102.0.1",
+          "sysctl -w net.ipv4.conf.all.rp_filter=0",
+          "sysctl -w net.ipv4.conf.default.rp_filter=0"
+        ]
+      },
+      "t23-c": {
+        "exec": [
+          "ip link set eth1 up",
+          "ip address add 10.103.0.10/24 dev eth1",
+          "ip route add default via 10.103.0.1",
+          "sysctl -w net.ipv4.conf.all.rp_filter=0",
+          "sysctl -w net.ipv4.conf.default.rp_filter=0"
+        ]
+      },
+      "t23-s": {
+        "exec": [
+          "ip link set eth1 up",
+          "ip address add 10.109.0.10/24 dev eth1",
+          "ip route add default via 10.109.0.1",
+          "sysctl -w net.ipv4.conf.all.rp_filter=0",
+          "sysctl -w net.ipv4.conf.default.rp_filter=0"
+        ]
+      }
+    },
+    "links": [
+      {
+        "endpoints": [
+          "pe23:eth1",
+          "t23-a:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "pe23:eth2",
+          "t23-b:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "pe23:eth3",
+          "t23-c:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "pe23:eth4",
+          "t23-s:eth1"
+        ]
+      }
+    ]
+  }
+}

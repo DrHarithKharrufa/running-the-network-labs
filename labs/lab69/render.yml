@@ -1,0 +1,31 @@
+---
+# Lab69.2 applies files only to localhost. No network-device inventory or transport.
+- name: Render a reviewed IOS XE access-port candidate to a local file
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    description: server-07
+    mode: access
+    vlan: 30
+    interface: GigabitEthernet1/0/8
+    service_name: "VLAN{{ vlan }}"
+    output_file: "{{ playbook_dir }}/rendered-iosxe.cfg"
+  tasks:
+    - name: Validate the bounded teaching intent
+      ansible.builtin.assert:
+        that:
+          - mode == 'access'
+          - vlan is integer
+          - vlan is not boolean
+          - vlan >= 1 and vlan <= 4094
+          - description is string
+          - description is match('^[A-Za-z0-9 ._:/-]{1,80}$')
+          - "'\n' not in description and '\r' not in description"
+          - interface is match('^GigabitEthernet[1-9][0-9]*/0/[1-9][0-9]*$')
+          - "'\n' not in interface and '\r' not in interface"
+    - name: Materialise the local candidate file
+      ansible.builtin.template:
+        src: templates/iosxe.j2
+        dest: "{{ output_file }}"
+        mode: '0600'

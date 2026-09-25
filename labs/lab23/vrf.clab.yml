@@ -1,0 +1,61 @@
+# Lab 23: distinct tenant prefixes, explicit VPN export filters.
+# Requires a Linux host with VRF and MPLS support. See README.md.
+name: lab23
+topology:
+  nodes:
+    pe1:
+      kind: linux
+      image: quay.io/frrouting/frr:10.2.1
+      binds:
+        - configs/pe1.conf:/etc/frr/frr.conf
+        - configs/daemons:/etc/frr/daemons
+        - configs/init-pe1.sh:/opt/lab/init.sh:ro
+      exec:
+        - sh /opt/lab/init.sh
+    pe2:
+      kind: linux
+      image: quay.io/frrouting/frr:10.2.1
+      binds:
+        - configs/pe2.conf:/etc/frr/frr.conf
+        - configs/daemons:/etc/frr/daemons
+        - configs/init-pe2.sh:/opt/lab/init.sh:ro
+      exec:
+        - sh /opt/lab/init.sh
+    cust-a:
+      kind: linux
+      image: nicolaka/netshoot:v0.13
+      cmd: sleep infinity
+      exec:
+        - ip link set eth1 up
+        - ip address replace 10.101.0.10/24 dev eth1
+        - ip route replace default via 10.101.0.1 dev eth1
+    cust-b:
+      kind: linux
+      image: nicolaka/netshoot:v0.13
+      cmd: sleep infinity
+      exec:
+        - ip link set eth1 up
+        - ip address replace 10.102.0.10/24 dev eth1
+        - ip route replace default via 10.102.0.1 dev eth1
+    cust-c:
+      kind: linux
+      image: nicolaka/netshoot:v0.13
+      cmd: sleep infinity
+      exec:
+        - ip link set eth1 up
+        - ip address replace 10.103.0.10/24 dev eth1
+        - ip route replace default via 10.103.0.1 dev eth1
+    services:
+      kind: linux
+      image: nicolaka/netshoot:v0.13
+      cmd: sleep infinity
+      exec:
+        - ip link set eth1 up
+        - ip address replace 10.109.0.10/24 dev eth1
+        - ip route replace default via 10.109.0.1 dev eth1
+  links:
+    - endpoints: ["pe1:eth1", "pe2:eth1"]
+    - endpoints: ["pe1:eth2", "cust-a:eth1"]
+    - endpoints: ["pe1:eth3", "cust-b:eth1"]
+    - endpoints: ["pe1:eth4", "cust-c:eth1"]
+    - endpoints: ["pe2:eth2", "services:eth1"]

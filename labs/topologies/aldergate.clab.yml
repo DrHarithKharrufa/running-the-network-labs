@@ -1,0 +1,55 @@
+# =====================================================================
+# Aldergate Group -- the enterprise reference network
+# Wiring-only inventory: no IP, routing, firewall, HA or host configuration.
+# The Linux firewall position is not a configured or qualified FortiGate.
+# GNS3 conversion creates wiring only; see Appendix A for separate acceptance.
+# Obtain image rights and check the host, node kind and image combination.
+# =====================================================================
+name: aldergate
+
+mgmt:
+  network: aldergate-mgmt
+  ipv4-subnet: 172.20.22.0/24
+
+topology:
+  kinds:
+    nokia_srlinux:
+      image: ghcr.io/nokia/srlinux:24.10.1
+      type: ixr-d2
+    linux:
+      image: quay.io/frrouting/frr:10.2.1
+
+  nodes:
+    ald-lon-core-01: { kind: nokia_srlinux, mgmt-ipv4: 172.20.22.11 }
+    ald-lon-core-02: { kind: nokia_srlinux, mgmt-ipv4: 172.20.22.12 }
+    ald-lon-acc-01:  { kind: nokia_srlinux, mgmt-ipv4: 172.20.22.21 }
+    ald-lon-acc-02:  { kind: nokia_srlinux, mgmt-ipv4: 172.20.22.22 }
+    ald-lon-fw-01:   { kind: linux,         mgmt-ipv4: 172.20.22.31 }
+    ald-man-core-01: { kind: nokia_srlinux, mgmt-ipv4: 172.20.22.41 }
+    ald-rdg-core-01: { kind: nokia_srlinux, mgmt-ipv4: 172.20.22.51 }
+    edge-isp:        { kind: linux,         mgmt-ipv4: 172.20.22.61 }
+    pc-user:   { kind: linux, image: alpine:3.20, mgmt-ipv4: 172.20.22.71 }
+    pc-voice:  { kind: linux, image: alpine:3.20, mgmt-ipv4: 172.20.22.72 }
+    pc-guest:  { kind: linux, image: alpine:3.20, mgmt-ipv4: 172.20.22.73 }
+    srv-dc:    { kind: linux, image: alpine:3.20, mgmt-ipv4: 172.20.22.74 }
+
+  links:
+    # core pair
+    - endpoints: ["ald-lon-core-01:e1-1", "ald-lon-core-02:e1-1"]
+    - endpoints: ["ald-lon-core-01:e1-2", "ald-lon-core-02:e1-2"]   # second bundle member
+    # access uplinks, one to each core
+    - endpoints: ["ald-lon-acc-01:e1-49", "ald-lon-core-01:e1-3"]
+    - endpoints: ["ald-lon-acc-01:e1-50", "ald-lon-core-02:e1-3"]
+    - endpoints: ["ald-lon-acc-02:e1-49", "ald-lon-core-01:e1-4"]
+    - endpoints: ["ald-lon-acc-02:e1-50", "ald-lon-core-02:e1-4"]
+    # edge
+    - endpoints: ["ald-lon-core-01:e1-5", "ald-lon-fw-01:eth1"]
+    - endpoints: ["ald-lon-fw-01:eth2", "edge-isp:eth1"]
+    # branch and DC
+    - endpoints: ["ald-lon-core-01:e1-6", "ald-man-core-01:e1-1"]
+    - endpoints: ["ald-lon-core-02:e1-6", "ald-rdg-core-01:e1-1"]
+    - endpoints: ["ald-rdg-core-01:e1-2", "srv-dc:eth1"]
+    # hosts
+    - endpoints: ["ald-lon-acc-01:e1-1", "pc-user:eth1"]
+    - endpoints: ["ald-lon-acc-01:e1-2", "pc-voice:eth1"]
+    - endpoints: ["ald-lon-acc-02:e1-1", "pc-guest:eth1"]

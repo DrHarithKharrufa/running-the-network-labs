@@ -1,0 +1,21 @@
+interface {{ interface }} {
+    description "{{ description }}"
+    admin-state enable
+    vlan-tagging true
+    subinterface 0 {
+        type bridged
+        admin-state enable
+        vlan {
+            encap {
+                untagged {
+                }
+            }
+        }
+    }
+}
+network-instance {{ service_name }} {
+    type mac-vrf
+    admin-state enable
+    interface {{ interface }}.0 {
+    }
+}

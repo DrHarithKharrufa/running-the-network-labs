@@ -1,0 +1,134 @@
+{
+  "name": "lab13-vrrp",
+  "topology": {
+    "kinds": {
+      "linux": {
+        "image": "netbook-services:20260916"
+      }
+    },
+    "nodes": {
+      "lan": {
+        "kind": "linux",
+        "cmd": "sleep infinity",
+        "exec": [
+          "ip link add br0 type bridge",
+          "ip link set br0 up",
+          "ip link set eth1 master br0",
+          "ip link set eth1 up",
+          "ip link set eth2 master br0",
+          "ip link set eth2 up",
+          "ip link set eth3 master br0",
+          "ip link set eth3 up"
+        ]
+      },
+      "back": {
+        "kind": "linux",
+        "cmd": "sleep infinity",
+        "exec": [
+          "ip link add br0 type bridge",
+          "ip link set br0 up",
+          "ip link set eth1 master br0",
+          "ip link set eth1 up",
+          "ip link set eth2 master br0",
+          "ip link set eth2 up",
+          "ip link set eth3 master br0",
+          "ip link set eth3 up"
+        ]
+      },
+      "r1": {
+        "kind": "linux",
+        "cmd": "sleep infinity",
+        "binds": [
+          "./r1.conf:/etc/keepalived/keepalived.conf:ro"
+        ],
+        "exec": [
+          "sysctl -w net.ipv4.ip_forward=1",
+          "sysctl -w net.ipv4.conf.all.rp_filter=0",
+          "sysctl -w net.ipv4.conf.default.rp_filter=0",
+          "ip address add 10.10.0.2/22 dev eth1",
+          "ip address add 198.51.100.2/24 dev eth2",
+          "ip link set eth1 up",
+          "ip link set eth2 up"
+        ]
+      },
+      "r2": {
+        "kind": "linux",
+        "cmd": "sleep infinity",
+        "binds": [
+          "./r2.conf:/etc/keepalived/keepalived.conf:ro"
+        ],
+        "exec": [
+          "sysctl -w net.ipv4.ip_forward=1",
+          "sysctl -w net.ipv4.conf.all.rp_filter=0",
+          "sysctl -w net.ipv4.conf.default.rp_filter=0",
+          "ip address add 10.10.0.3/22 dev eth1",
+          "ip address add 198.51.100.3/24 dev eth2",
+          "ip link set eth1 up",
+          "ip link set eth2 up"
+        ]
+      },
+      "client": {
+        "kind": "linux",
+        "cmd": "sleep infinity",
+        "exec": [
+          "ip address add 10.10.0.10/22 dev eth1",
+          "ip link set eth1 up",
+          "ip route add 198.51.100.0/24 via 10.10.0.1"
+        ],
+        "binds": [
+          "./tcp-echo.py:/lab/tcp-echo.py:ro"
+        ]
+      },
+      "server": {
+        "kind": "linux",
+        "cmd": "sleep infinity",
+        "exec": [
+          "ip address add 198.51.100.10/24 dev eth1",
+          "ip link set eth1 up",
+          "ip route add 10.10.0.0/22 via 198.51.100.1"
+        ],
+        "binds": [
+          "./tcp-echo.py:/lab/tcp-echo.py:ro"
+        ]
+      }
+    },
+    "links": [
+      {
+        "endpoints": [
+          "r1:eth1",
+          "lan:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "r2:eth1",
+          "lan:eth2"
+        ]
+      },
+      {
+        "endpoints": [
+          "client:eth1",
+          "lan:eth3"
+        ]
+      },
+      {
+        "endpoints": [
+          "r1:eth2",
+          "back:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "r2:eth2",
+          "back:eth2"
+        ]
+      },
+      {
+        "endpoints": [
+          "server:eth1",
+          "back:eth3"
+        ]
+      }
+    ]
+  }
+}

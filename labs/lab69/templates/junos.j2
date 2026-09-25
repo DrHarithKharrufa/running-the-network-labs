@@ -1,0 +1,4 @@
+set vlans {{ service_name }} vlan-id {{ vlan }}
+set interfaces {{ interface }} description "{{ description }}"
+set interfaces {{ interface }} unit 0 family ethernet-switching interface-mode access
+set interfaces {{ interface }} unit 0 family ethernet-switching vlan members {{ service_name }}

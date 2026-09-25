@@ -1,0 +1,113 @@
+{
+  "name": "lab32",
+  "topology": {
+    "nodes": {
+      "bng": {
+        "kind": "linux",
+        "image": "netbook-subscriber:1",
+        "cmd": "sleep infinity",
+        "exec": [
+          "sysctl -qw net.ipv6.conf.all.disable_ipv6=1",
+          "sysctl -qw net.ipv6.conf.default.disable_ipv6=1",
+          "sysctl -qw net.ipv4.ip_forward=1",
+          "iptables -P FORWARD DROP",
+          "ip link set eth1 mtu 1500 up",
+          "ip address add 100.64.1.1/30 dev eth1",
+          "ip link set eth2 mtu 1500 up",
+          "ip address add 100.64.2.1/30 dev eth2",
+          "ip link set eth3 mtu 1500 up",
+          "ip address add 10.255.32.1/30 dev eth3",
+          "ip link set eth4 mtu 1500 up",
+          "ip address add 203.0.113.1/24 dev eth4"
+        ],
+        "binds": [
+          "./subscriber.py:/lab/subscriber.py:ro",
+          "./make-config.py:/lab/make-config.py:ro",
+          "./send-dynamic.py:/lab/send-dynamic.py:ro",
+          "./generated:/run/netbook32"
+        ]
+      },
+      "radius": {
+        "kind": "linux",
+        "image": "netbook-subscriber:1",
+        "cmd": "sleep infinity",
+        "exec": [
+          "sysctl -qw net.ipv6.conf.all.disable_ipv6=1",
+          "sysctl -qw net.ipv6.conf.default.disable_ipv6=1",
+          "ip link set eth1 mtu 1500 up",
+          "ip address add 10.255.32.2/30 dev eth1",
+          "ip route replace default via 10.255.32.1"
+        ],
+        "binds": [
+          "./subscriber.py:/lab/subscriber.py:ro",
+          "./make-config.py:/lab/make-config.py:ro",
+          "./send-dynamic.py:/lab/send-dynamic.py:ro",
+          "./generated:/run/netbook32"
+        ]
+      },
+      "cpe1": {
+        "kind": "linux",
+        "image": "netbook-subscriber:1",
+        "cmd": "sleep infinity",
+        "exec": [
+          "sysctl -qw net.ipv6.conf.all.disable_ipv6=1",
+          "sysctl -qw net.ipv6.conf.default.disable_ipv6=1",
+          "ip link set eth1 mtu 1500 up",
+          "ip address add 100.64.1.2/30 dev eth1",
+          "ip route replace default via 100.64.1.1"
+        ]
+      },
+      "cpe2": {
+        "kind": "linux",
+        "image": "netbook-subscriber:1",
+        "cmd": "sleep infinity",
+        "exec": [
+          "sysctl -qw net.ipv6.conf.all.disable_ipv6=1",
+          "sysctl -qw net.ipv6.conf.default.disable_ipv6=1",
+          "ip link set eth1 mtu 1500 up",
+          "ip address add 100.64.2.2/30 dev eth1",
+          "ip route replace default via 100.64.2.1"
+        ]
+      },
+      "internet": {
+        "kind": "linux",
+        "image": "netbook-subscriber:1",
+        "cmd": "sleep infinity",
+        "exec": [
+          "sysctl -qw net.ipv6.conf.all.disable_ipv6=1",
+          "sysctl -qw net.ipv6.conf.default.disable_ipv6=1",
+          "ip link set eth1 mtu 1500 up",
+          "ip address add 203.0.113.20/24 dev eth1",
+          "ip route replace default via 203.0.113.1",
+          "ip address add 203.0.113.80/24 dev eth1"
+        ]
+      }
+    },
+    "links": [
+      {
+        "endpoints": [
+          "bng:eth1",
+          "cpe1:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "bng:eth2",
+          "cpe2:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "bng:eth3",
+          "radius:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "bng:eth4",
+          "internet:eth1"
+        ]
+      }
+    ]
+  }
+}

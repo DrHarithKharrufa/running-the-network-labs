@@ -1,0 +1,120 @@
+# Classic kernel STP; never deploy an unprotected triangle.
+{
+  "name": "lab12",
+  "topology": {
+    "kinds": {
+      "linux": {
+        "image": "netbook-services:20260916"
+      }
+    },
+    "nodes": {
+      "sw1": {
+        "kind": "linux",
+        "cmd": "sleep infinity",
+        "exec": [
+          "ip link add br0 type bridge stp_state 1 priority 4096",
+          "ip link set br0 address 02:00:00:00:12:01",
+          "ip link set br0 up",
+          "ip link set eth1 master br0",
+          "ip link set eth1 up",
+          "ip link set eth2 master br0",
+          "ip link set eth2 up",
+          "ip link set eth3 master br0",
+          "ip link set eth3 up"
+        ]
+      },
+      "sw2": {
+        "kind": "linux",
+        "cmd": "sleep infinity",
+        "exec": [
+          "ip link add br0 type bridge stp_state 1 priority 8192",
+          "ip link set br0 address 02:00:00:00:12:02",
+          "ip link set br0 up",
+          "ip link set eth1 master br0",
+          "ip link set eth1 up",
+          "ip link set eth2 master br0",
+          "ip link set eth2 up",
+          "ip link set eth3 master br0",
+          "ip link set eth3 up"
+        ]
+      },
+      "sw3": {
+        "kind": "linux",
+        "cmd": "sleep infinity",
+        "exec": [
+          "ip link add br0 type bridge stp_state 1 priority 32768",
+          "ip link set br0 address 02:00:00:00:12:03",
+          "ip link set br0 up",
+          "ip link set eth1 master br0",
+          "ip link set eth1 up",
+          "ip link set eth2 master br0",
+          "ip link set eth2 up",
+          "ip link set eth3 master br0",
+          "ip link set eth3 up"
+        ]
+      },
+      "h1": {
+        "kind": "linux",
+        "cmd": "sleep infinity",
+        "exec": [
+          "ip address replace 10.0.12.10/24 dev eth1",
+          "ip link set eth1 up"
+        ]
+      },
+      "h2": {
+        "kind": "linux",
+        "cmd": "sleep infinity",
+        "exec": [
+          "ip address replace 10.0.12.20/24 dev eth1",
+          "ip link set eth1 up"
+        ]
+      },
+      "h3": {
+        "kind": "linux",
+        "cmd": "sleep infinity",
+        "exec": [
+          "ip address replace 10.0.12.30/24 dev eth1",
+          "ip link set eth1 up"
+        ]
+      }
+    },
+    "links": [
+      {
+        "endpoints": [
+          "sw1:eth1",
+          "sw2:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "sw2:eth2",
+          "sw3:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "sw3:eth2",
+          "sw1:eth2"
+        ]
+      },
+      {
+        "endpoints": [
+          "h1:eth1",
+          "sw1:eth3"
+        ]
+      },
+      {
+        "endpoints": [
+          "h2:eth1",
+          "sw2:eth3"
+        ]
+      },
+      {
+        "endpoints": [
+          "h3:eth1",
+          "sw3:eth3"
+        ]
+      }
+    ]
+  }
+}

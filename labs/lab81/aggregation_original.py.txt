@@ -1,0 +1,67 @@
+#!/usr/bin/env python3
+"""
+Lab 81.1 -- hierarchy is what lets addresses aggregate.
+
+Chapter 81 sec 2: allocate hierarchically (region, then site, then function) and
+addresses aggregate -- a region's many subnets summarise to ONE prefix at its border,
+so the core carries one route instead of hundreds. A flat plan (subnets assigned
+first-come, ignoring structure) cannot aggregate, so every subnet propagates. This
+builds the same 512 subnets both ways and shows the core routing-table size.
+
+    python3 aggregation.py
+"""
+import ipaddress
+
+REGIONS, SITES, SUBNETS = 4, 16, 8          # 4 x 16 x 8 = 512 /24s
+
+def hierarchical():
+    """Each region gets a contiguous /17 (128 x /24), with gaps between regions for
+    growth. A region's 128 subnets collapse to a single aggregate."""
+    per_region = {}
+    for r in range(REGIONS):
+        base = ipaddress.ip_network(f"10.{r*4}.0.0/17")   # r*4 leaves room to grow
+        nets = list(base.subnets(new_prefix=24))[:SITES * SUBNETS]
+        per_region[r] = nets
+    return per_region
+
+def flat():
+    """Subnets assigned first-come as sites were added interleaved across regions
+    over time, so a region's subnets are scattered and cannot be summarised."""
+    all_nets = [ipaddress.ip_network(f"10.{i//256}.{i%256}.0/24") for i in range(512)]
+    per_region = {r: [] for r in range(REGIONS)}
+    for i, net in enumerate(all_nets):
+        per_region[i % REGIONS].append(net)      # round-robin: region owns scattered /24s
+    return per_region
+
+def core_table(per_region):
+    """What the core sees: each region advertises the aggregate(s) covering exactly
+    its own subnets (collapse_addresses). Sum across regions."""
+    total = 0
+    detail = {}
+    for r, nets in per_region.items():
+        agg = list(ipaddress.collapse_addresses(nets))
+        detail[r] = len(agg)
+        total += len(agg)
+    return total, detail
+
+if __name__ == "__main__":
+    print("Hierarchy enables aggregation (ch81 sec 2)\n")
+    print(f"Same network both ways: {REGIONS} regions x {SITES} sites x {SUBNETS} "
+          f"subnets = {REGIONS*SITES*SUBNETS} /24s\n")
+
+    h_total, h_detail = core_table(hierarchical())
+    print("[hierarchical]  each region's subnets are contiguous under a region prefix")
+    print(f"    region border advertises {h_detail[0]} aggregate for its 128 subnets")
+    print(f"    -> CORE ROUTING TABLE = {h_total} routes (one aggregate per region)\n")
+
+    f_total, f_detail = core_table(flat())
+    print("[flat]  subnets assigned first-come, a region's are scattered")
+    print(f"    region's 128 subnets collapse to {f_detail[0]} prefixes (no aggregation)")
+    print(f"    -> CORE ROUTING TABLE = {f_total} routes\n")
+
+    print(f"Hierarchy shrank the core table from {f_total} to {h_total} routes "
+          f"({f_total//h_total}x).")
+    print("That is fewer routes to hold (ch82 FIB), faster convergence (ch80 sec 6),")
+    print("and churn contained per region -- a flap inside a region never reaches the")
+    print("core past its aggregate. Leave gaps too (the r*4 spacing), so growth slots")
+    print("in without breaking the hierarchy (ch81 sec 2).")

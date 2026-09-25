@@ -1,0 +1,101 @@
+{
+  "scope": "Separate Kestrel-style teaching allocation scenario; not a measured or deployed network. Do not merge these pools into Aldergate.",
+  "routers": {
+    "r01": "lon",
+    "r02": "lon",
+    "r03": "lon",
+    "r04": "man",
+    "r05": "man",
+    "r06": "man",
+    "r07": "bhm",
+    "r08": "bhm",
+    "r09": "bhm",
+    "r10": "lds",
+    "r11": "lds",
+    "r12": "lds"
+  },
+  "edges": [
+    [
+      "r01",
+      "r02"
+    ],
+    [
+      "r02",
+      "r03"
+    ],
+    [
+      "r03",
+      "r04"
+    ],
+    [
+      "r04",
+      "r05"
+    ],
+    [
+      "r05",
+      "r06"
+    ],
+    [
+      "r06",
+      "r07"
+    ],
+    [
+      "r07",
+      "r08"
+    ],
+    [
+      "r08",
+      "r09"
+    ],
+    [
+      "r09",
+      "r10"
+    ],
+    [
+      "r10",
+      "r11"
+    ],
+    [
+      "r11",
+      "r12"
+    ],
+    [
+      "r12",
+      "r01"
+    ],
+    [
+      "r01",
+      "r07"
+    ],
+    [
+      "r02",
+      "r08"
+    ],
+    [
+      "r03",
+      "r09"
+    ],
+    [
+      "r04",
+      "r10"
+    ]
+  ],
+  "link_pool": "10.254.0.0/27",
+  "link_prefix_length": 31,
+  "loopback_pool": "10.255.0.0/27",
+  "loopback_prefix_length": 32,
+  "management_pool": "10.253.0.0/24",
+  "management_hosts": {
+    "lon": 20,
+    "man": 20,
+    "bhm": 20,
+    "lds": 20
+  },
+  "management_reservations_per_pop": 1,
+  "worked_management_prefixes": [
+    "10.253.0.0/27",
+    "10.253.0.32/27",
+    "10.253.0.64/27",
+    "10.253.0.96/27"
+  ]
+}

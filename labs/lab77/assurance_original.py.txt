@@ -1,0 +1,53 @@
+#!/usr/bin/env python3
+"""
+Lab 77.1 -- assurance: an outcome can break while the config is untouched.
+
+Chapter 77 sec 3/7: assurance is continuous proof that OBSERVED state still
+satisfies INTENT -- not that the config still matches. This defines an intent,
+checks it against observed state, and shows the intent broken by a link failure
+even though the configuration never changed -- the whole point of assurance.
+
+    python3 assurance.py
+"""
+
+# The intent (the outcome, not the config) -- sec 2
+INTENT = {
+    "name": "sites LON-MAN redundant, sub-50ms",
+    "max_latency_ms": 50,
+    "min_active_paths": 2,          # redundancy: must survive one path failing
+}
+
+def assure(intent, observed):
+    """Compare observed state to intent; return (met, reasons)."""
+    reasons = []
+    if observed["latency_ms"] > intent["max_latency_ms"]:
+        reasons.append(f"latency {observed['latency_ms']}ms > "
+                       f"{intent['max_latency_ms']}ms target")
+    if observed["active_paths"] < intent["min_active_paths"]:
+        reasons.append(f"only {observed['active_paths']} active path(s) < "
+                       f"{intent['min_active_paths']} required (redundancy lost)")
+    return (len(reasons) == 0), reasons
+
+SCENARIOS = {
+    "normal":                 {"latency_ms": 22, "active_paths": 2, "config_changed": False},
+    "one link failed":        {"latency_ms": 24, "active_paths": 1, "config_changed": False},
+    "congestion":             {"latency_ms": 71, "active_paths": 2, "config_changed": False},
+}
+
+if __name__ == "__main__":
+    print(f"Intent: {INTENT['name']}\n")
+    for name, obs in SCENARIOS.items():
+        met, reasons = assure(INTENT, obs)
+        print(f"  scenario: {name}   (config changed: {obs['config_changed']})")
+        if met:
+            print("    intent MET\n")
+        else:
+            print("    intent VIOLATED:")
+            for r in reasons:
+                print(f"      - {r}")
+            print("    -> assurance alerts / remediates, though the config is unchanged\n")
+    print("Drift detection would see nothing here -- the config never changed.")
+    print("Assurance checks the OUTCOME against observed state, so it catches the")
+    print("failed link and the congestion that break the intent (sec 3, sec 7).")
+    print("This is why translation+activation is config generation, and assurance")
+    print("is what makes a system genuinely intent-based.")

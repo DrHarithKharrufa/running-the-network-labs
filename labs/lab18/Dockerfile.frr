@@ -1,0 +1,7 @@
+FROM ubuntu:26.04
+RUN printf '#!/bin/sh\nexit 101\n' > /usr/sbin/policy-rc.d && chmod +x /usr/sbin/policy-rc.d \
+ && apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+ frr=10.5.1-1ubuntu4.1 iproute2 iputils-ping iptables tcpdump python3 procps \
+ && dpkg-query -W > /netbook-package-versions.txt \
+ && rm -rf /var/lib/apt/lists/*
+CMD ["sleep", "infinity"]

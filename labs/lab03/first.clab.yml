@@ -1,0 +1,21 @@
+# Linux teaching topology; consult README for validation scope.
+name: first
+topology:
+  kinds:
+    linux:
+      image: quay.io/frrouting/frr:10.2.1
+  nodes:
+    r1:
+      kind: linux
+      exec:
+      - ip address replace 10.0.0.1/24 dev eth1
+      - ip link set eth1 up
+    r2:
+      kind: linux
+      exec:
+      - ip address replace 10.0.0.2/24 dev eth1
+      - ip link set eth1 up
+  links:
+  - endpoints:
+    - r1:eth1
+    - r2:eth1

@@ -1,0 +1,50 @@
+# =====================================================================
+# Anvil -- the data centre reference fabric
+# Unconfigured inventory: two spines, four leaves and four unaddressed hosts.
+# No underlay/overlay startup configuration is supplied by this file.
+#
+#   sudo containerlab deploy -t anvil.clab.yml
+#
+# All six fabric nodes in this inventory use SR Linux. The fictional SONiC
+# pilot is not implemented here. Port/schema/image qualification is pending.
+# Use the chapter-specific lab and validation notes for executed mechanisms.
+# =====================================================================
+name: anvil
+
+mgmt:
+  network: anvil-mgmt
+  ipv4-subnet: 172.20.21.0/24
+
+topology:
+  kinds:
+    nokia_srlinux:
+      image: ghcr.io/nokia/srlinux:24.10.1
+      type: ixr-d3
+
+  nodes:
+    anv-spine-01: { kind: nokia_srlinux, mgmt-ipv4: 172.20.21.11 }
+    anv-spine-02: { kind: nokia_srlinux, mgmt-ipv4: 172.20.21.12 }
+    anv-leaf-01:  { kind: nokia_srlinux, mgmt-ipv4: 172.20.21.21 }
+    anv-leaf-02:  { kind: nokia_srlinux, mgmt-ipv4: 172.20.21.22 }
+    anv-leaf-03:  { kind: nokia_srlinux, mgmt-ipv4: 172.20.21.23 }
+    anv-leaf-04:  { kind: nokia_srlinux, mgmt-ipv4: 172.20.21.24 }
+    srv-01: { kind: linux, image: alpine:3.20, mgmt-ipv4: 172.20.21.31 }
+    srv-02: { kind: linux, image: alpine:3.20, mgmt-ipv4: 172.20.21.32 }
+    srv-03: { kind: linux, image: alpine:3.20, mgmt-ipv4: 172.20.21.33 }
+    srv-04: { kind: linux, image: alpine:3.20, mgmt-ipv4: 172.20.21.34 }
+
+  links:
+    # full leaf-spine mesh, underlay 10.200.0.0/16 as /31
+    - endpoints: ["anv-spine-01:e1-1", "anv-leaf-01:e1-29"]
+    - endpoints: ["anv-spine-01:e1-2", "anv-leaf-02:e1-29"]
+    - endpoints: ["anv-spine-01:e1-3", "anv-leaf-03:e1-29"]
+    - endpoints: ["anv-spine-01:e1-4", "anv-leaf-04:e1-29"]
+    - endpoints: ["anv-spine-02:e1-1", "anv-leaf-01:e1-30"]
+    - endpoints: ["anv-spine-02:e1-2", "anv-leaf-02:e1-30"]
+    - endpoints: ["anv-spine-02:e1-3", "anv-leaf-03:e1-30"]
+    - endpoints: ["anv-spine-02:e1-4", "anv-leaf-04:e1-30"]
+    # servers
+    - endpoints: ["anv-leaf-01:e1-1", "srv-01:eth1"]
+    - endpoints: ["anv-leaf-02:e1-1", "srv-02:eth1"]
+    - endpoints: ["anv-leaf-03:e1-1", "srv-03:eth1"]
+    - endpoints: ["anv-leaf-04:e1-1", "srv-04:eth1"]

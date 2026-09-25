@@ -1,0 +1,149 @@
+{
+  "name": "lab19",
+  "topology": {
+    "kinds": {
+      "linux": {
+        "image": "netbook-frr:10.5.1"
+      }
+    },
+    "nodes": {
+      "abr1": {
+        "kind": "linux",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab:ro"
+        ],
+        "exec": [
+          "sysctl -w net.ipv4.ip_forward=1",
+          "sysctl -w net.ipv4.conf.all.rp_filter=0",
+          "sysctl -w net.ipv4.conf.default.rp_filter=0",
+          "ip link set eth1 up",
+          "ip addr add 10.1.1.2/30 dev eth1",
+          "sysctl -w net.ipv4.conf.eth1.rp_filter=0",
+          "ip link set eth2 up",
+          "ip addr add 10.0.0.1/30 dev eth2",
+          "sysctl -w net.ipv4.conf.eth2.rp_filter=0",
+          "ip link set eth3 up",
+          "ip addr add 10.0.0.5/30 dev eth3",
+          "sysctl -w net.ipv4.conf.eth3.rp_filter=0",
+          "ip link set lo up",
+          "ip addr add 10.255.0.11/32 dev lo",
+          "sysctl -w net.ipv4.conf.lo.rp_filter=0"
+        ]
+      },
+      "abr2": {
+        "kind": "linux",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab:ro"
+        ],
+        "exec": [
+          "sysctl -w net.ipv4.ip_forward=1",
+          "sysctl -w net.ipv4.conf.all.rp_filter=0",
+          "sysctl -w net.ipv4.conf.default.rp_filter=0",
+          "ip link set eth1 up",
+          "ip addr add 10.2.1.1/30 dev eth1",
+          "sysctl -w net.ipv4.conf.eth1.rp_filter=0",
+          "ip link set eth2 up",
+          "ip addr add 10.0.0.2/30 dev eth2",
+          "sysctl -w net.ipv4.conf.eth2.rp_filter=0",
+          "ip link set eth3 up",
+          "ip addr add 10.0.0.9/30 dev eth3",
+          "sysctl -w net.ipv4.conf.eth3.rp_filter=0",
+          "ip link set lo up",
+          "ip addr add 10.255.0.12/32 dev lo",
+          "sysctl -w net.ipv4.conf.lo.rp_filter=0"
+        ]
+      },
+      "core": {
+        "kind": "linux",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab:ro"
+        ],
+        "exec": [
+          "sysctl -w net.ipv4.ip_forward=1",
+          "sysctl -w net.ipv4.conf.all.rp_filter=0",
+          "sysctl -w net.ipv4.conf.default.rp_filter=0",
+          "ip link set eth1 up",
+          "ip addr add 10.0.0.6/30 dev eth1",
+          "sysctl -w net.ipv4.conf.eth1.rp_filter=0",
+          "ip link set eth2 up",
+          "ip addr add 10.0.0.10/30 dev eth2",
+          "sysctl -w net.ipv4.conf.eth2.rp_filter=0",
+          "ip link set lo up",
+          "ip addr add 10.255.0.13/32 dev lo",
+          "sysctl -w net.ipv4.conf.lo.rp_filter=0"
+        ]
+      },
+      "r-a1": {
+        "kind": "linux",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab:ro"
+        ],
+        "exec": [
+          "sysctl -w net.ipv4.ip_forward=1",
+          "sysctl -w net.ipv4.conf.all.rp_filter=0",
+          "sysctl -w net.ipv4.conf.default.rp_filter=0",
+          "ip link set eth1 up",
+          "ip addr add 10.1.1.1/30 dev eth1",
+          "sysctl -w net.ipv4.conf.eth1.rp_filter=0",
+          "ip link set lo up",
+          "ip addr add 10.255.0.101/32 dev lo",
+          "sysctl -w net.ipv4.conf.lo.rp_filter=0"
+        ]
+      },
+      "r-b1": {
+        "kind": "linux",
+        "cmd": "sleep infinity",
+        "binds": [
+          ".:/lab:ro"
+        ],
+        "exec": [
+          "sysctl -w net.ipv4.ip_forward=1",
+          "sysctl -w net.ipv4.conf.all.rp_filter=0",
+          "sysctl -w net.ipv4.conf.default.rp_filter=0",
+          "ip link set eth1 up",
+          "ip addr add 10.2.1.2/30 dev eth1",
+          "sysctl -w net.ipv4.conf.eth1.rp_filter=0",
+          "ip link set lo up",
+          "ip addr add 10.255.0.102/32 dev lo",
+          "sysctl -w net.ipv4.conf.lo.rp_filter=0"
+        ]
+      }
+    },
+    "links": [
+      {
+        "endpoints": [
+          "r-a1:eth1",
+          "abr1:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "abr1:eth2",
+          "abr2:eth2"
+        ]
+      },
+      {
+        "endpoints": [
+          "abr1:eth3",
+          "core:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "abr2:eth3",
+          "core:eth2"
+        ]
+      },
+      {
+        "endpoints": [
+          "abr2:eth1",
+          "r-b1:eth1"
+        ]
+      }
+    ]
+  }
+}

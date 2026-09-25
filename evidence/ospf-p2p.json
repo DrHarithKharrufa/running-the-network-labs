@@ -1,0 +1,74 @@
+{
+  "captured_utc": "2026-09-25T23:36:15+00:00",
+  "captures": [
+    {
+      "cli": "vtysh",
+      "cmd": "show ip ospf neighbor",
+      "elapsed_s": 0.059,
+      "expect": "Full/",
+      "id": "adjacency-is-full",
+      "matched": true,
+      "node": "r1",
+      "output": "\nNeighbor ID     Pri State           Up Time         Dead Time Address         Interface                        RXmtL RqstL DBsmL\n10.255.0.2        1 Full/-          40.188s           39.885s 10.0.0.2        eth1:10.0.0.1                        0     0     0",
+      "returncode": 0,
+      "sha256": "32888a5b73741215f03a23b229089ef28e8d401c0378816263b65bda7ae6db24",
+      "stderr": "",
+      "stdout": "\nNeighbor ID     Pri State           Up Time         Dead Time Address         Interface                        RXmtL RqstL DBsmL\n10.255.0.2        1 Full/-          40.188s           39.885s 10.0.0.2        eth1:10.0.0.1                        0     0     0"
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show ip ospf interface eth1",
+      "elapsed_s": 0.077,
+      "expect": "Network Type POINTOPOINT",
+      "id": "interface-is-point-to-point",
+      "matched": true,
+      "node": "r1",
+      "output": "eth1 is up\n  ifindex 45, MTU 1500 bytes, BW 10000 Mbit <UP,LOWER_UP,BROADCAST,RUNNING,MULTICAST>\n  Internet Address 10.0.0.1/30, Broadcast 10.0.0.3, Area 0.0.0.0\n  MTU mismatch detection: enabled\n  Router ID 10.255.0.1, Network Type POINTOPOINT, Cost: 10\n  Transmit Delay is 1 sec, State Point-To-Point, Priority 1\n  No backup designated router on this network\n  Multicast group memberships: OSPFAllRouters\n  Timer intervals configured, Hello 10s, Dead 40s, Wait 40s, Retransmit 5\n    Hello due in 9.738s\n  Neighbor Count is 1, Adjacent neighbor count is 1\n  Graceful Restart hello delay: 10s\n  LSA retransmissions: 1",
+      "returncode": 0,
+      "sha256": "e94eb2e8ebdc3bd47dd3d07baf69abc5c4ef50c3e62681b3b3a03f3f99fab89d",
+      "stderr": "",
+      "stdout": "eth1 is up\n  ifindex 45, MTU 1500 bytes, BW 10000 Mbit <UP,LOWER_UP,BROADCAST,RUNNING,MULTICAST>\n  Internet Address 10.0.0.1/30, Broadcast 10.0.0.3, Area 0.0.0.0\n  MTU mismatch detection: enabled\n  Router ID 10.255.0.1, Network Type POINTOPOINT, Cost: 10\n  Transmit Delay is 1 sec, State Point-To-Point, Priority 1\n  No backup designated router on this network\n  Multicast group memberships: OSPFAllRouters\n  Timer intervals configured, Hello 10s, Dead 40s, Wait 40s, Retransmit 5\n    Hello due in 9.738s\n  Neighbor Count is 1, Adjacent neighbor count is 1\n  Graceful Restart hello delay: 10s\n  LSA retransmissions: 1"
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show ip route 10.255.0.2/32",
+      "elapsed_s": 0.059,
+      "expect": "10\\.0\\.0\\.2",
+      "id": "remote-loopback-in-rib",
+      "matched": true,
+      "node": "r1",
+      "output": "Routing entry for 10.255.0.2/32\n  Known via \"ospf\", distance 110, metric 10, best\n  Last update 00:00:35 ago\n  * 10.0.0.2, via eth1, weight 1",
+      "returncode": 0,
+      "sha256": "d80654daaa14cea8d15d3c7068deaad742f4ea3e261c3bf20c43b85f6a936339",
+      "stderr": "",
+      "stdout": "Routing entry for 10.255.0.2/32\n  Known via \"ospf\", distance 110, metric 10, best\n  Last update 00:00:35 ago\n  * 10.0.0.2, via eth1, weight 1"
+    },
+    {
+      "cli": "shell",
+      "cmd": "ping -c 3 -W 2 -I 10.255.0.1 10.255.0.2",
+      "elapsed_s": 2.049,
+      "expect": "0% packet loss",
+      "id": "forwarding-actually-works",
+      "matched": true,
+      "node": "r1",
+      "output": "PING 10.255.0.2 (10.255.0.2) from 10.255.0.1: 56 data bytes\n64 bytes from 10.255.0.2: seq=0 ttl=64 time=0.417 ms\n64 bytes from 10.255.0.2: seq=1 ttl=64 time=0.065 ms\n64 bytes from 10.255.0.2: seq=2 ttl=64 time=0.055 ms\n\n--- 10.255.0.2 ping statistics ---\n3 packets transmitted, 3 packets received, 0% packet loss\nround-trip min/avg/max = 0.055/0.179/0.417 ms",
+      "returncode": 0,
+      "sha256": "e0c1027b87b105673e97ea5ce8d71d8fba752f36294959d5db21b99eb2fe0fee",
+      "stderr": "",
+      "stdout": "PING 10.255.0.2 (10.255.0.2) from 10.255.0.1: 56 data bytes\n64 bytes from 10.255.0.2: seq=0 ttl=64 time=0.417 ms\n64 bytes from 10.255.0.2: seq=1 ttl=64 time=0.065 ms\n64 bytes from 10.255.0.2: seq=2 ttl=64 time=0.055 ms\n\n--- 10.255.0.2 ping statistics ---\n3 packets transmitted, 3 packets received, 0% packet loss\nround-trip min/avg/max = 0.055/0.179/0.417 ms"
+    }
+  ],
+  "captures_failed": 0,
+  "captures_total": 4,
+  "harness": "harness/netlab.py",
+  "images": {
+    "quay.io/frrouting/frr:10.2.1": {
+      "image_created": "2024-12-31T08:27:55.792462405Z",
+      "image_id": "sha256:e47e67bd612030cb1bedee2bde85b73913f2ea021573b749deb21d94940f03c1",
+      "repo_digest": "quay.io/frrouting/frr@sha256:e47e67bd612030cb1bedee2bde85b73913f2ea021573b749deb21d94940f03c1"
+    }
+  },
+  "kernel": "Linux-6.18.44-fc-v37-x86_64-with-glibc2.39",
+  "scope": "Commands accepted and output produced by these container images on this kernel at this time. Not hardware execution, not a claim about any NOS not run here, not a scale result.",
+  "topology": "rtnwb-ospf"
+}

@@ -1,0 +1,41 @@
+# =====================================================================
+# Lab 4.1 -- Read the physical layer
+# Running the Network, Chapter 4
+#
+#   sudo containerlab deploy -t physical.clab.yml
+#
+# Two routers, one link. The point is not the topology; it is learning
+# where each platform hides its interface state, its error counters and
+# its transceiver readings.
+# =====================================================================
+name: lab04
+
+topology:
+  kinds:
+    nokia_srlinux: { image: ghcr.io/nokia/srlinux:24.10.1, type: ixrd3 }
+    linux:         { image: quay.io/frrouting/frr:10.2.1 }
+
+  nodes:
+    lon-p-01:
+      kind: nokia_srlinux
+      startup-config: |
+        set / system name host-name lon-p-01
+        set / interface ethernet-1/1 admin-state enable
+        set / interface ethernet-1/1 description "to bhm-p-01"
+        set / interface ethernet-1/1 subinterface 0 ipv4 admin-state enable
+        set / interface ethernet-1/1 subinterface 0 ipv4 address 10.254.0.0/31
+        set / network-instance default type default
+        set / network-instance default interface ethernet-1/1.0
+    bhm-p-01:
+      kind: nokia_srlinux
+      startup-config: |
+        set / system name host-name bhm-p-01
+        set / interface ethernet-1/1 admin-state enable
+        set / interface ethernet-1/1 description "to lon-p-01"
+        set / interface ethernet-1/1 subinterface 0 ipv4 admin-state enable
+        set / interface ethernet-1/1 subinterface 0 ipv4 address 10.254.0.1/31
+        set / network-instance default type default
+        set / network-instance default interface ethernet-1/1.0
+
+  links:
+    - endpoints: ["lon-p-01:e1-1", "bhm-p-01:e1-1"]

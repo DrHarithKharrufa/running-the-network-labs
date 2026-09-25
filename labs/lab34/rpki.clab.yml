@@ -1,0 +1,100 @@
+{
+  "name": "lab34",
+  "topology": {
+    "nodes": {
+      "border": {
+        "kind": "linux",
+        "image": "netbook-rov:1",
+        "cmd": "sleep infinity",
+        "exec": [
+          "sysctl -qw net.ipv6.conf.all.disable_ipv6=1",
+          "sysctl -qw net.ipv6.conf.default.disable_ipv6=1",
+          "sysctl -qw net.ipv4.ip_forward=1",
+          "ip link set eth1 up",
+          "ip address add 192.0.2.0/31 dev eth1",
+          "ip link set eth2 up",
+          "ip address add 192.0.2.2/31 dev eth2",
+          "ip link set eth3 up",
+          "ip address add 192.0.2.4/31 dev eth3"
+        ],
+        "binds": [
+          "./:/lab:ro"
+        ]
+      },
+      "customer": {
+        "kind": "linux",
+        "image": "netbook-rov:1",
+        "cmd": "sleep infinity",
+        "exec": [
+          "sysctl -qw net.ipv6.conf.all.disable_ipv6=1",
+          "sysctl -qw net.ipv6.conf.default.disable_ipv6=1",
+          "sysctl -qw net.ipv4.ip_forward=1",
+          "ip link set eth1 up",
+          "ip address add 192.0.2.1/31 dev eth1",
+          "ip link set lo up",
+          "ip address add 203.0.113.200/32 dev lo",
+          "ip route replace 192.0.2.4/31 via 192.0.2.0"
+        ],
+        "binds": [
+          "./:/lab:ro"
+        ]
+      },
+      "neighbour": {
+        "kind": "linux",
+        "image": "netbook-rov:1",
+        "cmd": "sleep infinity",
+        "exec": [
+          "sysctl -qw net.ipv6.conf.all.disable_ipv6=1",
+          "sysctl -qw net.ipv6.conf.default.disable_ipv6=1",
+          "sysctl -qw net.ipv4.ip_forward=1",
+          "ip link set eth1 up",
+          "ip address add 192.0.2.3/31 dev eth1",
+          "ip link set lo up",
+          "ip address add 203.0.113.200/32 dev lo",
+          "ip link set lo up",
+          "ip address add 198.51.100.1/32 dev lo",
+          "ip route replace 192.0.2.4/31 via 192.0.2.2"
+        ],
+        "binds": [
+          "./:/lab:ro"
+        ]
+      },
+      "client": {
+        "kind": "linux",
+        "image": "netbook-rov:1",
+        "cmd": "sleep infinity",
+        "exec": [
+          "sysctl -qw net.ipv6.conf.all.disable_ipv6=1",
+          "sysctl -qw net.ipv6.conf.default.disable_ipv6=1",
+          "sysctl -qw net.ipv4.ip_forward=1",
+          "ip link set eth1 up",
+          "ip address add 192.0.2.5/31 dev eth1",
+          "ip route replace default via 192.0.2.4"
+        ],
+        "binds": [
+          "./:/lab:ro"
+        ]
+      }
+    },
+    "links": [
+      {
+        "endpoints": [
+          "border:eth1",
+          "customer:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "border:eth2",
+          "neighbour:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "border:eth3",
+          "client:eth1"
+        ]
+      }
+    ]
+  }
+}

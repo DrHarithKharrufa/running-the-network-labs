@@ -1,0 +1,86 @@
+# Linux teaching topology; consult README for validation scope.
+name: lab09
+topology:
+  kinds:
+    linux:
+      image: nicolaka/netshoot:latest
+  nodes:
+    pc:
+      kind: linux
+      cmd: sleep infinity
+      exec:
+      - ip link set eth1 up
+      - ip address replace 10.10.0.42/22 dev eth1
+      - ip route replace 203.0.113.0/24 via 10.10.0.1
+    acc:
+      kind: linux
+      cmd: sleep infinity
+      exec:
+      - ip link set eth1 up
+      - ip link set eth2 up
+      - ip link add name br0 type bridge
+      - ip link set br0 up
+      - ip link set eth1 master br0
+      - ip link set eth2 master br0
+    core:
+      kind: linux
+      cmd: sleep infinity
+      exec:
+      - ip link set eth1 up
+      - ip link set eth2 up
+      - sysctl -w net.ipv4.ip_forward=1
+      - ip address replace 10.10.0.1/22 dev eth1
+      - ip address replace 10.10.255.1/30 dev eth2
+      - ip route replace 203.0.113.0/24 via 10.10.255.2
+    fw:
+      kind: linux
+      cmd: sleep infinity
+      exec:
+      - ip link set eth1 up
+      - ip link set eth2 up
+      - sysctl -w net.ipv4.ip_forward=1
+      - ip address replace 10.10.255.2/30 dev eth1
+      - ip address replace 198.51.100.2/30 dev eth2
+      - ip route replace 10.10.0.0/22 via 10.10.255.1
+      - iptables -t nat -A POSTROUTING -o eth2 -s 10.10.0.0/22 -d 203.0.113.0/24 -j
+        SNAT --to-source 198.51.100.2
+      - ip route replace 203.0.113.0/24 via 198.51.100.1
+      - iptables -P FORWARD DROP
+      - iptables -A FORWARD -i eth1 -o eth2 -s 10.10.0.0/22 -d 203.0.113.20 -p tcp
+        --dport 80 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+      - iptables -A FORWARD -i eth2 -o eth1 -s 203.0.113.20 -d 10.10.0.0/22 -p tcp
+        --sport 80 -m conntrack --ctstate ESTABLISHED -j ACCEPT
+    isp:
+      kind: linux
+      cmd: sleep infinity
+      exec:
+      - ip link set eth1 up
+      - ip link set eth2 up
+      - sysctl -w net.ipv4.ip_forward=1
+      - ip address replace 198.51.100.1/30 dev eth1
+      - ip address replace 203.0.113.1/24 dev eth2
+    server:
+      kind: linux
+      cmd: sleep infinity
+      exec:
+      - ip link set eth1 up
+      - ip address replace 203.0.113.20/24 dev eth1
+      - ip route replace 198.51.100.0/30 via 203.0.113.1
+      - sh -c "python3 -m http.server 80 --bind 203.0.113.20 --directory /tmp >/tmp/lab09-http.log
+        2>&1 &"
+  links:
+  - endpoints:
+    - pc:eth1
+    - acc:eth1
+  - endpoints:
+    - acc:eth2
+    - core:eth1
+  - endpoints:
+    - core:eth2
+    - fw:eth1
+  - endpoints:
+    - fw:eth2
+    - isp:eth1
+  - endpoints:
+    - isp:eth2
+    - server:eth1

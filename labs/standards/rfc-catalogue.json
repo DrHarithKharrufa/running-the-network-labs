@@ -1,0 +1,4416 @@
+{
+  "source": "https://www.rfc-editor.org/rfc-index.xml",
+  "accessed": "2026-09-25",
+  "source_sha256": "401e94f50c15f60d89b09e95ce3dd02212cb9650165c05ca0fc83436bffd7742",
+  "missing_from_index": [],
+  "records": [
+    {
+      "number": 791,
+      "title": "Internet Protocol",
+      "status": "INTERNET STANDARD",
+      "month": "September",
+      "year": "1981",
+      "stream": "Legacy",
+      "obsoletes": [
+        "RFC760"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC1349",
+        "RFC2474",
+        "RFC6864"
+      ],
+      "chapters": [
+        6
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc791"
+    },
+    {
+      "number": 826,
+      "title": "An Ethernet Address Resolution Protocol: Or Converting Network Protocol Addresses to 48.bit Ethernet Address for Transmission on Ethernet Hardware",
+      "status": "INTERNET STANDARD",
+      "month": "November",
+      "year": "1982",
+      "stream": "Legacy",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC5227",
+        "RFC5494"
+      ],
+      "chapters": [
+        5
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc826"
+    },
+    {
+      "number": 1191,
+      "title": "Path MTU discovery",
+      "status": "DRAFT STANDARD",
+      "month": "November",
+      "year": "1990",
+      "stream": "Legacy",
+      "obsoletes": [
+        "RFC1063"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        7
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc1191"
+    },
+    {
+      "number": 1195,
+      "title": "Use of OSI IS-IS for routing in TCP/IP and dual environments",
+      "status": "PROPOSED STANDARD",
+      "month": "December",
+      "year": "1990",
+      "stream": "Legacy",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC1349",
+        "RFC5302",
+        "RFC5304"
+      ],
+      "chapters": [
+        20
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc1195"
+    },
+    {
+      "number": 1812,
+      "title": "Requirements for IP Version 4 Routers",
+      "status": "PROPOSED STANDARD",
+      "month": "June",
+      "year": "1995",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC1009",
+        "RFC1716"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC2644",
+        "RFC6633"
+      ],
+      "chapters": [
+        9,
+        12,
+        18
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc1812"
+    },
+    {
+      "number": 1918,
+      "title": "Address Allocation for Private Internets",
+      "status": "BEST CURRENT PRACTICE",
+      "month": "February",
+      "year": "1996",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC1597",
+        "RFC1627"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC6761"
+      ],
+      "chapters": [
+        6,
+        79,
+        81
+      ],
+      "other_locations": [
+        "copyright"
+      ],
+      "url": "https://www.rfc-editor.org/info/rfc1918"
+    },
+    {
+      "number": 1997,
+      "title": "BGP Communities Attribute",
+      "status": "PROPOSED STANDARD",
+      "month": "August",
+      "year": "1996",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC7606",
+        "RFC8642"
+      ],
+      "chapters": [
+        22
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc1997"
+    },
+    {
+      "number": 2104,
+      "title": "HMAC: Keyed-Hashing for Message Authentication",
+      "status": "INFORMATIONAL",
+      "month": "February",
+      "year": "1997",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC6151"
+      ],
+      "chapters": [
+        51
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc2104"
+    },
+    {
+      "number": 2131,
+      "title": "Dynamic Host Configuration Protocol",
+      "status": "DRAFT STANDARD",
+      "month": "March",
+      "year": "1997",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC1541"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC3396",
+        "RFC4361",
+        "RFC5494",
+        "RFC6842"
+      ],
+      "chapters": [
+        8
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc2131"
+    },
+    {
+      "number": 2308,
+      "title": "Negative Caching of DNS Queries (DNS NCACHE)",
+      "status": "PROPOSED STANDARD",
+      "month": "March",
+      "year": "1998",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC1034",
+        "RFC1035"
+      ],
+      "updated_by": [
+        "RFC4033",
+        "RFC4034",
+        "RFC4035",
+        "RFC6604",
+        "RFC8020",
+        "RFC8499",
+        "RFC9499",
+        "RFC9520"
+      ],
+      "chapters": [
+        8
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc2308"
+    },
+    {
+      "number": 2317,
+      "title": "Classless IN-ADDR.ARPA delegation",
+      "status": "BEST CURRENT PRACTICE",
+      "month": "March",
+      "year": "1998",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        8
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc2317"
+    },
+    {
+      "number": 2328,
+      "title": "OSPF Version 2",
+      "status": "INTERNET STANDARD",
+      "month": "April",
+      "year": "1998",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC2178"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC5709",
+        "RFC6549",
+        "RFC6845",
+        "RFC6860",
+        "RFC7474",
+        "RFC8042",
+        "RFC9355",
+        "RFC9454"
+      ],
+      "chapters": [
+        19,
+        82
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc2328"
+    },
+    {
+      "number": 2385,
+      "title": "Protection of BGP Sessions via the TCP MD5 Signature Option",
+      "status": "PROPOSED STANDARD",
+      "month": "August",
+      "year": "1998",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [
+        "RFC5925"
+      ],
+      "updates": [],
+      "updated_by": [
+        "RFC6691"
+      ],
+      "chapters": [
+        51
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc2385"
+    },
+    {
+      "number": 2464,
+      "title": "Transmission of IPv6 Packets over Ethernet Networks",
+      "status": "PROPOSED STANDARD",
+      "month": "December",
+      "year": "1998",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC1972"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC6085",
+        "RFC8064"
+      ],
+      "chapters": [
+        5
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc2464"
+    },
+    {
+      "number": 2474,
+      "title": "Definition of the Differentiated Services Field (DS Field) in the IPv4 and IPv6 Headers",
+      "status": "PROPOSED STANDARD",
+      "month": "December",
+      "year": "1998",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC1349",
+        "RFC1455"
+      ],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC791"
+      ],
+      "updated_by": [
+        "RFC3168",
+        "RFC3260",
+        "RFC8436"
+      ],
+      "chapters": [
+        31
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc2474"
+    },
+    {
+      "number": 2516,
+      "title": "A Method for Transmitting PPP Over Ethernet (PPPoE)",
+      "status": "INFORMATIONAL",
+      "month": "February",
+      "year": "1999",
+      "stream": "Legacy",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        32
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc2516"
+    },
+    {
+      "number": 2544,
+      "title": "Benchmarking Methodology for Network Interconnect Devices",
+      "status": "INFORMATIONAL",
+      "month": "March",
+      "year": "1999",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC1944"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC6201",
+        "RFC6815",
+        "RFC9004"
+      ],
+      "chapters": [],
+      "other_locations": [
+        "copyright"
+      ],
+      "url": "https://www.rfc-editor.org/info/rfc2544"
+    },
+    {
+      "number": 2597,
+      "title": "Assured Forwarding PHB Group",
+      "status": "PROPOSED STANDARD",
+      "month": "June",
+      "year": "1999",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC3260"
+      ],
+      "chapters": [
+        31
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc2597"
+    },
+    {
+      "number": 2784,
+      "title": "Generic Routing Encapsulation (GRE)",
+      "status": "PROPOSED STANDARD",
+      "month": "March",
+      "year": "2000",
+      "stream": "Legacy",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC2890",
+        "RFC9601"
+      ],
+      "chapters": [
+        5
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc2784"
+    },
+    {
+      "number": 2863,
+      "title": "The Interfaces Group MIB",
+      "status": "DRAFT STANDARD",
+      "month": "June",
+      "year": "2000",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC2233"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC8892"
+      ],
+      "chapters": [
+        67
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc2863"
+    },
+    {
+      "number": 2865,
+      "title": "Remote Authentication Dial In User Service (RADIUS)",
+      "status": "DRAFT STANDARD",
+      "month": "June",
+      "year": "2000",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC2138"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC2868",
+        "RFC3575",
+        "RFC5080",
+        "RFC6929",
+        "RFC8044",
+        "RFC9765"
+      ],
+      "chapters": [
+        32
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc2865"
+    },
+    {
+      "number": 2918,
+      "title": "Route Refresh Capability for BGP-4",
+      "status": "PROPOSED STANDARD",
+      "month": "September",
+      "year": "2000",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC7313"
+      ],
+      "chapters": [
+        21,
+        76
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc2918"
+    },
+    {
+      "number": 2961,
+      "title": "RSVP Refresh Overhead Reduction Extensions",
+      "status": "PROPOSED STANDARD",
+      "month": "April",
+      "year": "2001",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC5063"
+      ],
+      "chapters": [
+        27
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc2961"
+    },
+    {
+      "number": 3021,
+      "title": "Using 31-Bit Prefixes on IPv4 Point-to-Point Links",
+      "status": "PROPOSED STANDARD",
+      "month": "December",
+      "year": "2000",
+      "stream": "Legacy",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        6,
+        81
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc3021"
+    },
+    {
+      "number": 3031,
+      "title": "Multiprotocol Label Switching Architecture",
+      "status": "PROPOSED STANDARD",
+      "month": "January",
+      "year": "2001",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC6178",
+        "RFC6790"
+      ],
+      "chapters": [
+        26
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc3031"
+    },
+    {
+      "number": 3032,
+      "title": "MPLS Label Stack Encoding",
+      "status": "PROPOSED STANDARD",
+      "month": "January",
+      "year": "2001",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC3270",
+        "RFC3443",
+        "RFC4182",
+        "RFC5129",
+        "RFC5332",
+        "RFC5462",
+        "RFC5586",
+        "RFC7274",
+        "RFC9017"
+      ],
+      "chapters": [
+        26,
+        81
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc3032"
+    },
+    {
+      "number": 3046,
+      "title": "DHCP Relay Agent Information Option",
+      "status": "PROPOSED STANDARD",
+      "month": "January",
+      "year": "2001",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC6607"
+      ],
+      "chapters": [
+        8,
+        32
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc3046"
+    },
+    {
+      "number": 3101,
+      "title": "The OSPF Not-So-Stubby Area (NSSA) Option",
+      "status": "PROPOSED STANDARD",
+      "month": "January",
+      "year": "2003",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC1587"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        19
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc3101"
+    },
+    {
+      "number": 3164,
+      "title": "The BSD Syslog Protocol",
+      "status": "INFORMATIONAL",
+      "month": "August",
+      "year": "2001",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [
+        "RFC5424"
+      ],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        8
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc3164"
+    },
+    {
+      "number": 3168,
+      "title": "The Addition of Explicit Congestion Notification (ECN) to IP",
+      "status": "PROPOSED STANDARD",
+      "month": "September",
+      "year": "2001",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC2481"
+      ],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC793",
+        "RFC2003",
+        "RFC2401",
+        "RFC2474"
+      ],
+      "updated_by": [
+        "RFC4301",
+        "RFC6040",
+        "RFC8311",
+        "RFC9768"
+      ],
+      "chapters": [
+        31
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc3168"
+    },
+    {
+      "number": 3176,
+      "title": "InMon Corporation's sFlow: A Method for Monitoring Traffic in Switched and Routed Networks",
+      "status": "INFORMATIONAL",
+      "month": "September",
+      "year": "2001",
+      "stream": "Legacy",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        63
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc3176"
+    },
+    {
+      "number": 3209,
+      "title": "RSVP-TE: Extensions to RSVP for LSP Tunnels",
+      "status": "PROPOSED STANDARD",
+      "month": "December",
+      "year": "2001",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC3936",
+        "RFC4420",
+        "RFC4874",
+        "RFC5151",
+        "RFC5420",
+        "RFC5711",
+        "RFC6780",
+        "RFC6790",
+        "RFC7274"
+      ],
+      "chapters": [
+        27
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc3209"
+    },
+    {
+      "number": 3246,
+      "title": "An Expedited Forwarding PHB (Per-Hop Behavior)",
+      "status": "PROPOSED STANDARD",
+      "month": "March",
+      "year": "2002",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC2598"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        31
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc3246"
+    },
+    {
+      "number": 3270,
+      "title": "Multi-Protocol Label Switching (MPLS) Support of Differentiated Services",
+      "status": "PROPOSED STANDARD",
+      "month": "May",
+      "year": "2002",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC3032"
+      ],
+      "updated_by": [
+        "RFC5462"
+      ],
+      "chapters": [
+        26
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc3270"
+    },
+    {
+      "number": 3277,
+      "title": "Intermediate System to Intermediate System (IS-IS) Transient Blackhole Avoidance",
+      "status": "INFORMATIONAL",
+      "month": "April",
+      "year": "2002",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        20
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc3277"
+    },
+    {
+      "number": 3376,
+      "title": "Internet Group Management Protocol, Version 3",
+      "status": "PROPOSED STANDARD",
+      "month": "October",
+      "year": "2002",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [
+        "RFC9776"
+      ],
+      "updates": [
+        "RFC2236"
+      ],
+      "updated_by": [
+        "RFC4604"
+      ],
+      "chapters": [
+        24
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc3376"
+    },
+    {
+      "number": 3393,
+      "title": "IP Packet Delay Variation Metric for IP Performance Metrics (IPPM)",
+      "status": "PROPOSED STANDARD",
+      "month": "November",
+      "year": "2002",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        87
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc3393"
+    },
+    {
+      "number": 3411,
+      "title": "An Architecture for Describing Simple Network Management Protocol (SNMP) Management Frameworks",
+      "status": "INTERNET STANDARD",
+      "month": "December",
+      "year": "2002",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC2571"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC5343",
+        "RFC5590"
+      ],
+      "chapters": [
+        62
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc3411"
+    },
+    {
+      "number": 3443,
+      "title": "Time To Live (TTL) Processing in Multi-Protocol Label Switching (MPLS) Networks",
+      "status": "PROPOSED STANDARD",
+      "month": "January",
+      "year": "2003",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC3032"
+      ],
+      "updated_by": [
+        "RFC5462"
+      ],
+      "chapters": [
+        9,
+        26
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc3443"
+    },
+    {
+      "number": 3580,
+      "title": "IEEE 802.1X Remote Authentication Dial In User Service (RADIUS) Usage Guidelines",
+      "status": "INFORMATIONAL",
+      "month": "September",
+      "year": "2003",
+      "stream": "INDEPENDENT",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC7268"
+      ],
+      "chapters": [
+        15
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc3580"
+    },
+    {
+      "number": 3748,
+      "title": "Extensible Authentication Protocol (EAP)",
+      "status": "PROPOSED STANDARD",
+      "month": "June",
+      "year": "2004",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC2284"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC5247",
+        "RFC7057"
+      ],
+      "chapters": [
+        15
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc3748"
+    },
+    {
+      "number": 3810,
+      "title": "Multicast Listener Discovery Version 2 (MLDv2) for IPv6",
+      "status": "PROPOSED STANDARD",
+      "month": "June",
+      "year": "2004",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [
+        "RFC9777"
+      ],
+      "updates": [
+        "RFC2710"
+      ],
+      "updated_by": [
+        "RFC4604"
+      ],
+      "chapters": [
+        24
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc3810"
+    },
+    {
+      "number": 3849,
+      "title": "IPv6 Address Prefix Reserved for Documentation",
+      "status": "INFORMATIONAL",
+      "month": "July",
+      "year": "2004",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC9637"
+      ],
+      "chapters": [
+        6,
+        25
+      ],
+      "other_locations": [
+        "copyright"
+      ],
+      "url": "https://www.rfc-editor.org/info/rfc3849"
+    },
+    {
+      "number": 4090,
+      "title": "Fast Reroute Extensions to RSVP-TE for LSP Tunnels",
+      "status": "PROPOSED STANDARD",
+      "month": "May",
+      "year": "2005",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC8271",
+        "RFC8537",
+        "RFC8796",
+        "RFC9705"
+      ],
+      "chapters": [
+        27
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc4090"
+    },
+    {
+      "number": 4182,
+      "title": "Removing a Restriction on the use of MPLS Explicit NULL",
+      "status": "PROPOSED STANDARD",
+      "month": "September",
+      "year": "2005",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC3032"
+      ],
+      "updated_by": [
+        "RFC5462",
+        "RFC7274"
+      ],
+      "chapters": [
+        26
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc4182"
+    },
+    {
+      "number": 4192,
+      "title": "Procedures for Renumbering an IPv6 Network without a Flag Day",
+      "status": "INFORMATIONAL",
+      "month": "September",
+      "year": "2005",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC2072"
+      ],
+      "updated_by": [],
+      "chapters": [
+        81
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc4192"
+    },
+    {
+      "number": 4193,
+      "title": "Unique Local IPv6 Unicast Addresses",
+      "status": "PROPOSED STANDARD",
+      "month": "October",
+      "year": "2005",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        6,
+        81
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc4193"
+    },
+    {
+      "number": 4271,
+      "title": "A Border Gateway Protocol 4 (BGP-4)",
+      "status": "DRAFT STANDARD",
+      "month": "January",
+      "year": "2006",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC1771"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC4724",
+        "RFC6286",
+        "RFC6608",
+        "RFC6793",
+        "RFC7606",
+        "RFC7607",
+        "RFC7705",
+        "RFC8212",
+        "RFC8654",
+        "RFC9072",
+        "RFC9687",
+        "RFC9774"
+      ],
+      "chapters": [
+        17,
+        21,
+        25
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc4271"
+    },
+    {
+      "number": 4360,
+      "title": "BGP Extended Communities Attribute",
+      "status": "PROPOSED STANDARD",
+      "month": "February",
+      "year": "2006",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC7153",
+        "RFC7606"
+      ],
+      "chapters": [
+        21,
+        22,
+        81
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc4360"
+    },
+    {
+      "number": 4364,
+      "title": "BGP/MPLS IP Virtual Private Networks (VPNs)",
+      "status": "PROPOSED STANDARD",
+      "month": "February",
+      "year": "2006",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC2547"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC4577",
+        "RFC4684",
+        "RFC5462"
+      ],
+      "chapters": [
+        23,
+        29,
+        81
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc4364"
+    },
+    {
+      "number": 4427,
+      "title": "Recovery (Protection and Restoration) Terminology for Generalized Multi-Protocol Label Switching (GMPLS)",
+      "status": "INFORMATIONAL",
+      "month": "March",
+      "year": "2006",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        46
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc4427"
+    },
+    {
+      "number": 4448,
+      "title": "Encapsulation Methods for Transport of Ethernet over MPLS Networks",
+      "status": "PROPOSED STANDARD",
+      "month": "April",
+      "year": "2006",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC5462",
+        "RFC8469"
+      ],
+      "chapters": [
+        30
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc4448"
+    },
+    {
+      "number": 4456,
+      "title": "BGP Route Reflection: An Alternative to Full Mesh Internal BGP (IBGP)",
+      "status": "DRAFT STANDARD",
+      "month": "April",
+      "year": "2006",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC1966",
+        "RFC2796"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC7606"
+      ],
+      "chapters": [
+        21,
+        25,
+        82
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc4456"
+    },
+    {
+      "number": 4541,
+      "title": "Considerations for Internet Group Management Protocol (IGMP) and Multicast Listener Discovery (MLD) Snooping Switches",
+      "status": "INFORMATIONAL",
+      "month": "May",
+      "year": "2006",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        24
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc4541"
+    },
+    {
+      "number": 4577,
+      "title": "OSPF as the Provider/Customer Edge Protocol for BGP/MPLS IP Virtual Private Networks (VPNs)",
+      "status": "PROPOSED STANDARD",
+      "month": "June",
+      "year": "2006",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC4364"
+      ],
+      "updated_by": [],
+      "chapters": [
+        29
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc4577"
+    },
+    {
+      "number": 4607,
+      "title": "Source-Specific Multicast for IP",
+      "status": "PROPOSED STANDARD",
+      "month": "August",
+      "year": "2006",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        24
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc4607"
+    },
+    {
+      "number": 4610,
+      "title": "Anycast-RP Using Protocol Independent Multicast (PIM)",
+      "status": "PROPOSED STANDARD",
+      "month": "August",
+      "year": "2006",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        24
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc4610"
+    },
+    {
+      "number": 4632,
+      "title": "Classless Inter-domain Routing (CIDR): The Internet Address Assignment and Aggregation Plan",
+      "status": "BEST CURRENT PRACTICE",
+      "month": "August",
+      "year": "2006",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC1519"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        81
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc4632"
+    },
+    {
+      "number": 4638,
+      "title": "Accommodating a Maximum Transit Unit/Maximum Receive Unit (MTU/MRU) Greater Than 1492 in the Point-to-Point Protocol over Ethernet (PPPoE)",
+      "status": "INFORMATIONAL",
+      "month": "September",
+      "year": "2006",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        32
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc4638"
+    },
+    {
+      "number": 4684,
+      "title": "Constrained Route Distribution for Border Gateway Protocol/MultiProtocol Label Switching (BGP/MPLS) Internet Protocol (IP) Virtual Private Networks (VPNs)",
+      "status": "PROPOSED STANDARD",
+      "month": "November",
+      "year": "2006",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC4364"
+      ],
+      "updated_by": [],
+      "chapters": [
+        29
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc4684"
+    },
+    {
+      "number": 4724,
+      "title": "Graceful Restart Mechanism for BGP",
+      "status": "PROPOSED STANDARD",
+      "month": "January",
+      "year": "2007",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC4271"
+      ],
+      "updated_by": [
+        "RFC8538"
+      ],
+      "chapters": [
+        25
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc4724"
+    },
+    {
+      "number": 4760,
+      "title": "Multiprotocol Extensions for BGP-4",
+      "status": "DRAFT STANDARD",
+      "month": "January",
+      "year": "2007",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC2858"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC7606"
+      ],
+      "chapters": [
+        21
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc4760"
+    },
+    {
+      "number": 4761,
+      "title": "Virtual Private LAN Service (VPLS) Using BGP for Auto-Discovery and Signaling",
+      "status": "PROPOSED STANDARD",
+      "month": "January",
+      "year": "2007",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC5462",
+        "RFC8395",
+        "RFC8614"
+      ],
+      "chapters": [
+        30
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc4761"
+    },
+    {
+      "number": 4762,
+      "title": "Virtual Private LAN Service (VPLS) Using Label Distribution Protocol (LDP) Signaling",
+      "status": "PROPOSED STANDARD",
+      "month": "January",
+      "year": "2007",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        30
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc4762"
+    },
+    {
+      "number": 4786,
+      "title": "Operation of Anycast Services",
+      "status": "BEST CURRENT PRACTICE",
+      "month": "December",
+      "year": "2006",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        83
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc4786"
+    },
+    {
+      "number": 4818,
+      "title": "RADIUS Delegated-IPv6-Prefix Attribute",
+      "status": "PROPOSED STANDARD",
+      "month": "April",
+      "year": "2007",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        32
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc4818"
+    },
+    {
+      "number": 4861,
+      "title": "Neighbor Discovery for IP version 6 (IPv6)",
+      "status": "DRAFT STANDARD",
+      "month": "September",
+      "year": "2007",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC2461"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC5942",
+        "RFC6980",
+        "RFC7048",
+        "RFC7527",
+        "RFC7559",
+        "RFC8028",
+        "RFC8319",
+        "RFC8425",
+        "RFC9131",
+        "RFC9685",
+        "RFC9762",
+        "RFC9926"
+      ],
+      "chapters": [
+        5,
+        6
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc4861"
+    },
+    {
+      "number": 4862,
+      "title": "IPv6 Stateless Address Autoconfiguration",
+      "status": "DRAFT STANDARD",
+      "month": "September",
+      "year": "2007",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC2462"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC7527",
+        "RFC9762"
+      ],
+      "chapters": [
+        6
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc4862"
+    },
+    {
+      "number": 4998,
+      "title": "Evidence Record Syntax (ERS)",
+      "status": "PROPOSED STANDARD",
+      "month": "August",
+      "year": "2007",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        51
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc4998"
+    },
+    {
+      "number": 5036,
+      "title": "LDP Specification",
+      "status": "DRAFT STANDARD",
+      "month": "October",
+      "year": "2007",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC3036"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC6720",
+        "RFC6790",
+        "RFC7358",
+        "RFC7552"
+      ],
+      "chapters": [
+        26
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc5036"
+    },
+    {
+      "number": 5065,
+      "title": "Autonomous System Confederations for BGP",
+      "status": "DRAFT STANDARD",
+      "month": "August",
+      "year": "2007",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC3065"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC9774"
+      ],
+      "chapters": [
+        21
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc5065"
+    },
+    {
+      "number": 5072,
+      "title": "IP Version 6 over PPP",
+      "status": "DRAFT STANDARD",
+      "month": "September",
+      "year": "2007",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC2472"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC8064"
+      ],
+      "chapters": [
+        32
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc5072"
+    },
+    {
+      "number": 5120,
+      "title": "M-ISIS: Multi Topology (MT) Routing in Intermediate System to Intermediate Systems (IS-ISs)",
+      "status": "PROPOSED STANDARD",
+      "month": "February",
+      "year": "2008",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        20
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc5120"
+    },
+    {
+      "number": 5129,
+      "title": "Explicit Congestion Marking in MPLS",
+      "status": "PROPOSED STANDARD",
+      "month": "January",
+      "year": "2008",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC3032"
+      ],
+      "updated_by": [
+        "RFC5462"
+      ],
+      "chapters": [
+        31
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc5129"
+    },
+    {
+      "number": 5176,
+      "title": "Dynamic Authorization Extensions to Remote Authentication Dial In User Service (RADIUS)",
+      "status": "INFORMATIONAL",
+      "month": "January",
+      "year": "2008",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC3576"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC8559",
+        "RFC9765"
+      ],
+      "chapters": [
+        32
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc5176"
+    },
+    {
+      "number": 5286,
+      "title": "Basic Specification for IP Fast Reroute: Loop-Free Alternates",
+      "status": "PROPOSED STANDARD",
+      "month": "September",
+      "year": "2008",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC8518"
+      ],
+      "chapters": [
+        19
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc5286"
+    },
+    {
+      "number": 5302,
+      "title": "Domain-Wide Prefix Distribution with Two-Level IS-IS",
+      "status": "PROPOSED STANDARD",
+      "month": "October",
+      "year": "2008",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC2966"
+      ],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC1195"
+      ],
+      "updated_by": [],
+      "chapters": [
+        20
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc5302"
+    },
+    {
+      "number": 5305,
+      "title": "IS-IS Extensions for Traffic Engineering",
+      "status": "PROPOSED STANDARD",
+      "month": "October",
+      "year": "2008",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC3784"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC5307",
+        "RFC8918"
+      ],
+      "chapters": [
+        20
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc5305"
+    },
+    {
+      "number": 5308,
+      "title": "Routing IPv6 with IS-IS",
+      "status": "PROPOSED STANDARD",
+      "month": "October",
+      "year": "2008",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC7775"
+      ],
+      "chapters": [
+        20
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc5308"
+    },
+    {
+      "number": 5310,
+      "title": "IS-IS Generic Cryptographic Authentication",
+      "status": "PROPOSED STANDARD",
+      "month": "February",
+      "year": "2009",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC6232",
+        "RFC6233"
+      ],
+      "chapters": [
+        20
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc5310"
+    },
+    {
+      "number": 5340,
+      "title": "OSPF for IPv6",
+      "status": "PROPOSED STANDARD",
+      "month": "July",
+      "year": "2008",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC2740"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC6845",
+        "RFC6860",
+        "RFC7503",
+        "RFC8362",
+        "RFC9454"
+      ],
+      "chapters": [
+        19
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc5340"
+    },
+    {
+      "number": 5398,
+      "title": "Autonomous System (AS) Number Reservation for Documentation Use",
+      "status": "INFORMATIONAL",
+      "month": "December",
+      "year": "2008",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        6,
+        25,
+        81
+      ],
+      "other_locations": [
+        "copyright",
+        "reference-networks"
+      ],
+      "url": "https://www.rfc-editor.org/info/rfc5398"
+    },
+    {
+      "number": 5424,
+      "title": "The Syslog Protocol",
+      "status": "PROPOSED STANDARD",
+      "month": "March",
+      "year": "2009",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC3164"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        8,
+        63
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc5424"
+    },
+    {
+      "number": 5440,
+      "title": "Path Computation Element (PCE) Communication Protocol (PCEP)",
+      "status": "PROPOSED STANDARD",
+      "month": "March",
+      "year": "2009",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC7896",
+        "RFC8253",
+        "RFC8356",
+        "RFC9488",
+        "RFC9756"
+      ],
+      "chapters": [
+        27
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc5440"
+    },
+    {
+      "number": 5443,
+      "title": "LDP IGP Synchronization",
+      "status": "INFORMATIONAL",
+      "month": "March",
+      "year": "2009",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC6138",
+        "RFC10041"
+      ],
+      "chapters": [
+        26
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc5443"
+    },
+    {
+      "number": 5462,
+      "title": "Multiprotocol Label Switching (MPLS) Label Stack Entry: \"EXP\" Field Renamed to \"Traffic Class\" Field",
+      "status": "PROPOSED STANDARD",
+      "month": "February",
+      "year": "2009",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC3032",
+        "RFC3270",
+        "RFC3272",
+        "RFC3443",
+        "RFC3469",
+        "RFC3564",
+        "RFC3985",
+        "RFC4182",
+        "RFC4364",
+        "RFC4379",
+        "RFC4448",
+        "RFC4761",
+        "RFC5129"
+      ],
+      "updated_by": [],
+      "chapters": [
+        26
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc5462"
+    },
+    {
+      "number": 5549,
+      "title": "Advertising IPv4 Network Layer Reachability Information with an IPv6 Next Hop",
+      "status": "PROPOSED STANDARD",
+      "month": "May",
+      "year": "2009",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [
+        "RFC8950"
+      ],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        36
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc5549"
+    },
+    {
+      "number": 5668,
+      "title": "4-Octet AS Specific BGP Extended Community",
+      "status": "PROPOSED STANDARD",
+      "month": "October",
+      "year": "2009",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        81
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc5668"
+    },
+    {
+      "number": 5709,
+      "title": "OSPFv2 HMAC-SHA Cryptographic Authentication",
+      "status": "PROPOSED STANDARD",
+      "month": "October",
+      "year": "2009",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC2328"
+      ],
+      "updated_by": [
+        "RFC7474"
+      ],
+      "chapters": [
+        19
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc5709"
+    },
+    {
+      "number": 5714,
+      "title": "IP Fast Reroute Framework",
+      "status": "INFORMATIONAL",
+      "month": "January",
+      "year": "2010",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        80
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc5714"
+    },
+    {
+      "number": 5715,
+      "title": "A Framework for Loop-Free Convergence",
+      "status": "INFORMATIONAL",
+      "month": "January",
+      "year": "2010",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        27,
+        84
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc5715"
+    },
+    {
+      "number": 5737,
+      "title": "IPv4 Address Blocks Reserved for Documentation",
+      "status": "INFORMATIONAL",
+      "month": "January",
+      "year": "2010",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC1166"
+      ],
+      "updated_by": [],
+      "chapters": [
+        6,
+        25
+      ],
+      "other_locations": [
+        "copyright"
+      ],
+      "url": "https://www.rfc-editor.org/info/rfc5737"
+    },
+    {
+      "number": 5798,
+      "title": "Virtual Router Redundancy Protocol (VRRP) Version 3 for IPv4 and IPv6",
+      "status": "PROPOSED STANDARD",
+      "month": "March",
+      "year": "2010",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC3768"
+      ],
+      "obsoleted_by": [
+        "RFC9568"
+      ],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        13
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc5798"
+    },
+    {
+      "number": 5838,
+      "title": "Support of Address Families in OSPFv3",
+      "status": "PROPOSED STANDARD",
+      "month": "April",
+      "year": "2010",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC6969",
+        "RFC7949",
+        "RFC8362",
+        "RFC9454"
+      ],
+      "chapters": [
+        19
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc5838"
+    },
+    {
+      "number": 5880,
+      "title": "Bidirectional Forwarding Detection (BFD)",
+      "status": "PROPOSED STANDARD",
+      "month": "June",
+      "year": "2010",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC7419",
+        "RFC7880",
+        "RFC8562",
+        "RFC9747"
+      ],
+      "chapters": [
+        4,
+        18,
+        80
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc5880"
+    },
+    {
+      "number": 5881,
+      "title": "Bidirectional Forwarding Detection (BFD) for IPv4 and IPv6 (Single Hop)",
+      "status": "PROPOSED STANDARD",
+      "month": "June",
+      "year": "2010",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        18
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc5881"
+    },
+    {
+      "number": 5905,
+      "title": "Network Time Protocol Version 4: Protocol and Algorithms Specification",
+      "status": "PROPOSED STANDARD",
+      "month": "June",
+      "year": "2010",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC1305",
+        "RFC4330"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC7822",
+        "RFC8573",
+        "RFC9109",
+        "RFC9748",
+        "RFC9769"
+      ],
+      "chapters": [
+        8
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc5905"
+    },
+    {
+      "number": 5925,
+      "title": "The TCP Authentication Option",
+      "status": "PROPOSED STANDARD",
+      "month": "June",
+      "year": "2010",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC2385"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        51
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc5925"
+    },
+    {
+      "number": 6151,
+      "title": "Updated Security Considerations for the MD5 Message-Digest and the HMAC-MD5 Algorithms",
+      "status": "INFORMATIONAL",
+      "month": "March",
+      "year": "2011",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC1321",
+        "RFC2104"
+      ],
+      "updated_by": [],
+      "chapters": [
+        51
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc6151"
+    },
+    {
+      "number": 6164,
+      "title": "Using 127-Bit IPv6 Prefixes on Inter-Router Links",
+      "status": "PROPOSED STANDARD",
+      "month": "April",
+      "year": "2011",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC6547"
+      ],
+      "chapters": [
+        6,
+        81
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc6164"
+    },
+    {
+      "number": 6177,
+      "title": "IPv6 Address Assignment to End Sites",
+      "status": "BEST CURRENT PRACTICE",
+      "month": "March",
+      "year": "2011",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC3177"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        32,
+        81
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc6177"
+    },
+    {
+      "number": 6234,
+      "title": "US Secure Hash Algorithms (SHA and SHA-based HMAC and HKDF)",
+      "status": "INFORMATIONAL",
+      "month": "May",
+      "year": "2011",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC4634"
+      ],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC3174"
+      ],
+      "updated_by": [],
+      "chapters": [
+        51
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc6234"
+    },
+    {
+      "number": 6241,
+      "title": "Network Configuration Protocol (NETCONF)",
+      "status": "PROPOSED STANDARD",
+      "month": "June",
+      "year": "2011",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC4741"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC7803",
+        "RFC8526"
+      ],
+      "chapters": [
+        65,
+        70
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc6241"
+    },
+    {
+      "number": 6514,
+      "title": "BGP Encodings and Procedures for Multicast in MPLS/BGP IP VPNs",
+      "status": "PROPOSED STANDARD",
+      "month": "February",
+      "year": "2012",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC6515",
+        "RFC6625",
+        "RFC7385",
+        "RFC7441",
+        "RFC7582",
+        "RFC7899",
+        "RFC7900",
+        "RFC7902",
+        "RFC7988",
+        "RFC8534",
+        "RFC9081",
+        "RFC9573",
+        "RFC10018"
+      ],
+      "chapters": [
+        24
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc6514"
+    },
+    {
+      "number": 6587,
+      "title": "Transmission of Syslog Messages over TCP",
+      "status": "HISTORIC",
+      "month": "April",
+      "year": "2012",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        8
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc6587"
+    },
+    {
+      "number": 6598,
+      "title": "IANA-Reserved IPv4 Prefix for Shared Address Space",
+      "status": "BEST CURRENT PRACTICE",
+      "month": "April",
+      "year": "2012",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC5735"
+      ],
+      "updated_by": [],
+      "chapters": [
+        6,
+        25,
+        32
+      ],
+      "other_locations": [
+        "copyright",
+        "reference-networks"
+      ],
+      "url": "https://www.rfc-editor.org/info/rfc6598"
+    },
+    {
+      "number": 6614,
+      "title": "Transport Layer Security (TLS) Encryption for RADIUS",
+      "status": "EXPERIMENTAL",
+      "month": "May",
+      "year": "2012",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC8996",
+        "RFC9765"
+      ],
+      "chapters": [
+        8
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc6614"
+    },
+    {
+      "number": 6691,
+      "title": "TCP Options and Maximum Segment Size (MSS)",
+      "status": "INFORMATIONAL",
+      "month": "July",
+      "year": "2012",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [
+        "RFC9293"
+      ],
+      "updates": [
+        "RFC879",
+        "RFC2385"
+      ],
+      "updated_by": [],
+      "chapters": [
+        7
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc6691"
+    },
+    {
+      "number": 6790,
+      "title": "The Use of Entropy Labels in MPLS Forwarding",
+      "status": "PROPOSED STANDARD",
+      "month": "November",
+      "year": "2012",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC3031",
+        "RFC3107",
+        "RFC3209",
+        "RFC5036"
+      ],
+      "updated_by": [
+        "RFC7274",
+        "RFC7447",
+        "RFC8012"
+      ],
+      "chapters": [
+        26
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc6790"
+    },
+    {
+      "number": 6811,
+      "title": "BGP Prefix Origin Validation",
+      "status": "PROPOSED STANDARD",
+      "month": "January",
+      "year": "2013",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC8481",
+        "RFC8893"
+      ],
+      "chapters": [
+        22,
+        34
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc6811"
+    },
+    {
+      "number": 6877,
+      "title": "464XLAT: Combination of Stateful and Stateless Translation",
+      "status": "INFORMATIONAL",
+      "month": "April",
+      "year": "2013",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        32
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc6877"
+    },
+    {
+      "number": 6888,
+      "title": "Common Requirements for Carrier-Grade NATs (CGNs)",
+      "status": "BEST CURRENT PRACTICE",
+      "month": "April",
+      "year": "2013",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC4787"
+      ],
+      "updated_by": [],
+      "chapters": [
+        32
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc6888"
+    },
+    {
+      "number": 6976,
+      "title": "Framework for Loop-Free Convergence Using the Ordered Forwarding Information Base (oFIB) Approach",
+      "status": "INFORMATIONAL",
+      "month": "July",
+      "year": "2013",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        84
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc6976"
+    },
+    {
+      "number": 6996,
+      "title": "Autonomous System (AS) Reservation for Private Use",
+      "status": "BEST CURRENT PRACTICE",
+      "month": "July",
+      "year": "2013",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC1930"
+      ],
+      "updated_by": [],
+      "chapters": [
+        36,
+        81
+      ],
+      "other_locations": [
+        "copyright"
+      ],
+      "url": "https://www.rfc-editor.org/info/rfc6996"
+    },
+    {
+      "number": 7011,
+      "title": "Specification of the IP Flow Information Export (IPFIX) Protocol for the Exchange of Flow Information",
+      "status": "INTERNET STANDARD",
+      "month": "September",
+      "year": "2013",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC5101"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        63
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc7011"
+    },
+    {
+      "number": 7014,
+      "title": "Flow Selection Techniques",
+      "status": "PROPOSED STANDARD",
+      "month": "September",
+      "year": "2013",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        63
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc7014"
+    },
+    {
+      "number": 7084,
+      "title": "Basic Requirements for IPv6 Customer Edge Routers",
+      "status": "INFORMATIONAL",
+      "month": "November",
+      "year": "2013",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC6204"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC9096",
+        "RFC9818"
+      ],
+      "chapters": [
+        32
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc7084"
+    },
+    {
+      "number": 7166,
+      "title": "Supporting Authentication Trailer for OSPFv3",
+      "status": "PROPOSED STANDARD",
+      "month": "March",
+      "year": "2014",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC6506"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        19
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc7166"
+    },
+    {
+      "number": 7170,
+      "title": "Tunnel Extensible Authentication Protocol (TEAP) Version 1",
+      "status": "PROPOSED STANDARD",
+      "month": "May",
+      "year": "2014",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [
+        "RFC9930"
+      ],
+      "updates": [],
+      "updated_by": [
+        "RFC9427"
+      ],
+      "chapters": [
+        15
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc7170"
+    },
+    {
+      "number": 7196,
+      "title": "Making Route Flap Damping Usable",
+      "status": "PROPOSED STANDARD",
+      "month": "May",
+      "year": "2014",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        22
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc7196"
+    },
+    {
+      "number": 7274,
+      "title": "Allocating and Retiring Special-Purpose MPLS Labels",
+      "status": "PROPOSED STANDARD",
+      "month": "June",
+      "year": "2014",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC3032",
+        "RFC3038",
+        "RFC3209",
+        "RFC3811",
+        "RFC4182",
+        "RFC4928",
+        "RFC5331",
+        "RFC5586",
+        "RFC5921",
+        "RFC5960",
+        "RFC6391",
+        "RFC6478",
+        "RFC6790"
+      ],
+      "updated_by": [
+        "RFC9017"
+      ],
+      "chapters": [
+        26
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc7274"
+    },
+    {
+      "number": 7296,
+      "title": "Internet Key Exchange Protocol Version 2 (IKEv2)",
+      "status": "INTERNET STANDARD",
+      "month": "October",
+      "year": "2014",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC5996"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC7427",
+        "RFC7670",
+        "RFC8247",
+        "RFC8983",
+        "RFC9370",
+        "RFC9827"
+      ],
+      "chapters": [
+        56
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc7296"
+    },
+    {
+      "number": 7323,
+      "title": "TCP Extensions for High Performance",
+      "status": "PROPOSED STANDARD",
+      "month": "September",
+      "year": "2014",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC1323"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        7
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc7323"
+    },
+    {
+      "number": 7348,
+      "title": "Virtual eXtensible Local Area Network (VXLAN): A Framework for Overlaying Virtualized Layer 2 Networks over Layer 3 Networks",
+      "status": "INFORMATIONAL",
+      "month": "August",
+      "year": "2014",
+      "stream": "INDEPENDENT",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        5,
+        16,
+        81
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc7348"
+    },
+    {
+      "number": 7422,
+      "title": "Deterministic Address Mapping to Reduce Logging in Carrier-Grade NAT Deployments",
+      "status": "INFORMATIONAL",
+      "month": "December",
+      "year": "2014",
+      "stream": "INDEPENDENT",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        32
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc7422"
+    },
+    {
+      "number": 7432,
+      "title": "BGP MPLS-Based Ethernet VPN",
+      "status": "PROPOSED STANDARD",
+      "month": "February",
+      "year": "2015",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC8584",
+        "RFC9161",
+        "RFC9572",
+        "RFC9573",
+        "RFC9746"
+      ],
+      "chapters": [
+        12,
+        30,
+        83
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc7432"
+    },
+    {
+      "number": 7454,
+      "title": "BGP Operations and Security",
+      "status": "BEST CURRENT PRACTICE",
+      "month": "February",
+      "year": "2015",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        22
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc7454"
+    },
+    {
+      "number": 7474,
+      "title": "Security Extension for OSPFv2 When Using Manual Key Management",
+      "status": "PROPOSED STANDARD",
+      "month": "April",
+      "year": "2015",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC2328",
+        "RFC5709"
+      ],
+      "updated_by": [],
+      "chapters": [
+        19
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc7474"
+    },
+    {
+      "number": 7490,
+      "title": "Remote Loop-Free Alternate (LFA) Fast Reroute (FRR)",
+      "status": "PROPOSED STANDARD",
+      "month": "April",
+      "year": "2015",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        19
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc7490"
+    },
+    {
+      "number": 7552,
+      "title": "Updates to LDP for IPv6",
+      "status": "PROPOSED STANDARD",
+      "month": "June",
+      "year": "2015",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC5036",
+        "RFC6720"
+      ],
+      "updated_by": [],
+      "chapters": [
+        26
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc7552"
+    },
+    {
+      "number": 7567,
+      "title": "IETF Recommendations Regarding Active Queue Management",
+      "status": "BEST CURRENT PRACTICE",
+      "month": "July",
+      "year": "2015",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC2309"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        67
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc7567"
+    },
+    {
+      "number": 7599,
+      "title": "Mapping of Address and Port using Translation (MAP-T)",
+      "status": "PROPOSED STANDARD",
+      "month": "July",
+      "year": "2015",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        32
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc7599"
+    },
+    {
+      "number": 7606,
+      "title": "Revised Error Handling for BGP UPDATE Messages",
+      "status": "PROPOSED STANDARD",
+      "month": "August",
+      "year": "2015",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC1997",
+        "RFC4271",
+        "RFC4360",
+        "RFC4456",
+        "RFC4760",
+        "RFC5543",
+        "RFC5701",
+        "RFC6368"
+      ],
+      "updated_by": [],
+      "chapters": [
+        21
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc7606"
+    },
+    {
+      "number": 7679,
+      "title": "A One-Way Delay Metric for IP Performance Metrics (IPPM)",
+      "status": "INTERNET STANDARD",
+      "month": "January",
+      "year": "2016",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC2679"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        87
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc7679"
+    },
+    {
+      "number": 7680,
+      "title": "A One-Way Loss Metric for IP Performance Metrics (IPPM)",
+      "status": "INTERNET STANDARD",
+      "month": "January",
+      "year": "2016",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC2680"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        87
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc7680"
+    },
+    {
+      "number": 7761,
+      "title": "Protocol Independent Multicast - Sparse Mode (PIM-SM): Protocol Specification (Revised)",
+      "status": "INTERNET STANDARD",
+      "month": "March",
+      "year": "2016",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC4601"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC8736",
+        "RFC9436"
+      ],
+      "chapters": [
+        24
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc7761"
+    },
+    {
+      "number": 7871,
+      "title": "Client Subnet in DNS Queries",
+      "status": "INFORMATIONAL",
+      "month": "May",
+      "year": "2016",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        83
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc7871"
+    },
+    {
+      "number": 7908,
+      "title": "Problem Definition and Classification of BGP Route Leaks",
+      "status": "INFORMATIONAL",
+      "month": "June",
+      "year": "2016",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        33,
+        34
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc7908"
+    },
+    {
+      "number": 7911,
+      "title": "Advertisement of Multiple Paths in BGP",
+      "status": "PROPOSED STANDARD",
+      "month": "July",
+      "year": "2016",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        21
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc7911"
+    },
+    {
+      "number": 7938,
+      "title": "Use of BGP for Routing in Large-Scale Data Centers",
+      "status": "INFORMATIONAL",
+      "month": "August",
+      "year": "2016",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        21,
+        36
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc7938"
+    },
+    {
+      "number": 7947,
+      "title": "Internet Exchange BGP Route Server",
+      "status": "PROPOSED STANDARD",
+      "month": "September",
+      "year": "2016",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        21,
+        33
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc7947"
+    },
+    {
+      "number": 7950,
+      "title": "The YANG 1.1 Data Modeling Language",
+      "status": "PROPOSED STANDARD",
+      "month": "August",
+      "year": "2016",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC8342",
+        "RFC8526"
+      ],
+      "chapters": [
+        70
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc7950"
+    },
+    {
+      "number": 7951,
+      "title": "JSON Encoding of Data Modeled with YANG",
+      "status": "PROPOSED STANDARD",
+      "month": "August",
+      "year": "2016",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        70,
+        71
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc7951"
+    },
+    {
+      "number": 7999,
+      "title": "BLACKHOLE Community",
+      "status": "INFORMATIONAL",
+      "month": "October",
+      "year": "2016",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        22,
+        76
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc7999"
+    },
+    {
+      "number": 8029,
+      "title": "Detecting Multiprotocol Label Switched (MPLS) Data-Plane Failures",
+      "status": "PROPOSED STANDARD",
+      "month": "March",
+      "year": "2017",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC4379",
+        "RFC6424",
+        "RFC6829",
+        "RFC7537"
+      ],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC1122"
+      ],
+      "updated_by": [
+        "RFC8611",
+        "RFC9041",
+        "RFC9570"
+      ],
+      "chapters": [
+        26
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8029"
+    },
+    {
+      "number": 8040,
+      "title": "RESTCONF Protocol",
+      "status": "PROPOSED STANDARD",
+      "month": "January",
+      "year": "2017",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC8527"
+      ],
+      "chapters": [
+        70
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8040"
+    },
+    {
+      "number": 8072,
+      "title": "YANG Patch Media Type",
+      "status": "PROPOSED STANDARD",
+      "month": "February",
+      "year": "2017",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        70
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8072"
+    },
+    {
+      "number": 8077,
+      "title": "Pseudowire Setup and Maintenance Using the Label Distribution Protocol (LDP)",
+      "status": "INTERNET STANDARD",
+      "month": "February",
+      "year": "2017",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC4447",
+        "RFC6723"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        30
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8077"
+    },
+    {
+      "number": 8092,
+      "title": "BGP Large Communities Attribute",
+      "status": "PROPOSED STANDARD",
+      "month": "February",
+      "year": "2017",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        21,
+        22
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8092"
+    },
+    {
+      "number": 8106,
+      "title": "IPv6 Router Advertisement Options for DNS Configuration",
+      "status": "PROPOSED STANDARD",
+      "month": "March",
+      "year": "2017",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC6106"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        6
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8106"
+    },
+    {
+      "number": 8200,
+      "title": "Internet Protocol, Version 6 (IPv6) Specification",
+      "status": "INTERNET STANDARD",
+      "month": "July",
+      "year": "2017",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC2460"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC9673"
+      ],
+      "chapters": [
+        6,
+        70
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8200"
+    },
+    {
+      "number": 8201,
+      "title": "Path MTU Discovery for IP version 6",
+      "status": "INTERNET STANDARD",
+      "month": "July",
+      "year": "2017",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC1981"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        7
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8201"
+    },
+    {
+      "number": 8210,
+      "title": "The Resource Public Key Infrastructure (RPKI) to Router Protocol, Version 1",
+      "status": "PROPOSED STANDARD",
+      "month": "September",
+      "year": "2017",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC6810"
+      ],
+      "updated_by": [],
+      "chapters": [
+        22,
+        34
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8210"
+    },
+    {
+      "number": 8212,
+      "title": "Default External BGP (EBGP) Route Propagation Behavior without Policies",
+      "status": "PROPOSED STANDARD",
+      "month": "July",
+      "year": "2017",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC4271"
+      ],
+      "updated_by": [],
+      "chapters": [
+        21,
+        22,
+        36,
+        37
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8212"
+    },
+    {
+      "number": 8231,
+      "title": "Path Computation Element Communication Protocol (PCEP) Extensions for Stateful PCE",
+      "status": "PROPOSED STANDARD",
+      "month": "September",
+      "year": "2017",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC8786",
+        "RFC9353",
+        "RFC9753",
+        "RFC9756",
+        "RFC9862"
+      ],
+      "chapters": [
+        27
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8231"
+    },
+    {
+      "number": 8277,
+      "title": "Using BGP to Bind MPLS Labels to Address Prefixes",
+      "status": "PROPOSED STANDARD",
+      "month": "October",
+      "year": "2017",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC3107"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        29
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8277"
+    },
+    {
+      "number": 8279,
+      "title": "Multicast Using Bit Index Explicit Replication (BIER)",
+      "status": "PROPOSED STANDARD",
+      "month": "November",
+      "year": "2017",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        24
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8279"
+    },
+    {
+      "number": 8333,
+      "title": "Micro-loop Prevention by Introducing a Local Convergence Delay",
+      "status": "PROPOSED STANDARD",
+      "month": "March",
+      "year": "2018",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        27
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8333"
+    },
+    {
+      "number": 8365,
+      "title": "A Network Virtualization Overlay Solution Using Ethernet VPN (EVPN)",
+      "status": "PROPOSED STANDARD",
+      "month": "March",
+      "year": "2018",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC9746"
+      ],
+      "chapters": [
+        16,
+        30
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8365"
+    },
+    {
+      "number": 8402,
+      "title": "Segment Routing Architecture",
+      "status": "PROPOSED STANDARD",
+      "month": "July",
+      "year": "2018",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC9256"
+      ],
+      "chapters": [
+        20,
+        27,
+        81
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8402"
+    },
+    {
+      "number": 8405,
+      "title": "Shortest Path First (SPF) Back-Off Delay Algorithm for Link-State IGPs",
+      "status": "PROPOSED STANDARD",
+      "month": "June",
+      "year": "2018",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        82
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8405"
+    },
+    {
+      "number": 8415,
+      "title": "Dynamic Host Configuration Protocol for IPv6 (DHCPv6)",
+      "status": "PROPOSED STANDARD",
+      "month": "November",
+      "year": "2018",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC3315",
+        "RFC3633",
+        "RFC3736",
+        "RFC4242",
+        "RFC7083",
+        "RFC7283",
+        "RFC7550"
+      ],
+      "obsoleted_by": [
+        "RFC9915"
+      ],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        6,
+        32
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8415"
+    },
+    {
+      "number": 8446,
+      "title": "The Transport Layer Security (TLS) Protocol Version 1.3",
+      "status": "PROPOSED STANDARD",
+      "month": "August",
+      "year": "2018",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC5077",
+        "RFC5246",
+        "RFC6961"
+      ],
+      "obsoleted_by": [
+        "RFC9846"
+      ],
+      "updates": [
+        "RFC5705",
+        "RFC6066"
+      ],
+      "updated_by": [],
+      "chapters": [
+        51
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8446"
+    },
+    {
+      "number": 8452,
+      "title": "AES-GCM-SIV: Nonce Misuse-Resistant Authenticated Encryption",
+      "status": "INFORMATIONAL",
+      "month": "April",
+      "year": "2019",
+      "stream": "IRTF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        51
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8452"
+    },
+    {
+      "number": 8469,
+      "title": "Recommendation to Use the Ethernet Control Word",
+      "status": "PROPOSED STANDARD",
+      "month": "November",
+      "year": "2018",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC4448"
+      ],
+      "updated_by": [],
+      "chapters": [
+        30
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8469"
+    },
+    {
+      "number": 8481,
+      "title": "Clarifications to BGP Origin Validation Based on Resource Public Key Infrastructure (RPKI)",
+      "status": "PROPOSED STANDARD",
+      "month": "September",
+      "year": "2018",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC6811"
+      ],
+      "updated_by": [
+        "RFC9324"
+      ],
+      "chapters": [
+        22
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8481"
+    },
+    {
+      "number": 8525,
+      "title": "YANG Library",
+      "status": "PROPOSED STANDARD",
+      "month": "March",
+      "year": "2019",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC7895"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC10035"
+      ],
+      "chapters": [
+        70
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8525"
+    },
+    {
+      "number": 8584,
+      "title": "Framework for Ethernet VPN Designated Forwarder Election Extensibility",
+      "status": "PROPOSED STANDARD",
+      "month": "April",
+      "year": "2019",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC7432"
+      ],
+      "updated_by": [
+        "RFC9722",
+        "RFC9785"
+      ],
+      "chapters": [
+        30
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8584"
+    },
+    {
+      "number": 8639,
+      "title": "Subscription to YANG Notifications",
+      "status": "PROPOSED STANDARD",
+      "month": "September",
+      "year": "2019",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        70
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8639"
+    },
+    {
+      "number": 8640,
+      "title": "Dynamic Subscription to YANG Events and Datastores over NETCONF",
+      "status": "PROPOSED STANDARD",
+      "month": "September",
+      "year": "2019",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        70
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8640"
+    },
+    {
+      "number": 8641,
+      "title": "Subscription to YANG Notifications for Datastore Updates",
+      "status": "PROPOSED STANDARD",
+      "month": "September",
+      "year": "2019",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        70
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8641"
+    },
+    {
+      "number": 8660,
+      "title": "Segment Routing with the MPLS Data Plane",
+      "status": "PROPOSED STANDARD",
+      "month": "December",
+      "year": "2019",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        27
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8660"
+    },
+    {
+      "number": 8661,
+      "title": "Segment Routing MPLS Interworking with LDP",
+      "status": "PROPOSED STANDARD",
+      "month": "December",
+      "year": "2019",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        27
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8661"
+    },
+    {
+      "number": 8667,
+      "title": "IS-IS Extensions for Segment Routing",
+      "status": "PROPOSED STANDARD",
+      "month": "December",
+      "year": "2019",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        20,
+        27
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8667"
+    },
+    {
+      "number": 8754,
+      "title": "IPv6 Segment Routing Header (SRH)",
+      "status": "PROPOSED STANDARD",
+      "month": "March",
+      "year": "2020",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC9800"
+      ],
+      "chapters": [
+        28
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8754"
+    },
+    {
+      "number": 8899,
+      "title": "Packetization Layer Path MTU Discovery for Datagram Transports",
+      "status": "PROPOSED STANDARD",
+      "month": "September",
+      "year": "2020",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC4821",
+        "RFC4960",
+        "RFC6951",
+        "RFC8085",
+        "RFC8261"
+      ],
+      "updated_by": [],
+      "chapters": [
+        7
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8899"
+    },
+    {
+      "number": 8907,
+      "title": "The Terminal Access Controller Access-Control System Plus (TACACS+) Protocol",
+      "status": "INFORMATIONAL",
+      "month": "September",
+      "year": "2020",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC9887"
+      ],
+      "chapters": [
+        8,
+        52
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8907"
+    },
+    {
+      "number": 8908,
+      "title": "Captive Portal API",
+      "status": "PROPOSED STANDARD",
+      "month": "September",
+      "year": "2020",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        15
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8908"
+    },
+    {
+      "number": 8910,
+      "title": "Captive-Portal Identification in DHCP and Router Advertisements (RAs)",
+      "status": "PROPOSED STANDARD",
+      "month": "September",
+      "year": "2020",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC7710"
+      ],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC3679"
+      ],
+      "updated_by": [],
+      "chapters": [
+        15
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8910"
+    },
+    {
+      "number": 8915,
+      "title": "Network Time Security for the Network Time Protocol",
+      "status": "PROPOSED STANDARD",
+      "month": "September",
+      "year": "2020",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        8
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8915"
+    },
+    {
+      "number": 8950,
+      "title": "Advertising IPv4 Network Layer Reachability Information (NLRI) with an IPv6 Next Hop",
+      "status": "PROPOSED STANDARD",
+      "month": "November",
+      "year": "2020",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC5549"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        36
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8950"
+    },
+    {
+      "number": 8955,
+      "title": "Dissemination of Flow Specification Rules",
+      "status": "PROPOSED STANDARD",
+      "month": "December",
+      "year": "2020",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC5575",
+        "RFC7674"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC8956",
+        "RFC9117",
+        "RFC9184"
+      ],
+      "chapters": [
+        57
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8955"
+    },
+    {
+      "number": 8986,
+      "title": "Segment Routing over IPv6 (SRv6) Network Programming",
+      "status": "PROPOSED STANDARD",
+      "month": "February",
+      "year": "2021",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        28
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc8986"
+    },
+    {
+      "number": 9000,
+      "title": "QUIC: A UDP-Based Multiplexed and Secure Transport",
+      "status": "PROPOSED STANDARD",
+      "month": "May",
+      "year": "2021",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        7
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9000"
+    },
+    {
+      "number": 9001,
+      "title": "Using TLS to Secure QUIC",
+      "status": "PROPOSED STANDARD",
+      "month": "May",
+      "year": "2021",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        7
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9001"
+    },
+    {
+      "number": 9002,
+      "title": "QUIC Loss Detection and Congestion Control",
+      "status": "PROPOSED STANDARD",
+      "month": "May",
+      "year": "2021",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        7
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9002"
+    },
+    {
+      "number": 9017,
+      "title": "Special-Purpose Label Terminology",
+      "status": "PROPOSED STANDARD",
+      "month": "April",
+      "year": "2021",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC3032",
+        "RFC7274"
+      ],
+      "updated_by": [],
+      "chapters": [
+        26
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9017"
+    },
+    {
+      "number": 9107,
+      "title": "BGP Optimal Route Reflection (BGP ORR)",
+      "status": "PROPOSED STANDARD",
+      "month": "August",
+      "year": "2021",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        21
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9107"
+    },
+    {
+      "number": 9135,
+      "title": "Integrated Routing and Bridging in Ethernet VPN (EVPN)",
+      "status": "PROPOSED STANDARD",
+      "month": "October",
+      "year": "2021",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        30,
+        37
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9135"
+    },
+    {
+      "number": 9136,
+      "title": "IP Prefix Advertisement in Ethernet VPN (EVPN)",
+      "status": "PROPOSED STANDARD",
+      "month": "October",
+      "year": "2021",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        30
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9136"
+    },
+    {
+      "number": 9190,
+      "title": "EAP-TLS 1.3: Using the Extensible Authentication Protocol with TLS 1.3",
+      "status": "PROPOSED STANDARD",
+      "month": "February",
+      "year": "2022",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC5216"
+      ],
+      "updated_by": [
+        "RFC9965"
+      ],
+      "chapters": [
+        15
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9190"
+    },
+    {
+      "number": 9232,
+      "title": "Network Telemetry Framework",
+      "status": "INFORMATIONAL",
+      "month": "May",
+      "year": "2022",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        72
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9232"
+    },
+    {
+      "number": 9234,
+      "title": "Route Leak Prevention and Detection Using Roles in UPDATE and OPEN Messages",
+      "status": "PROPOSED STANDARD",
+      "month": "May",
+      "year": "2022",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        22,
+        33,
+        34
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9234"
+    },
+    {
+      "number": 9251,
+      "title": "Internet Group Management Protocol (IGMP) and Multicast Listener Discovery (MLD) Proxies for Ethernet VPN (EVPN)",
+      "status": "PROPOSED STANDARD",
+      "month": "June",
+      "year": "2022",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        30
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9251"
+    },
+    {
+      "number": 9252,
+      "title": "BGP Overlay Services Based on Segment Routing over IPv6 (SRv6)",
+      "status": "PROPOSED STANDARD",
+      "month": "July",
+      "year": "2022",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [
+        "RFC9819"
+      ],
+      "chapters": [
+        28
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9252"
+    },
+    {
+      "number": 9256,
+      "title": "Segment Routing Policy Architecture",
+      "status": "PROPOSED STANDARD",
+      "month": "July",
+      "year": "2022",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC8402"
+      ],
+      "updated_by": [],
+      "chapters": [
+        27
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9256"
+    },
+    {
+      "number": 9293,
+      "title": "Transmission Control Protocol (TCP)",
+      "status": "INTERNET STANDARD",
+      "month": "August",
+      "year": "2022",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC793",
+        "RFC879",
+        "RFC2873",
+        "RFC6093",
+        "RFC6429",
+        "RFC6528",
+        "RFC6691"
+      ],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC1011",
+        "RFC1122",
+        "RFC5961"
+      ],
+      "updated_by": [],
+      "chapters": [
+        7,
+        13
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9293"
+    },
+    {
+      "number": 9315,
+      "title": "Intent-Based Networking - Concepts and Definitions",
+      "status": "INFORMATIONAL",
+      "month": "October",
+      "year": "2022",
+      "stream": "IRTF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        77
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9315"
+    },
+    {
+      "number": 9319,
+      "title": "The Use of maxLength in the Resource Public Key Infrastructure (RPKI)",
+      "status": "BEST CURRENT PRACTICE",
+      "month": "October",
+      "year": "2022",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        34
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9319"
+    },
+    {
+      "number": 9552,
+      "title": "Distribution of Link-State and Traffic Engineering Information Using BGP",
+      "status": "PROPOSED STANDARD",
+      "month": "December",
+      "year": "2023",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC7752",
+        "RFC9029"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        27
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9552"
+    },
+    {
+      "number": 9568,
+      "title": "Virtual Router Redundancy Protocol (VRRP) Version 3 for IPv4 and IPv6",
+      "status": "PROPOSED STANDARD",
+      "month": "April",
+      "year": "2024",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC5798"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        13
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9568"
+    },
+    {
+      "number": 9582,
+      "title": "A Profile for Route Origin Authorizations (ROAs)",
+      "status": "PROPOSED STANDARD",
+      "month": "May",
+      "year": "2024",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC6482"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        34
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9582"
+    },
+    {
+      "number": 9602,
+      "title": "Segment Routing over IPv6 (SRv6) Segment Identifiers in the IPv6 Addressing Architecture",
+      "status": "INFORMATIONAL",
+      "month": "October",
+      "year": "2024",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        28
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9602"
+    },
+    {
+      "number": 9765,
+      "title": "RADIUS/1.1: Leveraging Application-Layer Protocol Negotiation (ALPN) to Remove MD5",
+      "status": "EXPERIMENTAL",
+      "month": "April",
+      "year": "2025",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC2865",
+        "RFC2866",
+        "RFC5176",
+        "RFC6613",
+        "RFC6614",
+        "RFC7360"
+      ],
+      "updated_by": [],
+      "chapters": [
+        32,
+        52
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9765"
+    },
+    {
+      "number": 9774,
+      "title": "Deprecation of AS_SET and AS_CONFED_SET in BGP",
+      "status": "PROPOSED STANDARD",
+      "month": "May",
+      "year": "2025",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC6472"
+      ],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC4271",
+        "RFC5065"
+      ],
+      "updated_by": [],
+      "chapters": [
+        21
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9774"
+    },
+    {
+      "number": 9776,
+      "title": "Internet Group Management Protocol, Version 3",
+      "status": "INTERNET STANDARD",
+      "month": "March",
+      "year": "2025",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC3376"
+      ],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC2236"
+      ],
+      "updated_by": [],
+      "chapters": [
+        24
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9776"
+    },
+    {
+      "number": 9777,
+      "title": "Multicast Listener Discovery Version 2 (MLDv2) for IPv6",
+      "status": "INTERNET STANDARD",
+      "month": "March",
+      "year": "2025",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC3810"
+      ],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC2710"
+      ],
+      "updated_by": [],
+      "chapters": [
+        24
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9777"
+    },
+    {
+      "number": 9800,
+      "title": "Compressed SRv6 Segment List Encoding",
+      "status": "PROPOSED STANDARD",
+      "month": "June",
+      "year": "2025",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC8754"
+      ],
+      "updated_by": [],
+      "chapters": [
+        28
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9800"
+    },
+    {
+      "number": 9819,
+      "title": "Argument Signaling for BGP Services in Segment Routing over IPv6 (SRv6)",
+      "status": "PROPOSED STANDARD",
+      "month": "July",
+      "year": "2025",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC9252"
+      ],
+      "updated_by": [],
+      "chapters": [
+        28
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9819"
+    },
+    {
+      "number": 9846,
+      "title": "The Transport Layer Security (TLS) Protocol Version 1.3",
+      "status": "PROPOSED STANDARD",
+      "month": "July",
+      "year": "2026",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC5077",
+        "RFC5246",
+        "RFC6961",
+        "RFC7627",
+        "RFC8422",
+        "RFC8446"
+      ],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC5705",
+        "RFC6066"
+      ],
+      "updated_by": [],
+      "chapters": [
+        51
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9846"
+    },
+    {
+      "number": 9855,
+      "title": "Topology Independent Fast Reroute Using Segment Routing",
+      "status": "PROPOSED STANDARD",
+      "month": "October",
+      "year": "2025",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        19,
+        27
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9855"
+    },
+    {
+      "number": 9887,
+      "title": "Terminal Access Controller Access-Control System Plus (TACACS+) over TLS 1.3",
+      "status": "PROPOSED STANDARD",
+      "month": "December",
+      "year": "2025",
+      "stream": "IETF",
+      "obsoletes": [],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC8907"
+      ],
+      "updated_by": [],
+      "chapters": [
+        52
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9887"
+    },
+    {
+      "number": 9915,
+      "title": "Dynamic Host Configuration Protocol for IPv6 (DHCPv6)",
+      "status": "INTERNET STANDARD",
+      "month": "January",
+      "year": "2026",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC8415"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        6,
+        8,
+        32
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9915"
+    },
+    {
+      "number": 9930,
+      "title": "Tunnel Extensible Authentication Protocol (TEAP) Version 1",
+      "status": "PROPOSED STANDARD",
+      "month": "February",
+      "year": "2026",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC7170"
+      ],
+      "obsoleted_by": [],
+      "updates": [
+        "RFC9427"
+      ],
+      "updated_by": [],
+      "chapters": [
+        15
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9930"
+    },
+    {
+      "number": 9989,
+      "title": "Domain-Based Message Authentication, Reporting, and Conformance (DMARC)",
+      "status": "PROPOSED STANDARD",
+      "month": "May",
+      "year": "2026",
+      "stream": "IETF",
+      "obsoletes": [
+        "RFC7489",
+        "RFC9091"
+      ],
+      "obsoleted_by": [],
+      "updates": [],
+      "updated_by": [],
+      "chapters": [
+        58
+      ],
+      "other_locations": [],
+      "url": "https://www.rfc-editor.org/info/rfc9989"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+# Static routing and BFD. Three routers in a triangle so there is a primary
+# path and a backup, which is what makes a floating static observable.
+#   r1 -- r2   (primary, distance 1)
+#   r1 -- r3 -- r2  (backup via r3, floating static at distance 200)
+name: rtnwb-static-bfd
+settle: 4
+converge: 25
+nodes:
+  r1:
+    image: quay.io/frrouting/frr:10.2.1
+    daemons: [bfdd, staticd]
+    pre:
+      - ip address replace 10.0.12.0/31 dev eth1
+      - ip address replace 10.0.13.0/31 dev eth2
+      - ip address replace 10.255.0.1/32 dev lo
+    config:
+      - configure terminal
+      - ip route 10.255.0.2/32 10.0.12.1
+      - ip route 10.255.0.2/32 10.0.13.1 200
+      - bfd
+      - peer 10.0.12.1
+      - exit
+      - exit
+  r2:
+    image: quay.io/frrouting/frr:10.2.1
+    daemons: [bfdd, staticd]
+    pre:
+      - ip address replace 10.0.12.1/31 dev eth1
+      - ip address replace 10.0.23.1/31 dev eth2
+      - ip address replace 10.255.0.2/32 dev lo
+    config:
+      - configure terminal
+      - ip route 10.255.0.1/32 10.0.12.0
+      - ip route 10.255.0.1/32 10.0.23.0 200
+      - bfd
+      - peer 10.0.12.0
+      - exit
+      - exit
+  r3:
+    image: quay.io/frrouting/frr:10.2.1
+    daemons: [staticd]
+    pre:
+      - ip address replace 10.0.13.1/31 dev eth1
+      - ip address replace 10.0.23.0/31 dev eth2
+      - ip address replace 10.255.0.3/32 dev lo
+    config:
+      - configure terminal
+      - ip route 10.255.0.1/32 10.0.13.0
+      - ip route 10.255.0.2/32 10.0.23.1
+links:
+  - endpoints: ["r1:eth1", "r2:eth1"]
+  - endpoints: ["r1:eth2", "r3:eth1"]
+  - endpoints: ["r3:eth2", "r2:eth2"]
+capture:
+  - id: primary-static-is-selected
+    node: r1
+    cmd: show ip route 10.255.0.2/32
+    expect: "10.0.12.1"
+  - id: the-floating-static-is-present-but-not-selected
+    node: r1
+    cmd: show ip route static
+    expect: "S>\\* 10\\.255\\.0\\.2/32 \\[1/0\\] via 10\\.0\\.12\\.1"
+  - id: the-backup-is-present-at-distance-200-and-not-selected
+    node: r1
+    cmd: show ip route static
+    expect: "\\n *S   10\\.255\\.0\\.2/32 \\[200/0\\] via 10\\.0\\.13\\.1"
+  - id: distance-is-what-decides
+    node: r1
+    cmd: show ip route 10.255.0.2/32
+    expect: "distance 1"
+  - id: bfd-session-is-up
+    node: r1
+    cmd: show bfd peers brief
+    expect: "up"
+  - id: bfd-detection-time-is-sub-second
+    node: r1
+    cmd: show bfd peer 10.0.12.1
+    expect: "Detect-multiplier"
+  - id: forwarding-over-the-primary
+    node: r1
+    cli: shell
+    cmd: ping -c 3 -W 2 -I 10.255.0.1 10.255.0.2
+    expect: "0% packet loss"

@@ -1,0 +1,25 @@
+{
+  "edition": "criteria-revision-2026-09-25",
+  "scope": "Invented standalone Aldergate training scenario, not deployed equipment, supplier quotes or an amendment to Appendix C.",
+  "client_subnet": "10.10.64.0/25",
+  "expanded_client_subnet": "10.10.64.0/24",
+  "management_subnet": "10.10.65.0/27",
+  "staff_endpoints": 120,
+  "gateway_addresses": 1,
+  "endpoint_growth_fraction": 0.20,
+  "wan_circuits": 2,
+  "usable_mbps_per_circuit": 100,
+  "total_demand_mbps": 70,
+  "critical_class_mbps": 20,
+  "deferrable_class_mbps": 50,
+  "survivor_planning_trigger_mbps": 80,
+  "annual_growth_scenarios": [0.10, 0.25, 0.40],
+  "discount_rate": 0.08,
+  "horizon_years": 3,
+  "first_year_cash_ceiling_gbp": 100000,
+  "cash_timing": "Setup at time zero and a full annual charge at each year end, irrespective of commissioning date; no tax, VAT, inflation, financing or residual value.",
+  "options": {
+    "A": {"setup_gbp": 70000, "annual_gbp": 45000, "complete_delivery_months": 8},
+    "B": {"setup_gbp": 20000, "annual_gbp": 65000, "complete_delivery_months": 4}
+  }
+}

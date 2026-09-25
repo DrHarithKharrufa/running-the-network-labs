@@ -1,0 +1,56 @@
+{
+  "name": "netbook15",
+  "topology": {
+    "nodes": {
+      "auth": {
+        "exec": [
+          "ip addr add 198.51.100.1/30 dev eth1",
+          "ip link set eth1 up",
+          "ip addr add 192.0.2.1/30 dev eth2",
+          "ip link set eth2 up"
+        ],
+        "kind": "linux",
+        "image": "netbook-services:20260916",
+        "binds": [
+          "./generated:/lab/generated:ro"
+        ]
+      },
+      "client": {
+        "exec": [
+          "ip addr add 198.51.100.2/30 dev eth1",
+          "ip link set eth1 up"
+        ],
+        "kind": "linux",
+        "image": "netbook-services:20260916",
+        "binds": [
+          "./generated:/lab/generated:ro"
+        ]
+      },
+      "radius": {
+        "exec": [
+          "ip addr add 192.0.2.2/30 dev eth1",
+          "ip link set eth1 up"
+        ],
+        "kind": "linux",
+        "image": "netbook-services:20260916",
+        "binds": [
+          "./generated:/lab/generated:ro"
+        ]
+      }
+    },
+    "links": [
+      {
+        "endpoints": [
+          "auth:eth1",
+          "client:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "auth:eth2",
+          "radius:eth1"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,4 @@
+Jinja2==3.1.6
+MarkupSafe==3.0.3
+# Lab 69.2 controller (Linux/WSL, Python 3.12+):
+ansible-core==2.21.4
