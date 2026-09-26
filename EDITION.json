@@ -3,14 +3,14 @@
   "date": "2026-09-26",
   "status": "retail edition; hashes below are of the published PDF pair and workbook",
   "book": {
-    "print_pages": 746,
-    "colour_pages": 744,
-    "print_sha256": "9ab689113acb845565b8feccba40a40585e5e43702c1fbc997966c855736f302",
-    "colour_sha256": "5dcbc4e17fff56117d799784f80dc98062e803da3fa8e074e65a287255581d48"
+    "print_pages": 748,
+    "colour_pages": 745,
+    "print_sha256": "726cd5b9dc8a8362abbb282352580a6d5e3ca7f735f432ac33e067696e77e046",
+    "colour_sha256": "f695141e6188d8d4cfd09d4615d60189d50e4e59d6a3454976a031b1e51d6c99"
   },
   "workbook": {
-    "pages": 25,
-    "sha256": "c507c14b2cb7d6c3c17bd4f299c9cca5088bab56723731ce5dbe4709b652cd53"
+    "pages": 27,
+    "sha256": "d1567723abe85cd3d15b22d2afcbaf302e8a9a75c4f5a5bae3333c5bfa2ff6d7"
   },
   "repository": "https://github.com/DrHarithKharrufa/running-the-network-labs",
   "errata": "https://github.com/DrHarithKharrufa/running-the-network-labs/issues",

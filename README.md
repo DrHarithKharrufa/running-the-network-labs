@@ -15,6 +15,7 @@ lab directories and 35 Containerlab topology files. Reproduce inventories with
 - Build n8n monitoring: [N8N-LAB.md](learning/practical-route/N8N-LAB.md).
 - Build Power Automate: [POWER-AUTOMATE-LAB.md](learning/practical-route/POWER-AUTOMATE-LAB.md).
 - Check your exercise attempt: [500 model answers](learning/SELECTED-ANSWERS.md).
+- Judge an answer you had to *produce* — an incident record, a design decision, a capacity case: [assessment standards](learning/ASSESSING-YOUR-ANSWER.md), each with a complete example, a plausible bad one and a rubric.
 
 The Python course starts with local CSV/JSON and progresses to an HTTP device
 simulator, bounded collection, a dry-run plan, apply/read-back/recovery and a durable
