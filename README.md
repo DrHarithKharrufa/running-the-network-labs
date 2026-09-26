@@ -1,9 +1,14 @@
 # Running the Network — labs and companion code
 
 The working code for *Running the Network*, an engineer's guide to enterprise and
-service provider networks. Every lab the book refers to lives here: **89 lab
-directories, 252 Python programs, 29 Containerlab topologies and 106 device
-configuration files.**
+service provider networks. Every lab the book refers to lives here: **84
+laboratory exercises, 252 Python programs, 35 Containerlab topologies and 114
+device configuration files**, plus five shared directories (`common`, `gns3`,
+`reference-designs`, `standards`, `topologies`) that the exercises draw on.
+
+Those figures come from `tools/count.py`, not from counting by hand. An earlier
+version of this page said "89 lab directories" because it counted the five
+shared directories as labs.
 
 The book teaches the reasoning. These labs are where you test whether the
 reasoning holds. They are not decoration, and several of them exist specifically

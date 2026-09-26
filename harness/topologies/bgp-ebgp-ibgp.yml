@@ -1,0 +1,116 @@
+# Two autonomous systems. AS 64500 has two routers speaking iBGP; AS 64510 has
+# one, peering eBGP with r1. This one topology carries the evidence for the
+# eBGP session, the iBGP next-hop problem and its fix, and what a session in
+# Established state does and does not prove.
+#
+#   r3 (AS 64510) --eBGP-- r1 ==iBGP== r2      (AS 64500)
+name: rtnwb-bgp
+settle: 4
+converge: 60
+nodes:
+  r1:
+    image: quay.io/frrouting/frr:10.2.1
+    daemons: [bgpd, ospfd]
+    pre:
+      - ip address replace 10.0.13.0/31 dev eth1
+      - ip address replace 10.0.12.0/31 dev eth2
+      - ip address replace 10.255.0.1/32 dev lo
+    config:
+      - configure terminal
+      - interface eth2
+      - ip ospf area 0
+      - ip ospf network point-to-point
+      - exit
+      - interface lo
+      - ip ospf area 0
+      - exit
+      - router ospf
+      - ospf router-id 10.255.0.1
+      - passive-interface lo
+      - exit
+      - router bgp 64500
+      - bgp router-id 10.255.0.1
+      - no bgp ebgp-requires-policy
+      - neighbor 10.0.13.1 remote-as 64510
+      - neighbor 10.255.0.2 remote-as 64500
+      - neighbor 10.255.0.2 update-source lo
+      - address-family ipv4 unicast
+      - network 10.255.0.1/32
+      - neighbor 10.0.13.1 activate
+      - neighbor 10.255.0.2 activate
+      - exit-address-family
+  r2:
+    image: quay.io/frrouting/frr:10.2.1
+    daemons: [bgpd, ospfd]
+    pre:
+      - ip address replace 10.0.12.1/31 dev eth1
+      - ip address replace 10.255.0.2/32 dev lo
+      - ip address replace 198.51.100.1/24 dev lo
+    config:
+      - configure terminal
+      - interface eth1
+      - ip ospf area 0
+      - ip ospf network point-to-point
+      - exit
+      - interface lo
+      - ip ospf area 0
+      - exit
+      - router ospf
+      - ospf router-id 10.255.0.2
+      - passive-interface lo
+      - exit
+      - router bgp 64500
+      - bgp router-id 10.255.0.2
+      - neighbor 10.255.0.1 remote-as 64500
+      - neighbor 10.255.0.1 update-source lo
+      - address-family ipv4 unicast
+      - network 198.51.100.0/24
+      - neighbor 10.255.0.1 activate
+      - exit-address-family
+  r3:
+    image: quay.io/frrouting/frr:10.2.1
+    daemons: [bgpd, ospfd]
+    pre:
+      - ip address replace 10.0.13.1/31 dev eth1
+      - ip address replace 203.0.113.1/32 dev lo
+    config:
+      - configure terminal
+      - router bgp 64510
+      - bgp router-id 203.0.113.1
+      - no bgp ebgp-requires-policy
+      - neighbor 10.0.13.0 remote-as 64500
+      - address-family ipv4 unicast
+      - network 203.0.113.1/32
+      - neighbor 10.0.13.0 activate
+      - exit-address-family
+links:
+  - endpoints: ["r1:eth1", "r3:eth1"]
+  - endpoints: ["r1:eth2", "r2:eth1"]
+capture:
+  - id: ebgp-session-established
+    node: r1
+    cmd: show bgp ipv4 unicast summary
+    expect: "10.0.13.1.*64510"
+  - id: ibgp-session-established
+    node: r1
+    cmd: show bgp ipv4 unicast summary
+    expect: "10.255.0.2.*64500"
+  - id: ebgp-changes-the-next-hop
+    node: r1
+    cmd: show bgp ipv4 unicast 203.0.113.1/32
+    expect: "10.0.13.1"
+  # The point of the topology. r2 RECEIVES the external prefix over iBGP with
+  # the original eBGP next hop, which it has no route to -- so the path is
+  # there and it is not usable. "Established" proves a session, not a service.
+  - id: ibgp-keeps-the-original-next-hop
+    node: r2
+    cmd: show bgp ipv4 unicast 203.0.113.1/32
+    expect: "10.0.13.1"
+  - id: the-path-is-not-valid-on-r2
+    node: r2
+    cmd: show bgp ipv4 unicast 203.0.113.1/32
+    expect: "(?s)^(?!.*\\bvalid, internal, best\\b).*$"
+  - id: and-so-it-is-not-in-the-routing-table
+    node: r2
+    cmd: show ip route 203.0.113.1/32
+    expect: "Network not in table"

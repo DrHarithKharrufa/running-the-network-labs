@@ -1,0 +1,136 @@
+{
+  "captured_utc": "2026-09-26T05:32:09+00:00",
+  "captures": [
+    {
+      "cli": "vtysh",
+      "cmd": "show bgp ipv4 unicast 203.0.113.1/32",
+      "elapsed_s": 0.056,
+      "expect": "valid, external, best",
+      "id": "r1-still-learns-it-externally",
+      "matched": true,
+      "node": "r1",
+      "output": "BGP routing table entry for 203.0.113.1/32, version 2\nPaths: (1 available, best #1, table default)\n  Advertised to non peer-group peers:\n  10.0.13.1 10.255.0.2\n  64510\n    10.0.13.1 from 10.0.13.1 (203.0.113.1)\n      Origin IGP, metric 0, valid, external, best (First path received)\n      Last update: Sat Sep 26 05:31:11 2026",
+      "returncode": 0,
+      "sha256": "8910ab6a719184d28087574f32c761f8c0b8f6039fab5613bb429a155c4ad9cb",
+      "stderr": "",
+      "stdout": "BGP routing table entry for 203.0.113.1/32, version 2\nPaths: (1 available, best #1, table default)\n  Advertised to non peer-group peers:\n  10.0.13.1 10.255.0.2\n  64510\n    10.0.13.1 from 10.0.13.1 (203.0.113.1)\n      Origin IGP, metric 0, valid, external, best (First path received)\n      Last update: Sat Sep 26 05:31:11 2026"
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show bgp ipv4 unicast 203.0.113.1/32",
+      "elapsed_s": 0.07,
+      "expect": "10.255.0.1 \\(metric [0-9]+\\) from 10.255.0.1",
+      "id": "the-next-hop-r2-receives-is-now-r1",
+      "matched": true,
+      "node": "r2",
+      "output": "BGP routing table entry for 203.0.113.1/32, version 2\nPaths: (1 available, best #1, table default)\n  Not advertised to any peer\n  64510\n    10.255.0.1 (metric 10) from 10.255.0.1 (10.255.0.1)\n      Origin IGP, metric 0, localpref 100, valid, internal, best (First path received)\n      Last update: Sat Sep 26 05:31:25 2026",
+      "returncode": 0,
+      "sha256": "980a069517292f2113dc42f2b726b879481624a5d05cf0a372b2332ea53cbc71",
+      "stderr": "",
+      "stdout": "BGP routing table entry for 203.0.113.1/32, version 2\nPaths: (1 available, best #1, table default)\n  Not advertised to any peer\n  64510\n    10.255.0.1 (metric 10) from 10.255.0.1 (10.255.0.1)\n      Origin IGP, metric 0, localpref 100, valid, internal, best (First path received)\n      Last update: Sat Sep 26 05:31:25 2026"
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show bgp ipv4 unicast 203.0.113.1/32",
+      "elapsed_s": 0.067,
+      "expect": "valid, internal, best",
+      "id": "and-the-path-is-now-valid-and-best",
+      "matched": true,
+      "node": "r2",
+      "output": "BGP routing table entry for 203.0.113.1/32, version 2\nPaths: (1 available, best #1, table default)\n  Not advertised to any peer\n  64510\n    10.255.0.1 (metric 10) from 10.255.0.1 (10.255.0.1)\n      Origin IGP, metric 0, localpref 100, valid, internal, best (First path received)\n      Last update: Sat Sep 26 05:31:25 2026",
+      "returncode": 0,
+      "sha256": "980a069517292f2113dc42f2b726b879481624a5d05cf0a372b2332ea53cbc71",
+      "stderr": "",
+      "stdout": "BGP routing table entry for 203.0.113.1/32, version 2\nPaths: (1 available, best #1, table default)\n  Not advertised to any peer\n  64510\n    10.255.0.1 (metric 10) from 10.255.0.1 (10.255.0.1)\n      Origin IGP, metric 0, localpref 100, valid, internal, best (First path received)\n      Last update: Sat Sep 26 05:31:25 2026"
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show ip route 203.0.113.1/32",
+      "elapsed_s": 0.072,
+      "expect": "Known via \"bgp\"",
+      "id": "so-the-prefix-reaches-the-routing-table",
+      "matched": true,
+      "node": "r2",
+      "output": "Routing entry for 203.0.113.1/32\n  Known via \"bgp\", distance 200, metric 0, best\n  Last update 00:00:44 ago\n    10.255.0.1 (recursive), weight 1\n  *   10.0.12.0, via eth1, weight 1",
+      "returncode": 0,
+      "sha256": "c6b3e231dd4b0be51a298f22ffa7439930e41520b38b6ad373867649aa4db86c",
+      "stderr": "",
+      "stdout": "Routing entry for 203.0.113.1/32\n  Known via \"bgp\", distance 200, metric 0, best\n  Last update 00:00:44 ago\n    10.255.0.1 (recursive), weight 1\n  *   10.0.12.0, via eth1, weight 1"
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show bgp ipv4 unicast 198.51.100.0/24",
+      "elapsed_s": 0.063,
+      "id": "diag-r1-view-of-the-customer-prefix",
+      "node": "r1",
+      "output": "BGP routing table entry for 198.51.100.0/24, version 3\nPaths: (1 available, best #1, table default)\n  Advertised to non peer-group peers:\n  10.0.13.1\n  Local\n    10.255.0.2 (metric 10) from 10.255.0.2 (10.255.0.2)\n      Origin IGP, metric 0, localpref 100, valid, internal, best (First path received)\n      Last update: Sat Sep 26 05:31:25 2026",
+      "returncode": 0,
+      "sha256": "547cde6bf55405482d073ebf7c0f3f974fa19c3b8bf46f4b3d61d4ec9f3291f2",
+      "stderr": "",
+      "stdout": "BGP routing table entry for 198.51.100.0/24, version 3\nPaths: (1 available, best #1, table default)\n  Advertised to non peer-group peers:\n  10.0.13.1\n  Local\n    10.255.0.2 (metric 10) from 10.255.0.2 (10.255.0.2)\n      Origin IGP, metric 0, localpref 100, valid, internal, best (First path received)\n      Last update: Sat Sep 26 05:31:25 2026"
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show bgp ipv4 unicast summary",
+      "elapsed_s": 0.065,
+      "id": "diag-r2-summary",
+      "node": "r2",
+      "output": "BGP router identifier 10.255.0.2, local AS number 64500 VRF default vrf-id 0\nBGP table version 2\nRIB entries 5, using 640 bytes of memory\nPeers 1, using 17 KiB of memory\n\nNeighbor        V         AS   MsgRcvd   MsgSent   TblVer  InQ OutQ  Up/Down State/PfxRcd   PfxSnt Desc\n10.255.0.1      4      64500         5         4        2    0    0 00:00:45            2        1 FRRouting/10.2.1_git\n\nTotal number of neighbors 1",
+      "returncode": 0,
+      "sha256": "66e07622eb4c3d209b1cb98637466c8723f23966f284b436675599838af48507",
+      "stderr": "",
+      "stdout": "BGP router identifier 10.255.0.2, local AS number 64500 VRF default vrf-id 0\nBGP table version 2\nRIB entries 5, using 640 bytes of memory\nPeers 1, using 17 KiB of memory\n\nNeighbor        V         AS   MsgRcvd   MsgSent   TblVer  InQ OutQ  Up/Down State/PfxRcd   PfxSnt Desc\n10.255.0.1      4      64500         5         4        2    0    0 00:00:45            2        1 FRRouting/10.2.1_git\n\nTotal number of neighbors 1"
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show ip route bgp",
+      "elapsed_s": 0.067,
+      "id": "diag-r3-routes",
+      "node": "r3",
+      "output": "Codes: K - kernel route, C - connected, L - local, S - static,\n       R - RIP, O - OSPF, I - IS-IS, B - BGP, E - EIGRP, N - NHRP,\n       T - Table, v - VNC, V - VNC-Direct, A - Babel, F - PBR,\n       f - OpenFabric, t - Table-Direct,\n       > - selected route, * - FIB route, q - queued, r - rejected, b - backup\n       t - trapped, o - offload failure\n\nB>* 10.255.0.1/32 [20/0] via 10.0.13.0, eth1, weight 1, 00:00:58\nB>* 198.51.100.0/24 [20/0] via 10.0.13.0, eth1, weight 1, 00:00:44",
+      "returncode": 0,
+      "sha256": "3d9454ae35dae3bab44b88ff2d4a505e8b6d605139c32858cb712b2736a7dee2",
+      "stderr": "",
+      "stdout": "Codes: K - kernel route, C - connected, L - local, S - static,\n       R - RIP, O - OSPF, I - IS-IS, B - BGP, E - EIGRP, N - NHRP,\n       T - Table, v - VNC, V - VNC-Direct, A - Babel, F - PBR,\n       f - OpenFabric, t - Table-Direct,\n       > - selected route, * - FIB route, q - queued, r - rejected, b - backup\n       t - trapped, o - offload failure\n\nB>* 10.255.0.1/32 [20/0] via 10.0.13.0, eth1, weight 1, 00:00:58\nB>* 198.51.100.0/24 [20/0] via 10.0.13.0, eth1, weight 1, 00:00:44"
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show bgp ipv4 unicast neighbors 10.0.13.1 advertised-routes",
+      "elapsed_s": 0.063,
+      "id": "diag-r1-advertised-to-r3",
+      "node": "r1",
+      "output": "BGP table version is 3, local router ID is 10.255.0.1, vrf id 0\nDefault local pref 100, local AS 64500\nStatus codes:  s suppressed, d damped, h history, u unsorted, * valid, > best, = multipath,\n               i internal, r RIB-failure, S Stale, R Removed\nNexthop codes: @NNN nexthop's vrf id, < announce-nh-self\nOrigin codes:  i - IGP, e - EGP, ? - incomplete\nRPKI validation codes: V valid, I invalid, N Not found\n\n     Network          Next Hop            Metric LocPrf Weight Path\n *> 10.255.0.1/32    0.0.0.0                  0         32768 i\n *> 198.51.100.0/24  0.0.0.0                       100      0 i\n *> 203.0.113.1/32   0.0.0.0                                0 64510 i\n\nTotal number of prefixes 3",
+      "returncode": 0,
+      "sha256": "faedf69459bed8384048aeb4f6fc460a0e82e948604de4a8ea4e42c86b22f11c",
+      "stderr": "",
+      "stdout": "BGP table version is 3, local router ID is 10.255.0.1, vrf id 0\nDefault local pref 100, local AS 64500\nStatus codes:  s suppressed, d damped, h history, u unsorted, * valid, > best, = multipath,\n               i internal, r RIB-failure, S Stale, R Removed\nNexthop codes: @NNN nexthop's vrf id, < announce-nh-self\nOrigin codes:  i - IGP, e - EGP, ? - incomplete\nRPKI validation codes: V valid, I invalid, N Not found\n\n     Network          Next Hop            Metric LocPrf Weight Path\n *> 10.255.0.1/32    0.0.0.0                  0         32768 i\n *> 198.51.100.0/24  0.0.0.0                       100      0 i\n *> 203.0.113.1/32   0.0.0.0                                0 64510 i\n\nTotal number of prefixes 3"
+    },
+    {
+      "cli": "shell",
+      "cmd": "ping -c 3 -W 2 -I 198.51.100.1 203.0.113.1",
+      "elapsed_s": 2.051,
+      "expect": "0% packet loss",
+      "id": "and-forwarding-works",
+      "matched": true,
+      "node": "r2",
+      "output": "PING 203.0.113.1 (203.0.113.1) from 198.51.100.1: 56 data bytes\n64 bytes from 203.0.113.1: seq=0 ttl=63 time=0.054 ms\n64 bytes from 203.0.113.1: seq=1 ttl=63 time=0.069 ms\n64 bytes from 203.0.113.1: seq=2 ttl=63 time=0.071 ms\n\n--- 203.0.113.1 ping statistics ---\n3 packets transmitted, 3 packets received, 0% packet loss\nround-trip min/avg/max = 0.054/0.064/0.071 ms",
+      "returncode": 0,
+      "sha256": "f06a0fbee214c337bb5d99c0d3d831a3b7439de2afc54c20754df46349f46d3e",
+      "stderr": "",
+      "stdout": "PING 203.0.113.1 (203.0.113.1) from 198.51.100.1: 56 data bytes\n64 bytes from 203.0.113.1: seq=0 ttl=63 time=0.054 ms\n64 bytes from 203.0.113.1: seq=1 ttl=63 time=0.069 ms\n64 bytes from 203.0.113.1: seq=2 ttl=63 time=0.071 ms\n\n--- 203.0.113.1 ping statistics ---\n3 packets transmitted, 3 packets received, 0% packet loss\nround-trip min/avg/max = 0.054/0.064/0.071 ms"
+    }
+  ],
+  "captures_failed": 0,
+  "captures_total": 9,
+  "harness": "harness/netlab.py",
+  "images": {
+    "quay.io/frrouting/frr:10.2.1": {
+      "image_created": "2024-12-31T08:27:55.792462405Z",
+      "image_id": "sha256:e47e67bd612030cb1bedee2bde85b73913f2ea021573b749deb21d94940f03c1",
+      "repo_digest": "quay.io/frrouting/frr@sha256:e47e67bd612030cb1bedee2bde85b73913f2ea021573b749deb21d94940f03c1"
+    }
+  },
+  "kernel": "Linux-6.18.44-fc-v37-x86_64-with-glibc2.39",
+  "scope": "Commands accepted and output produced by these container images on this kernel at this time. Not hardware execution, not a claim about any NOS not run here, not a scale result.",
+  "topology": "rtnwb-bgp-nhs"
+}

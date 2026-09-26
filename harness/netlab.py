@@ -89,7 +89,10 @@ def up(topo):
     for n, spec in topo['nodes'].items():
         c = node_name(topo, n)
         for cmd in spec.get('pre', []):
-            sh(['docker', 'exec', c, 'sh', '-c', cmd], check=False)
+            r = sh(['docker', 'exec', c, 'sh', '-c', cmd], check=False)
+            if r.returncode:
+                raise RuntimeError('%s: pre-command failed: %s\n%s%s'
+                                   % (n, cmd, r.stdout, r.stderr))
         daemons = spec.get('daemons', [])
         if daemons:
             expr = ';'.join("s/^%s=no/%s=yes/" % (d, d) for d in daemons)

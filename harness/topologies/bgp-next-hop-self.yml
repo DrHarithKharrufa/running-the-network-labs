@@ -1,0 +1,128 @@
+# The same topology as bgp-ebgp-ibgp, with one line added: r1 rewrites the
+# next hop to itself before advertising the external prefix to its iBGP peer.
+# Compare the two records side by side -- that single line is the difference
+# between a path that is present and a path that works.
+#
+# Two autonomous systems. AS 64500 has two routers speaking iBGP; AS 64510 has
+# one, peering eBGP with r1. This one topology carries the evidence for the
+# eBGP session, the iBGP next-hop problem and its fix, and what a session in
+# Established state does and does not prove.
+#
+#   r3 (AS 64510) --eBGP-- r1 ==iBGP== r2      (AS 64500)
+name: rtnwb-bgp-nhs
+settle: 4
+converge: 60
+nodes:
+  r1:
+    image: quay.io/frrouting/frr:10.2.1
+    daemons: [bgpd, ospfd]
+    pre:
+      - ip address replace 10.0.13.0/31 dev eth1
+      - ip address replace 10.0.12.0/31 dev eth2
+      - ip address replace 10.255.0.1/32 dev lo
+    config:
+      - configure terminal
+      - interface eth2
+      - ip ospf area 0
+      - ip ospf network point-to-point
+      - exit
+      - interface lo
+      - ip ospf area 0
+      - exit
+      - router ospf
+      - ospf router-id 10.255.0.1
+      - passive-interface lo
+      - exit
+      - router bgp 64500
+      - bgp router-id 10.255.0.1
+      - no bgp ebgp-requires-policy
+      - neighbor 10.0.13.1 remote-as 64510
+      - neighbor 10.255.0.2 remote-as 64500
+      - neighbor 10.255.0.2 update-source lo
+      - address-family ipv4 unicast
+      - network 10.255.0.1/32
+      - neighbor 10.0.13.1 activate
+      - neighbor 10.255.0.2 activate
+      - neighbor 10.255.0.2 next-hop-self
+      - exit-address-family
+  r2:
+    image: quay.io/frrouting/frr:10.2.1
+    daemons: [bgpd, ospfd]
+    pre:
+      - ip address replace 10.0.12.1/31 dev eth1
+      - ip address replace 10.255.0.2/32 dev lo
+      - ip address replace 198.51.100.1/24 dev lo
+    config:
+      - configure terminal
+      - interface eth1
+      - ip ospf area 0
+      - ip ospf network point-to-point
+      - exit
+      - interface lo
+      - ip ospf area 0
+      - exit
+      - router ospf
+      - ospf router-id 10.255.0.2
+      - passive-interface lo
+      - exit
+      - router bgp 64500
+      - bgp router-id 10.255.0.2
+      - neighbor 10.255.0.1 remote-as 64500
+      - neighbor 10.255.0.1 update-source lo
+      - address-family ipv4 unicast
+      - network 198.51.100.0/24
+      - neighbor 10.255.0.1 activate
+      - exit-address-family
+  r3:
+    image: quay.io/frrouting/frr:10.2.1
+    daemons: [bgpd, ospfd]
+    pre:
+      - ip address replace 10.0.13.1/31 dev eth1
+      - ip address replace 203.0.113.1/32 dev lo
+    config:
+      - configure terminal
+      - router bgp 64510
+      - bgp router-id 203.0.113.1
+      - no bgp ebgp-requires-policy
+      - neighbor 10.0.13.0 remote-as 64500
+      - address-family ipv4 unicast
+      - network 203.0.113.1/32
+      - neighbor 10.0.13.0 activate
+      - exit-address-family
+links:
+  - endpoints: ["r1:eth1", "r3:eth1"]
+  - endpoints: ["r1:eth2", "r2:eth1"]
+capture:
+  - id: r1-still-learns-it-externally
+    node: r1
+    cmd: show bgp ipv4 unicast 203.0.113.1/32
+    expect: "valid, external, best"
+  - id: the-next-hop-r2-receives-is-now-r1
+    node: r2
+    cmd: show bgp ipv4 unicast 203.0.113.1/32
+    expect: "10.255.0.1 \\(metric [0-9]+\\) from 10.255.0.1"
+  - id: and-the-path-is-now-valid-and-best
+    node: r2
+    cmd: show bgp ipv4 unicast 203.0.113.1/32
+    expect: "valid, internal, best"
+  - id: so-the-prefix-reaches-the-routing-table
+    node: r2
+    cmd: show ip route 203.0.113.1/32
+    expect: "Known via \"bgp\""
+  - id: diag-r1-view-of-the-customer-prefix
+    node: r1
+    cmd: show bgp ipv4 unicast 198.51.100.0/24
+  - id: diag-r2-summary
+    node: r2
+    cmd: show bgp ipv4 unicast summary
+  - id: diag-r3-routes
+    node: r3
+    cmd: show ip route bgp
+  - id: diag-r1-advertised-to-r3
+    node: r1
+    cmd: show bgp ipv4 unicast neighbors 10.0.13.1 advertised-routes
+  - id: and-forwarding-works
+    node: r2
+    cli: shell
+    cmd: ping -c 3 -W 2 -I 198.51.100.1 203.0.113.1
+    expect: "0% packet loss"
