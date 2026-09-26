@@ -4,15 +4,15 @@ Three labs for Chapter 62. All are offline calculation in closed form: no store
 is run, no device is sampled, no alerting system is started, and no figure here
 is a benchmark of any product.
 
-Two of them — `cardinality_check.py` and `alert_storm.py` — shipped with the
-first edition of this chapter and **were repaired, not withdrawn**. Each built in
-the conclusion it appeared to demonstrate. Each keeps its name, its purpose and
-its entry point; each has a `--demo-original` mode that prints what it used to do
-and why that was wrong; and the originals are preserved unchanged under
-`work/publication/full-review/before/ch62/lab62-before/`. That history is worth
-reading before trusting any lab, including these.
+Two of them — `cardinality_check.py` and `alert_storm.py` — carry a
+`--demo-original` mode, and it is worth running every time. It prints the
+**naive version of the same analysis**: one that builds in the conclusion it
+appears to demonstrate. Both are plausible, both are the kind of thing that
+reaches a capacity review, and seeing the two outputs together is the point of
+the lab. Treat a calculation that agrees with you as the one most in need of
+checking — including these.
 
-## 62.1 — `cardinality_check.py` (repaired)
+## 62.1 — `cardinality_check.py`
 
 What a label actually costs, counted rather than multiplied.
 
@@ -40,7 +40,7 @@ countable, usually affordable, and a lookup dimension rather than an aggregation
 one), and *open* (a source IP — the only case where "unbounded" is literally
 true, because you do not choose the values).
 
-## 62.2 — `alert_storm.py` (repaired)
+## 62.2 — `alert_storm.py`
 
 A rule evaluator, rather than a list of pre-labelled events.
 

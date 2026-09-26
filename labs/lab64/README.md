@@ -7,12 +7,13 @@ pipeline in 64.3 is a teaching model of forwarding, not anyone's silicon; the
 priors and likelihoods in 64.2 are stated in the file, illustrative rather
 than surveyed, and swept so you can see which conclusions depend on them.
 
-Two of the three shipped in the first edition and were **repaired rather than
-withdrawn**: same filenames, same command lines, same lesson, corrected
-argument. Each keeps a `--demo-original` mode that prints what it used to
-compute and why that was not enough.
+Two of the three carry a `--demo-original` mode. It is not a legacy switch: it
+prints the **same question answered badly** — the confident, plausible version
+of the analysis that most people would produce — so you can run the two side by
+side and see where the reasoning parts company from the arithmetic. Read the
+wrong one. It is the more instructive output.
 
-## 64.1 — `bisect_vs_guess.py` (repaired)
+## 64.1 — `bisect_vs_guess.py`
 
 ```bash
 python3 bisect_vs_guess.py
@@ -63,7 +64,7 @@ logarithms, because computed the obvious way it rounds to certainty after about
 ninety days and the lab would print the opposite of what it had just said — a
 defect its own tests caught.
 
-## 64.2 — `four_questions.py` (repaired)
+## 64.2 — `four_questions.py`
 
 ```bash
 python3 four_questions.py

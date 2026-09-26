@@ -1,16 +1,16 @@
 {
   "edition": "RTN-2026-09-26",
   "date": "2026-09-26",
-  "status": "local-print-proof; matching public release pending",
+  "status": "retail edition; hashes below are of the published PDF pair and workbook",
   "book": {
     "print_pages": 746,
     "colour_pages": 744,
-    "print_sha256": "d3d19fd9f07790e3f2988820f2b01c14abb80e6181aaecf6fa8b86f8768e0b3e",
-    "colour_sha256": "a7207bb6237a2ca572b398915c6804de969a9935530f568f5064625b2b86c679"
+    "print_sha256": "9ab689113acb845565b8feccba40a40585e5e43702c1fbc997966c855736f302",
+    "colour_sha256": "5dcbc4e17fff56117d799784f80dc98062e803da3fa8e074e65a287255581d48"
   },
   "workbook": {
     "pages": 25,
-    "sha256": "a9fd4f8f383bc02dc5e99053f33b112fba3246e384691449183b6032814c0e67"
+    "sha256": "c507c14b2cb7d6c3c17bd4f299c9cca5088bab56723731ce5dbe4709b652cd53"
   },
   "repository": "https://github.com/DrHarithKharrufa/running-the-network-labs",
   "errata": "https://github.com/DrHarithKharrufa/running-the-network-labs/issues",
@@ -34,5 +34,6 @@
     "fresh_routing_records": 17
   },
   "hash_manifest": "SHA256SUMS.txt in the reader archive; lists every payload except itself",
-  "qualification": "QUALIFICATION.md"
+  "qualification": "QUALIFICATION.md",
+  "hashes_are_of": "the three PDFs published with this edition: Running-the-Network-print-BW.pdf, Running-the-Network-colour-linked.pdf, Configuration-Workbook.pdf"
 }

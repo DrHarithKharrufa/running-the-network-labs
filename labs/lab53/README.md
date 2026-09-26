@@ -22,12 +22,14 @@ python3 test_harden_check.py
 **This is not a compliance scanner.** There is no collector, no parser and no
 session to a device. It reads a dictionary somebody typed and sorts it into
 three verdicts — `FINDING`, `UNSTATED`, `CLAIMED` — and there is deliberately no
-`PASS`. The version that shipped with the first edition claimed in its own
-docstring to check "a device's live configuration", and this README told you to
-"run it against a device's live config". Neither was true.
+`PASS`. That restraint is the lesson. It is easy to write a tool like this and
+describe it as checking "a device's live configuration" — the output looks
+identical, and nobody notices until an audit rests on it. A checker that never
+touched a device cannot tell you a device is compliant; it can only tell you
+what someone wrote down.
 
-It had a worse problem than the wrong label, and `--demo-fail-open` shows it.
-Two of its checks were written as blocklists:
+There is a worse failure available than the wrong label, and `--demo-fail-open`
+shows it. Consider two checks written as blocklists:
 
 ```python
 if dev.get("urpf_edge") == "loose":            # -> MEDIUM
