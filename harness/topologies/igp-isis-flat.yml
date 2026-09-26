@@ -95,4 +95,5 @@ capture:
     node: r1
     cli: shell
     cmd: ping -c 3 -W 2 -I 10.255.0.1 10.255.0.3
-    expect: "0% packet loss"
+    packet_loss: 0
+    require: ["packets transmitted", "received"]

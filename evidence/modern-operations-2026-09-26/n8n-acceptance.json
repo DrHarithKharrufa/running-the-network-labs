@@ -1,0 +1,251 @@
+[
+  {
+    "name": "normal webhook to durable draft",
+    "passed": true,
+    "observed": {
+      "http": 200,
+      "body": {
+        "status": "DRAFT_CREATED",
+        "event_id": "n8n-f2d5caaed3f24aa8896844b43c64a28e",
+        "case_id": "case-n8n-f2d5caaed3f24aa8896844b43c64a28e",
+        "duplicate": false
+      }
+    }
+  },
+  {
+    "name": "case owns mapped target and evidence",
+    "passed": true,
+    "observed": {
+      "case_id": "case-n8n-f2d5caaed3f24aa8896844b43c64a28e",
+      "revision": 1,
+      "status": "AWAITING_REVIEW",
+      "owner": "branch-team",
+      "event": {
+        "event_id": "n8n-f2d5caaed3f24aa8896844b43c64a28e",
+        "sensor_id": "sensor-r1-eth2",
+        "status": "Down",
+        "observed_at": 1790407668,
+        "sequence": 1790407668708
+      },
+      "evidence": [
+        {
+          "id": "ev-n8n-f2d5caaed3f24aa8896844b43c64a28e",
+          "asset_id": "r1",
+          "interface": "eth2",
+          "collected_at": 1790407668.8679254,
+          "scope": "local simulated device",
+          "snapshot": {
+            "asset_id": "r1",
+            "generation": 0,
+            "description": "Aldergate lab uplink",
+            "interfaces": [
+              {
+                "name": "eth1",
+                "oper_state": "up",
+                "errors": 0,
+                "packets": 1000
+              },
+              {
+                "name": "eth2",
+                "oper_state": "down",
+                "errors": 4,
+                "packets": 100
+              }
+            ]
+          }
+        }
+      ],
+      "summary": "Monitoring reported Down. Collected eth2 state is down. Cause is not established.",
+      "suggested_check": "Compare interface state, peer state and recent authorised changes.",
+      "ai_status": "NOT_REQUESTED",
+      "decisions": []
+    }
+  },
+  {
+    "name": "duplicate same case",
+    "passed": true,
+    "observed": {
+      "status": "DRAFT_CREATED",
+      "event_id": "n8n-f2d5caaed3f24aa8896844b43c64a28e",
+      "case_id": "case-n8n-f2d5caaed3f24aa8896844b43c64a28e",
+      "duplicate": true
+    }
+  },
+  {
+    "name": "conflicting identity fails workflow",
+    "passed": true,
+    "observed": {
+      "http": 500,
+      "body": {
+        "message": "Error in workflow"
+      }
+    }
+  },
+  {
+    "name": "old event cannot create case",
+    "passed": true,
+    "observed": {
+      "status": "STALE",
+      "event_id": "old-7ba679a147cd463bae3cb14837b9f78b",
+      "duplicate": false
+    }
+  },
+  {
+    "name": "invalid producer credential rejected",
+    "passed": true,
+    "observed": {
+      "http": 403,
+      "body": "Authorization data is wrong!"
+    }
+  },
+  {
+    "name": "unknown sensor fails workflow",
+    "passed": true,
+    "observed": {
+      "http": 500,
+      "body": {
+        "message": "Error in workflow"
+      }
+    }
+  },
+  {
+    "name": "collector outage fails workflow",
+    "passed": true,
+    "observed": {
+      "http": 500,
+      "body": {
+        "message": "Error in workflow"
+      }
+    }
+  },
+  {
+    "name": "same failed event retries after recovery",
+    "passed": true,
+    "observed": {
+      "status": "DRAFT_CREATED",
+      "event_id": "retry-843df27e7791492dbea213942120ee6b",
+      "case_id": "case-retry-843df27e7791492dbea213942120ee6b",
+      "duplicate": false
+    }
+  },
+  {
+    "name": "human decision is separate audited operation",
+    "passed": true,
+    "observed": {
+      "case_id": "case-n8n-f2d5caaed3f24aa8896844b43c64a28e",
+      "revision": 2,
+      "status": "REVIEWED",
+      "owner": "branch-team",
+      "event": {
+        "event_id": "n8n-f2d5caaed3f24aa8896844b43c64a28e",
+        "sensor_id": "sensor-r1-eth2",
+        "status": "Down",
+        "observed_at": 1790407668,
+        "sequence": 1790407668708
+      },
+      "evidence": [
+        {
+          "id": "ev-n8n-f2d5caaed3f24aa8896844b43c64a28e",
+          "asset_id": "r1",
+          "interface": "eth2",
+          "collected_at": 1790407668.8679254,
+          "scope": "local simulated device",
+          "snapshot": {
+            "asset_id": "r1",
+            "generation": 0,
+            "description": "Aldergate lab uplink",
+            "interfaces": [
+              {
+                "name": "eth1",
+                "oper_state": "up",
+                "errors": 0,
+                "packets": 1000
+              },
+              {
+                "name": "eth2",
+                "oper_state": "down",
+                "errors": 4,
+                "packets": 100
+              }
+            ]
+          }
+        }
+      ],
+      "summary": "Monitoring reported Down. Collected eth2 state is down. Cause is not established.",
+      "suggested_check": "Compare interface state, peer state and recent authorised changes.",
+      "ai_status": "NOT_REQUESTED",
+      "decisions": [
+        {
+          "decision": "investigate",
+          "reviewer": "local-token-holder",
+          "time": 1790407669.6208699
+        }
+      ]
+    }
+  },
+  {
+    "name": "restart preserves duplicate identity",
+    "passed": true,
+    "observed": {
+      "status": "DRAFT_CREATED",
+      "event_id": "n8n-f2d5caaed3f24aa8896844b43c64a28e",
+      "case_id": "case-n8n-f2d5caaed3f24aa8896844b43c64a28e",
+      "duplicate": true
+    }
+  },
+  {
+    "name": "restart preserves human decision",
+    "passed": true,
+    "observed": {
+      "case_id": "case-n8n-f2d5caaed3f24aa8896844b43c64a28e",
+      "revision": 2,
+      "status": "REVIEWED",
+      "owner": "branch-team",
+      "event": {
+        "event_id": "n8n-f2d5caaed3f24aa8896844b43c64a28e",
+        "sensor_id": "sensor-r1-eth2",
+        "status": "Down",
+        "observed_at": 1790407668,
+        "sequence": 1790407668708
+      },
+      "evidence": [
+        {
+          "id": "ev-n8n-f2d5caaed3f24aa8896844b43c64a28e",
+          "asset_id": "r1",
+          "interface": "eth2",
+          "collected_at": 1790407668.8679254,
+          "scope": "local simulated device",
+          "snapshot": {
+            "asset_id": "r1",
+            "generation": 0,
+            "description": "Aldergate lab uplink",
+            "interfaces": [
+              {
+                "name": "eth1",
+                "oper_state": "up",
+                "errors": 0,
+                "packets": 1000
+              },
+              {
+                "name": "eth2",
+                "oper_state": "down",
+                "errors": 4,
+                "packets": 100
+              }
+            ]
+          }
+        }
+      ],
+      "summary": "Monitoring reported Down. Collected eth2 state is down. Cause is not established.",
+      "suggested_check": "Compare interface state, peer state and recent authorised changes.",
+      "ai_status": "NOT_REQUESTED",
+      "decisions": [
+        {
+          "decision": "investigate",
+          "reviewer": "local-token-holder",
+          "time": 1790407669.6208699
+        }
+      ]
+    }
+  }
+]

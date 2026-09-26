@@ -1,0 +1,106 @@
+{
+  "python": "3.14.4 (main, Apr  8 2026, 04:02:31) [GCC 15.2.0]",
+  "results": [
+    {
+      "args": [
+        "01_inventory.py"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "passed": true
+    },
+    {
+      "args": [
+        "02_addresses.py"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "passed": true
+    },
+    {
+      "args": [
+        "03_report.py"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "passed": true
+    },
+    {
+      "args": [
+        "04_collect.py"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "passed": true
+    },
+    {
+      "args": [
+        "05_plan.py"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "passed": true
+    },
+    {
+      "args": [
+        "06_fleet.py"
+      ],
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "passed": true
+    },
+    {
+      "args": [
+        "07_change.py"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "passed": true
+    },
+    {
+      "args": [
+        "07_change.py",
+        "--apply",
+        "--description",
+        "Final CLI verified uplink"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "passed": true
+    },
+    {
+      "args": [
+        "07_change.py",
+        "--apply",
+        "--description",
+        "Final CLI rejected service",
+        "--fail-service"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "passed": true
+    },
+    {
+      "args": [
+        "08_investigate.py"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "passed": true
+    }
+  ],
+  "source_sha256": {
+    "01_inventory.py": "99d7f3d7fc6123d2a03553eea2d64828f9992026255e21e55513b850d01d61ae",
+    "02_addresses.py": "fa20e409cf056a25fabcf8c3aeb5f45d5489b6b838d4fc3e53fe4b5b35aa2de9",
+    "03_report.py": "1c3951915992c2e0dd902602e1a277d48021d1b4846cc159127d3b5211230cb1",
+    "04_collect.py": "c9e18232556f2b3fc2cdb73c853d5fff4fb76a2f084b95c3e6cb1adeca328f65",
+    "05_plan.py": "c72617bee51e024b28e9f5336ad58b9d3b50023476e896d87edcc94f0e51a913",
+    "06_fleet.py": "9684bebf18da98a4139376169243b6810895dc5d63c9db016b2e87ec8aa69d70",
+    "07_change.py": "abf88a3e05cf45b8b8d62e6cb8ae95d680bd6a74042770c9da9612c9c78280d5",
+    "08_investigate.py": "8bd1d73b295ac4e6cb5709a296a1adb32b591a62444826ae0066f6c95f0fac35",
+    "agent_advisor.py": "d055a66665f7340245385269347b9edf79bc1e7eb8ca0473ea3b33b5b4a23b01",
+    "common.py": "c80731e937872908fb1788b4bab860b73dbee47aef9b849a61c24fce9e405506",
+    "lab_service.py": "eacf67e9492893f1ffd5308a7595d604aeab303a818282f002301896d11edbbe",
+    "test_route.py": "cc1345f49a37f3953fba2c5c3b7f7d7da3040e8756e9ddd9ab762ccbd9d7c63f"
+  }
+}

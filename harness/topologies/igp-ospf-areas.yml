@@ -138,11 +138,13 @@ capture:
     node: r1
     cmd: show ip route 10.255.1.4/32
     expect: "Network not in table"
+    allow_messages: ["% Network not in table"]
   - id: end-to-end-forwarding
     node: r1
     cli: shell
     cmd: ping -c 3 -W 2 -I 10.255.0.1 10.255.1.4
-    expect: "0% packet loss"
+    packet_loss: 0
+    require: ["packets transmitted", "received"]
   - id: router-id-is-not-the-loopback-address
     node: r1
     cmd: show ip ospf

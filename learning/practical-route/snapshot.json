@@ -1,0 +1,9 @@
+{
+  "asset_id": "r1",
+  "generation": 0,
+  "description": "Aldergate lab uplink",
+  "interfaces": [
+    {"name": "eth1", "oper_state": "up", "errors": 0, "packets": 1000},
+    {"name": "eth2", "oper_state": "down", "errors": 4, "packets": 100}
+  ]
+}

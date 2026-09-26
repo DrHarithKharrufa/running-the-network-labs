@@ -1,0 +1,4 @@
+asset_id,management_ip,prefix,owner
+r1,192.0.2.11,192.0.2.0/24,branch-team
+r2,192.0.2.12,192.0.2.0/24,branch-team
+r3,198.51.100.11,198.51.100.0/24,core-team

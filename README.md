@@ -1,126 +1,72 @@
-# Running the Network — labs and companion code
+# Running the Network — reader companion
 
-The working code for *Running the Network*, an engineer's guide to enterprise and
-service provider networks. Every lab the book refers to lives here: **84
-laboratory exercises, 252 Python programs, 35 Containerlab topologies and 114
-device configuration files**, plus five shared directories (`common`, `gns3`,
-`reference-designs`, `standards`, `topologies`) that the exercises draw on.
+Edition **RTN-2026-09-26**, matching the 746-page black-and-white print proof
+and 744-page colour edition. There are 84 chapter lab directories, five shared
+lab directories and 35 Containerlab topology files. Reproduce inventories with
+`python tools/count.py .`; programs, tests and topologies are different counts.
 
-Those figures come from `tools/count.py`, not from counting by hand. An earlier
-version of this page said "89 lab directories" because it counted the five
-shared directories as labs.
+## Start with a task
 
-The book teaches the reasoning. These labs are where you test whether the
-reasoning holds. They are not decoration, and several of them exist specifically
-to show a plausible answer being wrong.
+- New to the profession: [learning/START-HERE.md](learning/START-HERE.md).
+- A connected operating case: [OPERATIONS-JOURNEY.md](learning/OPERATIONS-JOURNEY.md).
+- New to Python: [eight-session practical route](learning/practical-route/README.md).
+- Find a chapter: [INDEX.md](INDEX.md).
+- Troubleshoot, change, monitor or plan: [task index](learning/TASK-INDEX.md).
+- Build n8n monitoring: [N8N-LAB.md](learning/practical-route/N8N-LAB.md).
+- Build Power Automate: [POWER-AUTOMATE-LAB.md](learning/practical-route/POWER-AUTOMATE-LAB.md).
+- Check your exercise attempt: [500 model answers](learning/SELECTED-ANSWERS.md).
 
-## Start here, in ten minutes
+The Python course starts with local CSV/JSON and progresses to an HTTP device
+simulator, bounded collection, a dry-run plan, apply/read-back/recovery and a durable
+investigation case. It uses Python 3.11+ on Windows, Linux or macOS. Later network
+labs have separate Linux, package, privilege, image and equipment requirements.
 
-You need a Linux shell. macOS and Windows can drive a Linux lab host, but their
-local commands are not Linux commands — the book is explicit about that, and so
-are these labs.
+## Prerequisites and tests
 
-```bash
-git clone https://github.com/DrHarithKharrufa/running-the-network-labs.git
-cd running-the-network-labs
-python3 check-environment.py
+From the extracted companion root:
+
+```text
+python check-environment.py --chapter 71 --mode offline
+python check-environment.py --chapter 79 --mode live
+python run-all-tests.py --quick --out my-test-results
 ```
 
-`check-environment.py` tells you which labs you can run right now and which need
-something installed. It changes nothing on your machine.
+Use `python3` if that is your interpreter's name. The checker reads
+`prerequisites.json`, checks pinned dependencies and separates offline from live
+work. It does not infer readiness from a nearby topology file. A missing or manual
+prerequisite is not a pass. The runner preserves previous output directories.
+`--quick` includes eligible offline tests beside topology files.
+`--include-live` explicitly selects declared privileged tests; read their READMEs.
 
-Then open [`INDEX.md`](INDEX.md), find your chapter, and run its lab.
+[QUALIFICATION.md](QUALIFICATION.md) lists actual fresh execution. The older
+blanket “all 104 programs pass” claim is superseded by dated per-program results.
+A model test does not deploy a topology or qualify a commercial NOS.
 
-## What kind of lab is which
+## Routing and monitoring evidence
 
-| Kind | Count | What you need |
-|---|---|---|
-| **Python only** — arithmetic, models, policy simulations | most of the 89 | Python 3.10 or newer. Nothing else |
-| **Containerlab topologies** — real routing daemons on real veth links | 29 | Docker and Containerlab on Linux |
-| **Device configuration sets** | 106 files | Reading material, or your own equipment |
-| **Shell** — namespaces, nftables, tc, capture | 43 scripts | Linux, usually root |
+Use the complete named topology on a dedicated Linux/Docker lab host; see
+[harness/README.md](harness/README.md). Fresh captures are under
+`evidence/revision-2026-09-26/`; older records remain unchanged in `evidence/`.
+The new output hash covers the exact stored text's UTF-8 encoding. It is an
+integrity check, not a digital signature or an image digest.
 
-Start with the Python labs. They need nothing, they run in seconds, and several of
-them carry the book's sharper results.
+The n8n route was executed locally against a simulated monitoring/device adapter.
+The Power Automate route is a construction and acceptance guide, not a qualified
+tenant export. Live PRTG, a Power Automate tenant, an optional real language model
+and production effects require their stated acceptance tests. No new commercial
+NOS, hardware or scale qualification is claimed. Historical evidence in the author
+package retains its original date and scope. Vendor images are not supplied.
 
-## Run the tests
+## Edition, errata and licence
 
-Every lab that ships a model ships tests for it.
+The public [repository](https://github.com/DrHarithKharrufa/running-the-network-labs)
+and [issue tracker](https://github.com/DrHarithKharrufa/running-the-network-labs/issues)
+are established. For this proof use the accompanying ZIP and `EDITION.json`.
+Its matching public release must be checked before approving the printed download
+promise; this local delivery does not publish that release.
 
-```bash
-python3 -m unittest discover -s labs/lab64 -v      # one lab
-python3 run-all-tests.py                            # all of them
-```
-
-All 104 test programs pass on Python 3.11 and 3.12 on Linux. If one fails on your
-machine, that is worth an issue — see below.
-
-Be precise about what that means: these tests exercise each lab's **model and
-its checker**, including feeding the checker deliberately wrong input to prove
-it refuses to print a pass. They do not, by themselves, deploy the Containerlab
-topologies. Deploying a topology is a separate act with its own record — see
-below.
-
-## Executed evidence
-
-```bash
-python3 harness/netlab.py run harness/topologies/ospf-p2p.yml -o evidence/ospf-p2p.json
-```
-
-`harness/netlab.py` starts a container per node, wires them with veth pairs,
-configures each device through its own CLI, waits for the protocols to settle,
-and records exactly what the devices said: the command, the bytes returned, the
-exit status, a SHA-256 of the output, and the image digest and kernel it ran on.
-Where a capture declares an expectation, the record says whether it matched.
-
-Records live in [`evidence/`](evidence/). A record establishes that these
-commands were accepted and produced this output on this image at this time. It
-establishes nothing about hardware forwarding, about a NOS that was not run, or
-about scale. [`harness/README.md`](harness/README.md) has the detail.
-
-## What these labs do and do not establish
-
-Taking this seriously is the point of the book, so it applies here too.
-
-**They do** compute, enumerate and simulate. They run real routing daemons under
-Containerlab, real Linux namespaces, real nftables rulesets and real
-cryptography. Where a lab quotes a figure, the code that produced it is in the
-same directory.
-
-**They do not** qualify any vendor platform. No commercial network operating
-system is executed here and none is included. No hardware is involved anywhere.
-A lab that models a vendor's behaviour models it — the configuration files are
-reading material and starting points, not release-qualified templates. Test
-everything in your own lab before it touches a live network.
-
-Several labs are deliberately instructive about their own limits: `lab64`
-computes what a successful probe and a quiet interval actually prove, `lab53`
-holds a fail-open check beside a sound one, and `lab62` was repaired after it was
-found assuming its own conclusion. Each of those keeps a `--demo-original` mode
-that runs the flawed version and explains the defect.
-
-## Errata and corrections
-
-If you find an error — in a lab or in the book — please
-[open an issue](https://github.com/DrHarithKharrufa/running-the-network-labs/issues).
-Include the chapter or lab, what you ran, what you expected and what happened.
-
-Confirmed book errata are collected in [`ERRATA.md`](ERRATA.md).
-
-Corrections are welcome as pull requests. A fix that comes with a failing test
-first is the easiest kind to accept.
-
-## Licence
-
-The code, configurations and lab material in this repository are released under
-the **MIT Licence** — see [`LICENSE`](LICENSE). Use them at work, adapt them,
-teach from them.
-
-The text of *Running the Network* is copyright and is not covered by that
-licence. Vendor names, command syntax and product names belong to their
-respective owners and appear for identification and instruction only.
-
-## The book
-
-*Running the Network* — 91 chapters, from a first look at a packet to the
-decisions a CTO signs off. Paperback and digital.
+Report edition, chapter/file, expected/observed results and a minimal reproduction
+without secrets or customer data. [ERRATA.md](ERRATA.md) retains earlier corrections.
+Companion code and lab material use the [MIT licence](LICENSE). The book and
+separate configuration workbook remain copyright works. Vendor names identify
+platforms and do not imply endorsement.

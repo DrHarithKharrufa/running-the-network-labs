@@ -1,0 +1,415 @@
+{
+  "captured_utc": "2026-09-26T08:03:43+00:00",
+  "captures": [
+    {
+      "cli": "shell",
+      "cmd": "ping -4 -c 3 -W 2 10.0.12.1",
+      "contract": {
+        "cli": "shell",
+        "cmd": "ping -4 -c 3 -W 2 10.0.12.1",
+        "node": "r1",
+        "packet_loss": 0,
+        "require": [
+          "packets transmitted",
+          "received"
+        ]
+      },
+      "elapsed_s": 2.075,
+      "id": "r1: ping -4 -c 3 -W 2 10.0.12.1",
+      "matched": true,
+      "node": "r1",
+      "output": "PING 10.0.12.1 (10.0.12.1): 56 data bytes\n64 bytes from 10.0.12.1: seq=0 ttl=64 time=0.055 ms\n64 bytes from 10.0.12.1: seq=1 ttl=64 time=0.110 ms\n64 bytes from 10.0.12.1: seq=2 ttl=64 time=0.075 ms\n\n--- 10.0.12.1 ping statistics ---\n3 packets transmitted, 3 packets received, 0% packet loss\nround-trip min/avg/max = 0.055/0.080/0.110 ms\n",
+      "returncode": 0,
+      "sha256": "938ac74499e18255cb9824fc596088a284f88d8994be3f09d14b3a4f3085221d",
+      "stderr": "",
+      "stdout": "PING 10.0.12.1 (10.0.12.1): 56 data bytes\n64 bytes from 10.0.12.1: seq=0 ttl=64 time=0.055 ms\n64 bytes from 10.0.12.1: seq=1 ttl=64 time=0.110 ms\n64 bytes from 10.0.12.1: seq=2 ttl=64 time=0.075 ms\n\n--- 10.0.12.1 ping statistics ---\n3 packets transmitted, 3 packets received, 0% packet loss\nround-trip min/avg/max = 0.055/0.080/0.110 ms\n",
+      "validation_errors": []
+    },
+    {
+      "cli": "shell",
+      "cmd": "ping -4 -c 3 -W 2 10.0.12.0",
+      "contract": {
+        "cli": "shell",
+        "cmd": "ping -4 -c 3 -W 2 10.0.12.0",
+        "node": "r2",
+        "packet_loss": 0,
+        "require": [
+          "packets transmitted",
+          "received"
+        ]
+      },
+      "elapsed_s": 2.05,
+      "id": "r2: ping -4 -c 3 -W 2 10.0.12.0",
+      "matched": true,
+      "node": "r2",
+      "output": "PING 10.0.12.0 (10.0.12.0): 56 data bytes\n64 bytes from 10.0.12.0: seq=0 ttl=64 time=0.081 ms\n64 bytes from 10.0.12.0: seq=1 ttl=64 time=0.061 ms\n64 bytes from 10.0.12.0: seq=2 ttl=64 time=0.155 ms\n\n--- 10.0.12.0 ping statistics ---\n3 packets transmitted, 3 packets received, 0% packet loss\nround-trip min/avg/max = 0.061/0.099/0.155 ms\n",
+      "returncode": 0,
+      "sha256": "626d5dad68221bb1f5f97ef87fcd7be37ae885d35ce159da86746b3ad0b829ea",
+      "stderr": "",
+      "stdout": "PING 10.0.12.0 (10.0.12.0): 56 data bytes\n64 bytes from 10.0.12.0: seq=0 ttl=64 time=0.081 ms\n64 bytes from 10.0.12.0: seq=1 ttl=64 time=0.061 ms\n64 bytes from 10.0.12.0: seq=2 ttl=64 time=0.155 ms\n\n--- 10.0.12.0 ping statistics ---\n3 packets transmitted, 3 packets received, 0% packet loss\nround-trip min/avg/max = 0.061/0.099/0.155 ms\n",
+      "validation_errors": []
+    },
+    {
+      "cli": "shell",
+      "cmd": "ping -6 -c 3 -W 2 2001:db8:12::1",
+      "contract": {
+        "cli": "shell",
+        "cmd": "ping -6 -c 3 -W 2 2001:db8:12::1",
+        "node": "r1",
+        "packet_loss": 0,
+        "require": [
+          "packets transmitted",
+          "received"
+        ]
+      },
+      "elapsed_s": 2.071,
+      "id": "r1: ping -6 -c 3 -W 2 2001:db8:12::1",
+      "matched": true,
+      "node": "r1",
+      "output": "PING 2001:db8:12::1 (2001:db8:12::1): 56 data bytes\n64 bytes from 2001:db8:12::1: seq=0 ttl=64 time=0.302 ms\n64 bytes from 2001:db8:12::1: seq=1 ttl=64 time=0.100 ms\n64 bytes from 2001:db8:12::1: seq=2 ttl=64 time=0.094 ms\n\n--- 2001:db8:12::1 ping statistics ---\n3 packets transmitted, 3 packets received, 0% packet loss\nround-trip min/avg/max = 0.094/0.165/0.302 ms\n",
+      "returncode": 0,
+      "sha256": "d796cd65150d097d71aa78986150c478b13d05c9558c46181b4e514fad9d6f01",
+      "stderr": "",
+      "stdout": "PING 2001:db8:12::1 (2001:db8:12::1): 56 data bytes\n64 bytes from 2001:db8:12::1: seq=0 ttl=64 time=0.302 ms\n64 bytes from 2001:db8:12::1: seq=1 ttl=64 time=0.100 ms\n64 bytes from 2001:db8:12::1: seq=2 ttl=64 time=0.094 ms\n\n--- 2001:db8:12::1 ping statistics ---\n3 packets transmitted, 3 packets received, 0% packet loss\nround-trip min/avg/max = 0.094/0.165/0.302 ms\n",
+      "validation_errors": []
+    },
+    {
+      "cli": "shell",
+      "cmd": "ping -6 -c 3 -W 2 2001:db8:12::",
+      "contract": {
+        "cli": "shell",
+        "cmd": "ping -6 -c 3 -W 2 2001:db8:12::",
+        "node": "r2",
+        "packet_loss": 0,
+        "require": [
+          "packets transmitted",
+          "received"
+        ]
+      },
+      "elapsed_s": 2.043,
+      "id": "r2: ping -6 -c 3 -W 2 2001:db8:12::",
+      "matched": true,
+      "node": "r2",
+      "output": "PING 2001:db8:12:: (2001:db8:12::): 56 data bytes\n64 bytes from 2001:db8:12::: seq=0 ttl=64 time=0.045 ms\n64 bytes from 2001:db8:12::: seq=1 ttl=64 time=0.066 ms\n64 bytes from 2001:db8:12::: seq=2 ttl=64 time=0.085 ms\n\n--- 2001:db8:12:: ping statistics ---\n3 packets transmitted, 3 packets received, 0% packet loss\nround-trip min/avg/max = 0.045/0.065/0.085 ms\n",
+      "returncode": 0,
+      "sha256": "b8d9c0fc2ce1b9888d14fc00f6863c0d446cf4743e16bd2174ae5d206cf58d79",
+      "stderr": "",
+      "stdout": "PING 2001:db8:12:: (2001:db8:12::): 56 data bytes\n64 bytes from 2001:db8:12::: seq=0 ttl=64 time=0.045 ms\n64 bytes from 2001:db8:12::: seq=1 ttl=64 time=0.066 ms\n64 bytes from 2001:db8:12::: seq=2 ttl=64 time=0.085 ms\n\n--- 2001:db8:12:: ping statistics ---\n3 packets transmitted, 3 packets received, 0% packet loss\nround-trip min/avg/max = 0.045/0.065/0.085 ms\n",
+      "validation_errors": []
+    }
+  ],
+  "captures_failed": 0,
+  "captures_total": 4,
+  "configuration": [
+    {
+      "commands": [
+        "sysctl -w net.ipv4.ip_forward=1"
+      ],
+      "node": "r1",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "net.ipv4.ip_forward = 1\n"
+    },
+    {
+      "commands": [
+        "sysctl -w net.ipv4.ip_forward=1"
+      ],
+      "node": "r2",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "net.ipv4.ip_forward = 1\n"
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.0.1/30 dev eth1"
+      ],
+      "node": "r1",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.255.0.1/32 dev lo"
+      ],
+      "node": "r1",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "sed -i 's/^ospfd=no/ospfd=yes/' /etc/frr/daemons && touch /etc/frr/vtysh.conf && chown frr:frr /etc/frr/vtysh.conf && /usr/lib/frr/frrinit.sh start"
+      ],
+      "node": "r1",
+      "phase": "daemon-start",
+      "returncode": 0,
+      "stderr": "2026/09/26 08:03:30 ZEBRA: [NNACN-54BDA][EC 4043309110] Disabling MPLS support (no kernel support)\n/etc/frr/frr.conf does not exist; skipping config apply\n",
+      "stdout": "Starting watchfrr with command: '  /usr/lib/frr/watchfrr  -d  -F traditional   zebra mgmtd ospfd staticd'\nStarted watchfrr\n"
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.0.2/30 dev eth1"
+      ],
+      "node": "r2",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.255.0.2/32 dev lo"
+      ],
+      "node": "r2",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "sed -i 's/^ospfd=no/ospfd=yes/' /etc/frr/daemons && touch /etc/frr/vtysh.conf && chown frr:frr /etc/frr/vtysh.conf && /usr/lib/frr/frrinit.sh start"
+      ],
+      "node": "r2",
+      "phase": "daemon-start",
+      "returncode": 0,
+      "stderr": "2026/09/26 08:03:32 ZEBRA: [NNACN-54BDA][EC 4043309110] Disabling MPLS support (no kernel support)\n/etc/frr/frr.conf does not exist; skipping config apply\n",
+      "stdout": "Starting watchfrr with command: '  /usr/lib/frr/watchfrr  -d  -F traditional   zebra mgmtd ospfd staticd'\nStarted watchfrr\n"
+    },
+    {
+      "commands": [
+        "configure terminal",
+        "interface eth1",
+        "ip ospf area 0",
+        "ip ospf network point-to-point",
+        "exit",
+        "interface lo",
+        "ip ospf area 0",
+        "exit",
+        "router ospf",
+        "ospf router-id 10.255.0.1"
+      ],
+      "node": "r1",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "configure terminal",
+        "interface eth1",
+        "ip ospf area 0",
+        "ip ospf network point-to-point",
+        "exit",
+        "interface lo",
+        "ip ospf area 0",
+        "exit",
+        "router ospf",
+        "ospf router-id 10.255.0.2"
+      ],
+      "node": "r2",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip",
+        "address",
+        "replace",
+        "10.0.12.0/31",
+        "dev",
+        "eth1"
+      ],
+      "node": "r1",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "sysctl",
+        "-w",
+        "net.ipv6.conf.eth1.disable_ipv6=0"
+      ],
+      "node": "r1",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "net.ipv6.conf.eth1.disable_ipv6 = 0\n"
+    },
+    {
+      "commands": [
+        "ip",
+        "-6",
+        "address",
+        "replace",
+        "2001:db8:12::/127",
+        "dev",
+        "eth1"
+      ],
+      "node": "r1",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip",
+        "address",
+        "replace",
+        "10.0.12.1/31",
+        "dev",
+        "eth1"
+      ],
+      "node": "r2",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "sysctl",
+        "-w",
+        "net.ipv6.conf.eth1.disable_ipv6=0"
+      ],
+      "node": "r2",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "net.ipv6.conf.eth1.disable_ipv6 = 0\n"
+    },
+    {
+      "commands": [
+        "ip",
+        "-6",
+        "address",
+        "replace",
+        "2001:db8:12::1/127",
+        "dev",
+        "eth1"
+      ],
+      "node": "r2",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  ],
+  "harness": "harness/netlab.py",
+  "harness_sha256": "735d88b1ebe0e1952f0ce8eec3b2b1b64348c6176e7af9d0ba3c137cf4087802",
+  "hash_contract": "UTF-8 encoding of stored output, with exact stored newlines; not a signature",
+  "images": {
+    "quay.io/frrouting/frr:10.2.1": {
+      "image_created": "2024-12-31T08:27:55.792462405Z",
+      "image_id": "sha256:deea33b3f7bfeeedccd3780d258f0b306153420fd427bbbbdca53536a14a3f07",
+      "repo_digest": "quay.io/frrouting/frr@sha256:e47e67bd612030cb1bedee2bde85b73913f2ea021573b749deb21d94940f03c1"
+    }
+  },
+  "kernel": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "schema_version": 2,
+  "scope": "Commands accepted and output produced by these container images on this kernel at this time. Not hardware execution, not a claim about any NOS not run here, not a scale result.",
+  "topology": "rtncheck-address",
+  "topology_definition": {
+    "capture": [
+      {
+        "cli": "shell",
+        "cmd": "ping -4 -c 3 -W 2 10.0.12.1",
+        "node": "r1",
+        "packet_loss": 0,
+        "require": [
+          "packets transmitted",
+          "received"
+        ]
+      },
+      {
+        "cli": "shell",
+        "cmd": "ping -4 -c 3 -W 2 10.0.12.0",
+        "node": "r2",
+        "packet_loss": 0,
+        "require": [
+          "packets transmitted",
+          "received"
+        ]
+      },
+      {
+        "cli": "shell",
+        "cmd": "ping -6 -c 3 -W 2 2001:db8:12::1",
+        "node": "r1",
+        "packet_loss": 0,
+        "require": [
+          "packets transmitted",
+          "received"
+        ]
+      },
+      {
+        "cli": "shell",
+        "cmd": "ping -6 -c 3 -W 2 2001:db8:12::",
+        "node": "r2",
+        "packet_loss": 0,
+        "require": [
+          "packets transmitted",
+          "received"
+        ]
+      }
+    ],
+    "converge": 50,
+    "links": [
+      {
+        "endpoints": [
+          "r1:eth1",
+          "r2:eth1"
+        ]
+      }
+    ],
+    "name": "rtncheck-address",
+    "nodes": {
+      "r1": {
+        "config": [
+          "configure terminal",
+          "interface eth1",
+          "ip ospf area 0",
+          "ip ospf network point-to-point",
+          "exit",
+          "interface lo",
+          "ip ospf area 0",
+          "exit",
+          "router ospf",
+          "ospf router-id 10.255.0.1"
+        ],
+        "daemons": [
+          "ospfd"
+        ],
+        "image": "quay.io/frrouting/frr:10.2.1",
+        "pre": [
+          "ip address replace 10.0.0.1/30 dev eth1",
+          "ip address replace 10.255.0.1/32 dev lo"
+        ]
+      },
+      "r2": {
+        "config": [
+          "configure terminal",
+          "interface eth1",
+          "ip ospf area 0",
+          "ip ospf network point-to-point",
+          "exit",
+          "interface lo",
+          "ip ospf area 0",
+          "exit",
+          "router ospf",
+          "ospf router-id 10.255.0.2"
+        ],
+        "daemons": [
+          "ospfd"
+        ],
+        "image": "quay.io/frrouting/frr:10.2.1",
+        "pre": [
+          "ip address replace 10.0.0.2/30 dev eth1",
+          "ip address replace 10.255.0.2/32 dev lo"
+        ]
+      }
+    },
+    "settle": 3
+  },
+  "topology_sha256": "8c465ae1913374d80761030ebc6bab7e812ef869c6d99132e4565487ddd843a7"
+}

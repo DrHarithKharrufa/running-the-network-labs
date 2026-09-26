@@ -1,5 +1,7 @@
 # Chapter to lab index
 
+Edition RTN-2026-09-26. Start the [Python course](learning/practical-route/README.md) before Chapter 71 if you have not programmed. Use the [task index](learning/TASK-INDEX.md) to find an operational job. File availability is not execution evidence.
+
 Every lab in this repository and the chapter it belongs to. `L1`-`L5` is the
 book's own ladder: Foundation, Operations, Engineering, Architecture, Leadership.
 
@@ -71,8 +73,8 @@ Labs not tied to one chapter: [`common`](labs/common), [`gns3`](labs/gns3),
 
 | Ch | Level | Chapter | Lab | What it runs |
 |---|---|---|---|---|
-| 35 | L3 Engineering | Data centre fabric design | [`lab35`](labs/lab35), [`topologies`](labs/topologies) | Containerlab, device configs, Python, Python |
-| 36 | L3 Engineering | BGP in the data centre | [`lab36`](labs/lab36), [`topologies`](labs/topologies) | Containerlab, device configs, Python, Python |
+| 35 | L3 Engineering | Data centre fabric design | [`lab35`](labs/lab35), [`topologies`](labs/topologies) | Containerlab, device configs, Python |
+| 36 | L3 Engineering | BGP in the data centre | [`lab36`](labs/lab36), [`topologies`](labs/topologies) | Containerlab, device configs, Python |
 | 37 | L4 Architecture | VXLAN/EVPN fabrics and data centre interconnect | [`lab37`](labs/lab37) | Python |
 | 38 | L4 Architecture | Whitebox, SONiC and disaggregation | [`lab38`](labs/lab38) | Python |
 | 39 | L4 Architecture | Programmable data planes: P4, eBPF/XDP and DPUs | [`lab39`](labs/lab39) | Python |
@@ -132,7 +134,7 @@ Labs not tied to one chapter: [`common`](labs/common), [`gns3`](labs/gns3),
 | 73 | L4 Architecture | CI/CD, pre-change validation and digital twins | [`lab73`](labs/lab73) | Python |
 | 74 | L4 Architecture | Machine learning for network operations: what works | [`lab74`](labs/lab74) | Python |
 | 75 | L4 Architecture | LLMs in the NOC: retrieval, generation and evidence | [`lab75`](labs/lab75) | Python |
-| 76 | L4 Architecture | Agents, tool use and controlled automation | [`lab76`](labs/lab76) | — |
+| 76 | L4 Architecture | Agents, tool use and controlled automation | [`lab76`](labs/lab76), [`agent`](labs/lab76/agent/README.md) | Python policy/verification model |
 | 77 | L4 Architecture | Intent-based networking and autonomous networks | [`lab77`](labs/lab77) | Python |
 | 78 | L5 Leadership | Governing automation and AI | — | — |
 
@@ -140,7 +142,7 @@ Labs not tied to one chapter: [`common`](labs/common), [`gns3`](labs/gns3),
 
 | Ch | Level | Chapter | Lab | What it runs |
 |---|---|---|---|---|
-| 79 | L4 Architecture | The design method | [`lab79`](labs/lab79) | Python |
+| 79 | L4 Architecture | The design method | [`lab79`](labs/lab79) | Python and Linux namespace/live mode; check prerequisites |
 | 80 | L4 Architecture | Availability, resilience and failure domains | [`lab80`](labs/lab80) | Python |
 | 81 | L4 Architecture | Addressing, naming and numbering plans | [`lab81`](labs/lab81) | Python |
 | 82 | L4 Architecture | Scaling: what breaks at ten times the size | [`lab82`](labs/lab82) | Python |

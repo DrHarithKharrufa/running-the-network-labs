@@ -99,11 +99,8 @@ capture:
     node: r1
     cmd: show ip route isis
     expect: "10.255.0.2/32"
-  # The point of this topology. Textbooks say a level-1-2 router advertises
-  # its area's prefixes into level 2. FRR 10.2.1 does not, and its own
-  # documentation describes no command that would make it. The three captures
-  # below establish that in order: the ABR HAS the route, its level-2 LSP does
-  # NOT carry it, and the level-2 router therefore cannot reach it.
+  # Historical observation on this fixture; not a universal FRR limitation.
+  # Recheck levels, timers, policy, database completeness and release behaviour.
   - id: abr-has-the-level-1-prefix
     node: r2
     cmd: show ip route 10.255.0.3/32
@@ -113,9 +110,12 @@ capture:
   - id: level-2-database-does-not-carry-the-level-1-prefix
     node: r1
     cmd: show isis database detail
+    require: ["IS-IS Level-2 link-state database:", "LSP ID", "Extended IP Reachability", "[1-9][0-9]* LSPs"]
     expect: "(?s)^(?!.*10\\.255\\.0\\.3/32).*$"
   - id: level-2-router-cannot-reach-the-level-1-loopback
     node: r1
     cli: shell
-    cmd: ping -c 2 -W 2 -I 10.255.0.1 10.255.0.3 || true
+    cmd: ping -c 2 -W 2 -I 10.255.0.1 10.255.0.3
+    returncodes: [1, 2]
+    require: ["PING 10.255.0.3"]
     expect: "(Network unreachable|100% packet loss)"

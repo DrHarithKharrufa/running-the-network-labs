@@ -1,0 +1,378 @@
+{
+  "captured_utc": "2026-09-26T08:00:08+00:00",
+  "captures": [
+    {
+      "cli": "vtysh",
+      "cmd": "show ip route 10.255.0.2/32",
+      "contract": {
+        "cmd": "show ip route 10.255.0.2/32",
+        "node": "r1",
+        "require": [
+          "Known via \"static\"",
+          "distance 200",
+          "10.0.13.1"
+        ]
+      },
+      "elapsed_s": 0.068,
+      "id": "r1: show ip route 10.255.0.2/32",
+      "matched": true,
+      "node": "r1",
+      "output": "Routing entry for 10.255.0.2/32\n  Known via \"static\", distance 200, metric 0, best\n  Last update 00:00:32 ago\n  * 10.0.13.1, via eth2, weight 1\n\n",
+      "returncode": 0,
+      "sha256": "c0cd032c434f8ae15c29ce7487b7124170239f2d1c6fe6d33e83330229b9d1dd",
+      "stderr": "",
+      "stdout": "Routing entry for 10.255.0.2/32\n  Known via \"static\", distance 200, metric 0, best\n  Last update 00:00:32 ago\n  * 10.0.13.1, via eth2, weight 1\n\n",
+      "validation_errors": []
+    },
+    {
+      "cli": "shell",
+      "cmd": "ping -c 3 -W 2 -I 10.255.0.1 10.255.0.2",
+      "contract": {
+        "cli": "shell",
+        "cmd": "ping -c 3 -W 2 -I 10.255.0.1 10.255.0.2",
+        "node": "r1",
+        "packet_loss": 0,
+        "require": [
+          "packets transmitted",
+          "received"
+        ]
+      },
+      "elapsed_s": 2.055,
+      "id": "r1: ping -c 3 -W 2 -I 10.255.0.1 10.255.0.2",
+      "matched": true,
+      "node": "r1",
+      "output": "PING 10.255.0.2 (10.255.0.2) from 10.255.0.1: 56 data bytes\n64 bytes from 10.255.0.2: seq=0 ttl=63 time=0.330 ms\n64 bytes from 10.255.0.2: seq=1 ttl=63 time=0.188 ms\n64 bytes from 10.255.0.2: seq=2 ttl=63 time=0.108 ms\n\n--- 10.255.0.2 ping statistics ---\n3 packets transmitted, 3 packets received, 0% packet loss\nround-trip min/avg/max = 0.108/0.208/0.330 ms\n",
+      "returncode": 0,
+      "sha256": "a22c47089b296822fa3d68c17e4c1f8bd57e4f26a48a2e960269a935cc44166b",
+      "stderr": "",
+      "stdout": "PING 10.255.0.2 (10.255.0.2) from 10.255.0.1: 56 data bytes\n64 bytes from 10.255.0.2: seq=0 ttl=63 time=0.330 ms\n64 bytes from 10.255.0.2: seq=1 ttl=63 time=0.188 ms\n64 bytes from 10.255.0.2: seq=2 ttl=63 time=0.108 ms\n\n--- 10.255.0.2 ping statistics ---\n3 packets transmitted, 3 packets received, 0% packet loss\nround-trip min/avg/max = 0.108/0.208/0.330 ms\n",
+      "validation_errors": []
+    }
+  ],
+  "captures_failed": 0,
+  "captures_total": 2,
+  "configuration": [
+    {
+      "commands": [
+        "sysctl -w net.ipv4.ip_forward=1"
+      ],
+      "node": "r1",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "net.ipv4.ip_forward = 1\n"
+    },
+    {
+      "commands": [
+        "sysctl -w net.ipv4.ip_forward=1"
+      ],
+      "node": "r2",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "net.ipv4.ip_forward = 1\n"
+    },
+    {
+      "commands": [
+        "sysctl -w net.ipv4.ip_forward=1"
+      ],
+      "node": "r3",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "net.ipv4.ip_forward = 1\n"
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.12.0/31 dev eth1"
+      ],
+      "node": "r1",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.13.0/31 dev eth2"
+      ],
+      "node": "r1",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.255.0.1/32 dev lo"
+      ],
+      "node": "r1",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "sed -i 's/^bfdd=no/bfdd=yes/;s/^staticd=no/staticd=yes/' /etc/frr/daemons && touch /etc/frr/vtysh.conf && chown frr:frr /etc/frr/vtysh.conf && /usr/lib/frr/frrinit.sh start"
+      ],
+      "node": "r1",
+      "phase": "daemon-start",
+      "returncode": 0,
+      "stderr": "2026/09/26 07:59:24 ZEBRA: [NNACN-54BDA][EC 4043309110] Disabling MPLS support (no kernel support)\n/etc/frr/frr.conf does not exist; skipping config apply\n",
+      "stdout": "Starting watchfrr with command: '  /usr/lib/frr/watchfrr  -d  -F traditional   zebra mgmtd staticd bfdd'\nStarted watchfrr\n"
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.12.1/31 dev eth1"
+      ],
+      "node": "r2",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.23.1/31 dev eth2"
+      ],
+      "node": "r2",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.255.0.2/32 dev lo"
+      ],
+      "node": "r2",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "sed -i 's/^bfdd=no/bfdd=yes/;s/^staticd=no/staticd=yes/' /etc/frr/daemons && touch /etc/frr/vtysh.conf && chown frr:frr /etc/frr/vtysh.conf && /usr/lib/frr/frrinit.sh start"
+      ],
+      "node": "r2",
+      "phase": "daemon-start",
+      "returncode": 0,
+      "stderr": "2026/09/26 07:59:27 ZEBRA: [NNACN-54BDA][EC 4043309110] Disabling MPLS support (no kernel support)\n/etc/frr/frr.conf does not exist; skipping config apply\n",
+      "stdout": "Starting watchfrr with command: '  /usr/lib/frr/watchfrr  -d  -F traditional   zebra mgmtd staticd bfdd'\nStarted watchfrr\n"
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.13.1/31 dev eth1"
+      ],
+      "node": "r3",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.23.0/31 dev eth2"
+      ],
+      "node": "r3",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.255.0.3/32 dev lo"
+      ],
+      "node": "r3",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "sed -i 's/^staticd=no/staticd=yes/' /etc/frr/daemons && touch /etc/frr/vtysh.conf && chown frr:frr /etc/frr/vtysh.conf && /usr/lib/frr/frrinit.sh start"
+      ],
+      "node": "r3",
+      "phase": "daemon-start",
+      "returncode": 0,
+      "stderr": "2026/09/26 07:59:29 ZEBRA: [NNACN-54BDA][EC 4043309110] Disabling MPLS support (no kernel support)\n/etc/frr/frr.conf does not exist; skipping config apply\n",
+      "stdout": "Starting watchfrr with command: '  /usr/lib/frr/watchfrr  -d  -F traditional   zebra mgmtd staticd'\nStarted watchfrr\n"
+    },
+    {
+      "commands": [
+        "configure terminal",
+        "ip route 10.255.0.2/32 10.0.12.1",
+        "ip route 10.255.0.2/32 10.0.13.1 200",
+        "bfd",
+        "peer 10.0.12.1",
+        "exit",
+        "exit"
+      ],
+      "node": "r1",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "configure terminal",
+        "ip route 10.255.0.1/32 10.0.12.0",
+        "ip route 10.255.0.1/32 10.0.23.0 200",
+        "bfd",
+        "peer 10.0.12.0",
+        "exit",
+        "exit"
+      ],
+      "node": "r2",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "configure terminal",
+        "ip route 10.255.0.1/32 10.0.13.0",
+        "ip route 10.255.0.2/32 10.0.23.1"
+      ],
+      "node": "r3",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip",
+        "link",
+        "set",
+        "eth1",
+        "down"
+      ],
+      "node": "r1",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  ],
+  "harness": "harness/netlab.py",
+  "harness_sha256": "735d88b1ebe0e1952f0ce8eec3b2b1b64348c6176e7af9d0ba3c137cf4087802",
+  "hash_contract": "UTF-8 encoding of stored output, with exact stored newlines; not a signature",
+  "images": {
+    "quay.io/frrouting/frr:10.2.1": {
+      "image_created": "2024-12-31T08:27:55.792462405Z",
+      "image_id": "sha256:deea33b3f7bfeeedccd3780d258f0b306153420fd427bbbbdca53536a14a3f07",
+      "repo_digest": "quay.io/frrouting/frr@sha256:e47e67bd612030cb1bedee2bde85b73913f2ea021573b749deb21d94940f03c1"
+    }
+  },
+  "kernel": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "schema_version": 2,
+  "scope": "Commands accepted and output produced by these container images on this kernel at this time. Not hardware execution, not a claim about any NOS not run here, not a scale result.",
+  "topology": "rtncheck-static",
+  "topology_definition": {
+    "capture": [
+      {
+        "cmd": "show ip route 10.255.0.2/32",
+        "node": "r1",
+        "require": [
+          "Known via \"static\"",
+          "distance 200",
+          "10.0.13.1"
+        ]
+      },
+      {
+        "cli": "shell",
+        "cmd": "ping -c 3 -W 2 -I 10.255.0.1 10.255.0.2",
+        "node": "r1",
+        "packet_loss": 0,
+        "require": [
+          "packets transmitted",
+          "received"
+        ]
+      }
+    ],
+    "converge": 25,
+    "links": [
+      {
+        "endpoints": [
+          "r1:eth1",
+          "r2:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "r1:eth2",
+          "r3:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "r3:eth2",
+          "r2:eth2"
+        ]
+      }
+    ],
+    "name": "rtncheck-static",
+    "nodes": {
+      "r1": {
+        "config": [
+          "configure terminal",
+          "ip route 10.255.0.2/32 10.0.12.1",
+          "ip route 10.255.0.2/32 10.0.13.1 200",
+          "bfd",
+          "peer 10.0.12.1",
+          "exit",
+          "exit"
+        ],
+        "daemons": [
+          "bfdd",
+          "staticd"
+        ],
+        "image": "quay.io/frrouting/frr:10.2.1",
+        "pre": [
+          "ip address replace 10.0.12.0/31 dev eth1",
+          "ip address replace 10.0.13.0/31 dev eth2",
+          "ip address replace 10.255.0.1/32 dev lo"
+        ]
+      },
+      "r2": {
+        "config": [
+          "configure terminal",
+          "ip route 10.255.0.1/32 10.0.12.0",
+          "ip route 10.255.0.1/32 10.0.23.0 200",
+          "bfd",
+          "peer 10.0.12.0",
+          "exit",
+          "exit"
+        ],
+        "daemons": [
+          "bfdd",
+          "staticd"
+        ],
+        "image": "quay.io/frrouting/frr:10.2.1",
+        "pre": [
+          "ip address replace 10.0.12.1/31 dev eth1",
+          "ip address replace 10.0.23.1/31 dev eth2",
+          "ip address replace 10.255.0.2/32 dev lo"
+        ]
+      },
+      "r3": {
+        "config": [
+          "configure terminal",
+          "ip route 10.255.0.1/32 10.0.13.0",
+          "ip route 10.255.0.2/32 10.0.23.1"
+        ],
+        "daemons": [
+          "staticd"
+        ],
+        "image": "quay.io/frrouting/frr:10.2.1",
+        "pre": [
+          "ip address replace 10.0.13.1/31 dev eth1",
+          "ip address replace 10.0.23.0/31 dev eth2",
+          "ip address replace 10.255.0.3/32 dev lo"
+        ]
+      }
+    },
+    "settle": 4
+  },
+  "topology_sha256": "30c53a89985e5f2b09bd1f8ad3a14f81503e2f019595e88ddcf7f16d18909493"
+}

@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "event_id",
+    "sensor_id",
+    "status",
+    "observed_at",
+    "sequence"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,64}$"
+    },
+    "sensor_id": {
+      "type": "string",
+      "enum": [
+        "sensor-r1-eth2"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Down",
+        "Up"
+      ]
+    },
+    "observed_at": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    }
+  }
+}

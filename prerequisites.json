@@ -1,0 +1,2616 @@
+{
+  "schema_version": 1,
+  "edition": "RTN-2026-09-26",
+  "tests": {
+    "labs/test_frr_harness_audit.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/gns3/test_preflight.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {
+        "PyYAML": "6.0.3"
+      },
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab03/test_verify.py": {
+      "kind": "fixture",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [
+        "Linux"
+      ],
+      "root": false,
+      "binaries": [
+        "bash"
+      ],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab04/test_budget.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab06/test_address_plan.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab07/test_impair.py": {
+      "kind": "fixture",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [
+        "Linux"
+      ],
+      "root": false,
+      "binaries": [
+        "bash"
+      ],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab08/test_probe.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab09/test_fault.py": {
+      "kind": "fixture",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [
+        "Linux"
+      ],
+      "root": false,
+      "binaries": [
+        "bash"
+      ],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab33/test_percentile.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab34/test_validate.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab35/test_fabric_sizer.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab36/test_ecmp_check.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab37/test_evpn_plan.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab38/test_dbwalk.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab39/test_dropcost.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab40/test_bondcheck.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab41/test_allreduce.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab41/test_ecn_pfc.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab41/test_fabric_breakeven.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab42/test_egress_vs_availability.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab42/test_hybrid_bgp.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab42/test_landingzone.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab43/test_loss_budget.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab43/test_otdr_events.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab43/test_route_procurement.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab44/test_fec_and_errors.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab44/test_link_budget.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab44/test_osnr_budget.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab45/test_reach_capacity.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab45/test_spectrum_plan.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab46/test_ols_contract.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab46/test_path_budget.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab46/test_recovery_policy.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab47/test_time_error_budget.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab48/test_fronthaul_budget.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab48/test_fronthaul_rate.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab48/test_segment_contract.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab49/test_availability.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab49/test_band_choice.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab49/test_latency_by_path.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab49/test_shared_risk.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab50/test_control_coverage.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab50/test_scoring_resolution.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab50/test_threat_model.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab51/test_forward_secrecy.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab51/test_pqc_inventory.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab51/test_primitives.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab51/test_tls_validation.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab52/test_access_audit.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab52/test_ssh_revocation.py": {
+      "kind": "fixture",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [
+        "Linux"
+      ],
+      "root": false,
+      "binaries": [
+        "ssh-keygen"
+      ],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab52/test_tacacs_obfuscation.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab53/test_harden_check.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab53/test_iacl_exceptions.py": {
+      "kind": "live",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [
+        "Linux"
+      ],
+      "root": true,
+      "binaries": [
+        "ip",
+        "nft",
+        "ping"
+      ],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab53/test_urpf_modes.py": {
+      "kind": "live",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [
+        "Linux"
+      ],
+      "root": true,
+      "binaries": [
+        "ip",
+        "nft",
+        "ping"
+      ],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab54/test_ruleorder.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab55/test_microseg_policy.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab56/test_ipsec_overhead.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab56/test_tunnel_triage.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab57/test_anycast_catchment.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab57/test_ddos_triage.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab57/test_detection_budget.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab58/test_dkim_alignment.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab58/test_dmarc_check.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab59/test_detector_quality.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab59/test_flow_hunt.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab59/test_telemetry_limits.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab60/test_exception_register.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab60/test_metric_honesty.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab60/test_reporting_clock.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab61/test_coverage_models.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab61/test_incident_record.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab61/test_rota_arithmetic.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab62/test_alert_storm.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab62/test_cardinality_check.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab62/test_sampling_limits.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab63/test_capture_budget.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab63/test_log_delivery.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab63/test_sampling.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab64/test_bisect.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab64/test_control_vs_data_plane.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab64/test_four_questions.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab65/test_change_models.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab66/test_incident_models.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab67/test_capacity_case.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab68/test_sot.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab69/test_rendering.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab70/test_validation.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab71/test_lab.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {
+        "netmiko": "4.8.0",
+        "ntc-templates": "9.3.0",
+        "textfsm": "2.1.0"
+      },
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab72/test_closed_loop.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab73/test_batfish_probe.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab73/test_policy.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab74/test_base_rate.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab75/test_citations.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab77/test_assurance.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab80/test_availability.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab81/test_aggregation.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab82/test_scaling.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab83/test_latency.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab85/test_economics.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab87/test_sla_report.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab91/test_dashboard_metrics.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/reference-designs/test_designs.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/topologies/test_inventory.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {
+        "PyYAML": "6.0.3",
+        "Jinja2": "3.1.6"
+      },
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/lab76/agent/test_verifier.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {
+        "PyYAML": "6.0.3"
+      },
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "learning/test_case_math.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "learning/test_operations_policy.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "harness/test_netlab.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "new boundary suite; simulated targets"
+    },
+    "learning/practical-route/test_route.py": {
+      "kind": "loopback",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "new boundary suite; simulated targets"
+    }
+  },
+  "labs": {
+    "lab03": {
+      "offline": {
+        "test_programs": [
+          "labs/lab03/test_verify.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab04": {
+      "offline": {
+        "test_programs": [
+          "labs/lab04/test_budget.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab05": {
+      "offline": {
+        "test_programs": [],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab06": {
+      "offline": {
+        "test_programs": [
+          "labs/lab06/test_address_plan.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab07": {
+      "offline": {
+        "test_programs": [
+          "labs/lab07/test_impair.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab08": {
+      "offline": {
+        "test_programs": [
+          "labs/lab08/test_probe.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab09": {
+      "offline": {
+        "test_programs": [
+          "labs/lab09/test_fault.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab10": {
+      "offline": {
+        "test_programs": [],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab11": {
+      "offline": {
+        "test_programs": [],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab12": {
+      "offline": {
+        "test_programs": [],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab13": {
+      "offline": {
+        "test_programs": [],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab14": {
+      "offline": {
+        "test_programs": [],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab15": {
+      "offline": {
+        "test_programs": [],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab16": {
+      "offline": {
+        "test_programs": [],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab17": {
+      "offline": {
+        "test_programs": [],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab18": {
+      "offline": {
+        "test_programs": [],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab19": {
+      "offline": {
+        "test_programs": [],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab20": {
+      "offline": {
+        "test_programs": [],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab21": {
+      "offline": {
+        "test_programs": [],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab22": {
+      "offline": {
+        "test_programs": [],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab23": {
+      "offline": {
+        "test_programs": [],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab24": {
+      "offline": {
+        "test_programs": [],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab25": {
+      "offline": {
+        "test_programs": [],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab26": {
+      "offline": {
+        "test_programs": [],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab27": {
+      "offline": {
+        "test_programs": [],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab28": {
+      "offline": {
+        "test_programs": [],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab29": {
+      "offline": {
+        "test_programs": [],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab30": {
+      "offline": {
+        "test_programs": [],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab31": {
+      "offline": {
+        "test_programs": [],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab32": {
+      "offline": {
+        "test_programs": [],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab33": {
+      "offline": {
+        "test_programs": [
+          "labs/lab33/test_percentile.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab34": {
+      "offline": {
+        "test_programs": [
+          "labs/lab34/test_validate.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab35": {
+      "offline": {
+        "test_programs": [
+          "labs/lab35/test_fabric_sizer.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab36": {
+      "offline": {
+        "test_programs": [
+          "labs/lab36/test_ecmp_check.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab37": {
+      "offline": {
+        "test_programs": [
+          "labs/lab37/test_evpn_plan.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab38": {
+      "offline": {
+        "test_programs": [
+          "labs/lab38/test_dbwalk.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab39": {
+      "offline": {
+        "test_programs": [
+          "labs/lab39/test_dropcost.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab40": {
+      "offline": {
+        "test_programs": [
+          "labs/lab40/test_bondcheck.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab41": {
+      "offline": {
+        "test_programs": [
+          "labs/lab41/test_allreduce.py",
+          "labs/lab41/test_ecn_pfc.py",
+          "labs/lab41/test_fabric_breakeven.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab42": {
+      "offline": {
+        "test_programs": [
+          "labs/lab42/test_egress_vs_availability.py",
+          "labs/lab42/test_hybrid_bgp.py",
+          "labs/lab42/test_landingzone.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab43": {
+      "offline": {
+        "test_programs": [
+          "labs/lab43/test_loss_budget.py",
+          "labs/lab43/test_otdr_events.py",
+          "labs/lab43/test_route_procurement.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab44": {
+      "offline": {
+        "test_programs": [
+          "labs/lab44/test_fec_and_errors.py",
+          "labs/lab44/test_link_budget.py",
+          "labs/lab44/test_osnr_budget.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab45": {
+      "offline": {
+        "test_programs": [
+          "labs/lab45/test_reach_capacity.py",
+          "labs/lab45/test_spectrum_plan.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab46": {
+      "offline": {
+        "test_programs": [
+          "labs/lab46/test_ols_contract.py",
+          "labs/lab46/test_path_budget.py",
+          "labs/lab46/test_recovery_policy.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab47": {
+      "offline": {
+        "test_programs": [
+          "labs/lab47/test_time_error_budget.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab48": {
+      "offline": {
+        "test_programs": [
+          "labs/lab48/test_fronthaul_budget.py",
+          "labs/lab48/test_fronthaul_rate.py",
+          "labs/lab48/test_segment_contract.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab49": {
+      "offline": {
+        "test_programs": [
+          "labs/lab49/test_availability.py",
+          "labs/lab49/test_band_choice.py",
+          "labs/lab49/test_latency_by_path.py",
+          "labs/lab49/test_shared_risk.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab50": {
+      "offline": {
+        "test_programs": [
+          "labs/lab50/test_control_coverage.py",
+          "labs/lab50/test_scoring_resolution.py",
+          "labs/lab50/test_threat_model.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab51": {
+      "offline": {
+        "test_programs": [
+          "labs/lab51/test_forward_secrecy.py",
+          "labs/lab51/test_pqc_inventory.py",
+          "labs/lab51/test_primitives.py",
+          "labs/lab51/test_tls_validation.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab52": {
+      "offline": {
+        "test_programs": [
+          "labs/lab52/test_access_audit.py",
+          "labs/lab52/test_ssh_revocation.py",
+          "labs/lab52/test_tacacs_obfuscation.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab53": {
+      "offline": {
+        "test_programs": [
+          "labs/lab53/test_harden_check.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab54": {
+      "offline": {
+        "test_programs": [
+          "labs/lab54/test_ruleorder.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab55": {
+      "offline": {
+        "test_programs": [
+          "labs/lab55/test_microseg_policy.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab56": {
+      "offline": {
+        "test_programs": [
+          "labs/lab56/test_ipsec_overhead.py",
+          "labs/lab56/test_tunnel_triage.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab57": {
+      "offline": {
+        "test_programs": [
+          "labs/lab57/test_anycast_catchment.py",
+          "labs/lab57/test_ddos_triage.py",
+          "labs/lab57/test_detection_budget.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab58": {
+      "offline": {
+        "test_programs": [
+          "labs/lab58/test_dkim_alignment.py",
+          "labs/lab58/test_dmarc_check.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab59": {
+      "offline": {
+        "test_programs": [
+          "labs/lab59/test_detector_quality.py",
+          "labs/lab59/test_flow_hunt.py",
+          "labs/lab59/test_telemetry_limits.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab60": {
+      "offline": {
+        "test_programs": [
+          "labs/lab60/test_exception_register.py",
+          "labs/lab60/test_metric_honesty.py",
+          "labs/lab60/test_reporting_clock.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab61": {
+      "offline": {
+        "test_programs": [
+          "labs/lab61/test_coverage_models.py",
+          "labs/lab61/test_incident_record.py",
+          "labs/lab61/test_rota_arithmetic.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab62": {
+      "offline": {
+        "test_programs": [
+          "labs/lab62/test_alert_storm.py",
+          "labs/lab62/test_cardinality_check.py",
+          "labs/lab62/test_sampling_limits.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab63": {
+      "offline": {
+        "test_programs": [
+          "labs/lab63/test_capture_budget.py",
+          "labs/lab63/test_log_delivery.py",
+          "labs/lab63/test_sampling.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab64": {
+      "offline": {
+        "test_programs": [
+          "labs/lab64/test_bisect.py",
+          "labs/lab64/test_control_vs_data_plane.py",
+          "labs/lab64/test_four_questions.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab65": {
+      "offline": {
+        "test_programs": [
+          "labs/lab65/test_change_models.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab66": {
+      "offline": {
+        "test_programs": [
+          "labs/lab66/test_incident_models.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab67": {
+      "offline": {
+        "test_programs": [
+          "labs/lab67/test_capacity_case.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab68": {
+      "offline": {
+        "test_programs": [
+          "labs/lab68/test_sot.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab69": {
+      "offline": {
+        "test_programs": [
+          "labs/lab69/test_rendering.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab70": {
+      "offline": {
+        "test_programs": [
+          "labs/lab70/test_validation.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab71": {
+      "offline": {
+        "test_programs": [
+          "labs/lab71/test_lab.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": true,
+        "python_min": [
+          3,
+          11
+        ],
+        "os": [],
+        "root": false,
+        "binaries": [],
+        "packages": {
+          "netmiko": "4.8.0",
+          "ntc-templates": "9.3.0",
+          "textfsm": "2.1.0"
+        },
+        "manual": [
+          "Approved isolated target, verified SSH host key, read-only credential and qualified driver/parser/NOS"
+        ],
+        "scope": "Optional real SSH collection; not deployment acceptance"
+      }
+    },
+    "lab72": {
+      "offline": {
+        "test_programs": [
+          "labs/lab72/test_closed_loop.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab73": {
+      "offline": {
+        "test_programs": [
+          "labs/lab73/test_batfish_probe.py",
+          "labs/lab73/test_policy.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab74": {
+      "offline": {
+        "test_programs": [
+          "labs/lab74/test_base_rate.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab75": {
+      "offline": {
+        "test_programs": [
+          "labs/lab75/test_citations.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab76": {
+      "offline": {
+        "test_programs": [
+          "labs/lab76/agent/test_verifier.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab77": {
+      "offline": {
+        "test_programs": [
+          "labs/lab77/test_assurance.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab79": {
+      "offline": {
+        "test_programs": [],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": true,
+        "python_min": [
+          3,
+          11
+        ],
+        "os": [
+          "Linux"
+        ],
+        "root": true,
+        "binaries": [
+          "ip",
+          "ping"
+        ],
+        "packages": {},
+        "manual": [
+          "Linux network-namespace capability; isolated lab; review design_case.py before --execute"
+        ],
+        "scope": "Linux forwarding, not a Python-only exercise"
+      }
+    },
+    "lab80": {
+      "offline": {
+        "test_programs": [
+          "labs/lab80/test_availability.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab81": {
+      "offline": {
+        "test_programs": [
+          "labs/lab81/test_aggregation.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab82": {
+      "offline": {
+        "test_programs": [
+          "labs/lab82/test_scaling.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab83": {
+      "offline": {
+        "test_programs": [
+          "labs/lab83/test_latency.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab84": {
+      "offline": {
+        "test_programs": [],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab85": {
+      "offline": {
+        "test_programs": [
+          "labs/lab85/test_economics.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab87": {
+      "offline": {
+        "test_programs": [
+          "labs/lab87/test_sla_report.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    },
+    "lab91": {
+      "offline": {
+        "test_programs": [
+          "labs/lab91/test_dashboard_metrics.py"
+        ],
+        "scope": "declared test programs only; other modes have their own prerequisites"
+      },
+      "live": {
+        "fully_declared": false,
+        "manual": [
+          "Read lab README; qualify its OS, privileges, packages, images and external services."
+        ],
+        "scope": "Not inferred from filename extensions"
+      }
+    }
+  }
+}

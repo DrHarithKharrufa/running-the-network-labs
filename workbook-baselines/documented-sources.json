@@ -1,0 +1,65 @@
+{
+  "cisco-ospf-cr": {
+    "publisher": "Cisco IOS / IOS XE",
+    "title": "OSPF Command Reference",
+    "version": "updated 30 April 2024",
+    "url": "https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/iproute_ospf/command/iro-cr-book.pdf",
+    "checked": "2026-09-26"
+  },
+  "cisco-ospf-cfg": {
+    "publisher": "Cisco IOS XE",
+    "title": "OSPF Configuration Guide",
+    "version": "Gibraltar 16.12.x",
+    "url": "https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/iproute_ospf/configuration/xe-16-12/iro-xe-16-12-book.pdf",
+    "checked": "2026-09-26"
+  },
+  "arista-ospf": {
+    "publisher": "Arista EOS",
+    "title": "OSPFv2 User Manual",
+    "version": "4.36.2F",
+    "url": "https://www.arista.com/en/um-eos/eos-open-shortest-path-first-version-2",
+    "checked": "2026-09-26"
+  },
+  "arista-bgp": {
+    "publisher": "Arista EOS",
+    "title": "BGP User Manual",
+    "version": "4.36.2F",
+    "url": "https://www.arista.com/en/um-eos/eos-border-gateway-protocol-bgp",
+    "checked": "2026-09-26"
+  },
+  "junos-ospf": {
+    "publisher": "Juniper Junos OS",
+    "title": "OSPF User Guide",
+    "version": "maintained guide; target release must be checked",
+    "url": "https://www.juniper.net/documentation/us/en/software/junos/ospf/ospf.pdf",
+    "checked": "2026-09-26"
+  },
+  "vyos-ospf": {
+    "publisher": "VyOS",
+    "title": "OSPF documentation",
+    "version": "rolling",
+    "url": "https://docs.vyos.io/en/rolling/configuration/protocols/ospf.html",
+    "checked": "2026-09-26"
+  },
+  "vyos-bgp": {
+    "publisher": "VyOS",
+    "title": "BGP documentation",
+    "version": "rolling",
+    "url": "https://docs.vyos.io/en/rolling/configuration/protocols/bgp.html",
+    "checked": "2026-09-26"
+  },
+  "srl-ospf": {
+    "publisher": "Nokia SR Linux",
+    "title": "Routing Protocols Guide: OSPF",
+    "version": "24.10",
+    "url": "https://documentation.nokia.com/srlinux/24-10/books/routing-protocols/ospf.html",
+    "checked": "2026-09-26"
+  },
+  "frr-isis": {
+    "publisher": "FRRouting",
+    "title": "IS-IS User Manual",
+    "version": "10.2",
+    "url": "https://docs.frrouting.org/en/stable-10.2/isisd.html",
+    "checked": "2026-09-26"
+  }
+}

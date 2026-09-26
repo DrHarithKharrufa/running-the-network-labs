@@ -1,0 +1,8 @@
+{
+  "n8n": "2.40.7",
+  "image_digests": [
+    "docker.n8n.io/n8nio/n8n@sha256:ffeb52485f78b1b06c9a832205853cf75da72a07a514c9a27724df85979d6c34"
+  ],
+  "scope": "Live local n8n webhook + HTTP node + SQLite teaching adapter. Simulated monitoring/device data. No live PRTG, model, Power Automate tenant or external notification.",
+  "workflow_sha256": "a94e73bd86cc31ec62c6f54a32225f3b8b9e7208ab91ea39af929799c406eebd"
+}

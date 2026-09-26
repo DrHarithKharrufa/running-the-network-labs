@@ -1,0 +1,313 @@
+{
+  "captured_utc": "2026-09-26T07:58:30+00:00",
+  "captures": [
+    {
+      "cli": "vtysh",
+      "cmd": "show ip ospf neighbor",
+      "contract": {
+        "cmd": "show ip ospf neighbor",
+        "expect": "Full/",
+        "id": "adjacency-is-full",
+        "node": "r1"
+      },
+      "elapsed_s": 0.056,
+      "id": "adjacency-is-full",
+      "matched": true,
+      "node": "r1",
+      "output": "\nNeighbor ID     Pri State           Up Time         Dead Time Address         Interface                        RXmtL RqstL DBsmL\n10.255.0.2        1 Full/-          40.155s           39.924s 10.0.0.2        eth1:10.0.0.1                        0     0     0\n\n",
+      "returncode": 0,
+      "sha256": "5ae672df439f47d930b7df8397f0bf4e933ba4502cfb8f4b2d148826c7811fb8",
+      "stderr": "",
+      "stdout": "\nNeighbor ID     Pri State           Up Time         Dead Time Address         Interface                        RXmtL RqstL DBsmL\n10.255.0.2        1 Full/-          40.155s           39.924s 10.0.0.2        eth1:10.0.0.1                        0     0     0\n\n",
+      "validation_errors": []
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show ip ospf interface eth1",
+      "contract": {
+        "cmd": "show ip ospf interface eth1",
+        "expect": "Network Type POINTOPOINT",
+        "id": "interface-is-point-to-point",
+        "node": "r1"
+      },
+      "elapsed_s": 0.055,
+      "id": "interface-is-point-to-point",
+      "matched": true,
+      "node": "r1",
+      "output": "eth1 is up\n  ifindex 108, MTU 1500 bytes, BW 10000 Mbit <UP,LOWER_UP,BROADCAST,RUNNING,MULTICAST>\n  Internet Address 10.0.0.1/30, Broadcast 10.0.0.3, Area 0.0.0.0\n  MTU mismatch detection: enabled\n  Router ID 10.255.0.1, Network Type POINTOPOINT, Cost: 10\n  Transmit Delay is 1 sec, State Point-To-Point, Priority 1\n  No backup designated router on this network\n  Multicast group memberships: OSPFAllRouters\n  Timer intervals configured, Hello 10s, Dead 40s, Wait 40s, Retransmit 5\n    Hello due in 9.790s\n  Neighbor Count is 1, Adjacent neighbor count is 1\n  Graceful Restart hello delay: 10s\n  LSA retransmissions: 1\n\n",
+      "returncode": 0,
+      "sha256": "e469206ba011464896cbbfd73a58fd9da3ade2380d5153ad105b53d042b998fd",
+      "stderr": "",
+      "stdout": "eth1 is up\n  ifindex 108, MTU 1500 bytes, BW 10000 Mbit <UP,LOWER_UP,BROADCAST,RUNNING,MULTICAST>\n  Internet Address 10.0.0.1/30, Broadcast 10.0.0.3, Area 0.0.0.0\n  MTU mismatch detection: enabled\n  Router ID 10.255.0.1, Network Type POINTOPOINT, Cost: 10\n  Transmit Delay is 1 sec, State Point-To-Point, Priority 1\n  No backup designated router on this network\n  Multicast group memberships: OSPFAllRouters\n  Timer intervals configured, Hello 10s, Dead 40s, Wait 40s, Retransmit 5\n    Hello due in 9.790s\n  Neighbor Count is 1, Adjacent neighbor count is 1\n  Graceful Restart hello delay: 10s\n  LSA retransmissions: 1\n\n",
+      "validation_errors": []
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show ip route 10.255.0.2/32",
+      "contract": {
+        "cmd": "show ip route 10.255.0.2/32",
+        "expect": "10\\.0\\.0\\.2",
+        "id": "remote-loopback-in-rib",
+        "node": "r1"
+      },
+      "elapsed_s": 0.064,
+      "id": "remote-loopback-in-rib",
+      "matched": true,
+      "node": "r1",
+      "output": "Routing entry for 10.255.0.2/32\n  Known via \"ospf\", distance 110, metric 10, best\n  Last update 00:00:35 ago\n  * 10.0.0.2, via eth1, weight 1\n\n",
+      "returncode": 0,
+      "sha256": "d80654daaa14cea8d15d3c7068deaad742f4ea3e261c3bf20c43b85f6a936339",
+      "stderr": "",
+      "stdout": "Routing entry for 10.255.0.2/32\n  Known via \"ospf\", distance 110, metric 10, best\n  Last update 00:00:35 ago\n  * 10.0.0.2, via eth1, weight 1\n\n",
+      "validation_errors": []
+    },
+    {
+      "cli": "shell",
+      "cmd": "ping -c 3 -W 2 -I 10.255.0.1 10.255.0.2",
+      "contract": {
+        "cli": "shell",
+        "cmd": "ping -c 3 -W 2 -I 10.255.0.1 10.255.0.2",
+        "id": "forwarding-actually-works",
+        "node": "r1",
+        "packet_loss": 0,
+        "require": [
+          "packets transmitted",
+          "received"
+        ]
+      },
+      "elapsed_s": 2.051,
+      "id": "forwarding-actually-works",
+      "matched": true,
+      "node": "r1",
+      "output": "PING 10.255.0.2 (10.255.0.2) from 10.255.0.1: 56 data bytes\n64 bytes from 10.255.0.2: seq=0 ttl=64 time=0.091 ms\n64 bytes from 10.255.0.2: seq=1 ttl=64 time=0.056 ms\n64 bytes from 10.255.0.2: seq=2 ttl=64 time=0.063 ms\n\n--- 10.255.0.2 ping statistics ---\n3 packets transmitted, 3 packets received, 0% packet loss\nround-trip min/avg/max = 0.056/0.070/0.091 ms\n",
+      "returncode": 0,
+      "sha256": "fcf2799a707b3cd4a29c40f1061d751f1c468118f3c6f099dbb2b1697a97f2b9",
+      "stderr": "",
+      "stdout": "PING 10.255.0.2 (10.255.0.2) from 10.255.0.1: 56 data bytes\n64 bytes from 10.255.0.2: seq=0 ttl=64 time=0.091 ms\n64 bytes from 10.255.0.2: seq=1 ttl=64 time=0.056 ms\n64 bytes from 10.255.0.2: seq=2 ttl=64 time=0.063 ms\n\n--- 10.255.0.2 ping statistics ---\n3 packets transmitted, 3 packets received, 0% packet loss\nround-trip min/avg/max = 0.056/0.070/0.091 ms\n",
+      "validation_errors": []
+    }
+  ],
+  "captures_failed": 0,
+  "captures_total": 4,
+  "configuration": [
+    {
+      "commands": [
+        "sysctl -w net.ipv4.ip_forward=1"
+      ],
+      "node": "r1",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "net.ipv4.ip_forward = 1\n"
+    },
+    {
+      "commands": [
+        "sysctl -w net.ipv4.ip_forward=1"
+      ],
+      "node": "r2",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "net.ipv4.ip_forward = 1\n"
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.0.1/30 dev eth1"
+      ],
+      "node": "r1",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.255.0.1/32 dev lo"
+      ],
+      "node": "r1",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "sed -i 's/^ospfd=no/ospfd=yes/' /etc/frr/daemons && touch /etc/frr/vtysh.conf && chown frr:frr /etc/frr/vtysh.conf && /usr/lib/frr/frrinit.sh start"
+      ],
+      "node": "r1",
+      "phase": "daemon-start",
+      "returncode": 0,
+      "stderr": "2026/09/26 07:57:33 ZEBRA: [NNACN-54BDA][EC 4043309110] Disabling MPLS support (no kernel support)\n/etc/frr/frr.conf does not exist; skipping config apply\n",
+      "stdout": "Starting watchfrr with command: '  /usr/lib/frr/watchfrr  -d  -F traditional   zebra mgmtd ospfd staticd'\nStarted watchfrr\n"
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.0.2/30 dev eth1"
+      ],
+      "node": "r2",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.255.0.2/32 dev lo"
+      ],
+      "node": "r2",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "sed -i 's/^ospfd=no/ospfd=yes/' /etc/frr/daemons && touch /etc/frr/vtysh.conf && chown frr:frr /etc/frr/vtysh.conf && /usr/lib/frr/frrinit.sh start"
+      ],
+      "node": "r2",
+      "phase": "daemon-start",
+      "returncode": 0,
+      "stderr": "2026/09/26 07:57:35 ZEBRA: [NNACN-54BDA][EC 4043309110] Disabling MPLS support (no kernel support)\n/etc/frr/frr.conf does not exist; skipping config apply\n",
+      "stdout": "Starting watchfrr with command: '  /usr/lib/frr/watchfrr  -d  -F traditional   zebra mgmtd ospfd staticd'\nStarted watchfrr\n"
+    },
+    {
+      "commands": [
+        "configure terminal",
+        "interface eth1",
+        "ip ospf area 0",
+        "ip ospf network point-to-point",
+        "exit",
+        "interface lo",
+        "ip ospf area 0",
+        "exit",
+        "router ospf",
+        "ospf router-id 10.255.0.1"
+      ],
+      "node": "r1",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "configure terminal",
+        "interface eth1",
+        "ip ospf area 0",
+        "ip ospf network point-to-point",
+        "exit",
+        "interface lo",
+        "ip ospf area 0",
+        "exit",
+        "router ospf",
+        "ospf router-id 10.255.0.2"
+      ],
+      "node": "r2",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  ],
+  "harness": "harness/netlab.py",
+  "harness_sha256": "735d88b1ebe0e1952f0ce8eec3b2b1b64348c6176e7af9d0ba3c137cf4087802",
+  "hash_contract": "UTF-8 encoding of stored output, with exact stored newlines; not a signature",
+  "images": {
+    "quay.io/frrouting/frr:10.2.1": {
+      "image_created": "2024-12-31T08:27:55.792462405Z",
+      "image_id": "sha256:deea33b3f7bfeeedccd3780d258f0b306153420fd427bbbbdca53536a14a3f07",
+      "repo_digest": "quay.io/frrouting/frr@sha256:e47e67bd612030cb1bedee2bde85b73913f2ea021573b749deb21d94940f03c1"
+    }
+  },
+  "kernel": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "schema_version": 2,
+  "scope": "Commands accepted and output produced by these container images on this kernel at this time. Not hardware execution, not a claim about any NOS not run here, not a scale result.",
+  "topology": "rtnwb-ospf",
+  "topology_definition": {
+    "capture": [
+      {
+        "cmd": "show ip ospf neighbor",
+        "expect": "Full/",
+        "id": "adjacency-is-full",
+        "node": "r1"
+      },
+      {
+        "cmd": "show ip ospf interface eth1",
+        "expect": "Network Type POINTOPOINT",
+        "id": "interface-is-point-to-point",
+        "node": "r1"
+      },
+      {
+        "cmd": "show ip route 10.255.0.2/32",
+        "expect": "10\\.0\\.0\\.2",
+        "id": "remote-loopback-in-rib",
+        "node": "r1"
+      },
+      {
+        "cli": "shell",
+        "cmd": "ping -c 3 -W 2 -I 10.255.0.1 10.255.0.2",
+        "id": "forwarding-actually-works",
+        "node": "r1",
+        "packet_loss": 0,
+        "require": [
+          "packets transmitted",
+          "received"
+        ]
+      }
+    ],
+    "converge": 50,
+    "links": [
+      {
+        "endpoints": [
+          "r1:eth1",
+          "r2:eth1"
+        ]
+      }
+    ],
+    "name": "rtnwb-ospf",
+    "nodes": {
+      "r1": {
+        "config": [
+          "configure terminal",
+          "interface eth1",
+          "ip ospf area 0",
+          "ip ospf network point-to-point",
+          "exit",
+          "interface lo",
+          "ip ospf area 0",
+          "exit",
+          "router ospf",
+          "ospf router-id 10.255.0.1"
+        ],
+        "daemons": [
+          "ospfd"
+        ],
+        "image": "quay.io/frrouting/frr:10.2.1",
+        "pre": [
+          "ip address replace 10.0.0.1/30 dev eth1",
+          "ip address replace 10.255.0.1/32 dev lo"
+        ]
+      },
+      "r2": {
+        "config": [
+          "configure terminal",
+          "interface eth1",
+          "ip ospf area 0",
+          "ip ospf network point-to-point",
+          "exit",
+          "interface lo",
+          "ip ospf area 0",
+          "exit",
+          "router ospf",
+          "ospf router-id 10.255.0.2"
+        ],
+        "daemons": [
+          "ospfd"
+        ],
+        "image": "quay.io/frrouting/frr:10.2.1",
+        "pre": [
+          "ip address replace 10.0.0.2/30 dev eth1",
+          "ip address replace 10.255.0.2/32 dev lo"
+        ]
+      }
+    },
+    "settle": 3
+  },
+  "topology_sha256": "22ddbbc2e0794b2c56ef5e4d28ba99ca3cce80565c5049ce84a34e040d79a643"
+}

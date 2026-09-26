@@ -1,0 +1,38 @@
+{
+  "edition": "RTN-2026-09-26",
+  "date": "2026-09-26",
+  "status": "local-print-proof; matching public release pending",
+  "book": {
+    "print_pages": 746,
+    "colour_pages": 744,
+    "print_sha256": "d3d19fd9f07790e3f2988820f2b01c14abb80e6181aaecf6fa8b86f8768e0b3e",
+    "colour_sha256": "a7207bb6237a2ca572b398915c6804de969a9935530f568f5064625b2b86c679"
+  },
+  "workbook": {
+    "pages": 25,
+    "sha256": "a9fd4f8f383bc02dc5e99053f33b112fba3246e384691449183b6032814c0e67"
+  },
+  "repository": "https://github.com/DrHarithKharrufa/running-the-network-labs",
+  "errata": "https://github.com/DrHarithKharrufa/running-the-network-labs/issues",
+  "inventory": {
+    "laboratory_exercises": 84,
+    "support_directories": 5,
+    "support_names": [
+      "common",
+      "gns3",
+      "reference-designs",
+      "standards",
+      "topologies"
+    ],
+    "python_programs": 252,
+    "test_programs": 104,
+    "containerlab_topologies": 35,
+    "harness_topologies": 7,
+    "device_config_files": 114,
+    "evidence_json_files": 29,
+    "declared_test_programs": 108,
+    "fresh_routing_records": 17
+  },
+  "hash_manifest": "SHA256SUMS.txt in the reader archive; lists every payload except itself",
+  "qualification": "QUALIFICATION.md"
+}

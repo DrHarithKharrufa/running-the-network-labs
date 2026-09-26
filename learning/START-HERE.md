@@ -1,6 +1,6 @@
 # Running the Network: learning companion
 
-Edition: complete teaching revision, 25 September 2026. Start with Appendix G in the matching book. This directory supplies a learning route and worked guidance for all 500 chapter exercises; the existing `labs/` directory supplies the technical lab files and their environment-specific READMEs.
+Edition: RTN-2026-09-26, practical route and print proof. Start with Appendix G in the matching book. This directory supplies a learning route and worked guidance for all 500 chapter exercises; the existing `labs/` directory supplies the technical lab files and their environment-specific READMEs.
 
 1. Complete the number and terminal entry checks in Appendix G and Chapter 3.
 2. Choose the first milestone below that you cannot yet demonstrate.
@@ -47,7 +47,7 @@ For the first ten chapters, work through `FOUNDATIONS-WORKBOOK.md`: specify one 
 
 ## Run the offline example
 
-Use Python 3.10 or newer. From the extracted companion root:
+Use Python 3.11 or newer for this edition’s declared test route. From the extracted companion root:
 
 ```text
 python -B learning/case_math.py
@@ -72,4 +72,18 @@ Read `labs/lab03/README.md` and Appendix A before installing or deploying anythi
 
 Score mechanism/units, evidence/limits, service/recovery reasoning and communication/ownership from 0 to 2 each. For the teaching milestones, aim for at least 6/8, no zero, and no unresolved material technical or recovery error. A different well-supported design can earn full credit.
 
-For a suspected error, record the edition, chapter/section or file, the claim, the expected result, a minimal reproduction and any primary reference. Exclude passwords, customer data and unrelated logs. The author-facing revision package includes an errata template. A public download and reporting address must be established before the reader package is published; this private draft does not invent one.
+For a suspected error, record the edition, chapter/section or file, the claim, the expected result, a minimal reproduction and any primary reference. Exclude passwords, customer data and unrelated logs. The author-facing revision package includes an errata template. The public repository and issue tracker are linked in the companion README. Match EDITION.json to the book; the proof requires publication of its matching public release.
+
+
+## From paper reasoning to a working tool
+
+Open [practical-route/README.md](practical-route/README.md) for eight graded sessions.
+Each provides a goal, commands, expected observation, deliberate failure, recovery
+and transfer exercise, starting with no assumed Python knowledge. Then use
+[N8N-LAB.md](practical-route/N8N-LAB.md) to import and run the workflow, or
+[POWER-AUTOMATE-LAB.md](practical-route/POWER-AUTOMATE-LAB.md) to construct the
+tenant flow and capture its acceptance record. Use [TASK-INDEX.md](TASK-INDEX.md)
+when looking up a job instead of reading sequentially.
+
+
+The connected [OPERATIONS-JOURNEY.md](OPERATIONS-JOURNEY.md) joins commissioning, daily checks, recovery, monitoring, a controlled change and a capacity decision. Keep the FRR network and simulated HTTP service evidence separate.

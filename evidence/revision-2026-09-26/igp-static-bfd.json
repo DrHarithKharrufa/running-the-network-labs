@@ -1,0 +1,491 @@
+{
+  "captured_utc": "2026-09-26T07:57:29+00:00",
+  "captures": [
+    {
+      "cli": "vtysh",
+      "cmd": "show ip route 10.255.0.2/32",
+      "contract": {
+        "cmd": "show ip route 10.255.0.2/32",
+        "expect": "10.0.12.1",
+        "id": "primary-static-is-selected",
+        "node": "r1"
+      },
+      "elapsed_s": 0.058,
+      "id": "primary-static-is-selected",
+      "matched": true,
+      "node": "r1",
+      "output": "Routing entry for 10.255.0.2/32\n  Known via \"static\", distance 200, metric 0\n  Last update 00:00:26 ago\n    10.0.13.1, via eth2, weight 1\n\nRouting entry for 10.255.0.2/32\n  Known via \"static\", distance 1, metric 0, best\n  Last update 00:00:26 ago\n  * 10.0.12.1, via eth1, weight 1\n\n",
+      "returncode": 0,
+      "sha256": "f1059c326a9c9138d1ec341e8cb96fbc25551e380810187c95429930df5f2a02",
+      "stderr": "",
+      "stdout": "Routing entry for 10.255.0.2/32\n  Known via \"static\", distance 200, metric 0\n  Last update 00:00:26 ago\n    10.0.13.1, via eth2, weight 1\n\nRouting entry for 10.255.0.2/32\n  Known via \"static\", distance 1, metric 0, best\n  Last update 00:00:26 ago\n  * 10.0.12.1, via eth1, weight 1\n\n",
+      "validation_errors": []
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show ip route static",
+      "contract": {
+        "cmd": "show ip route static",
+        "expect": "S>\\* 10\\.255\\.0\\.2/32 \\[1/0\\] via 10\\.0\\.12\\.1",
+        "id": "the-floating-static-is-present-but-not-selected",
+        "node": "r1"
+      },
+      "elapsed_s": 0.052,
+      "id": "the-floating-static-is-present-but-not-selected",
+      "matched": true,
+      "node": "r1",
+      "output": "Codes: K - kernel route, C - connected, L - local, S - static,\n       R - RIP, O - OSPF, I - IS-IS, B - BGP, E - EIGRP, N - NHRP,\n       T - Table, v - VNC, V - VNC-Direct, A - Babel, F - PBR,\n       f - OpenFabric, t - Table-Direct,\n       > - selected route, * - FIB route, q - queued, r - rejected, b - backup\n       t - trapped, o - offload failure\n\nS   10.255.0.2/32 [200/0] via 10.0.13.1, eth2, weight 1, 00:00:26\nS>* 10.255.0.2/32 [1/0] via 10.0.12.1, eth1, weight 1, 00:00:26\n",
+      "returncode": 0,
+      "sha256": "9d55e93d9a4bb15902142a0165a3cc6a2f758d00c4de6f2945953340b3874815",
+      "stderr": "",
+      "stdout": "Codes: K - kernel route, C - connected, L - local, S - static,\n       R - RIP, O - OSPF, I - IS-IS, B - BGP, E - EIGRP, N - NHRP,\n       T - Table, v - VNC, V - VNC-Direct, A - Babel, F - PBR,\n       f - OpenFabric, t - Table-Direct,\n       > - selected route, * - FIB route, q - queued, r - rejected, b - backup\n       t - trapped, o - offload failure\n\nS   10.255.0.2/32 [200/0] via 10.0.13.1, eth2, weight 1, 00:00:26\nS>* 10.255.0.2/32 [1/0] via 10.0.12.1, eth1, weight 1, 00:00:26\n",
+      "validation_errors": []
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show ip route static",
+      "contract": {
+        "cmd": "show ip route static",
+        "expect": "\\n *S   10\\.255\\.0\\.2/32 \\[200/0\\] via 10\\.0\\.13\\.1",
+        "id": "the-backup-is-present-at-distance-200-and-not-selected",
+        "node": "r1"
+      },
+      "elapsed_s": 0.064,
+      "id": "the-backup-is-present-at-distance-200-and-not-selected",
+      "matched": true,
+      "node": "r1",
+      "output": "Codes: K - kernel route, C - connected, L - local, S - static,\n       R - RIP, O - OSPF, I - IS-IS, B - BGP, E - EIGRP, N - NHRP,\n       T - Table, v - VNC, V - VNC-Direct, A - Babel, F - PBR,\n       f - OpenFabric, t - Table-Direct,\n       > - selected route, * - FIB route, q - queued, r - rejected, b - backup\n       t - trapped, o - offload failure\n\nS   10.255.0.2/32 [200/0] via 10.0.13.1, eth2, weight 1, 00:00:26\nS>* 10.255.0.2/32 [1/0] via 10.0.12.1, eth1, weight 1, 00:00:26\n",
+      "returncode": 0,
+      "sha256": "9d55e93d9a4bb15902142a0165a3cc6a2f758d00c4de6f2945953340b3874815",
+      "stderr": "",
+      "stdout": "Codes: K - kernel route, C - connected, L - local, S - static,\n       R - RIP, O - OSPF, I - IS-IS, B - BGP, E - EIGRP, N - NHRP,\n       T - Table, v - VNC, V - VNC-Direct, A - Babel, F - PBR,\n       f - OpenFabric, t - Table-Direct,\n       > - selected route, * - FIB route, q - queued, r - rejected, b - backup\n       t - trapped, o - offload failure\n\nS   10.255.0.2/32 [200/0] via 10.0.13.1, eth2, weight 1, 00:00:26\nS>* 10.255.0.2/32 [1/0] via 10.0.12.1, eth1, weight 1, 00:00:26\n",
+      "validation_errors": []
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show ip route 10.255.0.2/32",
+      "contract": {
+        "cmd": "show ip route 10.255.0.2/32",
+        "expect": "distance 1",
+        "id": "distance-is-what-decides",
+        "node": "r1"
+      },
+      "elapsed_s": 0.072,
+      "id": "distance-is-what-decides",
+      "matched": true,
+      "node": "r1",
+      "output": "Routing entry for 10.255.0.2/32\n  Known via \"static\", distance 200, metric 0\n  Last update 00:00:26 ago\n    10.0.13.1, via eth2, weight 1\n\nRouting entry for 10.255.0.2/32\n  Known via \"static\", distance 1, metric 0, best\n  Last update 00:00:26 ago\n  * 10.0.12.1, via eth1, weight 1\n\n",
+      "returncode": 0,
+      "sha256": "f1059c326a9c9138d1ec341e8cb96fbc25551e380810187c95429930df5f2a02",
+      "stderr": "",
+      "stdout": "Routing entry for 10.255.0.2/32\n  Known via \"static\", distance 200, metric 0\n  Last update 00:00:26 ago\n    10.0.13.1, via eth2, weight 1\n\nRouting entry for 10.255.0.2/32\n  Known via \"static\", distance 1, metric 0, best\n  Last update 00:00:26 ago\n  * 10.0.12.1, via eth1, weight 1\n\n",
+      "validation_errors": []
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show bfd peers brief",
+      "contract": {
+        "cmd": "show bfd peers brief",
+        "expect": "up",
+        "id": "bfd-session-is-up",
+        "node": "r1"
+      },
+      "elapsed_s": 0.058,
+      "id": "bfd-session-is-up",
+      "matched": true,
+      "node": "r1",
+      "output": "Session count: 1\nSessionId  LocalAddress                             PeerAddress                             Status         \n=========  ============                             ===========                             ======         \n2757919139 0.0.0.0                                  10.0.12.1                               up             \n",
+      "returncode": 0,
+      "sha256": "bb238dbabb5b9ac1268a5e3b5586ff0c4957167baaddd34de42ae7143f6d15dd",
+      "stderr": "",
+      "stdout": "Session count: 1\nSessionId  LocalAddress                             PeerAddress                             Status         \n=========  ============                             ===========                             ======         \n2757919139 0.0.0.0                                  10.0.12.1                               up             \n",
+      "validation_errors": []
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show bfd peer 10.0.12.1",
+      "contract": {
+        "cmd": "show bfd peer 10.0.12.1",
+        "expect": "Detect-multiplier",
+        "id": "bfd-detection-time-is-sub-second",
+        "node": "r1"
+      },
+      "elapsed_s": 0.068,
+      "id": "bfd-detection-time-is-sub-second",
+      "matched": true,
+      "node": "r1",
+      "output": "BFD Peer:\n\tpeer 10.0.12.1 vrf default\n\t\tID: 2757919139\n\t\tRemote ID: 3604302243\n\t\tActive mode\n\t\tStatus: up\n\t\tUptime: 25 second(s)\n\t\tDiagnostics: ok\n\t\tRemote diagnostics: ok\n\t\tPeer Type: configured\n\t\tRTT min/avg/max: 0/0/0 usec\n\t\tLocal timers:\n\t\t\tDetect-multiplier: 3\n\t\t\tReceive interval: 300ms\n\t\t\tTransmission interval: 300ms\n\t\t\tEcho receive interval: 50ms\n\t\t\tEcho transmission interval: disabled\n\t\tRemote timers:\n\t\t\tDetect-multiplier: 3\n\t\t\tReceive interval: 300ms\n\t\t\tTransmission interval: 300ms\n\t\t\tEcho receive interval: 50ms\n\n",
+      "returncode": 0,
+      "sha256": "2297f773c067b1eb9e92abf6e3f1ff515a2034f3571626c2b0ea23fc753ef586",
+      "stderr": "",
+      "stdout": "BFD Peer:\n\tpeer 10.0.12.1 vrf default\n\t\tID: 2757919139\n\t\tRemote ID: 3604302243\n\t\tActive mode\n\t\tStatus: up\n\t\tUptime: 25 second(s)\n\t\tDiagnostics: ok\n\t\tRemote diagnostics: ok\n\t\tPeer Type: configured\n\t\tRTT min/avg/max: 0/0/0 usec\n\t\tLocal timers:\n\t\t\tDetect-multiplier: 3\n\t\t\tReceive interval: 300ms\n\t\t\tTransmission interval: 300ms\n\t\t\tEcho receive interval: 50ms\n\t\t\tEcho transmission interval: disabled\n\t\tRemote timers:\n\t\t\tDetect-multiplier: 3\n\t\t\tReceive interval: 300ms\n\t\t\tTransmission interval: 300ms\n\t\t\tEcho receive interval: 50ms\n\n",
+      "validation_errors": []
+    },
+    {
+      "cli": "shell",
+      "cmd": "ping -c 3 -W 2 -I 10.255.0.1 10.255.0.2",
+      "contract": {
+        "cli": "shell",
+        "cmd": "ping -c 3 -W 2 -I 10.255.0.1 10.255.0.2",
+        "id": "forwarding-over-the-primary",
+        "node": "r1",
+        "packet_loss": 0,
+        "require": [
+          "packets transmitted",
+          "received"
+        ]
+      },
+      "elapsed_s": 2.048,
+      "id": "forwarding-over-the-primary",
+      "matched": true,
+      "node": "r1",
+      "output": "PING 10.255.0.2 (10.255.0.2) from 10.255.0.1: 56 data bytes\n64 bytes from 10.255.0.2: seq=0 ttl=64 time=0.067 ms\n64 bytes from 10.255.0.2: seq=1 ttl=64 time=0.118 ms\n64 bytes from 10.255.0.2: seq=2 ttl=64 time=0.069 ms\n\n--- 10.255.0.2 ping statistics ---\n3 packets transmitted, 3 packets received, 0% packet loss\nround-trip min/avg/max = 0.067/0.084/0.118 ms\n",
+      "returncode": 0,
+      "sha256": "3bd6b611c50be823ee5d6a6dc08d4bdbf634804d3ad5d5fa450637a5ec675b34",
+      "stderr": "",
+      "stdout": "PING 10.255.0.2 (10.255.0.2) from 10.255.0.1: 56 data bytes\n64 bytes from 10.255.0.2: seq=0 ttl=64 time=0.067 ms\n64 bytes from 10.255.0.2: seq=1 ttl=64 time=0.118 ms\n64 bytes from 10.255.0.2: seq=2 ttl=64 time=0.069 ms\n\n--- 10.255.0.2 ping statistics ---\n3 packets transmitted, 3 packets received, 0% packet loss\nround-trip min/avg/max = 0.067/0.084/0.118 ms\n",
+      "validation_errors": []
+    }
+  ],
+  "captures_failed": 0,
+  "captures_total": 7,
+  "configuration": [
+    {
+      "commands": [
+        "sysctl -w net.ipv4.ip_forward=1"
+      ],
+      "node": "r1",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "net.ipv4.ip_forward = 1\n"
+    },
+    {
+      "commands": [
+        "sysctl -w net.ipv4.ip_forward=1"
+      ],
+      "node": "r2",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "net.ipv4.ip_forward = 1\n"
+    },
+    {
+      "commands": [
+        "sysctl -w net.ipv4.ip_forward=1"
+      ],
+      "node": "r3",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "net.ipv4.ip_forward = 1\n"
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.12.0/31 dev eth1"
+      ],
+      "node": "r1",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.13.0/31 dev eth2"
+      ],
+      "node": "r1",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.255.0.1/32 dev lo"
+      ],
+      "node": "r1",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "sed -i 's/^bfdd=no/bfdd=yes/;s/^staticd=no/staticd=yes/' /etc/frr/daemons && touch /etc/frr/vtysh.conf && chown frr:frr /etc/frr/vtysh.conf && /usr/lib/frr/frrinit.sh start"
+      ],
+      "node": "r1",
+      "phase": "daemon-start",
+      "returncode": 0,
+      "stderr": "2026/09/26 07:56:53 ZEBRA: [NNACN-54BDA][EC 4043309110] Disabling MPLS support (no kernel support)\n/etc/frr/frr.conf does not exist; skipping config apply\n",
+      "stdout": "Starting watchfrr with command: '  /usr/lib/frr/watchfrr  -d  -F traditional   zebra mgmtd staticd bfdd'\nStarted watchfrr\n"
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.12.1/31 dev eth1"
+      ],
+      "node": "r2",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.23.1/31 dev eth2"
+      ],
+      "node": "r2",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.255.0.2/32 dev lo"
+      ],
+      "node": "r2",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "sed -i 's/^bfdd=no/bfdd=yes/;s/^staticd=no/staticd=yes/' /etc/frr/daemons && touch /etc/frr/vtysh.conf && chown frr:frr /etc/frr/vtysh.conf && /usr/lib/frr/frrinit.sh start"
+      ],
+      "node": "r2",
+      "phase": "daemon-start",
+      "returncode": 0,
+      "stderr": "2026/09/26 07:56:55 ZEBRA: [NNACN-54BDA][EC 4043309110] Disabling MPLS support (no kernel support)\n/etc/frr/frr.conf does not exist; skipping config apply\n",
+      "stdout": "Starting watchfrr with command: '  /usr/lib/frr/watchfrr  -d  -F traditional   zebra mgmtd staticd bfdd'\nStarted watchfrr\n"
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.13.1/31 dev eth1"
+      ],
+      "node": "r3",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.23.0/31 dev eth2"
+      ],
+      "node": "r3",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.255.0.3/32 dev lo"
+      ],
+      "node": "r3",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "sed -i 's/^staticd=no/staticd=yes/' /etc/frr/daemons && touch /etc/frr/vtysh.conf && chown frr:frr /etc/frr/vtysh.conf && /usr/lib/frr/frrinit.sh start"
+      ],
+      "node": "r3",
+      "phase": "daemon-start",
+      "returncode": 0,
+      "stderr": "2026/09/26 07:56:58 ZEBRA: [NNACN-54BDA][EC 4043309110] Disabling MPLS support (no kernel support)\n/etc/frr/frr.conf does not exist; skipping config apply\n",
+      "stdout": "Starting watchfrr with command: '  /usr/lib/frr/watchfrr  -d  -F traditional   zebra mgmtd staticd'\nStarted watchfrr\n"
+    },
+    {
+      "commands": [
+        "configure terminal",
+        "ip route 10.255.0.2/32 10.0.12.1",
+        "ip route 10.255.0.2/32 10.0.13.1 200",
+        "bfd",
+        "peer 10.0.12.1",
+        "exit",
+        "exit"
+      ],
+      "node": "r1",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "configure terminal",
+        "ip route 10.255.0.1/32 10.0.12.0",
+        "ip route 10.255.0.1/32 10.0.23.0 200",
+        "bfd",
+        "peer 10.0.12.0",
+        "exit",
+        "exit"
+      ],
+      "node": "r2",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "configure terminal",
+        "ip route 10.255.0.1/32 10.0.13.0",
+        "ip route 10.255.0.2/32 10.0.23.1"
+      ],
+      "node": "r3",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  ],
+  "harness": "harness/netlab.py",
+  "harness_sha256": "735d88b1ebe0e1952f0ce8eec3b2b1b64348c6176e7af9d0ba3c137cf4087802",
+  "hash_contract": "UTF-8 encoding of stored output, with exact stored newlines; not a signature",
+  "images": {
+    "quay.io/frrouting/frr:10.2.1": {
+      "image_created": "2024-12-31T08:27:55.792462405Z",
+      "image_id": "sha256:deea33b3f7bfeeedccd3780d258f0b306153420fd427bbbbdca53536a14a3f07",
+      "repo_digest": "quay.io/frrouting/frr@sha256:e47e67bd612030cb1bedee2bde85b73913f2ea021573b749deb21d94940f03c1"
+    }
+  },
+  "kernel": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "schema_version": 2,
+  "scope": "Commands accepted and output produced by these container images on this kernel at this time. Not hardware execution, not a claim about any NOS not run here, not a scale result.",
+  "topology": "rtnwb-static-bfd",
+  "topology_definition": {
+    "capture": [
+      {
+        "cmd": "show ip route 10.255.0.2/32",
+        "expect": "10.0.12.1",
+        "id": "primary-static-is-selected",
+        "node": "r1"
+      },
+      {
+        "cmd": "show ip route static",
+        "expect": "S>\\* 10\\.255\\.0\\.2/32 \\[1/0\\] via 10\\.0\\.12\\.1",
+        "id": "the-floating-static-is-present-but-not-selected",
+        "node": "r1"
+      },
+      {
+        "cmd": "show ip route static",
+        "expect": "\\n *S   10\\.255\\.0\\.2/32 \\[200/0\\] via 10\\.0\\.13\\.1",
+        "id": "the-backup-is-present-at-distance-200-and-not-selected",
+        "node": "r1"
+      },
+      {
+        "cmd": "show ip route 10.255.0.2/32",
+        "expect": "distance 1",
+        "id": "distance-is-what-decides",
+        "node": "r1"
+      },
+      {
+        "cmd": "show bfd peers brief",
+        "expect": "up",
+        "id": "bfd-session-is-up",
+        "node": "r1"
+      },
+      {
+        "cmd": "show bfd peer 10.0.12.1",
+        "expect": "Detect-multiplier",
+        "id": "bfd-detection-time-is-sub-second",
+        "node": "r1"
+      },
+      {
+        "cli": "shell",
+        "cmd": "ping -c 3 -W 2 -I 10.255.0.1 10.255.0.2",
+        "id": "forwarding-over-the-primary",
+        "node": "r1",
+        "packet_loss": 0,
+        "require": [
+          "packets transmitted",
+          "received"
+        ]
+      }
+    ],
+    "converge": 25,
+    "links": [
+      {
+        "endpoints": [
+          "r1:eth1",
+          "r2:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "r1:eth2",
+          "r3:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "r3:eth2",
+          "r2:eth2"
+        ]
+      }
+    ],
+    "name": "rtnwb-static-bfd",
+    "nodes": {
+      "r1": {
+        "config": [
+          "configure terminal",
+          "ip route 10.255.0.2/32 10.0.12.1",
+          "ip route 10.255.0.2/32 10.0.13.1 200",
+          "bfd",
+          "peer 10.0.12.1",
+          "exit",
+          "exit"
+        ],
+        "daemons": [
+          "bfdd",
+          "staticd"
+        ],
+        "image": "quay.io/frrouting/frr:10.2.1",
+        "pre": [
+          "ip address replace 10.0.12.0/31 dev eth1",
+          "ip address replace 10.0.13.0/31 dev eth2",
+          "ip address replace 10.255.0.1/32 dev lo"
+        ]
+      },
+      "r2": {
+        "config": [
+          "configure terminal",
+          "ip route 10.255.0.1/32 10.0.12.0",
+          "ip route 10.255.0.1/32 10.0.23.0 200",
+          "bfd",
+          "peer 10.0.12.0",
+          "exit",
+          "exit"
+        ],
+        "daemons": [
+          "bfdd",
+          "staticd"
+        ],
+        "image": "quay.io/frrouting/frr:10.2.1",
+        "pre": [
+          "ip address replace 10.0.12.1/31 dev eth1",
+          "ip address replace 10.0.23.1/31 dev eth2",
+          "ip address replace 10.255.0.2/32 dev lo"
+        ]
+      },
+      "r3": {
+        "config": [
+          "configure terminal",
+          "ip route 10.255.0.1/32 10.0.13.0",
+          "ip route 10.255.0.2/32 10.0.23.1"
+        ],
+        "daemons": [
+          "staticd"
+        ],
+        "image": "quay.io/frrouting/frr:10.2.1",
+        "pre": [
+          "ip address replace 10.0.13.1/31 dev eth1",
+          "ip address replace 10.0.23.0/31 dev eth2",
+          "ip address replace 10.255.0.3/32 dev lo"
+        ]
+      }
+    },
+    "settle": 4
+  },
+  "topology_sha256": "3cfd0a7b52e78cb3615d08c7513c508b34015e76d6e50ae653ee48ee1d40279e"
+}

@@ -1,0 +1,565 @@
+{
+  "captured_utc": "2026-09-26T07:51:40+00:00",
+  "captures": [
+    {
+      "cli": "vtysh",
+      "cmd": "show bgp ipv4 unicast summary",
+      "contract": {
+        "cmd": "show bgp ipv4 unicast summary",
+        "expect": "10.0.13.1.*64510",
+        "id": "ebgp-session-established",
+        "node": "r1"
+      },
+      "elapsed_s": 0.074,
+      "id": "ebgp-session-established",
+      "matched": true,
+      "node": "r1",
+      "output": "BGP router identifier 10.255.0.1, local AS number 64500 VRF default vrf-id 0\nBGP table version 3\nRIB entries 5, using 640 bytes of memory\nPeers 2, using 33 KiB of memory\n\nNeighbor        V         AS   MsgRcvd   MsgSent   TblVer  InQ OutQ  Up/Down State/PfxRcd   PfxSnt Desc\n10.0.13.1       4      64510        11         7        3    0    0 00:00:59            1        1 N/A\n10.255.0.2      4      64500         4         6        3    0    0 00:00:45            1        2 FRRouting/10.2.1_git\n\nTotal number of neighbors 2\n",
+      "returncode": 0,
+      "sha256": "5a1c057607bd3d11cb06d14088fe24949d86e8a59f94fb4ce9ccb40e45af4418",
+      "stderr": "",
+      "stdout": "BGP router identifier 10.255.0.1, local AS number 64500 VRF default vrf-id 0\nBGP table version 3\nRIB entries 5, using 640 bytes of memory\nPeers 2, using 33 KiB of memory\n\nNeighbor        V         AS   MsgRcvd   MsgSent   TblVer  InQ OutQ  Up/Down State/PfxRcd   PfxSnt Desc\n10.0.13.1       4      64510        11         7        3    0    0 00:00:59            1        1 N/A\n10.255.0.2      4      64500         4         6        3    0    0 00:00:45            1        2 FRRouting/10.2.1_git\n\nTotal number of neighbors 2\n",
+      "validation_errors": []
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show bgp ipv4 unicast summary",
+      "contract": {
+        "cmd": "show bgp ipv4 unicast summary",
+        "expect": "10.255.0.2.*64500",
+        "id": "ibgp-session-established",
+        "node": "r1"
+      },
+      "elapsed_s": 0.077,
+      "id": "ibgp-session-established",
+      "matched": true,
+      "node": "r1",
+      "output": "BGP router identifier 10.255.0.1, local AS number 64500 VRF default vrf-id 0\nBGP table version 3\nRIB entries 5, using 640 bytes of memory\nPeers 2, using 33 KiB of memory\n\nNeighbor        V         AS   MsgRcvd   MsgSent   TblVer  InQ OutQ  Up/Down State/PfxRcd   PfxSnt Desc\n10.0.13.1       4      64510        11         7        3    0    0 00:00:59            1        1 N/A\n10.255.0.2      4      64500         4         6        3    0    0 00:00:45            1        2 FRRouting/10.2.1_git\n\nTotal number of neighbors 2\n",
+      "returncode": 0,
+      "sha256": "5a1c057607bd3d11cb06d14088fe24949d86e8a59f94fb4ce9ccb40e45af4418",
+      "stderr": "",
+      "stdout": "BGP router identifier 10.255.0.1, local AS number 64500 VRF default vrf-id 0\nBGP table version 3\nRIB entries 5, using 640 bytes of memory\nPeers 2, using 33 KiB of memory\n\nNeighbor        V         AS   MsgRcvd   MsgSent   TblVer  InQ OutQ  Up/Down State/PfxRcd   PfxSnt Desc\n10.0.13.1       4      64510        11         7        3    0    0 00:00:59            1        1 N/A\n10.255.0.2      4      64500         4         6        3    0    0 00:00:45            1        2 FRRouting/10.2.1_git\n\nTotal number of neighbors 2\n",
+      "validation_errors": []
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show bgp ipv4 unicast 203.0.113.1/32",
+      "contract": {
+        "cmd": "show bgp ipv4 unicast 203.0.113.1/32",
+        "expect": "10.0.13.1",
+        "id": "ebgp-changes-the-next-hop",
+        "node": "r1"
+      },
+      "elapsed_s": 0.078,
+      "id": "ebgp-changes-the-next-hop",
+      "matched": true,
+      "node": "r1",
+      "output": "BGP routing table entry for 203.0.113.1/32, version 2\nPaths: (1 available, best #1, table default)\n  Advertised to non peer-group peers:\n  10.255.0.2\n  64510\n    10.0.13.1 from 10.0.13.1 (203.0.113.1)\n      Origin IGP, metric 0, valid, external, best (First path received)\n      Last update: Sat Sep 26 07:50:56 2026\n",
+      "returncode": 0,
+      "sha256": "b6f7aff86098cf85a8b9df4fea0eb87e3632b476f0bbffaf1e1f1b82c7f7a715",
+      "stderr": "",
+      "stdout": "BGP routing table entry for 203.0.113.1/32, version 2\nPaths: (1 available, best #1, table default)\n  Advertised to non peer-group peers:\n  10.255.0.2\n  64510\n    10.0.13.1 from 10.0.13.1 (203.0.113.1)\n      Origin IGP, metric 0, valid, external, best (First path received)\n      Last update: Sat Sep 26 07:50:56 2026\n",
+      "validation_errors": []
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show bgp ipv4 unicast 203.0.113.1/32",
+      "contract": {
+        "cmd": "show bgp ipv4 unicast 203.0.113.1/32",
+        "expect": "10.0.13.1",
+        "id": "ibgp-keeps-the-original-next-hop",
+        "node": "r2"
+      },
+      "elapsed_s": 0.089,
+      "id": "ibgp-keeps-the-original-next-hop",
+      "matched": true,
+      "node": "r2",
+      "output": "BGP routing table entry for 203.0.113.1/32, version 0\nPaths: (1 available, no best path)\n  Not advertised to any peer\n  64510\n    10.0.13.1 (inaccessible, import-check enabled) from 10.255.0.1 (10.255.0.1)\n      Origin IGP, metric 0, localpref 100, invalid, internal\n      Last update: Sat Sep 26 07:50:56 2026\n",
+      "returncode": 0,
+      "sha256": "3344606d0323eb4da9ef7062953536bc4743b37263a7eee9bc60b4473fb00c97",
+      "stderr": "",
+      "stdout": "BGP routing table entry for 203.0.113.1/32, version 0\nPaths: (1 available, no best path)\n  Not advertised to any peer\n  64510\n    10.0.13.1 (inaccessible, import-check enabled) from 10.255.0.1 (10.255.0.1)\n      Origin IGP, metric 0, localpref 100, invalid, internal\n      Last update: Sat Sep 26 07:50:56 2026\n",
+      "validation_errors": []
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show bgp ipv4 unicast 203.0.113.1/32",
+      "contract": {
+        "cmd": "show bgp ipv4 unicast 203.0.113.1/32",
+        "expect": "(?s)^(?!.*\\bvalid, internal, best\\b).*$",
+        "id": "the-path-is-not-valid-on-r2",
+        "node": "r2",
+        "require": [
+          "BGP routing table entry for 203.0.113.1/32",
+          "Paths:",
+          "10.0.13.1"
+        ]
+      },
+      "elapsed_s": 0.073,
+      "id": "the-path-is-not-valid-on-r2",
+      "matched": true,
+      "node": "r2",
+      "output": "BGP routing table entry for 203.0.113.1/32, version 0\nPaths: (1 available, no best path)\n  Not advertised to any peer\n  64510\n    10.0.13.1 (inaccessible, import-check enabled) from 10.255.0.1 (10.255.0.1)\n      Origin IGP, metric 0, localpref 100, invalid, internal\n      Last update: Sat Sep 26 07:50:56 2026\n",
+      "returncode": 0,
+      "sha256": "3344606d0323eb4da9ef7062953536bc4743b37263a7eee9bc60b4473fb00c97",
+      "stderr": "",
+      "stdout": "BGP routing table entry for 203.0.113.1/32, version 0\nPaths: (1 available, no best path)\n  Not advertised to any peer\n  64510\n    10.0.13.1 (inaccessible, import-check enabled) from 10.255.0.1 (10.255.0.1)\n      Origin IGP, metric 0, localpref 100, invalid, internal\n      Last update: Sat Sep 26 07:50:56 2026\n",
+      "validation_errors": []
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show ip route 203.0.113.1/32",
+      "contract": {
+        "allow_messages": [
+          "% Network not in table"
+        ],
+        "cmd": "show ip route 203.0.113.1/32",
+        "expect": "Network not in table",
+        "id": "and-so-it-is-not-in-the-routing-table",
+        "node": "r2"
+      },
+      "elapsed_s": 0.06,
+      "id": "and-so-it-is-not-in-the-routing-table",
+      "matched": true,
+      "node": "r2",
+      "output": "% Network not in table\n",
+      "returncode": 0,
+      "sha256": "341916725e2fa95ff1a6b137a55706abda5233e09226e58b2f1b4a4c278438a2",
+      "stderr": "",
+      "stdout": "% Network not in table\n",
+      "validation_errors": []
+    }
+  ],
+  "captures_failed": 0,
+  "captures_total": 6,
+  "configuration": [
+    {
+      "commands": [
+        "sysctl -w net.ipv4.ip_forward=1"
+      ],
+      "node": "r1",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "net.ipv4.ip_forward = 1\n"
+    },
+    {
+      "commands": [
+        "sysctl -w net.ipv4.ip_forward=1"
+      ],
+      "node": "r2",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "net.ipv4.ip_forward = 1\n"
+    },
+    {
+      "commands": [
+        "sysctl -w net.ipv4.ip_forward=1"
+      ],
+      "node": "r3",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "net.ipv4.ip_forward = 1\n"
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.13.0/31 dev eth1"
+      ],
+      "node": "r1",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.12.0/31 dev eth2"
+      ],
+      "node": "r1",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.255.0.1/32 dev lo"
+      ],
+      "node": "r1",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "sed -i 's/^bgpd=no/bgpd=yes/;s/^ospfd=no/ospfd=yes/' /etc/frr/daemons && touch /etc/frr/vtysh.conf && chown frr:frr /etc/frr/vtysh.conf && /usr/lib/frr/frrinit.sh start"
+      ],
+      "node": "r1",
+      "phase": "daemon-start",
+      "returncode": 0,
+      "stderr": "2026/09/26 07:50:29 ZEBRA: [NNACN-54BDA][EC 4043309110] Disabling MPLS support (no kernel support)\n/etc/frr/frr.conf does not exist; skipping config apply\n",
+      "stdout": "Starting watchfrr with command: '  /usr/lib/frr/watchfrr  -d  -F traditional   zebra mgmtd bgpd ospfd staticd'\nStarted watchfrr\n"
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.12.1/31 dev eth1"
+      ],
+      "node": "r2",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.255.0.2/32 dev lo"
+      ],
+      "node": "r2",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 198.51.100.1/24 dev lo"
+      ],
+      "node": "r2",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "sed -i 's/^bgpd=no/bgpd=yes/;s/^ospfd=no/ospfd=yes/' /etc/frr/daemons && touch /etc/frr/vtysh.conf && chown frr:frr /etc/frr/vtysh.conf && /usr/lib/frr/frrinit.sh start"
+      ],
+      "node": "r2",
+      "phase": "daemon-start",
+      "returncode": 0,
+      "stderr": "2026/09/26 07:50:31 ZEBRA: [NNACN-54BDA][EC 4043309110] Disabling MPLS support (no kernel support)\n/etc/frr/frr.conf does not exist; skipping config apply\n",
+      "stdout": "Starting watchfrr with command: '  /usr/lib/frr/watchfrr  -d  -F traditional   zebra mgmtd bgpd ospfd staticd'\nStarted watchfrr\n"
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.13.1/31 dev eth1"
+      ],
+      "node": "r3",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 203.0.113.1/32 dev lo"
+      ],
+      "node": "r3",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "sed -i 's/^bgpd=no/bgpd=yes/;s/^ospfd=no/ospfd=yes/' /etc/frr/daemons && touch /etc/frr/vtysh.conf && chown frr:frr /etc/frr/vtysh.conf && /usr/lib/frr/frrinit.sh start"
+      ],
+      "node": "r3",
+      "phase": "daemon-start",
+      "returncode": 0,
+      "stderr": "2026/09/26 07:50:33 ZEBRA: [NNACN-54BDA][EC 4043309110] Disabling MPLS support (no kernel support)\n/etc/frr/frr.conf does not exist; skipping config apply\n",
+      "stdout": "Starting watchfrr with command: '  /usr/lib/frr/watchfrr  -d  -F traditional   zebra mgmtd bgpd ospfd staticd'\nStarted watchfrr\n"
+    },
+    {
+      "commands": [
+        "configure terminal",
+        "interface eth2",
+        "ip ospf area 0",
+        "ip ospf network point-to-point",
+        "exit",
+        "interface lo",
+        "ip ospf area 0",
+        "exit",
+        "router ospf",
+        "ospf router-id 10.255.0.1",
+        "passive-interface lo",
+        "exit",
+        "ip prefix-list PEER-IN seq 10 permit 203.0.113.1/32",
+        "ip prefix-list PEER-OUT seq 10 permit 198.51.100.0/24",
+        "route-map FROM-PEER permit 10",
+        "match ip address prefix-list PEER-IN",
+        "exit",
+        "route-map TO-PEER permit 10",
+        "match ip address prefix-list PEER-OUT",
+        "exit",
+        "router bgp 64500",
+        "bgp router-id 10.255.0.1",
+        "bgp ebgp-requires-policy",
+        "neighbor 10.0.13.1 remote-as 64510",
+        "neighbor 10.255.0.2 remote-as 64500",
+        "neighbor 10.255.0.2 update-source lo",
+        "address-family ipv4 unicast",
+        "network 10.255.0.1/32",
+        "neighbor 10.0.13.1 activate",
+        "neighbor 10.0.13.1 route-map FROM-PEER in",
+        "neighbor 10.0.13.1 route-map TO-PEER out",
+        "neighbor 10.255.0.2 activate",
+        "exit-address-family"
+      ],
+      "node": "r1",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "This command is deprecated, because it is not VRF-aware.\nPlease, use \"ip ospf passive\" on an interface instead.\n"
+    },
+    {
+      "commands": [
+        "configure terminal",
+        "interface eth1",
+        "ip ospf area 0",
+        "ip ospf network point-to-point",
+        "exit",
+        "interface lo",
+        "ip ospf area 0",
+        "exit",
+        "router ospf",
+        "ospf router-id 10.255.0.2",
+        "passive-interface lo",
+        "exit",
+        "router bgp 64500",
+        "bgp router-id 10.255.0.2",
+        "neighbor 10.255.0.1 remote-as 64500",
+        "neighbor 10.255.0.1 update-source lo",
+        "address-family ipv4 unicast",
+        "network 198.51.100.0/24",
+        "neighbor 10.255.0.1 activate",
+        "exit-address-family"
+      ],
+      "node": "r2",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "This command is deprecated, because it is not VRF-aware.\nPlease, use \"ip ospf passive\" on an interface instead.\n"
+    },
+    {
+      "commands": [
+        "configure terminal",
+        "ip prefix-list PEER-IN seq 10 permit 198.51.100.0/24",
+        "ip prefix-list PEER-OUT seq 10 permit 203.0.113.1/32",
+        "route-map FROM-PEER permit 10",
+        "match ip address prefix-list PEER-IN",
+        "exit",
+        "route-map TO-PEER permit 10",
+        "match ip address prefix-list PEER-OUT",
+        "exit",
+        "router bgp 64510",
+        "bgp router-id 203.0.113.1",
+        "bgp ebgp-requires-policy",
+        "neighbor 10.0.13.0 remote-as 64500",
+        "address-family ipv4 unicast",
+        "network 203.0.113.1/32",
+        "neighbor 10.0.13.0 activate",
+        "neighbor 10.0.13.0 route-map FROM-PEER in",
+        "neighbor 10.0.13.0 route-map TO-PEER out",
+        "exit-address-family"
+      ],
+      "node": "r3",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  ],
+  "harness": "harness/netlab.py",
+  "harness_sha256": "735d88b1ebe0e1952f0ce8eec3b2b1b64348c6176e7af9d0ba3c137cf4087802",
+  "hash_contract": "UTF-8 encoding of stored output, with exact stored newlines; not a signature",
+  "images": {
+    "quay.io/frrouting/frr:10.2.1": {
+      "image_created": "2024-12-31T08:27:55.792462405Z",
+      "image_id": "sha256:deea33b3f7bfeeedccd3780d258f0b306153420fd427bbbbdca53536a14a3f07",
+      "repo_digest": "quay.io/frrouting/frr@sha256:e47e67bd612030cb1bedee2bde85b73913f2ea021573b749deb21d94940f03c1"
+    }
+  },
+  "kernel": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "schema_version": 2,
+  "scope": "Commands accepted and output produced by these container images on this kernel at this time. Not hardware execution, not a claim about any NOS not run here, not a scale result.",
+  "topology": "rtnwb-bgp",
+  "topology_definition": {
+    "capture": [
+      {
+        "cmd": "show bgp ipv4 unicast summary",
+        "expect": "10.0.13.1.*64510",
+        "id": "ebgp-session-established",
+        "node": "r1"
+      },
+      {
+        "cmd": "show bgp ipv4 unicast summary",
+        "expect": "10.255.0.2.*64500",
+        "id": "ibgp-session-established",
+        "node": "r1"
+      },
+      {
+        "cmd": "show bgp ipv4 unicast 203.0.113.1/32",
+        "expect": "10.0.13.1",
+        "id": "ebgp-changes-the-next-hop",
+        "node": "r1"
+      },
+      {
+        "cmd": "show bgp ipv4 unicast 203.0.113.1/32",
+        "expect": "10.0.13.1",
+        "id": "ibgp-keeps-the-original-next-hop",
+        "node": "r2"
+      },
+      {
+        "cmd": "show bgp ipv4 unicast 203.0.113.1/32",
+        "expect": "(?s)^(?!.*\\bvalid, internal, best\\b).*$",
+        "id": "the-path-is-not-valid-on-r2",
+        "node": "r2",
+        "require": [
+          "BGP routing table entry for 203.0.113.1/32",
+          "Paths:",
+          "10.0.13.1"
+        ]
+      },
+      {
+        "allow_messages": [
+          "% Network not in table"
+        ],
+        "cmd": "show ip route 203.0.113.1/32",
+        "expect": "Network not in table",
+        "id": "and-so-it-is-not-in-the-routing-table",
+        "node": "r2"
+      }
+    ],
+    "converge": 60,
+    "links": [
+      {
+        "endpoints": [
+          "r1:eth1",
+          "r3:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "r1:eth2",
+          "r2:eth1"
+        ]
+      }
+    ],
+    "name": "rtnwb-bgp",
+    "nodes": {
+      "r1": {
+        "config": [
+          "configure terminal",
+          "interface eth2",
+          "ip ospf area 0",
+          "ip ospf network point-to-point",
+          "exit",
+          "interface lo",
+          "ip ospf area 0",
+          "exit",
+          "router ospf",
+          "ospf router-id 10.255.0.1",
+          "passive-interface lo",
+          "exit",
+          "ip prefix-list PEER-IN seq 10 permit 203.0.113.1/32",
+          "ip prefix-list PEER-OUT seq 10 permit 198.51.100.0/24",
+          "route-map FROM-PEER permit 10",
+          "match ip address prefix-list PEER-IN",
+          "exit",
+          "route-map TO-PEER permit 10",
+          "match ip address prefix-list PEER-OUT",
+          "exit",
+          "router bgp 64500",
+          "bgp router-id 10.255.0.1",
+          "bgp ebgp-requires-policy",
+          "neighbor 10.0.13.1 remote-as 64510",
+          "neighbor 10.255.0.2 remote-as 64500",
+          "neighbor 10.255.0.2 update-source lo",
+          "address-family ipv4 unicast",
+          "network 10.255.0.1/32",
+          "neighbor 10.0.13.1 activate",
+          "neighbor 10.0.13.1 route-map FROM-PEER in",
+          "neighbor 10.0.13.1 route-map TO-PEER out",
+          "neighbor 10.255.0.2 activate",
+          "exit-address-family"
+        ],
+        "daemons": [
+          "bgpd",
+          "ospfd"
+        ],
+        "image": "quay.io/frrouting/frr:10.2.1",
+        "pre": [
+          "ip address replace 10.0.13.0/31 dev eth1",
+          "ip address replace 10.0.12.0/31 dev eth2",
+          "ip address replace 10.255.0.1/32 dev lo"
+        ]
+      },
+      "r2": {
+        "config": [
+          "configure terminal",
+          "interface eth1",
+          "ip ospf area 0",
+          "ip ospf network point-to-point",
+          "exit",
+          "interface lo",
+          "ip ospf area 0",
+          "exit",
+          "router ospf",
+          "ospf router-id 10.255.0.2",
+          "passive-interface lo",
+          "exit",
+          "router bgp 64500",
+          "bgp router-id 10.255.0.2",
+          "neighbor 10.255.0.1 remote-as 64500",
+          "neighbor 10.255.0.1 update-source lo",
+          "address-family ipv4 unicast",
+          "network 198.51.100.0/24",
+          "neighbor 10.255.0.1 activate",
+          "exit-address-family"
+        ],
+        "daemons": [
+          "bgpd",
+          "ospfd"
+        ],
+        "image": "quay.io/frrouting/frr:10.2.1",
+        "pre": [
+          "ip address replace 10.0.12.1/31 dev eth1",
+          "ip address replace 10.255.0.2/32 dev lo",
+          "ip address replace 198.51.100.1/24 dev lo"
+        ]
+      },
+      "r3": {
+        "config": [
+          "configure terminal",
+          "ip prefix-list PEER-IN seq 10 permit 198.51.100.0/24",
+          "ip prefix-list PEER-OUT seq 10 permit 203.0.113.1/32",
+          "route-map FROM-PEER permit 10",
+          "match ip address prefix-list PEER-IN",
+          "exit",
+          "route-map TO-PEER permit 10",
+          "match ip address prefix-list PEER-OUT",
+          "exit",
+          "router bgp 64510",
+          "bgp router-id 203.0.113.1",
+          "bgp ebgp-requires-policy",
+          "neighbor 10.0.13.0 remote-as 64500",
+          "address-family ipv4 unicast",
+          "network 203.0.113.1/32",
+          "neighbor 10.0.13.0 activate",
+          "neighbor 10.0.13.0 route-map FROM-PEER in",
+          "neighbor 10.0.13.0 route-map TO-PEER out",
+          "exit-address-family"
+        ],
+        "daemons": [
+          "bgpd",
+          "ospfd"
+        ],
+        "image": "quay.io/frrouting/frr:10.2.1",
+        "pre": [
+          "ip address replace 10.0.13.1/31 dev eth1",
+          "ip address replace 203.0.113.1/32 dev lo"
+        ]
+      }
+    },
+    "settle": 4
+  },
+  "topology_sha256": "41cffbf5871d77d5bd05d58862ef0ee2aa1a87e2b6f0b9d431fc56f5735dd90b"
+}

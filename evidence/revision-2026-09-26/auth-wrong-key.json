@@ -1,0 +1,477 @@
+{
+  "captured_utc": "2026-09-26T08:02:41+00:00",
+  "captures": [
+    {
+      "cli": "vtysh",
+      "cmd": "show ip ospf neighbor",
+      "contract": {
+        "cmd": "show ip ospf neighbor",
+        "expect": "(?s)^(?!.*Full).*$",
+        "node": "r1",
+        "require": [
+          "Neighbor ID"
+        ]
+      },
+      "elapsed_s": 0.059,
+      "id": "r1: show ip ospf neighbor",
+      "matched": true,
+      "node": "r1",
+      "output": "\nNeighbor ID     Pri State           Up Time         Dead Time Address         Interface                        RXmtL RqstL DBsmL\n\n",
+      "returncode": 0,
+      "sha256": "577f9faf40c7a166f914a24700c115e8ea4b57d7d84eab5034b17b83890404d3",
+      "stderr": "",
+      "stdout": "\nNeighbor ID     Pri State           Up Time         Dead Time Address         Interface                        RXmtL RqstL DBsmL\n\n",
+      "validation_errors": []
+    }
+  ],
+  "captures_failed": 0,
+  "captures_total": 1,
+  "configuration": [
+    {
+      "commands": [
+        "sysctl -w net.ipv4.ip_forward=1"
+      ],
+      "node": "r1",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "net.ipv4.ip_forward = 1\n"
+    },
+    {
+      "commands": [
+        "sysctl -w net.ipv4.ip_forward=1"
+      ],
+      "node": "r2",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "net.ipv4.ip_forward = 1\n"
+    },
+    {
+      "commands": [
+        "sysctl -w net.ipv4.ip_forward=1"
+      ],
+      "node": "r3",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "net.ipv4.ip_forward = 1\n"
+    },
+    {
+      "commands": [
+        "sysctl -w net.ipv4.ip_forward=1"
+      ],
+      "node": "r4",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "net.ipv4.ip_forward = 1\n"
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.12.0/31 dev eth1"
+      ],
+      "node": "r1",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.255.0.1/32 dev lo"
+      ],
+      "node": "r1",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "sed -i 's/^ospfd=no/ospfd=yes/' /etc/frr/daemons && touch /etc/frr/vtysh.conf && chown frr:frr /etc/frr/vtysh.conf && /usr/lib/frr/frrinit.sh start"
+      ],
+      "node": "r1",
+      "phase": "daemon-start",
+      "returncode": 0,
+      "stderr": "2026/09/26 08:00:41 ZEBRA: [NNACN-54BDA][EC 4043309110] Disabling MPLS support (no kernel support)\n/etc/frr/frr.conf does not exist; skipping config apply\n",
+      "stdout": "Starting watchfrr with command: '  /usr/lib/frr/watchfrr  -d  -F traditional   zebra mgmtd ospfd staticd'\nStarted watchfrr\n"
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.12.1/31 dev eth1"
+      ],
+      "node": "r2",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.23.0/31 dev eth2"
+      ],
+      "node": "r2",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.255.0.2/32 dev lo"
+      ],
+      "node": "r2",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "sed -i 's/^ospfd=no/ospfd=yes/' /etc/frr/daemons && touch /etc/frr/vtysh.conf && chown frr:frr /etc/frr/vtysh.conf && /usr/lib/frr/frrinit.sh start"
+      ],
+      "node": "r2",
+      "phase": "daemon-start",
+      "returncode": 0,
+      "stderr": "2026/09/26 08:00:43 ZEBRA: [NNACN-54BDA][EC 4043309110] Disabling MPLS support (no kernel support)\n/etc/frr/frr.conf does not exist; skipping config apply\n",
+      "stdout": "Starting watchfrr with command: '  /usr/lib/frr/watchfrr  -d  -F traditional   zebra mgmtd ospfd staticd'\nStarted watchfrr\n"
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.23.1/31 dev eth1"
+      ],
+      "node": "r3",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.34.0/31 dev eth2"
+      ],
+      "node": "r3",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.255.1.3/32 dev lo"
+      ],
+      "node": "r3",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "sed -i 's/^ospfd=no/ospfd=yes/' /etc/frr/daemons && touch /etc/frr/vtysh.conf && chown frr:frr /etc/frr/vtysh.conf && /usr/lib/frr/frrinit.sh start"
+      ],
+      "node": "r3",
+      "phase": "daemon-start",
+      "returncode": 0,
+      "stderr": "2026/09/26 08:00:45 ZEBRA: [NNACN-54BDA][EC 4043309110] Disabling MPLS support (no kernel support)\n/etc/frr/frr.conf does not exist; skipping config apply\n",
+      "stdout": "Starting watchfrr with command: '  /usr/lib/frr/watchfrr  -d  -F traditional   zebra mgmtd ospfd staticd'\nStarted watchfrr\n"
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.34.1/31 dev eth1"
+      ],
+      "node": "r4",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.255.1.4/32 dev lo"
+      ],
+      "node": "r4",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "sed -i 's/^ospfd=no/ospfd=yes/' /etc/frr/daemons && touch /etc/frr/vtysh.conf && chown frr:frr /etc/frr/vtysh.conf && /usr/lib/frr/frrinit.sh start"
+      ],
+      "node": "r4",
+      "phase": "daemon-start",
+      "returncode": 0,
+      "stderr": "2026/09/26 08:00:48 ZEBRA: [NNACN-54BDA][EC 4043309110] Disabling MPLS support (no kernel support)\n/etc/frr/frr.conf does not exist; skipping config apply\n",
+      "stdout": "Starting watchfrr with command: '  /usr/lib/frr/watchfrr  -d  -F traditional   zebra mgmtd ospfd staticd'\nStarted watchfrr\n"
+    },
+    {
+      "commands": [
+        "configure terminal",
+        "interface eth1",
+        "ip ospf area 0",
+        "ip ospf network point-to-point",
+        "ip ospf authentication message-digest",
+        "ip ospf message-digest-key 1 md5 lab-key-one",
+        "exit",
+        "interface lo",
+        "ip ospf area 0",
+        "exit",
+        "router ospf",
+        "ospf router-id 10.255.0.1",
+        "passive-interface lo"
+      ],
+      "node": "r1",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "This command is deprecated, because it is not VRF-aware.\nPlease, use \"ip ospf passive\" on an interface instead.\n"
+    },
+    {
+      "commands": [
+        "configure terminal",
+        "interface eth1",
+        "ip ospf area 0",
+        "ip ospf network point-to-point",
+        "ip ospf authentication message-digest",
+        "ip ospf message-digest-key 1 md5 lab-key-one",
+        "exit",
+        "interface eth2",
+        "ip ospf area 1",
+        "ip ospf network point-to-point",
+        "ip ospf cost 40",
+        "exit",
+        "interface lo",
+        "ip ospf area 0",
+        "exit",
+        "router ospf",
+        "ospf router-id 10.255.0.2",
+        "area 1 range 10.255.1.0/24",
+        "passive-interface lo"
+      ],
+      "node": "r2",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "This command is deprecated, because it is not VRF-aware.\nPlease, use \"ip ospf passive\" on an interface instead.\n"
+    },
+    {
+      "commands": [
+        "configure terminal",
+        "interface eth1",
+        "ip ospf area 1",
+        "ip ospf network point-to-point",
+        "exit",
+        "interface eth2",
+        "ip ospf area 1",
+        "ip ospf network point-to-point",
+        "exit",
+        "interface lo",
+        "ip ospf area 1",
+        "exit",
+        "router ospf",
+        "ospf router-id 10.255.1.3",
+        "passive-interface lo"
+      ],
+      "node": "r3",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "This command is deprecated, because it is not VRF-aware.\nPlease, use \"ip ospf passive\" on an interface instead.\n"
+    },
+    {
+      "commands": [
+        "configure terminal",
+        "interface eth1",
+        "ip ospf area 1",
+        "ip ospf network point-to-point",
+        "exit",
+        "interface lo",
+        "ip ospf area 1",
+        "exit",
+        "router ospf",
+        "ospf router-id 10.255.1.4",
+        "passive-interface lo"
+      ],
+      "node": "r4",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "This command is deprecated, because it is not VRF-aware.\nPlease, use \"ip ospf passive\" on an interface instead.\n"
+    },
+    {
+      "commands": [
+        "configure terminal",
+        "interface eth1",
+        "ip ospf message-digest-key 1 md5 lab-key-wrong"
+      ],
+      "node": "r2",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "clear ip ospf process"
+      ],
+      "node": "r2",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  ],
+  "harness": "harness/netlab.py",
+  "harness_sha256": "735d88b1ebe0e1952f0ce8eec3b2b1b64348c6176e7af9d0ba3c137cf4087802",
+  "hash_contract": "UTF-8 encoding of stored output, with exact stored newlines; not a signature",
+  "images": {
+    "quay.io/frrouting/frr:10.2.1": {
+      "image_created": "2024-12-31T08:27:55.792462405Z",
+      "image_id": "sha256:deea33b3f7bfeeedccd3780d258f0b306153420fd427bbbbdca53536a14a3f07",
+      "repo_digest": "quay.io/frrouting/frr@sha256:e47e67bd612030cb1bedee2bde85b73913f2ea021573b749deb21d94940f03c1"
+    }
+  },
+  "kernel": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "schema_version": 2,
+  "scope": "Commands accepted and output produced by these container images on this kernel at this time. Not hardware execution, not a claim about any NOS not run here, not a scale result.",
+  "topology": "rtncheck-auth",
+  "topology_definition": {
+    "capture": [
+      {
+        "cmd": "show ip ospf neighbor",
+        "expect": "(?s)^(?!.*Full).*$",
+        "node": "r1",
+        "require": [
+          "Neighbor ID"
+        ]
+      }
+    ],
+    "converge": 70,
+    "links": [
+      {
+        "endpoints": [
+          "r1:eth1",
+          "r2:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "r2:eth2",
+          "r3:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "r3:eth2",
+          "r4:eth1"
+        ]
+      }
+    ],
+    "name": "rtncheck-auth",
+    "nodes": {
+      "r1": {
+        "config": [
+          "configure terminal",
+          "interface eth1",
+          "ip ospf area 0",
+          "ip ospf network point-to-point",
+          "ip ospf authentication message-digest",
+          "ip ospf message-digest-key 1 md5 lab-key-one",
+          "exit",
+          "interface lo",
+          "ip ospf area 0",
+          "exit",
+          "router ospf",
+          "ospf router-id 10.255.0.1",
+          "passive-interface lo"
+        ],
+        "daemons": [
+          "ospfd"
+        ],
+        "image": "quay.io/frrouting/frr:10.2.1",
+        "pre": [
+          "ip address replace 10.0.12.0/31 dev eth1",
+          "ip address replace 10.255.0.1/32 dev lo"
+        ]
+      },
+      "r2": {
+        "config": [
+          "configure terminal",
+          "interface eth1",
+          "ip ospf area 0",
+          "ip ospf network point-to-point",
+          "ip ospf authentication message-digest",
+          "ip ospf message-digest-key 1 md5 lab-key-one",
+          "exit",
+          "interface eth2",
+          "ip ospf area 1",
+          "ip ospf network point-to-point",
+          "ip ospf cost 40",
+          "exit",
+          "interface lo",
+          "ip ospf area 0",
+          "exit",
+          "router ospf",
+          "ospf router-id 10.255.0.2",
+          "area 1 range 10.255.1.0/24",
+          "passive-interface lo"
+        ],
+        "daemons": [
+          "ospfd"
+        ],
+        "image": "quay.io/frrouting/frr:10.2.1",
+        "pre": [
+          "ip address replace 10.0.12.1/31 dev eth1",
+          "ip address replace 10.0.23.0/31 dev eth2",
+          "ip address replace 10.255.0.2/32 dev lo"
+        ]
+      },
+      "r3": {
+        "config": [
+          "configure terminal",
+          "interface eth1",
+          "ip ospf area 1",
+          "ip ospf network point-to-point",
+          "exit",
+          "interface eth2",
+          "ip ospf area 1",
+          "ip ospf network point-to-point",
+          "exit",
+          "interface lo",
+          "ip ospf area 1",
+          "exit",
+          "router ospf",
+          "ospf router-id 10.255.1.3",
+          "passive-interface lo"
+        ],
+        "daemons": [
+          "ospfd"
+        ],
+        "image": "quay.io/frrouting/frr:10.2.1",
+        "pre": [
+          "ip address replace 10.0.23.1/31 dev eth1",
+          "ip address replace 10.0.34.0/31 dev eth2",
+          "ip address replace 10.255.1.3/32 dev lo"
+        ]
+      },
+      "r4": {
+        "config": [
+          "configure terminal",
+          "interface eth1",
+          "ip ospf area 1",
+          "ip ospf network point-to-point",
+          "exit",
+          "interface lo",
+          "ip ospf area 1",
+          "exit",
+          "router ospf",
+          "ospf router-id 10.255.1.4",
+          "passive-interface lo"
+        ],
+        "daemons": [
+          "ospfd"
+        ],
+        "image": "quay.io/frrouting/frr:10.2.1",
+        "pre": [
+          "ip address replace 10.0.34.1/31 dev eth1",
+          "ip address replace 10.255.1.4/32 dev lo"
+        ]
+      }
+    },
+    "settle": 4
+  },
+  "topology_sha256": "e2583f7cba40171db7e4651bab4521617317bc07c1689865b7fae0890654d1af"
+}

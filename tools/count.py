@@ -34,7 +34,9 @@ counts = {
     'harness_topologies': walk(os.path.join(ROOT, 'harness'),
                                lambda f: f.endswith('.yml')),
     'device_config_files': walk(labs, lambda f: f.endswith(('.conf', '.cfg'))),
-    'evidence_records': walk(os.path.join(ROOT, 'evidence'),
+    'evidence_json_files': walk(os.path.join(ROOT, 'evidence'),
                              lambda f: f.endswith('.json')),
 }
+counts['declared_test_programs'] = len(json.load(open(os.path.join(ROOT, 'prerequisites.json')))['tests'])
+counts['fresh_routing_records'] = len(json.load(open(os.path.join(ROOT, 'evidence', 'revision-2026-09-26', 'record-index.json'))))
 print(json.dumps(counts, indent=2))

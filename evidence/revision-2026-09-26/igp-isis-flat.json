@@ -1,0 +1,445 @@
+{
+  "captured_utc": "2026-09-26T07:54:08+00:00",
+  "captures": [
+    {
+      "cli": "vtysh",
+      "cmd": "show isis neighbor",
+      "contract": {
+        "cmd": "show isis neighbor",
+        "expect": "Up",
+        "id": "level-2-adjacencies-up",
+        "node": "r2"
+      },
+      "elapsed_s": 0.069,
+      "id": "level-2-adjacencies-up",
+      "matched": true,
+      "node": "r2",
+      "output": "Area CORE:\n System Id           Interface   L  State         Holdtime SNPA\n 859da4eece77        eth1        2  Up            30       2020.2020.2020\n 02e5bd625de2        eth2        2  Up            30       2020.2020.2020\n",
+      "returncode": 0,
+      "sha256": "29922e7be013b3827dd804ef59cccc55b531ac5804b3270a1081f03b0fdeca5b",
+      "stderr": "",
+      "stdout": "Area CORE:\n System Id           Interface   L  State         Holdtime SNPA\n 859da4eece77        eth1        2  Up            30       2020.2020.2020\n 02e5bd625de2        eth2        2  Up            30       2020.2020.2020\n",
+      "validation_errors": []
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show ip route isis",
+      "contract": {
+        "cmd": "show ip route isis",
+        "expect": "10.255.0.3/32",
+        "id": "every-loopback-is-in-every-table",
+        "node": "r1"
+      },
+      "elapsed_s": 0.072,
+      "id": "every-loopback-is-in-every-table",
+      "matched": true,
+      "node": "r1",
+      "output": "Codes: K - kernel route, C - connected, L - local, S - static,\n       R - RIP, O - OSPF, I - IS-IS, B - BGP, E - EIGRP, N - NHRP,\n       T - Table, v - VNC, V - VNC-Direct, A - Babel, F - PBR,\n       f - OpenFabric, t - Table-Direct,\n       > - selected route, * - FIB route, q - queued, r - rejected, b - backup\n       t - trapped, o - offload failure\n\nI   10.0.12.0/31 [115/20] via 10.0.12.1, eth1 inactive, weight 1, 00:00:31\nI>* 10.0.23.0/31 [115/35] via 10.0.12.1, eth1, weight 1, 00:00:31\nI>* 10.255.0.2/32 [115/20] via 10.0.12.1, eth1, weight 1, 00:00:31\nI>* 10.255.0.3/32 [115/45] via 10.0.12.1, eth1, weight 1, 00:00:30\n",
+      "returncode": 0,
+      "sha256": "c4e8c7acf94e6bb09e2e0e003dac6abadf9358d8d38d4b9cae641be322ab0ba2",
+      "stderr": "",
+      "stdout": "Codes: K - kernel route, C - connected, L - local, S - static,\n       R - RIP, O - OSPF, I - IS-IS, B - BGP, E - EIGRP, N - NHRP,\n       T - Table, v - VNC, V - VNC-Direct, A - Babel, F - PBR,\n       f - OpenFabric, t - Table-Direct,\n       > - selected route, * - FIB route, q - queued, r - rejected, b - backup\n       t - trapped, o - offload failure\n\nI   10.0.12.0/31 [115/20] via 10.0.12.1, eth1 inactive, weight 1, 00:00:31\nI>* 10.0.23.0/31 [115/35] via 10.0.12.1, eth1, weight 1, 00:00:31\nI>* 10.255.0.2/32 [115/20] via 10.0.12.1, eth1, weight 1, 00:00:31\nI>* 10.255.0.3/32 [115/45] via 10.0.12.1, eth1, weight 1, 00:00:30\n",
+      "validation_errors": []
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show isis database detail",
+      "contract": {
+        "cmd": "show isis database detail",
+        "expect": "10.0.23.0/31 \\(Metric: 25\\)",
+        "id": "wide-metric-25-is-carried",
+        "node": "r1"
+      },
+      "elapsed_s": 0.066,
+      "id": "wide-metric-25-is-carried",
+      "matched": true,
+      "node": "r1",
+      "output": "Area CORE:\nIS-IS Level-2 link-state database:\nLSP ID                  PduLen  SeqNumber   Chksum  Holdtime  ATT/P/OL\n859da4eece77.00-00   *    102   0x00000003  0xc145    1128    0/0/0\n  Protocols Supported: IPv4\n  Area Address: 49.0001\n  Hostname: 859da4eece77\n  TE Router ID: 10.255.0.1\n  Router Capability: 10.255.0.1 , D:0, S:0\n  Extended Reachability: 0102.5500.0002.00 (Metric: 10)\n  IPv4 Interface Address: 10.255.0.1\n  Extended IP Reachability: 10.0.12.0/31 (Metric: 10)\n  Extended IP Reachability: 10.255.0.1/32 (Metric: 10)\n\n7b795b709889.00-00        122   0x00000003  0xa631    1145    0/0/0\n  Protocols Supported: IPv4\n  Area Address: 49.0001\n  Hostname: 7b795b709889\n  TE Router ID: 10.255.0.2\n  Router Capability: 10.255.0.2 , D:0, S:0\n  Extended Reachability: 0102.5500.0001.00 (Metric: 10)\n  Extended Reachability: 0102.5500.0003.00 (Metric: 25)\n  IPv4 Interface Address: 10.255.0.2\n  Extended IP Reachability: 10.0.12.0/31 (Metric: 10)\n  Extended IP Reachability: 10.0.23.0/31 (Metric: 25)\n  Extended IP Reachability: 10.255.0.2/32 (Metric: 10)\n\n02e5bd625de2.00-00        102   0x00000003  0xec4a    1118    0/0/0\n  Protocols Supported: IPv4\n  Area Address: 49.0001\n  Hostname: 02e5bd625de2\n  TE Router ID: 10.255.0.3\n  Router Capability: 10.255.0.3 , D:0, S:0\n  Extended Reachability: 0102.5500.0002.00 (Metric: 10)\n  IPv4 Interface Address: 10.255.0.3\n  Extended IP Reachability: 10.0.23.0/31 (Metric: 10)\n  Extended IP Reachability: 10.255.0.3/32 (Metric: 10)\n\n    3 LSPs\n\n",
+      "returncode": 0,
+      "sha256": "29f9c33aab7d30dd1158a295ab248de45c8ffcb377e21a4892c379f34d49e131",
+      "stderr": "",
+      "stdout": "Area CORE:\nIS-IS Level-2 link-state database:\nLSP ID                  PduLen  SeqNumber   Chksum  Holdtime  ATT/P/OL\n859da4eece77.00-00   *    102   0x00000003  0xc145    1128    0/0/0\n  Protocols Supported: IPv4\n  Area Address: 49.0001\n  Hostname: 859da4eece77\n  TE Router ID: 10.255.0.1\n  Router Capability: 10.255.0.1 , D:0, S:0\n  Extended Reachability: 0102.5500.0002.00 (Metric: 10)\n  IPv4 Interface Address: 10.255.0.1\n  Extended IP Reachability: 10.0.12.0/31 (Metric: 10)\n  Extended IP Reachability: 10.255.0.1/32 (Metric: 10)\n\n7b795b709889.00-00        122   0x00000003  0xa631    1145    0/0/0\n  Protocols Supported: IPv4\n  Area Address: 49.0001\n  Hostname: 7b795b709889\n  TE Router ID: 10.255.0.2\n  Router Capability: 10.255.0.2 , D:0, S:0\n  Extended Reachability: 0102.5500.0001.00 (Metric: 10)\n  Extended Reachability: 0102.5500.0003.00 (Metric: 25)\n  IPv4 Interface Address: 10.255.0.2\n  Extended IP Reachability: 10.0.12.0/31 (Metric: 10)\n  Extended IP Reachability: 10.0.23.0/31 (Metric: 25)\n  Extended IP Reachability: 10.255.0.2/32 (Metric: 10)\n\n02e5bd625de2.00-00        102   0x00000003  0xec4a    1118    0/0/0\n  Protocols Supported: IPv4\n  Area Address: 49.0001\n  Hostname: 02e5bd625de2\n  TE Router ID: 10.255.0.3\n  Router Capability: 10.255.0.3 , D:0, S:0\n  Extended Reachability: 0102.5500.0002.00 (Metric: 10)\n  IPv4 Interface Address: 10.255.0.3\n  Extended IP Reachability: 10.0.23.0/31 (Metric: 10)\n  Extended IP Reachability: 10.255.0.3/32 (Metric: 10)\n\n    3 LSPs\n\n",
+      "validation_errors": []
+    },
+    {
+      "cli": "shell",
+      "cmd": "ping -c 3 -W 2 -I 10.255.0.1 10.255.0.3",
+      "contract": {
+        "cli": "shell",
+        "cmd": "ping -c 3 -W 2 -I 10.255.0.1 10.255.0.3",
+        "id": "end-to-end-forwarding",
+        "node": "r1",
+        "packet_loss": 0,
+        "require": [
+          "packets transmitted",
+          "received"
+        ]
+      },
+      "elapsed_s": 2.061,
+      "id": "end-to-end-forwarding",
+      "matched": true,
+      "node": "r1",
+      "output": "PING 10.255.0.3 (10.255.0.3) from 10.255.0.1: 56 data bytes\n64 bytes from 10.255.0.3: seq=0 ttl=63 time=0.220 ms\n64 bytes from 10.255.0.3: seq=1 ttl=63 time=0.093 ms\n64 bytes from 10.255.0.3: seq=2 ttl=63 time=0.068 ms\n\n--- 10.255.0.3 ping statistics ---\n3 packets transmitted, 3 packets received, 0% packet loss\nround-trip min/avg/max = 0.068/0.127/0.220 ms\n",
+      "returncode": 0,
+      "sha256": "c5b17bc9834d1019eadac8e2d35f52b7436bd57e5eb82e924ea12eb26a764440",
+      "stderr": "",
+      "stdout": "PING 10.255.0.3 (10.255.0.3) from 10.255.0.1: 56 data bytes\n64 bytes from 10.255.0.3: seq=0 ttl=63 time=0.220 ms\n64 bytes from 10.255.0.3: seq=1 ttl=63 time=0.093 ms\n64 bytes from 10.255.0.3: seq=2 ttl=63 time=0.068 ms\n\n--- 10.255.0.3 ping statistics ---\n3 packets transmitted, 3 packets received, 0% packet loss\nround-trip min/avg/max = 0.068/0.127/0.220 ms\n",
+      "validation_errors": []
+    }
+  ],
+  "captures_failed": 0,
+  "captures_total": 4,
+  "configuration": [
+    {
+      "commands": [
+        "sysctl -w net.ipv4.ip_forward=1"
+      ],
+      "node": "r1",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "net.ipv4.ip_forward = 1\n"
+    },
+    {
+      "commands": [
+        "sysctl -w net.ipv4.ip_forward=1"
+      ],
+      "node": "r2",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "net.ipv4.ip_forward = 1\n"
+    },
+    {
+      "commands": [
+        "sysctl -w net.ipv4.ip_forward=1"
+      ],
+      "node": "r3",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "net.ipv4.ip_forward = 1\n"
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.12.0/31 dev eth1"
+      ],
+      "node": "r1",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.255.0.1/32 dev lo"
+      ],
+      "node": "r1",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "sed -i 's/^isisd=no/isisd=yes/' /etc/frr/daemons && touch /etc/frr/vtysh.conf && chown frr:frr /etc/frr/vtysh.conf && /usr/lib/frr/frrinit.sh start"
+      ],
+      "node": "r1",
+      "phase": "daemon-start",
+      "returncode": 0,
+      "stderr": "2026/09/26 07:52:57 ZEBRA: [NNACN-54BDA][EC 4043309110] Disabling MPLS support (no kernel support)\n/etc/frr/frr.conf does not exist; skipping config apply\n",
+      "stdout": "Starting watchfrr with command: '  /usr/lib/frr/watchfrr  -d  -F traditional   zebra mgmtd isisd staticd'\nStarted watchfrr\n"
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.12.1/31 dev eth1"
+      ],
+      "node": "r2",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.23.0/31 dev eth2"
+      ],
+      "node": "r2",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.255.0.2/32 dev lo"
+      ],
+      "node": "r2",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "sed -i 's/^isisd=no/isisd=yes/' /etc/frr/daemons && touch /etc/frr/vtysh.conf && chown frr:frr /etc/frr/vtysh.conf && /usr/lib/frr/frrinit.sh start"
+      ],
+      "node": "r2",
+      "phase": "daemon-start",
+      "returncode": 0,
+      "stderr": "2026/09/26 07:52:59 ZEBRA: [NNACN-54BDA][EC 4043309110] Disabling MPLS support (no kernel support)\n/etc/frr/frr.conf does not exist; skipping config apply\n",
+      "stdout": "Starting watchfrr with command: '  /usr/lib/frr/watchfrr  -d  -F traditional   zebra mgmtd isisd staticd'\nStarted watchfrr\n"
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.23.1/31 dev eth1"
+      ],
+      "node": "r3",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.255.0.3/32 dev lo"
+      ],
+      "node": "r3",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "sed -i 's/^isisd=no/isisd=yes/' /etc/frr/daemons && touch /etc/frr/vtysh.conf && chown frr:frr /etc/frr/vtysh.conf && /usr/lib/frr/frrinit.sh start"
+      ],
+      "node": "r3",
+      "phase": "daemon-start",
+      "returncode": 0,
+      "stderr": "2026/09/26 07:53:02 ZEBRA: [NNACN-54BDA][EC 4043309110] Disabling MPLS support (no kernel support)\n/etc/frr/frr.conf does not exist; skipping config apply\n",
+      "stdout": "Starting watchfrr with command: '  /usr/lib/frr/watchfrr  -d  -F traditional   zebra mgmtd isisd staticd'\nStarted watchfrr\n"
+    },
+    {
+      "commands": [
+        "configure terminal",
+        "interface lo",
+        "ip router isis CORE",
+        "isis passive",
+        "exit",
+        "interface eth1",
+        "ip router isis CORE",
+        "isis network point-to-point",
+        "isis circuit-type level-2-only",
+        "exit",
+        "router isis CORE",
+        "net 49.0001.0102.5500.0001.00",
+        "is-type level-2-only",
+        "metric-style wide"
+      ],
+      "node": "r1",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "configure terminal",
+        "interface lo",
+        "ip router isis CORE",
+        "isis passive",
+        "exit",
+        "interface eth1",
+        "ip router isis CORE",
+        "isis network point-to-point",
+        "isis circuit-type level-2-only",
+        "exit",
+        "interface eth2",
+        "ip router isis CORE",
+        "isis network point-to-point",
+        "isis circuit-type level-2-only",
+        "isis metric 25",
+        "exit",
+        "router isis CORE",
+        "net 49.0001.0102.5500.0002.00",
+        "is-type level-2-only",
+        "metric-style wide"
+      ],
+      "node": "r2",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "configure terminal",
+        "interface lo",
+        "ip router isis CORE",
+        "isis passive",
+        "exit",
+        "interface eth1",
+        "ip router isis CORE",
+        "isis network point-to-point",
+        "isis circuit-type level-2-only",
+        "exit",
+        "router isis CORE",
+        "net 49.0001.0102.5500.0003.00",
+        "is-type level-2-only",
+        "metric-style wide"
+      ],
+      "node": "r3",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  ],
+  "harness": "harness/netlab.py",
+  "harness_sha256": "735d88b1ebe0e1952f0ce8eec3b2b1b64348c6176e7af9d0ba3c137cf4087802",
+  "hash_contract": "UTF-8 encoding of stored output, with exact stored newlines; not a signature",
+  "images": {
+    "quay.io/frrouting/frr:10.2.1": {
+      "image_created": "2024-12-31T08:27:55.792462405Z",
+      "image_id": "sha256:deea33b3f7bfeeedccd3780d258f0b306153420fd427bbbbdca53536a14a3f07",
+      "repo_digest": "quay.io/frrouting/frr@sha256:e47e67bd612030cb1bedee2bde85b73913f2ea021573b749deb21d94940f03c1"
+    }
+  },
+  "kernel": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "schema_version": 2,
+  "scope": "Commands accepted and output produced by these container images on this kernel at this time. Not hardware execution, not a claim about any NOS not run here, not a scale result.",
+  "topology": "rtnwb-isis-flat",
+  "topology_definition": {
+    "capture": [
+      {
+        "cmd": "show isis neighbor",
+        "expect": "Up",
+        "id": "level-2-adjacencies-up",
+        "node": "r2"
+      },
+      {
+        "cmd": "show ip route isis",
+        "expect": "10.255.0.3/32",
+        "id": "every-loopback-is-in-every-table",
+        "node": "r1"
+      },
+      {
+        "cmd": "show isis database detail",
+        "expect": "10.0.23.0/31 \\(Metric: 25\\)",
+        "id": "wide-metric-25-is-carried",
+        "node": "r1"
+      },
+      {
+        "cli": "shell",
+        "cmd": "ping -c 3 -W 2 -I 10.255.0.1 10.255.0.3",
+        "id": "end-to-end-forwarding",
+        "node": "r1",
+        "packet_loss": 0,
+        "require": [
+          "packets transmitted",
+          "received"
+        ]
+      }
+    ],
+    "converge": 60,
+    "links": [
+      {
+        "endpoints": [
+          "r1:eth1",
+          "r2:eth1"
+        ]
+      },
+      {
+        "endpoints": [
+          "r2:eth2",
+          "r3:eth1"
+        ]
+      }
+    ],
+    "name": "rtnwb-isis-flat",
+    "nodes": {
+      "r1": {
+        "config": [
+          "configure terminal",
+          "interface lo",
+          "ip router isis CORE",
+          "isis passive",
+          "exit",
+          "interface eth1",
+          "ip router isis CORE",
+          "isis network point-to-point",
+          "isis circuit-type level-2-only",
+          "exit",
+          "router isis CORE",
+          "net 49.0001.0102.5500.0001.00",
+          "is-type level-2-only",
+          "metric-style wide"
+        ],
+        "daemons": [
+          "isisd"
+        ],
+        "image": "quay.io/frrouting/frr:10.2.1",
+        "pre": [
+          "ip address replace 10.0.12.0/31 dev eth1",
+          "ip address replace 10.255.0.1/32 dev lo"
+        ]
+      },
+      "r2": {
+        "config": [
+          "configure terminal",
+          "interface lo",
+          "ip router isis CORE",
+          "isis passive",
+          "exit",
+          "interface eth1",
+          "ip router isis CORE",
+          "isis network point-to-point",
+          "isis circuit-type level-2-only",
+          "exit",
+          "interface eth2",
+          "ip router isis CORE",
+          "isis network point-to-point",
+          "isis circuit-type level-2-only",
+          "isis metric 25",
+          "exit",
+          "router isis CORE",
+          "net 49.0001.0102.5500.0002.00",
+          "is-type level-2-only",
+          "metric-style wide"
+        ],
+        "daemons": [
+          "isisd"
+        ],
+        "image": "quay.io/frrouting/frr:10.2.1",
+        "pre": [
+          "ip address replace 10.0.12.1/31 dev eth1",
+          "ip address replace 10.0.23.0/31 dev eth2",
+          "ip address replace 10.255.0.2/32 dev lo"
+        ]
+      },
+      "r3": {
+        "config": [
+          "configure terminal",
+          "interface lo",
+          "ip router isis CORE",
+          "isis passive",
+          "exit",
+          "interface eth1",
+          "ip router isis CORE",
+          "isis network point-to-point",
+          "isis circuit-type level-2-only",
+          "exit",
+          "router isis CORE",
+          "net 49.0001.0102.5500.0003.00",
+          "is-type level-2-only",
+          "metric-style wide"
+        ],
+        "daemons": [
+          "isisd"
+        ],
+        "image": "quay.io/frrouting/frr:10.2.1",
+        "pre": [
+          "ip address replace 10.0.23.1/31 dev eth1",
+          "ip address replace 10.255.0.3/32 dev lo"
+        ]
+      }
+    },
+    "settle": 4
+  },
+  "topology_sha256": "3773e6270156cc2acd4e199fd767d219629b1352156aa32f0ede5e0ef7fdd564"
+}

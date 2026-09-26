@@ -33,15 +33,25 @@ nodes:
       - ospf router-id 10.255.0.1
       - passive-interface lo
       - exit
+      - ip prefix-list PEER-IN seq 10 permit 203.0.113.1/32
+      - ip prefix-list PEER-OUT seq 10 permit 198.51.100.0/24
+      - route-map FROM-PEER permit 10
+      - match ip address prefix-list PEER-IN
+      - exit
+      - route-map TO-PEER permit 10
+      - match ip address prefix-list PEER-OUT
+      - exit
       - router bgp 64500
       - bgp router-id 10.255.0.1
-      - no bgp ebgp-requires-policy
+      - bgp ebgp-requires-policy
       - neighbor 10.0.13.1 remote-as 64510
       - neighbor 10.255.0.2 remote-as 64500
       - neighbor 10.255.0.2 update-source lo
       - address-family ipv4 unicast
       - network 10.255.0.1/32
       - neighbor 10.0.13.1 activate
+      - neighbor 10.0.13.1 route-map FROM-PEER in
+      - neighbor 10.0.13.1 route-map TO-PEER out
       - neighbor 10.255.0.2 activate
       - neighbor 10.255.0.2 next-hop-self
       - exit-address-family
@@ -81,13 +91,23 @@ nodes:
       - ip address replace 203.0.113.1/32 dev lo
     config:
       - configure terminal
+      - ip prefix-list PEER-IN seq 10 permit 198.51.100.0/24
+      - ip prefix-list PEER-OUT seq 10 permit 203.0.113.1/32
+      - route-map FROM-PEER permit 10
+      - match ip address prefix-list PEER-IN
+      - exit
+      - route-map TO-PEER permit 10
+      - match ip address prefix-list PEER-OUT
+      - exit
       - router bgp 64510
       - bgp router-id 203.0.113.1
-      - no bgp ebgp-requires-policy
+      - bgp ebgp-requires-policy
       - neighbor 10.0.13.0 remote-as 64500
       - address-family ipv4 unicast
       - network 203.0.113.1/32
       - neighbor 10.0.13.0 activate
+      - neighbor 10.0.13.0 route-map FROM-PEER in
+      - neighbor 10.0.13.0 route-map TO-PEER out
       - exit-address-family
 links:
   - endpoints: ["r1:eth1", "r3:eth1"]
@@ -125,4 +145,5 @@ capture:
     node: r2
     cli: shell
     cmd: ping -c 3 -W 2 -I 198.51.100.1 203.0.113.1
-    expect: "0% packet loss"
+    packet_loss: 0
+    require: ["packets transmitted", "received"]
