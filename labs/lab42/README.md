@@ -23,13 +23,13 @@ python3 test_egress_vs_availability.py   # 41 checks
 
 Python 3 only. Nothing else is needed and nothing else is used.
 
-## Why the lab was rebuilt
+## The version this lab is built against
 
-The lab that shipped with this chapter did two things. It called
-`ipaddress.overlaps()` on two hard-coded dictionaries — one deliberately
-overlapping, one not — and reported that they did and did not overlap. And it
-multiplied invented per-gigabyte tariffs by invented monthly volumes and
-announced a saving that the choice of volumes had already decided.
+Picture the obvious version of this tool. It calls `ipaddress.overlaps()` on two
+hard-coded dictionaries — one deliberately overlapping, one not — and reports
+that they did and did not overlap. And it multiplies invented per-gigabyte
+tariffs by invented monthly volumes and announces a saving that the choice of
+volumes had already decided.
 
 Neither used anything the reader supplied, so neither could disagree with
 anyone. And between them they never went near BGP, which is the one thing the

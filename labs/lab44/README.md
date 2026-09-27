@@ -20,11 +20,12 @@ python3 test_osnr_budget.py      # 43 checks
 python3 test_fec_and_errors.py   # 47 checks
 ```
 
-## Why the lab was rebuilt
+## The version this lab is built against
 
-The previous version computed a received power, compared it with the receiver's
-sensitivity, subtracted a ten-year reserve, and printed a verdict — from that one
-subtraction alone. It printed the overload check on the line above and ignored it.
+The obvious version of a link-budget tool computes a received power, compares it
+with the receiver's sensitivity, subtracts a ten-year reserve, and prints a
+verdict — from that one subtraction alone. It prints the overload check on the
+line above and ignores it.
 Given a +10 dBm transmitter into 5 dB of loss it reported, in the same run:
 
 ```

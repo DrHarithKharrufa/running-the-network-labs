@@ -1,0 +1,31 @@
+{
+  "scope": "Planning inputs for the worked branch in BRANCH-COMPLETE.md. Fictional. Offline allocations; no production configuration and no execution.",
+  "site": "HGT",
+  "parents": {
+    "ipv4_enterprise": "10.10.0.0/16",
+    "ipv6_enterprise": "2001:db8:a1de::/48",
+    "ipv4_unallocated_pool": "10.10.64.0/18",
+    "note": "Appendix C allocates London 10.10.0.0/19 (including 10.10.16.0/20 reserved for London growth), Manchester 10.10.32.0/20 and Reading 10.10.48.0/20, and leaves 10.10.64.0/18 and 10.10.128.0/17 unallocated. A new branch comes from the unallocated pool, not from another site's reservation. IPv6 /56 blocks follow the same scheme: London 00, Manchester 01, Reading 02, so this branch takes 03."
+  },
+  "site_allocation": {
+    "ipv4": "10.10.64.0/22",
+    "ipv6": "2001:db8:a1de:300::/56"
+  },
+  "lans": [
+    {"vlan": 100, "purpose": "User",           "ipv4": "10.10.64.0/24",    "ipv6": "2001:db8:a1de:300::/64", "dhcp4": "10.10.64.50-10.10.64.230"},
+    {"vlan": 200, "purpose": "Voice",          "ipv4": "10.10.65.0/25",    "ipv6": "2001:db8:a1de:301::/64", "dhcp4": "10.10.65.20-10.10.65.110"},
+    {"vlan": 400, "purpose": "Building systems","ipv4": "10.10.65.128/26", "ipv6": "2001:db8:a1de:302::/64", "dhcp4": "10.10.65.140-10.10.65.180"},
+    {"vlan": 500, "purpose": "Guest",          "ipv4": "10.10.66.0/24",    "ipv6": "2001:db8:a1de:303::/64", "dhcp4": "10.10.66.50-10.10.66.230"},
+    {"vlan": 900, "purpose": "Infrastructure", "ipv4": "10.10.67.0/28",    "ipv6": "2001:db8:a1de:3ff::/64", "dhcp4": null}
+  ],
+  "loopbacks": {
+    "ipv4_pool": "10.10.67.32/27",
+    "ipv6_pool": "2001:db8:a1de:3fe::/64",
+    "hgt-rtr-01": {"ipv4": "10.10.67.32/32", "ipv6": "2001:db8:a1de:3fe::1/128"}
+  },
+  "spare": {
+    "ipv4": ["10.10.65.192/26", "10.10.67.64/26", "10.10.67.128/25"],
+    "ipv6": ["2001:db8:a1de:304::/64", "2001:db8:a1de:305::/64"],
+    "note": "Genuinely unassigned. A site with no spare subnet is a site whose next requirement is a renumbering."
+  }
+}

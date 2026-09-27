@@ -29,13 +29,13 @@ def parse(text):
         cells = [c.strip() for c in line.strip().strip('|').split('|')]
         if not cells:
             continue
-        m = re.fullmatch(r'(R|D|AT|FT|RP)-(\d+)', cells[0])
+        m = re.fullmatch(r'(R|D|AT|FT|RP)-(\d+[a-z]?)', cells[0])
         if not m:
             continue
         ident = cells[0]
         defined.setdefault(m.group(1), set()).add(ident)
         # requirements referenced anywhere else in the row
-        refs = set(re.findall(r'\bR-\d+\b', ' '.join(cells[1:])))
+        refs = set(re.findall(r'\bR-\d+[a-z]?\b', ' '.join(cells[1:])))
         serves[ident] = refs
     return defined, serves
 
@@ -57,7 +57,7 @@ def main():
     # A requirement may be exempted from one kind, but only out loud: the
     # document has to say which requirement, which kind, and why.
     exempt = set()
-    for m in re.finditer(r'\*\*Declared exemption\.\*\*\s+(R-\d+)[^.]*?no (fault test|acceptance test|decision|recovery procedure)', text, re.S):
+    for m in re.finditer(r'\*\*Declared exemption\.\*\*\s+(R-\d+[a-z]?)[^.]*?no (fault test|acceptance test|decision|recovery procedure)', text, re.S):
         exempt.add((m.group(1), m.group(2)))
 
     # forwards: every requirement is served by each kind
