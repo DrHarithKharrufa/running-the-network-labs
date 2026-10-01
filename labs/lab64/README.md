@@ -67,10 +67,20 @@ defect its own tests caught.
 ## 64.2 — `four_questions.py`
 
 ```bash
-python3 four_questions.py
-python3 four_questions.py --demo-original
+python3 four_questions.py                    # the four demonstration cases
+python3 four_questions.py --demo-original    # the withdrawn verdict version
 python3 test_four_questions.py               # 51 tests
+
+# your own incident, without editing anything:
+python3 four_questions.py --case "pump room" --ever-worked yes \
+        --scope "one site" --changes-per-day 40
+python3 four_questions.py --help
 ```
+
+The four printed cases are the `_case(...)` calls inside `report()`, near the end
+of an 800-line file, which is why `--case` exists: a reader putting their own
+incident through this should not have to read the program first. Any question you
+leave out is answered `unknown`, and an unknown answer updates nothing.
 
 **What it got wrong.** The four questions are the cheapest thing you can do and
 asking them first is still right. The lab turned each answer into a verdict:
@@ -147,7 +157,8 @@ control plane first **when the symptom points there**".
   how often a probe lies, and see what your confidence in the answer should be.
 - In `four_questions.py`, replace the priors with your own service desk's mix,
   then re-run the sweep and find your own break point. Put in your real change
-  rate and see what your correlations are worth.
+  rate and see what your correlations are worth. For a single incident you do not
+  need to edit anything: `--case` takes the answers on the command line.
 - In `control_vs_data_plane.py`, replace the check costs with how long those
   commands actually take you, and the symptom weights with your own, then look
   at which ordering the arithmetic recommends.

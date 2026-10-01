@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "edition": "RTN-2026-09-26",
+  "edition": "RTN-2026-10-01",
   "tests": {
-    "labs/test_frr_harness_audit.py": {
+    "harness/test_netlab.py": {
       "kind": "offline",
       "python_min": [
         3,
@@ -12,7 +12,7 @@
       "root": false,
       "binaries": [],
       "packages": {},
-      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+      "basis": "new boundary suite; simulated targets"
     },
     "labs/gns3/test_preflight.py": {
       "kind": "offline",
@@ -1152,6 +1152,20 @@
       "packages": {},
       "basis": "reviewed program inventory; not inferred from adjacent topology files"
     },
+    "labs/lab76/agent/test_verifier.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {
+        "PyYAML": "6.0.3"
+      },
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
     "labs/lab77/test_assurance.py": {
       "kind": "offline",
       "python_min": [
@@ -1248,7 +1262,31 @@
       "packages": {},
       "basis": "reviewed program inventory; not inferred from adjacent topology files"
     },
+    "labs/reference-designs/test_check_addressing.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
     "labs/reference-designs/test_designs.py": {
+      "kind": "offline",
+      "python_min": [
+        3,
+        11
+      ],
+      "os": [],
+      "root": false,
+      "binaries": [],
+      "packages": {},
+      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+    },
+    "labs/test_frr_harness_audit.py": {
       "kind": "offline",
       "python_min": [
         3,
@@ -1275,8 +1313,8 @@
       },
       "basis": "reviewed program inventory; not inferred from adjacent topology files"
     },
-    "labs/lab76/agent/test_verifier.py": {
-      "kind": "offline",
+    "learning/practical-route/test_route.py": {
+      "kind": "loopback",
       "python_min": [
         3,
         11
@@ -1284,10 +1322,8 @@
       "os": [],
       "root": false,
       "binaries": [],
-      "packages": {
-        "PyYAML": "6.0.3"
-      },
-      "basis": "reviewed program inventory; not inferred from adjacent topology files"
+      "packages": {},
+      "basis": "new boundary suite; simulated targets"
     },
     "learning/test_case_math.py": {
       "kind": "offline",
@@ -1312,30 +1348,6 @@
       "binaries": [],
       "packages": {},
       "basis": "reviewed program inventory; not inferred from adjacent topology files"
-    },
-    "harness/test_netlab.py": {
-      "kind": "offline",
-      "python_min": [
-        3,
-        11
-      ],
-      "os": [],
-      "root": false,
-      "binaries": [],
-      "packages": {},
-      "basis": "new boundary suite; simulated targets"
-    },
-    "learning/practical-route/test_route.py": {
-      "kind": "loopback",
-      "python_min": [
-        3,
-        11
-      ],
-      "os": [],
-      "root": false,
-      "binaries": [],
-      "packages": {},
-      "basis": "new boundary suite; simulated targets"
     }
   },
   "labs": {

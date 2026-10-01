@@ -6,7 +6,7 @@ labs/, but five of them -- common, gns3, reference-designs, standards and
 topologies -- are shared material, not exercises. The real figure is 84. A book
 about measuring things carefully should not miscount its own labs.
 """
-import os, re, json, sys
+import glob, os, re, json, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__)) if '__file__' in dir() else '.'
 ROOT = sys.argv[1] if len(sys.argv) > 1 else '.'
@@ -38,5 +38,10 @@ counts = {
                              lambda f: f.endswith('.json')),
 }
 counts['declared_test_programs'] = len(json.load(open(os.path.join(ROOT, 'prerequisites.json')))['tests'])
-counts['fresh_routing_records'] = len(json.load(open(os.path.join(ROOT, 'evidence', 'revision-2026-09-26', 'record-index.json'))))
+# Every dated revision folder's index, summed. Hard-coding one folder meant a
+# later revision's records were invisible to the inventory.
+fresh = 0
+for ix in sorted(glob.glob(os.path.join(ROOT, 'evidence', 'revision-*', 'record-index.json'))):
+    fresh += len(json.load(open(ix)))
+counts['fresh_routing_records'] = fresh
 print(json.dumps(counts, indent=2))

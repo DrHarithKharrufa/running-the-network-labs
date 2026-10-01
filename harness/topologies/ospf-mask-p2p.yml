@@ -1,0 +1,89 @@
+# Why this lab exists: the workbook's IGP-05 trap says a router checks certain
+# Hello fields before it will create a neighbour, and names the network mask
+# among them. RFC 2328 s10.5 makes the mask an exception on point-to-point
+# networks and virtual links, and IGP-05's own FRR baseline is point-to-point,
+# so the exception is not a footnote here -- it is the case in front of the
+# reader. This topology deliberately mismatches the masks on a point-to-point
+# link and records what happens.
+#   r1 (10.0.0.1/30, point-to-point) ---- r2 (10.0.0.2/24, point-to-point)
+name: rtnwb-ospf-mask-p2p
+settle: 4
+converge: 50
+nodes:
+  r1:
+    image: quay.io/frrouting/frr:10.2.1
+    daemons: [ospfd]
+    pre:
+      - ip address replace 10.0.0.1/30 dev eth1
+      - ip address replace 10.255.0.1/32 dev lo
+    config:
+      - configure terminal
+      - log file /tmp/ospf.log informational
+      - interface lo
+      - ip ospf area 0
+      - ip ospf passive
+      - exit
+      - interface eth1
+      - ip ospf area 0
+      - ip ospf network point-to-point
+      - exit
+      - router ospf
+      - ospf router-id 10.255.0.1
+  r2:
+    image: quay.io/frrouting/frr:10.2.1
+    daemons: [ospfd]
+    pre:
+      - ip address replace 10.0.0.2/24 dev eth1
+      - ip address replace 10.255.0.2/32 dev lo
+    config:
+      - configure terminal
+      - log file /tmp/ospf.log informational
+      - interface lo
+      - ip ospf area 0
+      - ip ospf passive
+      - exit
+      - interface eth1
+      - ip ospf area 0
+      - ip ospf network point-to-point
+      - exit
+      - router ospf
+      - ospf router-id 10.255.0.2
+links:
+  - endpoints: ["r1:eth1", "r2:eth1"]
+capture:
+  - id: the-masks-really-do-differ-r1
+    node: r1
+    cmd: show ip ospf interface eth1
+    require: ["eth1 is up"]
+    expect: "10\\.0\\.0\\.1/30"
+  - id: the-masks-really-do-differ-r2
+    node: r2
+    cmd: show ip ospf interface eth1
+    require: ["eth1 is up"]
+    expect: "10\\.0\\.0\\.2/24"
+  - id: the-interface-type-is-point-to-point
+    node: r1
+    cmd: show ip ospf interface eth1
+    require: ["eth1 is up"]
+    expect: "Network Type POINTOPOINT"
+  - id: the-adjacency-comes-up-anyway-r1
+    node: r1
+    cmd: show ip ospf neighbor
+    require: ["Neighbor ID"]
+    expect: "10\\.255\\.0\\.2.*Full"
+  - id: the-adjacency-comes-up-anyway-r2
+    node: r2
+    cmd: show ip ospf neighbor
+    require: ["Neighbor ID"]
+    expect: "10\\.255\\.0\\.1.*Full"
+  - id: and-prefixes-are-installed
+    node: r1
+    cmd: show ip route ospf
+    require: ["O"]
+    expect: "10\\.255\\.0\\.2/32"
+  - id: no-mask-mismatch-was-logged
+    node: r1
+    cli: shell
+    cmd: grep -ci NetworkMask /tmp/ospf.log || true
+    require: ["^[0-9]+"]
+    expect: "^0$"

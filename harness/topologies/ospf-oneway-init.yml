@@ -1,0 +1,85 @@
+# What Init actually points at. One interface type on each side, and the same
+# mask mismatch as the other two labs. r2 is point-to-point, so it IGNORES the
+# mask, accepts r1's Hello and creates a neighbour. r1 is broadcast, so it
+# CHECKS the mask, discards r2's Hello and creates nothing. r1's Hellos
+# therefore never list r2, and r2 sits at Init: the state that says "I heard
+# you, you have not heard me."
+#
+# No filter, no broken cable, no one-way fibre. Two lines of configuration.
+#   r1 (10.0.0.1/30, broadcast) ---- r2 (10.0.0.2/24, point-to-point)
+name: rtnwb-ospf-oneway-init
+settle: 4
+converge: 55
+nodes:
+  r1:
+    image: quay.io/frrouting/frr:10.2.1
+    daemons: [ospfd]
+    pre:
+      - ip address replace 10.0.0.1/30 dev eth1
+      - ip address replace 10.255.0.1/32 dev lo
+    config:
+      - configure terminal
+      - log file /tmp/ospf.log informational
+      - interface lo
+      - ip ospf area 0
+      - ip ospf passive
+      - exit
+      - interface eth1
+      - ip ospf area 0
+      - exit
+      - router ospf
+      - ospf router-id 10.255.0.1
+  r2:
+    image: quay.io/frrouting/frr:10.2.1
+    daemons: [ospfd]
+    pre:
+      - ip address replace 10.0.0.2/24 dev eth1
+      - ip address replace 10.255.0.2/32 dev lo
+    config:
+      - configure terminal
+      - log file /tmp/ospf.log informational
+      - interface lo
+      - ip ospf area 0
+      - ip ospf passive
+      - exit
+      - interface eth1
+      - ip ospf area 0
+      - ip ospf network point-to-point
+      - exit
+      - router ospf
+      - ospf router-id 10.255.0.2
+links:
+  - endpoints: ["r1:eth1", "r2:eth1"]
+capture:
+  - id: r1-checks-the-mask-because-it-is-broadcast
+    node: r1
+    cmd: show ip ospf interface eth1
+    require: ["eth1 is up"]
+    expect: "Network Type BROADCAST"
+  - id: r2-ignores-the-mask-because-it-is-point-to-point
+    node: r2
+    cmd: show ip ospf interface eth1
+    require: ["eth1 is up"]
+    expect: "Network Type POINTOPOINT"
+  - id: r2-is-stuck-in-init
+    node: r2
+    cmd: show ip ospf neighbor
+    require: ["Neighbor ID"]
+    expect: "10\\.255\\.0\\.1.*Init"
+  - id: r1-has-no-neighbour-entry-at-all
+    node: r1
+    cmd: show ip ospf neighbor
+    require: ["Neighbor ID", "State"]
+    expect: "(?s)^(?!.*(Full|Init|2-Way|ExStart|Exchange|Loading)).*$"
+  - id: r1-says-why-it-discarded-the-hello
+    node: r1
+    cli: shell
+    cmd: grep -i NetworkMask /tmp/ospf.log | tail -2
+    require: ["NetworkMask"]
+    expect: "mismatch"
+  - id: r2-logged-no-mismatch-because-it-did-not-check
+    node: r2
+    cli: shell
+    cmd: grep -ci NetworkMask /tmp/ospf.log || true
+    require: ["^[0-9]+"]
+    expect: "^0$"

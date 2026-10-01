@@ -1,0 +1,15 @@
+# Line endings are LF in this repository, for every text file.
+#
+# This was not always so. Files added in recent editions were LF while files
+# untouched since the first import were CRLF, so editing one line of an old file
+# rewrote the whole file's endings and the diff for that edition said nothing.
+# Worse, the reader package delivered for review and the tree published here
+# could differ byte for byte while containing the same text, which defeats the
+# checksum manifest they are both supposed to be checked against.
+#
+# Everything is LF, and this file keeps it that way. Git still checks out CRLF
+# on Windows where a tool needs it; it is the stored form that is pinned.
+* text=auto eol=lf
+*.png binary
+*.pdf binary
+*.gz  binary

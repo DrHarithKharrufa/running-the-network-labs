@@ -4,6 +4,76 @@ Editions of the companion, newest first. A tagged release is frozen; this file
 in the repository's current state records what moved between tags. Corrections
 made after an edition was printed go in `ERRATA.md`.
 
+## RTN-2026-10-01
+
+Corrections from a third independent reader and publication review. The theme of
+this round is that several earlier repairs named a mechanism without establishing
+that it delivered the promised result.
+
+- **The reader's first five minutes now work as printed.** The book's retrieval
+  page ended by putting you in the repository root and then told you to `cd` into
+  a second copy of the repository beneath it. Both download routes now declare
+  one starting directory — the folder holding `EDITION.json` — and every command
+  is relative to it. The git example no longer uses a Unix backslash continuation
+  in a page that advertises a Windows workflow, and the failure guidance no longer
+  says a failure means "the problem is Python": it lists the three errors you
+  actually get, and only one of them is Python.
+- **One authority for the edition identity.** Eleven reader-facing files repeated
+  the edition in their own words, and this download previously introduced itself
+  as RTN-2026-09-26 "matching the 746-page print proof" while the book's own page
+  said RTN-2026-09-27 and 748 pages. `EDITION.json` is now the only authority and
+  `tools/stamp_edition.py` stamps and then polices every other mention; an
+  undeclared stale identifier anywhere in the payload fails the check.
+  `QUALIFICATION.md` now says plainly which of its runs belong to this edition and
+  which are carried forward with their original dates.
+- **`labs/reference-designs/BRANCH-COMPLETE.md`: three mechanisms specified
+  rather than asserted.**
+  - Controller isolation no longer rests on protected ports, which are local to
+    one switch: with two switches joined by a trunk, a protected port still
+    forwards to the trunk and the far switch still delivers to its protected
+    port. The control is now an ingress filter on every controller port on both
+    switches, the port map places a controller on each switch deliberately, and
+    the acceptance test covers the same-switch *and* cross-switch cases.
+  - Voice continuity across a WAN change no longer rests on a loopback-sourced
+    tunnel. A loopback keeps the inner addresses stable; it does nothing for the
+    outer endpoint or its NAT mapping. The design now runs two IKEv2 tunnels, one
+    per WAN, and names IKEv2 MOBIKE as the single-tunnel alternative with the
+    condition RFC 4555 actually places on it.
+  - The router-failure procedure is specified end to end: the switch port's
+    degraded profile, the CPE's prepared gateway and DHCP scope, who can apply
+    the change and over what path, which services survive and which do not, and
+    two separately measured deadlines instead of a shipping promise standing in
+    for a restoration target.
+  - R-01 covers link *and access-switch* failure again. Narrowing it to links in
+    the previous round silently dropped a commitment that D-03, FT-04 and RP-02
+    all still depended on.
+- **`check_addressing.py` now matches what it claims.** It validates the assigned
+  device loopbacks, not only their pools, and the addressing block in the document
+  is *generated* from the JSON and compared byte for byte, so a changed DHCP
+  endpoint, loopback or spare block in the prose fails the check. It previously
+  reported that "the document agrees with the source" while comparing only the LAN
+  prefixes. `test_check_addressing.py` is new and keeps fifteen bad-input cases,
+  including the three the reviewer used.
+- **The incident record stops claiming a clock bound it cannot support.** The
+  model answer previously derived ±20 ms from a pre-incident offset reading and a
+  dispersion figure, which do not combine into a bound and which exceed 20 ms
+  anyway. It now says so, shows that the ordering the record relies on is 81
+  seconds and survives without a bound, and gives the three terms a real bound
+  needs.
+- **Three new FRR 10.2.1 runs settle the workbook's OSPF Init explanation**, in
+  `evidence/revision-2026-10-01/`. The same mask mismatch on the same pair of
+  routers is harmless on a point-to-point link, fatal at both ends on a broadcast
+  link, and produces a persistent Init on exactly one side when the interface
+  types differ. The workbook now says *persistently* stuck in Init, and says the
+  receive checks that apply to the interface type rather than listing the mask
+  unconditionally.
+- Smaller corrections: the ADR's requirement count and alternative rows name the
+  requirements instead of saying "both"; the guest ACL names its direction; the
+  workbook PDF no longer carries the LaTeX and pdfTeX banner; `--case` lets a
+  reader put an incident through lab 64.2 without editing the program; the
+  inventory count now sums every dated evidence revision rather than one
+  hard-coded folder.
+
 ## RTN-2026-09-27
 
 Corrections from a second independent reader and publication review.

@@ -1,6 +1,6 @@
 # From a CSV to an operational decision
 
-Edition **RTN-2026-09-26**. Allow eight sessions of 45–90 minutes, then the n8n and Power Automate sessions. These are learning estimates, not measured reader completion times. Start here even if you have never written Python. The existing `learning/` workbooks cover the wider network and leadership route; this course supplies the missing code-to-workflow progression.
+Edition **RTN-2026-10-01**. Allow eight sessions of 45–90 minutes, then the n8n and Power Automate sessions. These are learning estimates, not measured reader completion times. Start here even if you have never written Python. The existing `learning/` workbooks cover the wider network and leadership route; this course supplies the missing code-to-workflow progression.
 
 The story: Aldergate's branch dashboard says “uplink down”. A colleague suggests automating a port bounce. Your first job is to establish what the observation means. By the end you can collect evidence, distinguish missing data from a down interface, create a review case and explain why a case is not a repair. The devices in this course are simulated. The HTTP requests, Python processes, SQLite transactions and n8n execution are real. For actual routing and packet forwarding, continue to the FRR workbook and `harness/`.
 

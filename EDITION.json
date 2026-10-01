@@ -1,16 +1,16 @@
 {
-  "edition": "RTN-2026-09-27",
-  "date": "2026-09-27",
+  "edition": "RTN-2026-10-01",
+  "date": "2026-10-01",
   "status": "retail edition; hashes below are of the published PDF pair and workbook",
   "book": {
-    "print_pages": 748,
-    "colour_pages": 745,
-    "print_sha256": "9796d3f5eef61e6654fc9305511b919e7d233c7c694ec528e45700c68eecac86",
-    "colour_sha256": "ddf6cabd5f134a0fa9495770fc6f08bbdbf25a60c808eae498833e2bfb859c06"
+    "print_pages": 750,
+    "colour_pages": 747,
+    "print_sha256": "fe2bd374c29ea56f22deb8705cdc3ede00349bd8a1c12f6500d0d1a2d1214767",
+    "colour_sha256": "6303cb6c475289bffa283d7830c13d089538d196872700e99d6baac585bd2ed8"
   },
   "workbook": {
     "pages": 27,
-    "sha256": "6032fdde4af18d70c1915913b501e6bd9660a8c6061ec23b4eef625f2efa8985"
+    "sha256": "c6dbd6ac9b47d9618cc41298de0b997ff5b6f604a07aadba86eee5215e0b7a11"
   },
   "repository": "https://github.com/DrHarithKharrufa/running-the-network-labs",
   "errata": "https://github.com/DrHarithKharrufa/running-the-network-labs/issues",
@@ -24,18 +24,18 @@
       "standards",
       "topologies"
     ],
-    "python_programs": 252,
-    "test_programs": 104,
+    "python_programs": 255,
+    "test_programs": 105,
     "containerlab_topologies": 35,
-    "harness_topologies": 7,
+    "harness_topologies": 10,
     "device_config_files": 114,
-    "evidence_json_files": 29,
-    "declared_test_programs": 108,
-    "fresh_routing_records": 17
+    "evidence_json_files": 33,
+    "declared_test_programs": 109,
+    "fresh_routing_records": 20
   },
   "hash_manifest": "SHA256SUMS.txt in the reader archive; lists every payload except itself",
   "qualification": "QUALIFICATION.md",
   "hashes_are_of": "the three PDFs published with this edition: Running-the-Network-print-BW.pdf, Running-the-Network-colour-linked.pdf, Configuration-Workbook.pdf",
-  "supersedes": "RTN-2026-09-26",
-  "release": "https://github.com/DrHarithKharrufa/running-the-network-labs/releases/tag/RTN-2026-09-27"
+  "supersedes": "RTN-2026-09-27 (which superseded RTN-2026-09-26)",
+  "release": "https://github.com/DrHarithKharrufa/running-the-network-labs/releases/tag/RTN-2026-10-01"
 }

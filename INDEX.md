@@ -1,6 +1,6 @@
 # Chapter to lab index
 
-Edition RTN-2026-09-26. Start the [Python course](learning/practical-route/README.md) before Chapter 71 if you have not programmed. Use the [task index](learning/TASK-INDEX.md) to find an operational job. File availability is not execution evidence.
+Edition RTN-2026-10-01. Start the [Python course](learning/practical-route/README.md) before Chapter 71 if you have not programmed. Use the [task index](learning/TASK-INDEX.md) to find an operational job. File availability is not execution evidence.
 
 Every lab in this repository and the chapter it belongs to. `L1`-`L5` is the
 book's own ladder: Foundation, Operations, Engineering, Architecture, Leadership.

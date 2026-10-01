@@ -1,0 +1,41 @@
+{
+  "ospf-mask-broadcast.json": {
+    "captured_utc": "2026-10-01T11:58:55+00:00",
+    "captures": 6,
+    "harness_sha256": "735d88b1ebe0e1952f0ce8eec3b2b1b64348c6176e7af9d0ba3c137cf4087802",
+    "images": {
+      "quay.io/frrouting/frr:10.2.1": {
+        "image_created": "2024-12-31T08:27:55.792462405Z",
+        "image_id": "sha256:e47e67bd612030cb1bedee2bde85b73913f2ea021573b749deb21d94940f03c1",
+        "repo_digest": "quay.io/frrouting/frr@sha256:e47e67bd612030cb1bedee2bde85b73913f2ea021573b749deb21d94940f03c1"
+      }
+    },
+    "record_sha256": "1e83619d3f602b662a717da36d0c0d3fdc9ed0cd0e37f73ce09237625109a595"
+  },
+  "ospf-mask-p2p.json": {
+    "captured_utc": "2026-10-01T11:57:54+00:00",
+    "captures": 7,
+    "harness_sha256": "735d88b1ebe0e1952f0ce8eec3b2b1b64348c6176e7af9d0ba3c137cf4087802",
+    "images": {
+      "quay.io/frrouting/frr:10.2.1": {
+        "image_created": "2024-12-31T08:27:55.792462405Z",
+        "image_id": "sha256:e47e67bd612030cb1bedee2bde85b73913f2ea021573b749deb21d94940f03c1",
+        "repo_digest": "quay.io/frrouting/frr@sha256:e47e67bd612030cb1bedee2bde85b73913f2ea021573b749deb21d94940f03c1"
+      }
+    },
+    "record_sha256": "adf6e08ad13f8a4acf2c0644ff06255e6d4ef219c40fef16640f05cf4970594d"
+  },
+  "ospf-oneway-init.json": {
+    "captured_utc": "2026-10-01T12:00:00+00:00",
+    "captures": 6,
+    "harness_sha256": "735d88b1ebe0e1952f0ce8eec3b2b1b64348c6176e7af9d0ba3c137cf4087802",
+    "images": {
+      "quay.io/frrouting/frr:10.2.1": {
+        "image_created": "2024-12-31T08:27:55.792462405Z",
+        "image_id": "sha256:e47e67bd612030cb1bedee2bde85b73913f2ea021573b749deb21d94940f03c1",
+        "repo_digest": "quay.io/frrouting/frr@sha256:e47e67bd612030cb1bedee2bde85b73913f2ea021573b749deb21d94940f03c1"
+      }
+    },
+    "record_sha256": "4009096dbfe16a7cc1d212e7ad43ae974efe69e49ecc5a3e9c4d466553e0d857"
+  }
+}

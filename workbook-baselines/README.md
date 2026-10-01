@@ -1,6 +1,6 @@
 # Workbook baselines and platform boundaries
 
-Edition RTN-2026-09-26. The workbook is a selected IGP/BGP sample, not equal tested coverage of every vendor. Its task pages are fragments; the complete FRR starting configurations and addressing are in `harness/topologies/`. Do not concatenate r1 and r2 panels into one router session.
+Edition RTN-2026-10-01. The workbook is a selected IGP/BGP sample, not equal tested coverage of every vendor. Its task pages are fragments; the complete FRR starting configurations and addressing are in `harness/topologies/`. Do not concatenate r1 and r2 panels into one router session.
 
 | Task family | FRR baseline / node |
 | --- | --- |

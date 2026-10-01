@@ -1,7 +1,7 @@
 # Running the Network — reader companion
 
-Edition **RTN-2026-09-26**, matching the 746-page black-and-white print proof
-and 744-page colour edition. There are 84 chapter lab directories, five shared
+Edition **RTN-2026-10-01**, matching the 750-page black-and-white print
+proof and the 747-page colour edition. There are 84 chapter lab directories, five shared
 lab directories and 35 Containerlab topology files. Reproduce inventories with
 `python tools/count.py .`; programs, tests and topologies are different counts.
 

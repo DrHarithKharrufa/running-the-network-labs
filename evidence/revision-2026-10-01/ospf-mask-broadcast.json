@@ -1,0 +1,403 @@
+{
+  "captured_utc": "2026-10-01T11:58:55+00:00",
+  "captures": [
+    {
+      "cli": "vtysh",
+      "cmd": "show ip ospf interface eth1",
+      "contract": {
+        "cmd": "show ip ospf interface eth1",
+        "expect": "Network Type BROADCAST",
+        "id": "the-interface-type-is-broadcast-r1",
+        "node": "r1",
+        "require": [
+          "eth1 is up"
+        ]
+      },
+      "elapsed_s": 0.083,
+      "id": "the-interface-type-is-broadcast-r1",
+      "matched": true,
+      "node": "r1",
+      "output": "eth1 is up\n  ifindex 11, MTU 1500 bytes, BW 10000 Mbit <UP,LOWER_UP,BROADCAST,RUNNING,MULTICAST>\n  Internet Address 10.0.0.1/30, Broadcast 10.0.0.3, Area 0.0.0.0\n  MTU mismatch detection: enabled\n  Router ID 10.255.0.1, Network Type BROADCAST, Cost: 10\n  Transmit Delay is 1 sec, State DR, Priority 1\n  Designated Router (ID) 10.255.0.1 Interface Address 10.0.0.1/30\n  No backup designated router on this network\n  Multicast group memberships: OSPFAllRouters OSPFDesignatedRouters\n  Timer intervals configured, Hello 10s, Dead 40s, Wait 40s, Retransmit 5\n    Hello due in 9.764s\n  Neighbor Count is 0, Adjacent neighbor count is 0\n  Graceful Restart hello delay: 10s\n  LSA retransmissions: 0\n\n",
+      "returncode": 0,
+      "sha256": "6a13c6af4daabe352a3dc8455a5f0dfbbab176781b6fcf02950ce0a190d26fe5",
+      "stderr": "",
+      "stdout": "eth1 is up\n  ifindex 11, MTU 1500 bytes, BW 10000 Mbit <UP,LOWER_UP,BROADCAST,RUNNING,MULTICAST>\n  Internet Address 10.0.0.1/30, Broadcast 10.0.0.3, Area 0.0.0.0\n  MTU mismatch detection: enabled\n  Router ID 10.255.0.1, Network Type BROADCAST, Cost: 10\n  Transmit Delay is 1 sec, State DR, Priority 1\n  Designated Router (ID) 10.255.0.1 Interface Address 10.0.0.1/30\n  No backup designated router on this network\n  Multicast group memberships: OSPFAllRouters OSPFDesignatedRouters\n  Timer intervals configured, Hello 10s, Dead 40s, Wait 40s, Retransmit 5\n    Hello due in 9.764s\n  Neighbor Count is 0, Adjacent neighbor count is 0\n  Graceful Restart hello delay: 10s\n  LSA retransmissions: 0\n\n",
+      "validation_errors": []
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show ip ospf interface eth1",
+      "contract": {
+        "cmd": "show ip ospf interface eth1",
+        "expect": "Network Type BROADCAST",
+        "id": "the-interface-type-is-broadcast-r2",
+        "node": "r2",
+        "require": [
+          "eth1 is up"
+        ]
+      },
+      "elapsed_s": 0.082,
+      "id": "the-interface-type-is-broadcast-r2",
+      "matched": true,
+      "node": "r2",
+      "output": "eth1 is up\n  ifindex 10, MTU 1500 bytes, BW 10000 Mbit <UP,LOWER_UP,BROADCAST,RUNNING,MULTICAST>\n  Internet Address 10.0.0.2/24, Broadcast 10.0.0.255, Area 0.0.0.0\n  MTU mismatch detection: enabled\n  Router ID 10.255.0.2, Network Type BROADCAST, Cost: 10\n  Transmit Delay is 1 sec, State DR, Priority 1\n  Designated Router (ID) 10.255.0.2 Interface Address 10.0.0.2/24\n  No backup designated router on this network\n  Multicast group memberships: OSPFAllRouters OSPFDesignatedRouters\n  Timer intervals configured, Hello 10s, Dead 40s, Wait 40s, Retransmit 5\n    Hello due in 9.773s\n  Neighbor Count is 0, Adjacent neighbor count is 0\n  Graceful Restart hello delay: 10s\n  LSA retransmissions: 0\n\n",
+      "returncode": 0,
+      "sha256": "6007031d859c69a5e2ae4b0097ac42d0162dd63e172f03889679b75d53137635",
+      "stderr": "",
+      "stdout": "eth1 is up\n  ifindex 10, MTU 1500 bytes, BW 10000 Mbit <UP,LOWER_UP,BROADCAST,RUNNING,MULTICAST>\n  Internet Address 10.0.0.2/24, Broadcast 10.0.0.255, Area 0.0.0.0\n  MTU mismatch detection: enabled\n  Router ID 10.255.0.2, Network Type BROADCAST, Cost: 10\n  Transmit Delay is 1 sec, State DR, Priority 1\n  Designated Router (ID) 10.255.0.2 Interface Address 10.0.0.2/24\n  No backup designated router on this network\n  Multicast group memberships: OSPFAllRouters OSPFDesignatedRouters\n  Timer intervals configured, Hello 10s, Dead 40s, Wait 40s, Retransmit 5\n    Hello due in 9.773s\n  Neighbor Count is 0, Adjacent neighbor count is 0\n  Graceful Restart hello delay: 10s\n  LSA retransmissions: 0\n\n",
+      "validation_errors": []
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show ip ospf neighbor",
+      "contract": {
+        "cmd": "show ip ospf neighbor",
+        "expect": "(?s)^(?!.*(Full|Init|2-Way|ExStart|Exchange|Loading)).*$",
+        "id": "r1-has-no-neighbour-at-all",
+        "node": "r1",
+        "require": [
+          "Neighbor ID",
+          "State"
+        ]
+      },
+      "elapsed_s": 0.085,
+      "id": "r1-has-no-neighbour-at-all",
+      "matched": true,
+      "node": "r1",
+      "output": "\nNeighbor ID     Pri State           Up Time         Dead Time Address         Interface                        RXmtL RqstL DBsmL\n\n",
+      "returncode": 0,
+      "sha256": "577f9faf40c7a166f914a24700c115e8ea4b57d7d84eab5034b17b83890404d3",
+      "stderr": "",
+      "stdout": "\nNeighbor ID     Pri State           Up Time         Dead Time Address         Interface                        RXmtL RqstL DBsmL\n\n",
+      "validation_errors": []
+    },
+    {
+      "cli": "vtysh",
+      "cmd": "show ip ospf neighbor",
+      "contract": {
+        "cmd": "show ip ospf neighbor",
+        "expect": "(?s)^(?!.*(Full|Init|2-Way|ExStart|Exchange|Loading)).*$",
+        "id": "r2-has-no-neighbour-at-all",
+        "node": "r2",
+        "require": [
+          "Neighbor ID",
+          "State"
+        ]
+      },
+      "elapsed_s": 0.088,
+      "id": "r2-has-no-neighbour-at-all",
+      "matched": true,
+      "node": "r2",
+      "output": "\nNeighbor ID     Pri State           Up Time         Dead Time Address         Interface                        RXmtL RqstL DBsmL\n\n",
+      "returncode": 0,
+      "sha256": "577f9faf40c7a166f914a24700c115e8ea4b57d7d84eab5034b17b83890404d3",
+      "stderr": "",
+      "stdout": "\nNeighbor ID     Pri State           Up Time         Dead Time Address         Interface                        RXmtL RqstL DBsmL\n\n",
+      "validation_errors": []
+    },
+    {
+      "cli": "shell",
+      "cmd": "grep -i NetworkMask /tmp/ospf.log | tail -2",
+      "contract": {
+        "cli": "shell",
+        "cmd": "grep -i NetworkMask /tmp/ospf.log | tail -2",
+        "expect": "mismatch",
+        "id": "and-the-router-says-why-r1",
+        "node": "r1",
+        "require": [
+          "NetworkMask"
+        ]
+      },
+      "elapsed_s": 0.072,
+      "id": "and-the-router-says-why-r1",
+      "matched": true,
+      "node": "r1",
+      "output": "2026/10/01 11:58:45 OSPF: [X978W-FEJC8][EC 134217741] Packet 10.255.0.2 [Hello:RECV]: NetworkMask mismatch on eth1:10.0.0.1 (configured prefix length is 30, but hello packet indicates 24).\n2026/10/01 11:58:55 OSPF: [X978W-FEJC8][EC 134217741] Packet 10.255.0.2 [Hello:RECV]: NetworkMask mismatch on eth1:10.0.0.1 (configured prefix length is 30, but hello packet indicates 24).\n",
+      "returncode": 0,
+      "sha256": "2ccd12b840607e0603dcbb8d07b87b6b1f21c79f8ae16c467a4b60f2d2ad165d",
+      "stderr": "",
+      "stdout": "2026/10/01 11:58:45 OSPF: [X978W-FEJC8][EC 134217741] Packet 10.255.0.2 [Hello:RECV]: NetworkMask mismatch on eth1:10.0.0.1 (configured prefix length is 30, but hello packet indicates 24).\n2026/10/01 11:58:55 OSPF: [X978W-FEJC8][EC 134217741] Packet 10.255.0.2 [Hello:RECV]: NetworkMask mismatch on eth1:10.0.0.1 (configured prefix length is 30, but hello packet indicates 24).\n",
+      "validation_errors": []
+    },
+    {
+      "cli": "shell",
+      "cmd": "grep -i NetworkMask /tmp/ospf.log | tail -2",
+      "contract": {
+        "cli": "shell",
+        "cmd": "grep -i NetworkMask /tmp/ospf.log | tail -2",
+        "expect": "mismatch",
+        "id": "and-the-router-says-why-r2",
+        "node": "r2",
+        "require": [
+          "NetworkMask"
+        ]
+      },
+      "elapsed_s": 0.061,
+      "id": "and-the-router-says-why-r2",
+      "matched": true,
+      "node": "r2",
+      "output": "2026/10/01 11:58:44 OSPF: [X978W-FEJC8][EC 134217741] Packet 10.255.0.1 [Hello:RECV]: NetworkMask mismatch on eth1:10.0.0.2 (configured prefix length is 24, but hello packet indicates 30).\n2026/10/01 11:58:54 OSPF: [X978W-FEJC8][EC 134217741] Packet 10.255.0.1 [Hello:RECV]: NetworkMask mismatch on eth1:10.0.0.2 (configured prefix length is 24, but hello packet indicates 30).\n",
+      "returncode": 0,
+      "sha256": "ac5273288daa0d594102b565af2108553a4a300525b79360b3d21fc60c332c8a",
+      "stderr": "",
+      "stdout": "2026/10/01 11:58:44 OSPF: [X978W-FEJC8][EC 134217741] Packet 10.255.0.1 [Hello:RECV]: NetworkMask mismatch on eth1:10.0.0.2 (configured prefix length is 24, but hello packet indicates 30).\n2026/10/01 11:58:54 OSPF: [X978W-FEJC8][EC 134217741] Packet 10.255.0.1 [Hello:RECV]: NetworkMask mismatch on eth1:10.0.0.2 (configured prefix length is 24, but hello packet indicates 30).\n",
+      "validation_errors": []
+    }
+  ],
+  "captures_failed": 0,
+  "captures_total": 6,
+  "configuration": [
+    {
+      "commands": [
+        "sysctl -w net.ipv4.ip_forward=1"
+      ],
+      "node": "r1",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "net.ipv4.ip_forward = 1\n"
+    },
+    {
+      "commands": [
+        "sysctl -w net.ipv4.ip_forward=1"
+      ],
+      "node": "r2",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "net.ipv4.ip_forward = 1\n"
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.0.1/30 dev eth1"
+      ],
+      "node": "r1",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.255.0.1/32 dev lo"
+      ],
+      "node": "r1",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "sed -i 's/^ospfd=no/ospfd=yes/' /etc/frr/daemons && touch /etc/frr/vtysh.conf && chown frr:frr /etc/frr/vtysh.conf && /usr/lib/frr/frrinit.sh start"
+      ],
+      "node": "r1",
+      "phase": "daemon-start",
+      "returncode": 0,
+      "stderr": "2026/10/01 11:57:56 ZEBRA: [M2MGG-ET69W] RTADV socket for ns: 0 failure to create: Address family not supported by protocol(97)\n2026/10/01 11:57:56 ZEBRA: [WVJCK-PPMGD][EC 4043309093] generic-netlink-cmd (NS 0) error: No such file or directory, type=RTM_NEWLINK(16), seq=1, pid=53\n2026/10/01 11:57:56 ZEBRA: [VQYGV-SKT5D] Kernel does not support 'SEG6' Generic Netlink family. Any attempt to set the encapsulation parameters under the SRv6 configuration will fail\n2026/10/01 11:57:56 ZEBRA: [YPXBJ-5ZTFF] Failed to get SRv6 encap source address: kernel does not support 'SEG6' Generic Netlink family.\n2026/10/01 11:57:56 ZEBRA: [NNACN-54BDA][EC 4043309110] Disabling MPLS support (no kernel support)\n/etc/frr/frr.conf does not exist; skipping config apply\n",
+      "stdout": "Starting watchfrr with command: '  /usr/lib/frr/watchfrr  -d  -F traditional   zebra mgmtd ospfd staticd'\nStarted watchfrr\n"
+    },
+    {
+      "commands": [
+        "ip address replace 10.0.0.2/24 dev eth1"
+      ],
+      "node": "r2",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "ip address replace 10.255.0.2/32 dev lo"
+      ],
+      "node": "r2",
+      "phase": "pre",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "sed -i 's/^ospfd=no/ospfd=yes/' /etc/frr/daemons && touch /etc/frr/vtysh.conf && chown frr:frr /etc/frr/vtysh.conf && /usr/lib/frr/frrinit.sh start"
+      ],
+      "node": "r2",
+      "phase": "daemon-start",
+      "returncode": 0,
+      "stderr": "2026/10/01 11:57:58 ZEBRA: [M2MGG-ET69W] RTADV socket for ns: 0 failure to create: Address family not supported by protocol(97)\n2026/10/01 11:57:58 ZEBRA: [WVJCK-PPMGD][EC 4043309093] generic-netlink-cmd (NS 0) error: No such file or directory, type=RTM_NEWLINK(16), seq=1, pid=53\n2026/10/01 11:57:58 ZEBRA: [VQYGV-SKT5D] Kernel does not support 'SEG6' Generic Netlink family. Any attempt to set the encapsulation parameters under the SRv6 configuration will fail\n2026/10/01 11:57:58 ZEBRA: [YPXBJ-5ZTFF] Failed to get SRv6 encap source address: kernel does not support 'SEG6' Generic Netlink family.\n2026/10/01 11:57:58 ZEBRA: [NNACN-54BDA][EC 4043309110] Disabling MPLS support (no kernel support)\n/etc/frr/frr.conf does not exist; skipping config apply\n",
+      "stdout": "Starting watchfrr with command: '  /usr/lib/frr/watchfrr  -d  -F traditional   zebra mgmtd ospfd staticd'\nStarted watchfrr\n"
+    },
+    {
+      "commands": [
+        "configure terminal",
+        "log file /tmp/ospf.log informational",
+        "interface lo",
+        "ip ospf area 0",
+        "ip ospf passive",
+        "exit",
+        "interface eth1",
+        "ip ospf area 0",
+        "exit",
+        "router ospf",
+        "ospf router-id 10.255.0.1"
+      ],
+      "node": "r1",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "commands": [
+        "configure terminal",
+        "log file /tmp/ospf.log informational",
+        "interface lo",
+        "ip ospf area 0",
+        "ip ospf passive",
+        "exit",
+        "interface eth1",
+        "ip ospf area 0",
+        "exit",
+        "router ospf",
+        "ospf router-id 10.255.0.2"
+      ],
+      "node": "r2",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  ],
+  "harness": "harness/netlab.py",
+  "harness_sha256": "735d88b1ebe0e1952f0ce8eec3b2b1b64348c6176e7af9d0ba3c137cf4087802",
+  "hash_contract": "UTF-8 encoding of stored output, with exact stored newlines; not a signature",
+  "images": {
+    "quay.io/frrouting/frr:10.2.1": {
+      "image_created": "2024-12-31T08:27:55.792462405Z",
+      "image_id": "sha256:e47e67bd612030cb1bedee2bde85b73913f2ea021573b749deb21d94940f03c1",
+      "repo_digest": "quay.io/frrouting/frr@sha256:e47e67bd612030cb1bedee2bde85b73913f2ea021573b749deb21d94940f03c1"
+    }
+  },
+  "kernel": "Linux-6.18.44-fc-v50-x86_64-with-glibc2.39",
+  "schema_version": 2,
+  "scope": "Commands accepted and output produced by these container images on this kernel at this time. Not hardware execution, not a claim about any NOS not run here, not a scale result.",
+  "topology": "rtnwb-ospf-mask-bcast",
+  "topology_definition": {
+    "capture": [
+      {
+        "cmd": "show ip ospf interface eth1",
+        "expect": "Network Type BROADCAST",
+        "id": "the-interface-type-is-broadcast-r1",
+        "node": "r1",
+        "require": [
+          "eth1 is up"
+        ]
+      },
+      {
+        "cmd": "show ip ospf interface eth1",
+        "expect": "Network Type BROADCAST",
+        "id": "the-interface-type-is-broadcast-r2",
+        "node": "r2",
+        "require": [
+          "eth1 is up"
+        ]
+      },
+      {
+        "cmd": "show ip ospf neighbor",
+        "expect": "(?s)^(?!.*(Full|Init|2-Way|ExStart|Exchange|Loading)).*$",
+        "id": "r1-has-no-neighbour-at-all",
+        "node": "r1",
+        "require": [
+          "Neighbor ID",
+          "State"
+        ]
+      },
+      {
+        "cmd": "show ip ospf neighbor",
+        "expect": "(?s)^(?!.*(Full|Init|2-Way|ExStart|Exchange|Loading)).*$",
+        "id": "r2-has-no-neighbour-at-all",
+        "node": "r2",
+        "require": [
+          "Neighbor ID",
+          "State"
+        ]
+      },
+      {
+        "cli": "shell",
+        "cmd": "grep -i NetworkMask /tmp/ospf.log | tail -2",
+        "expect": "mismatch",
+        "id": "and-the-router-says-why-r1",
+        "node": "r1",
+        "require": [
+          "NetworkMask"
+        ]
+      },
+      {
+        "cli": "shell",
+        "cmd": "grep -i NetworkMask /tmp/ospf.log | tail -2",
+        "expect": "mismatch",
+        "id": "and-the-router-says-why-r2",
+        "node": "r2",
+        "require": [
+          "NetworkMask"
+        ]
+      }
+    ],
+    "converge": 50,
+    "links": [
+      {
+        "endpoints": [
+          "r1:eth1",
+          "r2:eth1"
+        ]
+      }
+    ],
+    "name": "rtnwb-ospf-mask-bcast",
+    "nodes": {
+      "r1": {
+        "config": [
+          "configure terminal",
+          "log file /tmp/ospf.log informational",
+          "interface lo",
+          "ip ospf area 0",
+          "ip ospf passive",
+          "exit",
+          "interface eth1",
+          "ip ospf area 0",
+          "exit",
+          "router ospf",
+          "ospf router-id 10.255.0.1"
+        ],
+        "daemons": [
+          "ospfd"
+        ],
+        "image": "quay.io/frrouting/frr:10.2.1",
+        "pre": [
+          "ip address replace 10.0.0.1/30 dev eth1",
+          "ip address replace 10.255.0.1/32 dev lo"
+        ]
+      },
+      "r2": {
+        "config": [
+          "configure terminal",
+          "log file /tmp/ospf.log informational",
+          "interface lo",
+          "ip ospf area 0",
+          "ip ospf passive",
+          "exit",
+          "interface eth1",
+          "ip ospf area 0",
+          "exit",
+          "router ospf",
+          "ospf router-id 10.255.0.2"
+        ],
+        "daemons": [
+          "ospfd"
+        ],
+        "image": "quay.io/frrouting/frr:10.2.1",
+        "pre": [
+          "ip address replace 10.0.0.2/24 dev eth1",
+          "ip address replace 10.255.0.2/32 dev lo"
+        ]
+      }
+    },
+    "settle": 4
+  },
+  "topology_sha256": "3bf4c08400c79dacd4cc2907827fcd70c4931d057ba9758ec4955071f55338a5"
+}

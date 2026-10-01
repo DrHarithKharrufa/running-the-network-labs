@@ -23,8 +23,10 @@ each is something you will be asked for at work:
 ## 1. An incident record
 
 **The task.** Chapter 66's exercises ask you to run the timeline exercise and
-supply a defensible clock bound. More generally: write the record for an
-incident you have run.
+supply a defensible clock bound --- or to say plainly that you cannot, and show
+that the record's conclusions survive without one. Both are complete answers;
+inventing a bound is not. More generally: write the record for an incident you
+have run.
 
 ### Plausible but inadequate
 
@@ -51,16 +53,33 @@ which is the thing that already failed.
 > other services unaffected. No data loss. Two customer-facing orders delayed,
 > both completed same day.
 >
-> **Timeline.** Clock bound. Device logs are NTP-synchronised to
-> `ntp1.internal`; the last offset check before the incident read 3 ms, and the
-> daemon's own worst dispersion over the incident window was 18 ms, so **device
-> times below are good to ±20 ms** and events 50 ms apart can be ordered. The
-> 3 ms reading on its own would not have established that: an offset estimate
-> says where the clock was, an uncertainty bound says how far it could have
-> been, and only the second lets you order two events. The ticket system is
-> browser-timestamped against an unsynchronised client, so its times carry no
-> bound I can defend; they are marked ±60 s as a working assumption and are
-> **not** used to order anything.
+> **Timeline.** Clock bound: **I do not have one, and the record does not need
+> one.** Device logs are NTP-synchronised to `ntp1.internal` by `chronyd`. What I
+> have from the window is a *last offset* reading of 3 ms taken before the
+> incident and a worst root dispersion of 18 ms during it, and those two
+> quantities do not combine into a bound. Chrony documents the bound as
+> `clock_error <= |system_time_offset| + root_dispersion + (0.5 * root_delay)`,
+> assuming the reference is correct: the first term is the remaining correction
+> *at the moment of the timestamp*, which a last-offset reading from earlier is
+> not, and the third term is a root delay I never recorded. Even read
+> generously, 3 ms and 18 ms already exceed 20 ms before any root delay is
+> added, so a ±20 ms claim would have been arithmetically wrong as well as
+> unsupported.
+>
+> So: **no subsecond ordering is claimed below.** The ordering this record
+> actually relies on is the 81 seconds between the change at 09:12:41 and the
+> first probe failure at 09:14:02, which is far outside any plausible bound on a
+> synchronised clock and holds without one. Had the two events been 50 ms apart,
+> the honest entry would have been *order not established* — and the finding
+> would then have depended on the change record and the router's own
+> configuration history instead. The ticket system is browser-timestamped
+> against an unsynchronised client; its times are marked ±60 s as a working
+> assumption and are **not** used to order anything.
+>
+> If you do need subsecond ordering, this is what it takes: the three chrony
+> terms above, read on each device at the time of the timestamps, plus the
+> logging path's own precision and capture delay. That is a measurement to set
+> up before an incident, not a number to reconstruct after one.
 >
 > | Time (UTC) | Source | Event |
 > |---|---|---|
@@ -124,7 +143,11 @@ are separated from the narrative. Whether you rank actions. Whether you keep a
 why.
 
 **Failure signatures to check your own work for.** Times without sources; a
-clock offset offered where an uncertainty bound is needed; a *single* cause
+clock offset offered where an uncertainty bound is needed; **a precise bound
+whose terms are not defined, or are read from a different moment than the
+timestamps they are supposed to bound** --- a figure like ±20 ms is worse than
+"not established", because it invites an ordering the evidence does not support;
+a *single* cause
 presented as sufficient when the detection and process factors are unexamined —
 the heading is not the problem, the singularity is; any action whose
 verification is "we will be careful"; the passive voice hiding who did what;
@@ -150,8 +173,8 @@ you know, including the evidence still missing.
 Everything in it may be true. It is still not a decision record, because it
 does not let a successor disagree with it: no requirement is stated, so nothing
 can be checked against; "better scalability" has no number; the rejected option
-is described only as bad, which means the trade was never made; there is no
-cost, no risk and no condition that would make this decision wrong.
+is described only as bad, so nobody reading this can check the trade; there is
+no cost, no risk and no condition that would make this decision wrong.
 
 ### Complete
 
@@ -159,7 +182,7 @@ cost, no risk and no condition that would make this decision wrong.
 > **Status:** accepted, 2026-03-02. Supersedes nothing. Revisit trigger below.
 >
 > **Context.** Anvil carries 2 spines and 4 leaves today, projected to 2 and 10
-> within 18 months. Two requirements drive this decision:
+> within 18 months. Three requirements drive this decision:
 > - R-07: a tenant's layer-2 domain may span any leaf pair (product requirement,
 >   confirmed with the platform team 2026-02-18).
 > - R-09: onboarding a tenant onto a leaf pair must not require configuration on
@@ -178,8 +201,8 @@ cost, no risk and no condition that would make this decision wrong.
 > | Option | Why not chosen | What it would have cost |
 > |---|---|---|
 > | Keep VLAN trunking | Fails R-09; per-tenant change is fabric-wide | £0 now; an estimated 2 engineer-days per tenant onboarding, rising with leaf count |
-> | VXLAN with a controller | Meets both requirements; adds a controller to the failure domain and a licence we would have to keep current | Licence ~£28k/yr, plus the controller's own availability design |
-> | EVPN-VXLAN, asymmetric IRB | Meets both; requires every VNI on every leaf, which we expect to exceed leaf table capacity at the 10-leaf projection | £0 licence; a table-capacity wall we would hit inside the projection window |
+> | VXLAN with a controller | Meets R-07 and R-09; adds a controller to the failure domain and a licence we would have to keep current | Licence ~£28k/yr, plus the controller's own availability design |
+> | EVPN-VXLAN, asymmetric IRB | Meets R-07 and R-09; requires every VNI on every leaf, which we expect to exceed leaf table capacity at the 10-leaf projection | £0 licence; a table-capacity wall we would hit inside the projection window |
 >
 > **Consequences we accept.**
 > - Two networks to operate on one fabric: the underlay and the overlay. Chapter
@@ -210,7 +233,7 @@ cost, no risk and no condition that would make this decision wrong.
 - A requirement that the decision can be checked against, with a source and a
   date — not a goal like "scalability".
 - The rejected options, each with the reason and **what it would have cost**.
-  An option described only as bad was never really considered.
+  An option described only as bad leaves a successor unable to check the trade.
 - Consequences you accept, including operational and human ones.
 - The evidence you do not have, and which missing number would hurt most.
 - A condition that would make this decision wrong, stated in advance.
@@ -224,10 +247,12 @@ rejection whose stated reason does not match the requirement it cites; no
 revisit trigger; consequences that are all positive; and the decision stated
 before the requirement, which usually means the requirement was written to fit.
 
-One thing this rubric deliberately does **not** say: that an option without a
-written cost was never really considered. You cannot infer what somebody
-thought from what they wrote down. What you can say is that the record does not
-let a successor check the trade, which is the defect to fix.
+Note what that bullet does **not** say, and the earlier bad example does not
+say either: that an option without a written cost was never really considered.
+You cannot infer what somebody thought from what they wrote down, and a team
+that argued for three hours and minuted one line has a documentation defect, not
+a thinking defect. What you can say is that the record does not let a successor
+check the trade. That is the defect, and it is the one you can actually fix.
 
 ---
 

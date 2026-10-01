@@ -1,0 +1,81 @@
+# The other half of the same question. Identical addresses and identical mask
+# mismatch, but the default broadcast network type on both ends. RFC 2328 s10.5
+# checks the mask here, so the Hello is discarded at BOTH ends and neither
+# router ever creates a neighbour. Compare with ospf-mask-p2p: same
+# misconfiguration, different outcome, decided entirely by the interface type.
+#   r1 (10.0.0.1/30, broadcast) ---- r2 (10.0.0.2/24, broadcast)
+name: rtnwb-ospf-mask-bcast
+settle: 4
+converge: 50
+nodes:
+  r1:
+    image: quay.io/frrouting/frr:10.2.1
+    daemons: [ospfd]
+    pre:
+      - ip address replace 10.0.0.1/30 dev eth1
+      - ip address replace 10.255.0.1/32 dev lo
+    config:
+      - configure terminal
+      - log file /tmp/ospf.log informational
+      - interface lo
+      - ip ospf area 0
+      - ip ospf passive
+      - exit
+      - interface eth1
+      - ip ospf area 0
+      - exit
+      - router ospf
+      - ospf router-id 10.255.0.1
+  r2:
+    image: quay.io/frrouting/frr:10.2.1
+    daemons: [ospfd]
+    pre:
+      - ip address replace 10.0.0.2/24 dev eth1
+      - ip address replace 10.255.0.2/32 dev lo
+    config:
+      - configure terminal
+      - log file /tmp/ospf.log informational
+      - interface lo
+      - ip ospf area 0
+      - ip ospf passive
+      - exit
+      - interface eth1
+      - ip ospf area 0
+      - exit
+      - router ospf
+      - ospf router-id 10.255.0.2
+links:
+  - endpoints: ["r1:eth1", "r2:eth1"]
+capture:
+  - id: the-interface-type-is-broadcast-r1
+    node: r1
+    cmd: show ip ospf interface eth1
+    require: ["eth1 is up"]
+    expect: "Network Type BROADCAST"
+  - id: the-interface-type-is-broadcast-r2
+    node: r2
+    cmd: show ip ospf interface eth1
+    require: ["eth1 is up"]
+    expect: "Network Type BROADCAST"
+  - id: r1-has-no-neighbour-at-all
+    node: r1
+    cmd: show ip ospf neighbor
+    require: ["Neighbor ID", "State"]
+    expect: "(?s)^(?!.*(Full|Init|2-Way|ExStart|Exchange|Loading)).*$"
+  - id: r2-has-no-neighbour-at-all
+    node: r2
+    cmd: show ip ospf neighbor
+    require: ["Neighbor ID", "State"]
+    expect: "(?s)^(?!.*(Full|Init|2-Way|ExStart|Exchange|Loading)).*$"
+  - id: and-the-router-says-why-r1
+    node: r1
+    cli: shell
+    cmd: grep -i NetworkMask /tmp/ospf.log | tail -2
+    require: ["NetworkMask"]
+    expect: "mismatch"
+  - id: and-the-router-says-why-r2
+    node: r2
+    cli: shell
+    cmd: grep -i NetworkMask /tmp/ospf.log | tail -2
+    require: ["NetworkMask"]
+    expect: "mismatch"

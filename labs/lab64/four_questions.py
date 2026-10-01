@@ -26,6 +26,13 @@ cannot distinguish from its rival is not a diagnosis.
     python3 four_questions.py --demo-original
     python3 test_four_questions.py
 
+To put YOUR incident through it, pass the answers; you do not have to edit this
+file. An unanswered question is answered 'unknown', which updates nothing:
+
+    python3 four_questions.py --case "pump room" --ever-worked yes \
+            --scope "one site" --changes-per-day 40
+    python3 four_questions.py --help
+
 Offline calculation only. Every prior and likelihood used here is written down
 below, is illustrative rather than surveyed, and is swept in sensitivity() so
 you can see which conclusions survive changing it. No network was probed.
@@ -785,13 +792,70 @@ def report(out=print, original=False):
     return failed
 
 
+def one_case(args, out=print):
+    """Your own incident, through the same calculation as the printed cases.
+
+    This exists because the book used to tell a first-time reader to "edit the
+    case at the top of the file", and the cases are neither at the top nor
+    especially editable: they are four _case(...) calls inside report(), near
+    the end of 800 lines. A reader putting their own incident through this
+    should not have to read the program first.
+    """
+    ever = {'yes': True, 'no': False, 'unknown': UNKNOWN}[args.ever_worked]
+    out('=' * 74)
+    out('LAB 64.2 --- YOUR CASE, THROUGH THE SAME WEIGHTS AS THE PRINTED ONES')
+    out('=' * 74)
+    out('')
+    out('The priors and likelihoods are the ones written down in this file. They')
+    out('are illustrative, not surveyed. Replace them with your own service')
+    out("desk's mix before you believe a number: the README says where.")
+    out('')
+    _case(out, 'YOUR CASE --- %s' % args.case,
+          ever_worked=ever,
+          scope=UNKNOWN if args.scope == 'unknown' else args.scope,
+          changes_per_day=args.changes_per_day,
+          window_minutes=args.window_minutes)
+    out('An answer you did not give was treated as unknown and changed nothing.')
+    return False
+
+
 def main(argv=None):
+    import argparse
     argv = list(sys.argv[1:] if argv is None else argv)
-    original = '--demo-original' in argv
-    for arg in argv:
-        if arg != '--demo-original':
-            raise SystemExit(f'unrecognised argument: {arg}')
-    failed = report(original=original)
+    ap = argparse.ArgumentParser(
+        prog='four_questions.py',
+        description='Weigh the four triage questions. With no options, prints '
+                    'the four constructed demonstration cases.')
+    ap.add_argument('--demo-original', action='store_true',
+                    help='print the withdrawn verdict-style version, for comparison')
+    ap.add_argument('--case', metavar='NAME',
+                    help='put your own incident through it, under this name')
+    ap.add_argument('--ever-worked', choices=['yes', 'no', 'unknown'],
+                    default='unknown',
+                    help='did it ever work? (default: unknown, which updates nothing)')
+    ap.add_argument('--scope', choices=sorted(SCOPES) + ['unknown'],
+                    default='unknown',
+                    help='is it one or many? (default: unknown)')
+    ap.add_argument('--changes-per-day', type=float, metavar='N',
+                    help='changes a day across the estate, if a change correlates')
+    ap.add_argument('--window-minutes', type=float, default=15.0, metavar='M',
+                    help='how close in time the change was (default: 15)')
+    args = ap.parse_args(argv)
+
+    if args.case:
+        if args.demo_original:
+            ap.error('--case and --demo-original ask for different reports')
+        if args.changes_per_day is not None and args.changes_per_day <= 0:
+            ap.error('--changes-per-day must be greater than zero')
+        failed = one_case(args)
+    else:
+        for name, value in (('--ever-worked', args.ever_worked),
+                            ('--scope', args.scope)):
+            if value != 'unknown':
+                ap.error('%s only means something with --case' % name)
+        if args.changes_per_day is not None:
+            ap.error('--changes-per-day only means something with --case')
+        failed = report(original=args.demo_original)
     return 0 if not failed else 1
 
 
