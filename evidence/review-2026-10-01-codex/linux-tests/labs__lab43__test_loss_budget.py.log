@@ -1,0 +1,42 @@
+ok    typical, acceptance and design are all different  [(12.6, 18.6, 20.5225)]
+ok    they are in the order typical < acceptance < design
+ok    acceptance differs from typical only by the element figures
+ok    design differs from acceptance only by the life allowance
+ok    the chapter's 60 km span passes on typical figures  [12.6]
+ok    ...and FAILS on a design basis  [20.5225]
+ok    ...by a margin larger than its entire connector allowance  [7.922500000000001]
+ok    one more kilometre changes the total
+ok    one more splice changes the total
+ok    one more connector pair changes the total
+ok    the other wavelength changes the total
+ok    1550 nm beats 1310 nm over distance
+ok    a mechanical splice costs more than a fusion splice
+ok    mechanical splices are counted when present
+ok    the repair allowance adds loss
+ok    a repair costs TWO splices, not one  [['fibre, 60 km at 0.25 dB/km', '4 fusion splices at 0.15 dB', '4 connector pairs at 0.75 dB', '3 repairs x 2 splices at 0.15 dB', '3 repairs x 30 m of slack cable', 'ageing and drift allowance']]
+ok    the ageing allowance is a separate line
+ok    more repairs cost more
+ok    zero repairs matches the acceptance basis
+ok    ageing remains with zero repairs
+ok    zero-repair ageing is itemised
+ok    the printed terms sum to the stated total
+ok    some shipped spans pass on the design basis  [['...on optics with a 22 dB budget', 'long span, spliced straight through', 'short metro hop']]
+ok    ...and some fail, so the basis is not simply stricter about everything  [["the chapter's 60 km example", '...with two patch panels taken out']]
+ok    removing two patch panels is a real but insufficient saving
+ok    a bigger optical budget is what fits the same span
+ok    rejects (-1, 1550) {}  [a span length is not negative, got -1]
+ok    rejects (10, 1234) {}  [no attenuation figure for 1234 nm; have 1310, 1550, 1625]
+ok    rejects (10, 1550) {'fusion_splices': -1}  [fusion splices must be a non-negative integer, got -1]
+ok    rejects (10, 1550) {'connector_pairs': 1.5}  [connector pairs must be a non-negative integer, got 1.5]
+ok    rejects (10, 1550) {'basis': 'optimistic'}  [basis is 'typical' or 'maximum', got 'optimistic']
+ok    rejects (10, 1550) {'margins': {'repairs_over_life': -1}}  [the repair count and ageing allowance are not negative]
+ok    rejects a zero system budget
+ok    the report names all three bases
+ok    the report says the defaults are illustrative
+ok    the report tells you what typical figures ARE for
+ok    the report itemises the design terms
+ok    the report flags the pass-on-typical case explicitly
+ok    the script exits 0  [0]
+ok    --json exits 0  [0]
+
+40/40 checks passed

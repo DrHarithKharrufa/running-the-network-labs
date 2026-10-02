@@ -5,7 +5,7 @@ Two parts, separated by what each can establish.
 | | What it does | What it proves |
 |---|---|---|
 | 37.1 `evpn_plan.py` | Builds a route-target **membership plan** from a tenant definition and reports one-way relationships, orphaned targets and mutual cross-tenant paths | Membership relationships implied by this input **model** |
-| 37.2 `overlay_lab.py` | Runs an EVPN control plane and a Linux VXLAN data plane on the Chapter 36 underlay, with two tenants and four hosts | What BGP, the bridge and the traffic **actually did**, on this host, on this run |
+| 37.2 `overlay_lab.py` | Runs an EVPN control plane and a Linux VXLAN data plane on the Chapter 35 underlay, with two tenants and four hosts | What BGP, the bridge and the traffic **actually did**, on this host, on this run |
 
 Neither runs Containerlab, a commercial NOS or an ASIC. Neither measures
 throughput, and neither builds symmetric IRB.

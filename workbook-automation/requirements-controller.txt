@@ -1,0 +1,4 @@
+Jinja2==3.1.6
+PyYAML==6.0.3
+# Ansible and device libraries are separately pinned after qualification.
+# Offline kit needs only Jinja2; inventory generation/QA also uses PyYAML.

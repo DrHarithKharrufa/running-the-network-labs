@@ -1,0 +1,118 @@
+Firewall rule-base analysis --- first match wins (§54.3)
+9 rules. Symbolic labels only: this model does not understand addresses,
+ports, protocols, NAT or state, and refuses input it cannot represent.
+
+  [CONTRADICTED] rule 2 (deny) can never match
+      shadowed by a single earlier rule: rule 1
+      the shadowing rule or rules take a DIFFERENT action, so the policy does the opposite of what this rule says --- somebody wrote this rule and did not get it
+  [REDUNDANT   ] rule 8 (deny) can never match
+      shadowed by a single earlier rule: rule 6
+      the shadowing rule or rules take the same action, so the effect is unchanged --- this is dead weight, not a hole
+
+Flow traces:
+  internal SSH to the DMZ web box (meant to be DENIED) -> rule 1 ALLOW
+  partner HTTPS to the DMZ web box                     -> rule 4 ALLOW
+  guest to internal file sharing                       -> rule 3 DENY
+  an identity no rule names, to the database           -> rule 6 DENY
+
+2 unreachable rule(s), of which 1 contradicted: an earlier rule takes the
+opposite action, so the policy does the opposite of what the rule says.
+{
+  "shadows": [
+    {
+      "rule": 2,
+      "action": "deny",
+      "shadowed_by": [
+        1
+      ],
+      "by_actions": [
+        "allow"
+      ],
+      "how": "a single earlier rule",
+      "severity": "CONTRADICTED",
+      "meaning": "the shadowing rule or rules take a DIFFERENT action, so the policy does the opposite of what this rule says --- somebody wrote this rule and did not get it"
+    },
+    {
+      "rule": 8,
+      "action": "deny",
+      "shadowed_by": [
+        6
+      ],
+      "by_actions": [
+        "deny"
+      ],
+      "how": "a single earlier rule",
+      "severity": "REDUNDANT",
+      "meaning": "the shadowing rule or rules take the same action, so the effect is unchanged --- this is dead weight, not a hole"
+    }
+  ],
+  "traces": [
+    {
+      "flow": {
+        "src": "internal",
+        "dst": "dmz-web",
+        "port": "ssh",
+        "label": "internal SSH to the DMZ web box (meant to be DENIED)"
+      },
+      "rule": 1,
+      "action": "allow",
+      "note": "first match wins; evaluation stopped here",
+      "label": "internal SSH to the DMZ web box (meant to be DENIED)"
+    },
+    {
+      "flow": {
+        "src": "partner",
+        "dst": "dmz-web",
+        "port": "https",
+        "label": "partner HTTPS to the DMZ web box"
+      },
+      "rule": 4,
+      "action": "allow",
+      "note": "first match wins; evaluation stopped here",
+      "label": "partner HTTPS to the DMZ web box"
+    },
+    {
+      "flow": {
+        "src": "guest",
+        "dst": "internal",
+        "port": "smb",
+        "label": "guest to internal file sharing"
+      },
+      "rule": 3,
+      "action": "deny",
+      "note": "first match wins; evaluation stopped here",
+      "label": "guest to internal file sharing"
+    },
+    {
+      "flow": {
+        "src": "contractor",
+        "dst": "dmz-db",
+        "port": "sql",
+        "label": "an identity no rule names, to the database"
+      },
+      "rule": 6,
+      "action": "deny",
+      "note": "first match wins; evaluation stopped here",
+      "label": "an identity no rule names, to the database"
+    }
+  ],
+  "rule_count": 9
+}
+What this model refuses, and why refusing beats guessing:
+
+  a CIDR prefix                REFUSED
+      rule at position 1 field src is '10.10.0.0/16', which this model cannot represent: a CIDR prefix --- this model compares labels for equality and cannot decide whether one prefix contains another. Refusing to analyse rather than report a confident wrong answer.
+
+  a port range                 REFUSED
+      rule at position 1 field port is '1024-65535', which this model cannot represent: a range --- this model has no ordering, so it cannot decide overlap. Refusing to analyse rather than report a confident wrong answer.
+
+  an address group             REFUSED
+      rule at position 1 field src is 'hr,finance', which this model cannot represent: a list or group --- expand it into separate rules, or use a model that understands objects. Refusing to analyse rather than report a confident wrong answer.
+
+  an action it does not know   REFUSED
+      rule at position 1 has action 'inspect'; this model knows only allow and deny
+
+  a flow of "any"              REFUSED
+      the flow specifies src='any'. A flow is one concrete packet, not a set: "any" as a flow value asks "what happens to everything at once", which has no single answer. Name the actual source, destination and port you mean.
+
+73 checks, 0 failed

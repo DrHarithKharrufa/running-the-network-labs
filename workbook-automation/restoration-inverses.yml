@@ -1,0 +1,33 @@
+# Absent description only. For a present original value, restore that exact value.
+# Substitute only the declared owned interface; preview and qualify before applying.
+iosxe:
+  module: cisco.ios.ios_config
+  parents: interface GigabitEthernet1/0/1
+  lines: [no description]
+  save_when: never
+nxos:
+  module: cisco.nxos.nxos_config
+  parents: interface Ethernet1/1
+  lines: [no description]
+  save_when: never
+eos:
+  module: arista.eos.eos_config
+  parents: interface Ethernet1
+  lines: [no description]
+  save_when: never
+junos:
+  module: juniper.device.config
+  load: set
+  lines: [delete interfaces ge-0/0/0 description]
+  check: true
+  commit: false
+  write_phase: "Separately reviewed commit:true, confirm:5; verify independently before confirmation."
+srl:
+  module: nokia.srlinux.config
+  delete:
+    - path: /interface[name=ethernet-1/1]/description
+  save_when: never
+vyos:
+  module: vyos.vyos.vyos_config
+  lines: [delete interfaces ethernet eth2 description]
+  save: false

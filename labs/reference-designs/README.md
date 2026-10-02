@@ -13,7 +13,7 @@ they carry no per-port low-level design.
 - `BRANCH-COMPLETE.md` — one Aldergate branch carried all the way through:
   requirement, decision, acceptance test, fault test, recovery procedure, owner
   and cost, sharing one identifier set. This is the completeness standard
-  Chapter 79 asks you to reach.
+  Chapter 76 asks you to reach.
 - `check_traceability.py` — parses that document and fails if any requirement
   lacks a decision, acceptance test, fault test or recovery procedure, or if any
   of those exists without naming a requirement. “Traceable” is checked, not claimed.

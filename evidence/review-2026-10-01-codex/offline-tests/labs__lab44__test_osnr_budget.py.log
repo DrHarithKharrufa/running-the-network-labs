@@ -1,0 +1,45 @@
+ok    one span is launch - loss - NF - the noise reference  [30.5]
+ok    more launch power gives more OSNR, one for one
+ok    more span loss costs OSNR, one for one
+ok    a noisier amplifier costs OSNR, one for one
+ok    one span in a chain equals the span formula
+ok    four identical spans cost exactly 10log10(4) = 6.02 dB  [6.020599913279625]
+ok    ...which is NOT a quarter of the OSNR
+ok    ten spans cost 10 dB
+ok    an unequal chain is dominated by its worst span
+ok    per-span figures are reported, not just the total
+ok    the effective SNR has a maximum  [(12.26481789945479, 16.53808755167521, 9.17358403236102)]
+ok    past the optimum, MORE power gives LESS effective SNR  [(-3.170000000000252, 9.17358403236102)]
+ok    ...while the ASE figure keeps improving, which is the trap
+ok    the penalty at the optimum is the classical 1.76 dB  [1.7610125784051007]
+ok    that figure is independent of the chain length
+ok    a lower nonlinear coefficient moves the optimum up
+ok    the effective SNR is never above the ASE figure
+ok    the requirement adds the penalties to the back-to-back figure  [18.0]
+ok    a bare back-to-back figure understates it
+ok    every penalty is itemised
+ok    the system reaches a finite number of spans  [5]
+ok    one more span than that does not work
+ok    ...and that many does
+ok    ASE-only reasoning overstates the reach at the same launch power  [(8, 5)]
+ok    a quieter amplifier reaches further
+ok    a lossier span reaches less far
+ok    a lower required OSNR reaches further
+ok    assess reports the margin against the requirement
+ok    a working chain says so
+ok    assess at a stated launch power uses that power, not the optimum
+ok    ...and a badly chosen launch power can fail a chain that would work
+ok    rejects span_osnr_db(0.0, -1.0, 5.5)  [a span loss is not negative, got -1.0]
+ok    rejects span_osnr_db(0.0, 22.0, -1.0)  [a noise figure is not negative, got -1.0]
+ok    rejects chain_osnr_db(0.0, [])  [a chain has at least one span]
+ok    rejects required_osnr_db(-1.0,)  [penalties and margins are not negative]
+ok    rejects lin_to_db(0.0,)  [cannot express 0.0 as dB]
+ok    the report disclaims being a planning tool
+ok    the report disclaims being a Gaussian-noise model
+ok    the report states that past the optimum more power makes it WORSE
+ok    the report lists what it leaves out
+ok    the report contrasts ASE-only reasoning with the answer
+ok    the script exits 0  [0]
+ok    --json exits 0  [0]
+
+43/43 checks passed

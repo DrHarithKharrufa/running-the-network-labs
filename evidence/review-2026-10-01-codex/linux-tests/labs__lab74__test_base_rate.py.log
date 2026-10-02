@@ -1,0 +1,21 @@
+test_always_negative_does_not_have_zero_precision (__main__.Tests.test_always_negative_does_not_have_zero_precision) ... ok
+test_base_rate_identity (__main__.Tests.test_base_rate_identity) ... ok
+test_cost_assumptions_reverse_choice (__main__.Tests.test_cost_assumptions_reverse_choice) ... ok
+test_cost_validation (__main__.Tests.test_cost_validation) ... ok
+test_empty_dataset_all_point_metrics_undefined (__main__.Tests.test_empty_dataset_all_point_metrics_undefined) ... ok
+test_invalid_counts (__main__.Tests.test_invalid_counts) ... ok
+test_invalid_rates (__main__.Tests.test_invalid_rates) ... ok
+test_model_point_estimates_both_improve (__main__.Tests.test_model_point_estimates_both_improve) ... ok
+test_no_negative_labels_makes_fpr_undefined (__main__.Tests.test_no_negative_labels_makes_fpr_undefined) ... ok
+test_no_positive_labels_makes_recall_undefined (__main__.Tests.test_no_positive_labels_makes_recall_undefined) ... ok
+test_no_predicted_positive_rate_undefined (__main__.Tests.test_no_predicted_positive_rate_undefined) ... ok
+test_prevalence_changes_precision (__main__.Tests.test_prevalence_changes_precision) ... ok
+test_wilson_bounds_and_symmetry (__main__.Tests.test_wilson_bounds_and_symmetry) ... ok
+test_wilson_empty_and_invalid (__main__.Tests.test_wilson_empty_and_invalid) ... ok
+test_wilson_known_interval (__main__.Tests.test_wilson_known_interval) ... ok
+test_worked_confusion_matrix (__main__.Tests.test_worked_confusion_matrix) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.001s
+
+OK

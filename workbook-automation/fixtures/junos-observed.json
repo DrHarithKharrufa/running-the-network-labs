@@ -1,0 +1,14 @@
+{
+  "synthetic": true,
+  "platform": "junos",
+  "device": "r1-wb",
+  "interface": "ge-0/0/0",
+  "description_present": true,
+  "description": "original lab label",
+  "management_ok": true,
+  "service_ok": true,
+  "restoration_ready": true,
+  "baseline_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "schema_version": "SYNTHETIC OFFLINE FIXTURE",
+  "observed_utc": "2026-10-02T00:00:00Z"
+}

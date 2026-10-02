@@ -1,6 +1,6 @@
 # Monitoring, workflows and a bounded security agent
 
-Companion to Chapters 62 and 68–78, with procurement in 86 and outcomes in 91. Reviewed 25 September 2026. The observations below are constructed teaching data. The Python exercise is an offline policy/outbox model: it connects to no monitor, model, ticket system or network device. No PRTG/n8n integration or live security response has been qualified for this book.
+Companion to Chapters 61 and 67–75, with procurement in 83 and outcomes in 87. Reviewed 25 September 2026. The observations below are constructed teaching data. The Python exercise is an offline policy/outbox model: it connects to no monitor, model, ticket system or network device. No PRTG/n8n integration or live security response has been qualified for this book.
 
 ## What the components are responsible for
 

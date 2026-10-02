@@ -1,0 +1,54 @@
+ok    the centre granularity is 6.25 GHz
+ok    the slot granularity is 12.5 GHz
+ok    they are not the same number
+ok    the slot unit is twice the centre step
+ok    n moves the centre by 6.25 GHz, not 12.5  [6.25]
+ok    m sets the width in 12.5 GHz units
+ok    a channel can be centred between the old 50 GHz positions  [193106.25]
+ok    the anchor is 193.1 THz
+ok    n may be negative
+ok    the occupied edges follow from centre and width
+ok    100 GHz needs 8 slots  [8]
+ok    ...allocating exactly 100 GHz with nothing wasted
+ok    62.5 GHz needs 5 slots
+ok    one gigahertz more needs a whole extra slot  [6]
+ok    ...and wastes almost all of it  [12.0]
+ok    rounding never allocates less than needed
+ok    a fresh band is one clean run
+ok    ...of the whole band
+ok    placing reduces the free spectrum  [950.0]
+ok    first fit packs from the low edge
+ok    releasing frees the slots back  [900.0]
+ok    ...and leaves a hole  [0.05555555555555558]
+ok    half the band is free  [100.0]
+ok    ...in single-slot pieces  [12.5]
+ok    a 4-slot channel cannot be placed despite the free spectrum
+ok    ...and a 1-slot channel can
+ok    fragmentation reports how bad it is  [0.8571428571428572]
+ok    the request is refused  [NO ROOM --- the free spectrum is not contiguous]
+ok    ...with plenty of spectrum free  [1650.0]
+ok    ...but the largest run is smaller than the request  [(75.0, 100.0)]
+ok    fragmentation is severe at that moment  [0.9545454545454546]
+ok    defragmenting makes it fit  [placed at slot 252]
+ok    the scenario fills the band before it fragments it  [37.5]
+ok    repacked snapshot subtracts the newly placed width  [1550.0]
+ok    repacked snapshot reports a single remaining run  [{'event': 'after defragmenting the static plan (no live service moved)', 'free_ghz': 1550.0, 'largest_run_ghz': 1550.0, 'fragmentation': 0.0, 'result': 'placed at slot 252'}]
+ok    rejects channel(0.5, 4)  [n is an integer number of 6.25 GHz steps, got 0.5]
+ok    rejects channel(0, 0)  [m is a positive integer number of 12.5 GHz slots, ]
+ok    rejects channel(0, -1)  [m is a positive integer number of 12.5 GHz slots, ]
+ok    rejects a width of 0
+ok    rejects a width of -1
+ok    rejects an empty band
+ok    rejects a zero-slot placement
+ok    rejects a placement off the end
+ok    a blocked explicit placement returns None rather than raising
+ok    the report names both granularities
+ok    the report says quoting only 12.5 leaves something out
+ok    the report says CDC does not create contiguous spectrum
+ok    the report names the other links of the path
+ok    the report separates static repacking from live migration
+ok    the report disclaims equipment
+ok    the script exits 0  [0]
+ok    --json exits 0  [0]
+
+52/52 checks passed

@@ -1,0 +1,25 @@
+ok    a learned route chain does NOT begin at CONFIG_DB
+ok    a learned route chain begins in the BGP RIB
+ok    a static route chain DOES begin at CONFIG_DB
+ok    the static chain is the learned chain with CONFIG_DB in front
+ok    STATE_DB is not a stage of the route chain
+ok    STATE_DB is listed as present-but-not-a-stage
+ok    the STATE_DB entry says it is not a per-route receipt
+ok    the stages are in control-to-forwarding order
+ok    forwarding is the last stage and needs traffic
+ok    every stage declares what it does not establish
+ok    the zebra stage warns it is not hardware proof
+ok    ASIC_DB is described as the request, not the receipt
+ok    Redis database numbers are placeholders, not hard-coded
+ok    the scope says the numbers come from database_config.json
+ok    the docstring says nothing was run on SONiC
+ok    a caveat warns against virtual-switch capacity claims
+ok    a caveat warns that names vary by release
+ok    a caveat states a learned route is not expected in CONFIG_DB
+ok    the report prints for a learned route
+ok    the report prints the does-NOT line for every stage
+ok    the report prints for a static route
+ok    the CLI exits 0
+ok    the CLI accepts --static --json
+
+23/23 checks passed

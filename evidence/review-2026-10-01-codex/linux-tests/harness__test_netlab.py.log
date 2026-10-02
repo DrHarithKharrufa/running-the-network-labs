@@ -1,0 +1,20 @@
+test_allow_only_expected_absence_message (__main__.ObservationTests.test_allow_only_expected_absence_message) ... ok
+test_ambiguous_ping_rejected (__main__.ObservationTests.test_ambiguous_ping_rejected) ... ok
+test_cleanup_does_not_delete_unowned_links (__main__.ObservationTests.test_cleanup_does_not_delete_unowned_links) ... ok
+test_cleanup_for_start_and_config_failure (__main__.ObservationTests.test_cleanup_for_start_and_config_failure) ... ok
+test_cleanup_removes_only_created_host_endpoints (__main__.ObservationTests.test_cleanup_removes_only_created_host_endpoints) ... ok
+test_cli_errors_negative_fail (__main__.ObservationTests.test_cli_errors_negative_fail) ... ok
+test_empty_negative_is_unknown (__main__.ObservationTests.test_empty_negative_is_unknown) ... ok
+test_exit_status (__main__.ObservationTests.test_exit_status) ... ok
+test_hash_serialized_output_exactly (__main__.ObservationTests.test_hash_serialized_output_exactly) ... ok
+test_healthy (__main__.ObservationTests.test_healthy) ... ok
+test_keep_option (__main__.ObservationTests.test_keep_option) ... ok
+test_negative_without_contract_rejected (__main__.ObservationTests.test_negative_without_contract_rejected) ... ok
+test_original_error_survives_cleanup_error (__main__.ObservationTests.test_original_error_survives_cleanup_error) ... ok
+test_structure_before_absence (__main__.ObservationTests.test_structure_before_absence) ... ok
+test_zero_loss_is_exact (__main__.ObservationTests.test_zero_loss_is_exact) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.020s
+
+OK

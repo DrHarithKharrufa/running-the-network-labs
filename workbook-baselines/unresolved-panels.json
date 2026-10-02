@@ -1,0 +1,229 @@
+[
+  {
+    "task": "AUT-05",
+    "vendor": "eos",
+    "reason": "The returned Arista sources establish OpenConfig/gNMI and RESTCONF syntax, but do not establish a native NETCONF edit-config schema and transaction recipe for this task. Those APIs do not replace NETCONF. This is an unqualified recipe, not a claim that every EOS image lacks the feature.",
+    "attempts": [
+      {
+        "key": "eos-openconfig",
+        "url": "https://aristanetworks.github.io/openmgmt/configuration/openconfig/",
+        "retrieved_utc": "2026-10-02T04:12:16.166398+00:00",
+        "status": "FETCHED_TEXT",
+        "http_status": 200,
+        "final_url": "https://aristanetworks.github.io/openmgmt/configuration/openconfig/",
+        "content_type": "text/html; charset=utf-8",
+        "sha256": "75ab0bdba9efa46690d569360a95467096b1b351b2c3d2245a8a6b9ed4133d19",
+        "characters": 22144
+      },
+      {
+        "key": "eos-restconf",
+        "url": "https://aristanetworks.github.io/openmgmt/configuration/restconf/",
+        "retrieved_utc": "2026-10-02T04:18:59.480127+00:00",
+        "status": "FETCHED_TEXT",
+        "http_status": 200,
+        "final_url": "https://aristanetworks.github.io/openmgmt/configuration/restconf/",
+        "content_type": "text/html; charset=utf-8",
+        "sha256": "4e26c0a0204a0ff994cbe5cea14ddc6cf2be4d10c2de3f528013c8ad57aebbe8",
+        "characters": 9630
+      },
+      {
+        "key": "eos-manual-en",
+        "url": "https://www.arista.com/en/assets/data/pdf/user-manual/um-books/EOS-User-Manual.pdf",
+        "retrieved_utc": "2026-10-01T22:36:50.898053+00:00",
+        "status": "FETCHED_TEXT",
+        "http_status": 200,
+        "final_url": "https://www.arista.com/assets/data/pdf/user-manual/EOS-User-Manual.pdf",
+        "content_type": "application/pdf",
+        "sha256": "8b6e78afcb8d41646ba1b67a6b86677b0dc47bcfc9563a3b4eff835c79d823aa",
+        "pages": 5492,
+        "characters": 7855994
+      }
+    ],
+    "execution_claim": false
+  },
+  {
+    "task": "BGP-13",
+    "vendor": "eos",
+    "reason": "The official EOS 4.36.2F material establishes RPKI display/state references, but the cache configuration and enforcement syntax was not returned by the accessible sources. The relevant support articles required sign-in. No configuration panel is qualified; the retained attempt ledger identifies the manual, articles and PDF that were checked.",
+    "attempts": [
+      {
+        "key": "eos-manual-en",
+        "url": "https://www.arista.com/en/assets/data/pdf/user-manual/um-books/EOS-User-Manual.pdf",
+        "retrieved_utc": "2026-10-01T22:36:50.898053+00:00",
+        "status": "FETCHED_TEXT",
+        "http_status": 200,
+        "final_url": "https://www.arista.com/assets/data/pdf/user-manual/EOS-User-Manual.pdf",
+        "content_type": "application/pdf",
+        "sha256": "8b6e78afcb8d41646ba1b67a6b86677b0dc47bcfc9563a3b4eff835c79d823aa",
+        "pages": 5492,
+        "characters": 7855994
+      },
+      {
+        "key": "eos-rpki-toi",
+        "url": "https://www.arista.com/en/support/toi/eos-4-24-0f/14470-bgp-prefix-origin-validation-with-resource-public-key-infrastructure-rpki",
+        "retrieved_utc": "2026-10-02T01:11:15.926030+00:00",
+        "status": "EMPTY_OR_SHELL",
+        "http_status": 200,
+        "final_url": "https://www.arista.com/en/support/toi/eos-4-24-0f/14470-bgp-prefix-origin-validation-with-resource-public-key-infrastructure-rpki",
+        "content_type": "text/html; charset=utf-8",
+        "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+        "characters": 418
+      },
+      {
+        "key": "eos-rpki-community",
+        "url": "https://arista.my.site.com/AristaCommunity/s/article/sidr-with-rpki",
+        "retrieved_utc": "2026-10-02T01:11:16.353959+00:00",
+        "status": "EMPTY_OR_SHELL",
+        "http_status": 200,
+        "final_url": "https://arista.my.site.com/AristaCommunity/s/article/sidr-with-rpki",
+        "content_type": "text/html;charset=UTF-8",
+        "sha256": "13c0112f6309064790cfee4e9d4508666a04849cf07ebbcbad66988c481057b6",
+        "characters": 73
+      },
+      {
+        "key": "eos-wan-guide",
+        "url": "https://www.arista.com/assets/data/pdf/user-manual/CloudEOS_vEOS_Router_Config_Guide.pdf",
+        "retrieved_utc": "2026-10-02T01:09:56.614779+00:00",
+        "status": "EMPTY_OR_SHELL",
+        "http_status": 200,
+        "final_url": "https://www.arista.com/assets/data/pdf/user-manual/CloudEOS_vEOS_Router_Config_Guide.pdf",
+        "content_type": "text/html; charset=utf-8",
+        "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+        "characters": 418
+      }
+    ],
+    "execution_claim": false
+  },
+  {
+    "task": "L2-07",
+    "vendor": "vyos",
+    "reason": "The returned VyOS 1.4 bridge guide establishes STP and bridge membership, but does not establish the edge, BPDU-guard and root-guard recipe required here. Ordinary bridge participation is not equivalent to these protections.",
+    "attempts": [
+      {
+        "key": "vyos-bridge",
+        "url": "https://docs.vyos.io/en/1.4/configuration/interfaces/bridge.html",
+        "retrieved_utc": "2026-10-01T22:40:31.458530+00:00",
+        "status": "FETCHED_TEXT",
+        "http_status": 200,
+        "final_url": "https://docs.vyos.io/en/1.4/configuration/interfaces/bridge.html",
+        "content_type": "text/html; charset=utf-8",
+        "sha256": "bf78500f6cd2ce75e4755ca2d4c6bfbdb7e0c91cfbe1ea085026eb67363b16ae",
+        "characters": 47642
+      }
+    ],
+    "execution_claim": false
+  },
+  {
+    "task": "OPS-07",
+    "vendor": "vyos",
+    "reason": "The returned VyOS 1.4 API guide establishes POST /retrieve rather than a RESTCONF GET endpoint. It is a different API and cannot be labelled RFC 8040 RESTCONF. This GET-only panel remains unqualified; a POST-based read requires a separately scoped experiment.",
+    "attempts": [
+      {
+        "key": "vyos-netconf",
+        "url": "https://docs.vyos.io/en/sagitta/automation/vyos-api.html",
+        "retrieved_utc": "2026-10-02T03:57:59.417269+00:00",
+        "status": "FETCHED_TEXT",
+        "http_status": 200,
+        "final_url": "https://docs.vyos.io/en/1.4/automation/vyos-api.html",
+        "content_type": "text/html; charset=utf-8",
+        "sha256": "8ff05f5b8787d6bf062d03b284514aead01e186effa257d676128a72c6eb0834",
+        "characters": 9596
+      }
+    ],
+    "execution_claim": false
+  },
+  {
+    "task": "VPN-04",
+    "vendor": "frr",
+    "reason": "The returned FRR 10.2 protocol, pathd and ldpd references establish SR-TE policy and segment-list syntax, not RSVP PATH/RESV signalling or RSVP bandwidth reservations. Use the FRR SR variant in VPN-05, or a qualified RSVP implementation for this task; they test different mechanisms.",
+    "attempts": [
+      {
+        "key": "frr-index",
+        "url": "https://docs.frrouting.org/en/stable-10.2/index.html",
+        "retrieved_utc": "2026-10-02T01:37:07.567402+00:00",
+        "status": "FETCHED_TEXT",
+        "http_status": 200,
+        "final_url": "https://docs.frrouting.org/en/stable-10.2/index.html",
+        "content_type": "text/html; charset=utf-8",
+        "sha256": "ca507dbc8d3e19c0aee3403974c223e8fc7a9f49bd9bf27e197cd33192527311",
+        "characters": 2915
+      },
+      {
+        "key": "frr-path",
+        "url": "https://docs.frrouting.org/en/stable-10.2/pathd.html",
+        "retrieved_utc": "2026-10-02T01:37:07.105330+00:00",
+        "status": "FETCHED_TEXT",
+        "http_status": 200,
+        "final_url": "https://docs.frrouting.org/en/stable-10.2/pathd.html",
+        "content_type": "text/html; charset=utf-8",
+        "sha256": "e2a9eb69f27c89b334b26a3df8cda30c664aba13b1ef9e48e205ebfdd3889192",
+        "characters": 15486
+      },
+      {
+        "key": "frr-ldp",
+        "url": "https://docs.frrouting.org/en/stable-10.2/ldpd.html",
+        "retrieved_utc": "2026-10-02T01:22:48.683590+00:00",
+        "status": "FETCHED_TEXT",
+        "http_status": 200,
+        "final_url": "https://docs.frrouting.org/en/stable-10.2/ldpd.html",
+        "content_type": "text/html; charset=utf-8",
+        "sha256": "34a5246939326ed219c6817f9747a6541a01e2adcdda228aa8a1e421e71ab5c1",
+        "characters": 13946
+      }
+    ],
+    "execution_claim": false
+  },
+  {
+    "task": "VPN-10",
+    "vendor": "eos",
+    "reason": "The returned EOS material establishes point-to-point pseudowires and confirms VPLS feature prose, but the required LDP-VPLS service/mesh syntax was not returned. The relevant support article required sign-in. This is a syntax-access gap, not a claim that VPLS is unsupported; an EVPN recipe does not qualify this LDP-VPLS task.",
+    "attempts": [
+      {
+        "key": "eos-manual-en",
+        "url": "https://www.arista.com/en/assets/data/pdf/user-manual/um-books/EOS-User-Manual.pdf",
+        "retrieved_utc": "2026-10-01T22:36:50.898053+00:00",
+        "status": "FETCHED_TEXT",
+        "http_status": 200,
+        "final_url": "https://www.arista.com/assets/data/pdf/user-manual/EOS-User-Manual.pdf",
+        "content_type": "application/pdf",
+        "sha256": "8b6e78afcb8d41646ba1b67a6b86677b0dc47bcfc9563a3b4eff835c79d823aa",
+        "pages": 5492,
+        "characters": 7855994
+      },
+      {
+        "key": "eos-vpls-search",
+        "url": "https://www.arista.com/en/um-eos/eos-multiprotocol-label-switching",
+        "retrieved_utc": "2026-10-02T02:02:11.471751+00:00",
+        "status": "EMPTY_OR_SHELL",
+        "http_status": 200,
+        "final_url": "https://www.arista.com/en/um-eos/eos-multiprotocol-label-switching",
+        "content_type": "text/html; charset=utf-8",
+        "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+        "characters": 418
+      },
+      {
+        "key": "eos-vpls-toi-list",
+        "url": "https://www.arista.com/en/support/toi/tag/vpls",
+        "retrieved_utc": "2026-10-02T02:03:20.738736+00:00",
+        "status": "EMPTY_OR_SHELL",
+        "http_status": 200,
+        "final_url": "https://www.arista.com/en/support/toi/tag/vpls",
+        "content_type": "text/html; charset=utf-8",
+        "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+        "characters": 418
+      },
+      {
+        "key": "eos-vpls-toi",
+        "url": "https://www.arista.com/en/support/toi/eos-4-27-2f/15093-virtual-private-lan-service-using-ldp-signaling",
+        "retrieved_utc": "2026-10-02T02:03:45.990303+00:00",
+        "status": "EMPTY_OR_SHELL",
+        "http_status": 200,
+        "final_url": "https://www.arista.com/en/support/toi/eos-4-27-2f/15093-virtual-private-lan-service-using-ldp-signaling",
+        "content_type": "text/html; charset=utf-8",
+        "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+        "characters": 418
+      }
+    ],
+    "execution_claim": false
+  }
+]

@@ -18,7 +18,7 @@ Explain how a client resolves a service name, chooses a route and resolves its l
 
 ## 2. Practise the change on a small topology
 
-Use the existing Lab 3.2 routed path in a supported isolated environment. If the required environment is unavailable, submit a plan and leave the execution milestone incomplete. The Chapter 3 recorded Linux evidence does not prove that you deployed the Containerlab wrapper.
+Use the existing Lab 3.2 routed path in a supported isolated environment. If the required environment is unavailable, submit a plan and leave the execution milestone incomplete. The Chapter 2 recorded Linux evidence does not prove that you deployed the Containerlab wrapper.
 
 **Submit:** a correct baseline with explicit probe source, the predicted effect of removing only r3's return route, the observed fault and the restored service. Use `EVIDENCE-FORM.md` and the lab README. Keep exact route state rather than only a ping screenshot.
 
@@ -38,7 +38,7 @@ Before execution, identify the client, server, transaction, success response, lo
 
 ## 4. Put a date on the capacity decision
 
-**Inputs:** two circuits, each assumed to carry 100 Mbit/s of usable load; aligned total demand 70 Mbit/s; normal equal split 35/35; sole-survivor demand 70 after successful rerouting; a chosen survivor planning trigger of 80. Evaluate 10%, 25% and 40% constant annual compound growth.
+**Inputs:** two circuits, each assumed to carry 100 Mbit/s of usable load; aligned total demand 70 Mbit/s; normal equal split 35/35; sole-survivor demand 70 after successful rerouting; a chosen survivor **in-service planning limit** of 80. Added capacity must be operational before demand reaches that limit. It is not an order trigger already adjusted for lead time. The historical JSON key `survivor_planning_trigger_mbps` is retained for compatibility and means this in-service limit. Evaluate 10%, 25% and 40% constant annual compound growth.
 
 **Submit:** the binding failure state, crossing time, latest decision under each supplier allowance, missing performance evidence and an interim option. Use `12 × ln(80/70) / ln(1+g)` for months.
 

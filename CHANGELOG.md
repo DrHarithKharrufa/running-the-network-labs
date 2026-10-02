@@ -4,6 +4,50 @@ Editions of the companion, newest first. A tagged release is frozen; this file
 in the repository's current state records what moved between tags. Corrections
 made after an edition was printed go in `ERRATA.md`.
 
+## RTN-2026-10-02
+
+The reader edition of the book, with the 120-task Configuration Workbook and
+everything it uses now public. RTN-2026-10-01 is unchanged and stays available
+under its own tag.
+
+- **The book is 87 chapters and 714 print pages** (750 before). Four former
+  chapters now share a chapter with a neighbour; every subject, section and all
+  500 exercises remain, and the worked answers follow the new numbering. Most of
+  the saving is layout: page geometry, chapter heads, part openings and a
+  contents list of chapters only, with body and code sizes unchanged.
+- **Reading pauses.** Fifty-one editorial cartoons, twelve two-minute mysteries
+  with their reveals in the book's Appendix H, ten workplace scenes and twelve
+  service checkpoints that follow one fictional WAN trial. Markdown copies are in
+  `learning/creative-reading/`. None of them adds a laboratory result.
+- **Lab numbers are stable identifiers.** Lab directories keep their original
+  numbers, so `labs/lab64` belongs to Chapter 63. `INDEX.md` gives the printed
+  chapter, `learning/CHAPTER-MAP.md` converts both ways, and
+  `check-environment.py` takes `--lab-id` (`--chapter` remains as an alias).
+  Program banners written for the earlier numbering are left as they were, so the
+  recorded hashes of those programs stay valid.
+- **The Configuration Workbook's helpers.** `workbook-automation/` (an offline
+  kit: 196 guard/XML checks and 21 counter checks, `device_execution=false`),
+  `workbook-fixtures/` (preparation contracts), `TASK-NAVIGATOR.md`,
+  `READER-MAP.json`, and `workbook-baselines/documented-sources.json`, which now
+  holds every READ source for all 120 tasks — 714 READ and six NO_PANEL vendor
+  outcomes, each READ entry with its official URL, version and retrieval date.
+  READ is documentary syntax evidence, not a device run.
+- **Corrections.** `prerequisites.json` now declares Jinja2 for Lab69's test
+  program, which failed on a clean machine under the previous edition's runner.
+  `labs/lab53/urpf_modes.py` describes three namespaces, which is what it builds,
+  not four, and the Lab53 README no longer presents feasible-path uRPF as an
+  ownership check. `labs/reference-designs/BRANCH-COMPLETE.md` tightens source
+  validation (IPv6 link-local, spoofed sources, non-IP frames), DHCP lease state
+  in the degraded path, the spanning-tree roles and costs, the CPE transit profile
+  and the budget definition, while its generated addressing block and both checkers
+  still pass. The Lab64 README states the assumptions behind its posterior figures.
+- **Evidence.** This edition's run passes all 109 declared test programs on one
+  Linux host, including both privileged Lab53 suites (`test-results-2026-10-02/`).
+  `evidence/review-2026-10-01-codex/` keeps the independent review's own runs.
+- **Line endings.** Every text file in the release is LF again. Some files had
+  been written with CRLF during the review, which would have made
+  `SHA256SUMS.txt` disagree with a checkout of this tag.
+
 ## RTN-2026-10-01
 
 Corrections from a third independent reader and publication review. The theme of

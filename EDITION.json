@@ -1,16 +1,24 @@
 {
-  "edition": "RTN-2026-10-01",
-  "date": "2026-10-01",
-  "status": "retail edition; hashes below are of the published PDF pair and workbook",
+  "edition": "RTN-2026-10-02",
+  "date": "2026-10-02",
+  "status": "Public edition: book, Configuration Workbook and companion released together",
   "book": {
-    "print_pages": 750,
-    "colour_pages": 747,
-    "print_sha256": "fe2bd374c29ea56f22deb8705cdc3ede00349bd8a1c12f6500d0d1a2d1214767",
-    "colour_sha256": "6303cb6c475289bffa283d7830c13d089538d196872700e99d6baac585bd2ed8"
+    "print_pages": 714,
+    "colour_pages": 713,
+    "print_sha256": "50d1ab78b69f376f889267d3a8eff36788200db02317c6496b2b71e3f9c55334",
+    "colour_sha256": "1ecc1f0edeff1b3fad516c30536a753f5667f54173a5072cbacab7625d5a21f1",
+    "chapters": 87
   },
   "workbook": {
-    "pages": 27,
-    "sha256": "c6dbd6ac9b47d9618cc41298de0b997ff5b6f604a07aadba86eee5215e0b7a11"
+    "pages": 528,
+    "sha256": "c0b0e29d1038d2b2f8db3852e00c410d66e63922ae960bd08f810c287a9ac2ed",
+    "tasks": 120,
+    "planned_vendor_outcomes": 720,
+    "READ": 714,
+    "NO_PANEL": 6,
+    "new_vendor_execution_claim": false,
+    "task_bookmarks": 135,
+    "tasks_with_usability_guidance": 120
   },
   "repository": "https://github.com/DrHarithKharrufa/running-the-network-labs",
   "errata": "https://github.com/DrHarithKharrufa/running-the-network-labs/issues",
@@ -29,13 +37,67 @@
     "containerlab_topologies": 35,
     "harness_topologies": 10,
     "device_config_files": 114,
-    "evidence_json_files": 33,
+    "evidence_json_files": 38,
     "declared_test_programs": 109,
     "fresh_routing_records": 20
   },
-  "hash_manifest": "SHA256SUMS.txt in the reader archive; lists every payload except itself",
+  "hash_manifest": "SHA256SUMS.txt in this release lists every file except itself",
   "qualification": "QUALIFICATION.md",
-  "hashes_are_of": "the three PDFs published with this edition: Running-the-Network-print-BW.pdf, Running-the-Network-colour-linked.pdf, Configuration-Workbook.pdf",
-  "supersedes": "RTN-2026-09-27 (which superseded RTN-2026-09-26)",
-  "release": "https://github.com/DrHarithKharrufa/running-the-network-labs/releases/tag/RTN-2026-10-01"
+  "hashes_are_of": "The RTN-2026-10-02 PDFs: Running-the-Network-print-BW.pdf, Running-the-Network-colour-linked.pdf, Configuration-Workbook.pdf and Running-the-Network-cover.pdf",
+  "supersedes": "RTN-2026-10-01 (which superseded RTN-2026-09-27 and RTN-2026-09-26)",
+  "release": "https://github.com/DrHarithKharrufa/running-the-network-labs/releases/tag/RTN-2026-10-02",
+  "review_date": "2026-10-02",
+  "cover": {
+    "pages": 1,
+    "sha256": "b7ddf44f59e6ccdfabacc60ea7ff8df39111f069cf5a78d16f9f5655a5979a4c",
+    "interior_pages": 714,
+    "paper": "white",
+    "ink": "black",
+    "trim_inches": [
+      8.27,
+      11.69
+    ],
+    "spine_mm": 40.841,
+    "artwork_effective_dpi": 125.55,
+    "qualification": "Approved design; original raster resolution below 300 dpi; printer proof required"
+  },
+  "workbook_software": {
+    "offline_guard_xml_checks": 196,
+    "counter_checks": 21,
+    "actual_local_service_tests": "TCP/UDP echo and CA/hostname-verified HTTPS, including negative/deadline tests",
+    "device_execution": false
+  },
+  "actual_size_proof": {
+    "pages": 43,
+    "sha256": "02374f762603ee2e66d12ec88b2693ba4a249c6e4f033d21cdd36be06bb19ea9"
+  },
+  "condensation": {
+    "previous_edition": "RTN-2026-10-01",
+    "previous_print_pages": 750,
+    "previous_colour_pages": 747,
+    "previous_chapters": 91,
+    "technical_chapter_and_appendix_sources": "Four adjacent subject pairs share a chapter; every subject, section and all 500 exercises retained",
+    "body_and_code_font_sizes": "unchanged",
+    "linked_bookmarks": 1018
+  },
+  "creative": {
+    "cartoons": 51,
+    "new_cartoons": 27,
+    "earlier_cartoons_colourised": 24,
+    "new_contextual_remarks": 91,
+    "workbook_cartoon_appearances": 10,
+    "industry_bridges": 12
+  },
+  "cartoon_catalogue": {
+    "pages": 51,
+    "sha256": "ea1741d2150c4dda49189458917c94c961c27fff51cd7bbe72a3106161c5d3e6"
+  },
+  "tests": {
+    "date": "2026-10-02",
+    "declared_test_programs": 109,
+    "passed": 109,
+    "not_run": 0,
+    "host": "Linux 6.18 container, root, Python 3.11.15, iproute2 6.1.0, nftables 1.0.9",
+    "record": "test-results-2026-10-02/execution.json"
+  }
 }

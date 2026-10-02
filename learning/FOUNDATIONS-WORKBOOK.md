@@ -1,6 +1,6 @@
 # From a failed order to a useful handover
 
-Foundations revision, 25 September 2026. This paper exercise connects Chapters 1–10 before the larger Appendix G capstone. It needs no vendor image and makes no device changes. Every observation below is **constructed teaching data**, not output from a lab run. Keep your own reasoning separate from the supplied observations.
+Foundations revision, 25 September 2026. This paper exercise connects Chapters 1–9 before the larger Appendix G capstone. It needs no vendor image and makes no device changes. Every observation below is **constructed teaching data**, not output from a lab run. Keep your own reasoning separate from the supplied observations.
 
 Work in five sessions, stopping when you have a reviewable submission rather than after a fixed number of minutes. Read the corresponding chapters, attempt the task, then use the model discussion at the end. The chapter answer key is `SELECTED-ANSWERS.md`.
 
@@ -10,19 +10,19 @@ This standalone fictional branch has client `10.10.64.20/25`, gateway `10.10.64.
 
 The normal packet path has two routers and an ordinary access bridge. Assume Ethernet throughout, no tunnel, NAT, proxy or remarking, and an initial IPv4 TTL of 64 in each direction. Configuration, policy and reachability are requirements to investigate, not facts established by the diagram. The service owner wants a correct order response, not merely a successful ping.
 
-## Session 1: specify the result (Chapters 1–3)
+## Session 1: specify the result (Chapters 1–2)
 
 Write one sentence defining the transaction, one proposed success condition and the person who must approve it. Draw both directions and mark the DNS dependency. Make three columns: supplied observation, inference and unknown. Put “the topology diagram shows a path” in the appropriate column without converting it into a claim that the path forwards traffic.
 
 Submit a one-page evidence plan: client, exact flow, observations needed, authorised test scope, recovery and the next person to contact. Identify which work you can do on paper and which work needs execution.
 
-## Session 2: predict the fields (Chapters 4–7)
+## Session 2: predict the fields (Chapters 3–6)
 
 Calculate the client's network and conventional host range. Decide which neighbour the client needs for the remote server. Use role names for MACs until measured values exist; inventing realistic-looking hexadecimal values adds no evidence.
 
 Draw a table at the client/access link, router-to-router link and remote-router/server link. Predict source and destination MAC roles, source/destination IP and TTL. Repeat for the reply. Calculate the largest ordinary ICMP echo payload if the IPv4 path MTU is 1500 with no IP options. State one thing a successful 64-byte-payload ping would leave untested.
 
-## Session 3: interpret two different failures (Chapters 8–9)
+## Session 3: interpret two different failures (Chapters 7–8)
 
 Treat these cards as separate scenarios, not a single incident with a hidden combined cause.
 
@@ -34,7 +34,7 @@ Explain why both answers fit the supplied timeline. Identify what a failed appli
 
 Write three remaining hypotheses and one discriminating observation for each. Explain why the route query does not prove a packet crossed either router. Distinguish a missing observation from an observed absence at a verified capture point.
 
-## Session 4: order events and govern a change (Chapters 8 and 10)
+## Session 4: order events and govern a change (Chapters 7 and 9)
 
 A firewall event is timestamped 12:00:00.100 with an estimated error of ±40 ms. A server event is timestamped 12:00:00.130 with ±20 ms. Calculate both possible UTC intervals and their overlap. Decide whether the timestamps alone establish event order.
 
@@ -56,7 +56,7 @@ The client's network is `10.10.64.0/25`, broadcast `.127`, and conventional host
 
 The bridge does not decrement IP TTL. For a reply starting at 64, the roles reverse: server to remote gateway at 64, remote transit to branch transit at 63, and branch gateway to client at 62. Required return routes and policy still need proof. With the stated headers, ICMP payload allowance is `1500 − 20 − 8 = 1472` bytes. A small ping does not establish the large-packet boundary, application success, all ECMP paths or recovery.
 
-Card A has elapsed cache age 91 seconds and 29 seconds left. Updating authority does not retrospectively edit that cache entry. A failure before name resolution completes need not send any application connection to the new server. A controlled hostname-preserving address override, as explained in Chapter 8, can investigate the later connection separately; it does not prove that normal DNS access works. Do not clear a shared production resolver merely to produce a cleaner teaching example.
+Card A has elapsed cache age 91 seconds and 29 seconds left. Updating authority does not retrospectively edit that cache entry. A failure before name resolution completes need not send any application connection to the new server. A controlled hostname-preserving address override, as explained in Chapter 7, can investigate the later connection separately; it does not prove that normal DNS access works. Do not clear a shared production resolver merely to produce a cleaner teaching example.
 
 For Card B, useful alternatives include gateway forwarding/policy failure, a missing or denied return path, and a stopped or rejecting server listener. Use matching counters and bounded captures at the relevant boundary, inspect the server and correlate a real transaction. A route lookup is a prediction using supplied routing inputs. Neighbour state indicates a mapping with its recorded state and age; it is not an end-to-end service test.
 

@@ -63,7 +63,7 @@ is worse than none.
 `--prove` enumerates every tri-state assignment over the observations the
 impossibility constraints couple together (2,187 of them), keeps the 1,224 that
 are consistent, and finds a concrete witness for every rule. A rule with no
-witness would be dead code pretending to be a control — the trap chapter 54's
+witness would be dead code pretending to be a control — the trap chapter 53's
 union-shadow detector fell into.
 
 ## Lab 56.2 — the number the chapter used to leave out

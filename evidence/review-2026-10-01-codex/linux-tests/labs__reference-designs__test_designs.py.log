@@ -1,0 +1,17 @@
+test_aldergate_internet_failure_budget (__main__.Designs.test_aldergate_internet_failure_budget) ... ok
+test_aldergate_ipv4_partition (__main__.Designs.test_aldergate_ipv4_partition) ... ok
+test_aldergate_ipv6_sites (__main__.Designs.test_aldergate_ipv6_sites) ... ok
+test_aldergate_staff_and_access (__main__.Designs.test_aldergate_staff_and_access) ... ok
+test_anvil_links_optics_and_pools (__main__.Designs.test_anvil_links_optics_and_pools) ... ok
+test_anvil_site_totals (__main__.Designs.test_anvil_site_totals) ... ok
+test_anvil_spine_cages_and_failure_ratios (__main__.Designs.test_anvil_spine_cages_and_failure_ratios) ... ok
+test_kestrel_bng_surviving_capacity (__main__.Designs.test_kestrel_bng_surviving_capacity) ... ok
+test_kestrel_demand_and_utilisation_gate (__main__.Designs.test_kestrel_demand_and_utilisation_gate) ... ok
+test_kestrel_ipv6_service_pools (__main__.Designs.test_kestrel_ipv6_service_pools) ... ok
+test_kestrel_shared_pools (__main__.Designs.test_kestrel_shared_pools) ... ok
+test_smaller_site_subnets_partition (__main__.Designs.test_smaller_site_subnets_partition) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.001s
+
+OK

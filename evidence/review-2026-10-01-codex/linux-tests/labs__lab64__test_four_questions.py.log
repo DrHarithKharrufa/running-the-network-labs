@@ -1,0 +1,9 @@
+usage: four_questions.py [-h] [--demo-original] [--case NAME]
+                         [--ever-worked {yes,no,unknown}]
+                         [--scope {everywhere,one site,one user,unknown}]
+                         [--changes-per-day N] [--window-minutes M]
+four_questions.py: error: unrecognized arguments: --nonsense
+----------------------------------------------------------------------
+Ran 51 tests in 0.005s
+
+OK

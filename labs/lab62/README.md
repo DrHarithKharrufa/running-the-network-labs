@@ -1,6 +1,6 @@
 # Lab 62.1 / 62.2 / 62.3 — what a label costs, what a rule does, what a sample can see
 
-Three labs for Chapter 62. All are offline calculation in closed form: no store
+Three labs for Chapter 61. All are offline calculation in closed form: no store
 is run, no device is sampled, no alerting system is started, and no figure here
 is a benchmark of any product.
 

@@ -1,0 +1,151 @@
+Micro-segmentation CANDIDATES from labels and observed flows (§55.4)
+Observation window 2026-09-01 to 2026-09-15 --- 15 days. Everything below about what was
+NOT seen is bounded by that number.
+
+CANDIDATE rules --- intent corroborated by observation:
+  admin -> db     :22     administrative access from the jump host
+  app   -> db     :5432   application tier to database
+  web   -> app    :8080   web tier to application tier
+
+UNOBSERVED INTENT --- authorised, not seen. DO NOT DROP THESE:
+  backup -> db     :5432   month-end backup extract from the database
+      authorised but not seen in 15 days of observation. KEEP IT unless somebody decides to retire it: a relationship that is quiet is not a relationship that is dead, and the rare ones are the ones whose failure hurts most.
+
+UNSANCTIONED FLOWS --- seen, not authorised. Adjudicate:
+  web-01 -> db-01 :5432  (web -> db)
+      observed but not authorised. This is a question for a human: a forgotten dependency, or lateral movement. It is not a reason to write a rule.
+
+UNLABELLED ENDPOINTS --- no rule can be written about these:
+  legacy-07 -> db-01 :5432
+      no rule can be written about legacy-07 until it is labelled --- and an endpoint nobody labelled is also an endpoint nobody owns
+
+3 candidate rule(s) from 7 observed workload pairs. 1 authorised relationship(s)
+were never seen, 1 flow(s) were seen without authorisation, and 1 endpoint(s)
+have no label.
+
+Nothing above is policy. It is a list of candidates and a list of questions.
+Approval is a human act with an owner and a date, and the enforcement platform
+must be tested separately --- this module has never seen it.
+{
+  "window": {
+    "start": "2026-09-01",
+    "end": "2026-09-15"
+  },
+  "window_days": 15,
+  "candidates": [
+    {
+      "rule": [
+        "admin",
+        "db",
+        22
+      ],
+      "reason": "administrative access from the jump host",
+      "verdict": "CANDIDATE",
+      "corroborating_pairs": [
+        [
+          "jump-01",
+          "db-01"
+        ]
+      ]
+    },
+    {
+      "rule": [
+        "app",
+        "db",
+        5432
+      ],
+      "reason": "application tier to database",
+      "verdict": "CANDIDATE",
+      "corroborating_pairs": [
+        [
+          "app-01",
+          "db-01"
+        ],
+        [
+          "app-02",
+          "db-01"
+        ]
+      ]
+    },
+    {
+      "rule": [
+        "web",
+        "app",
+        8080
+      ],
+      "reason": "web tier to application tier",
+      "verdict": "CANDIDATE",
+      "corroborating_pairs": [
+        [
+          "web-01",
+          "app-01"
+        ],
+        [
+          "web-02",
+          "app-02"
+        ]
+      ]
+    }
+  ],
+  "unobserved_intent": [
+    {
+      "rule": [
+        "backup",
+        "db",
+        5432
+      ],
+      "reason": "month-end backup extract from the database",
+      "verdict": "UNOBSERVED",
+      "why": "authorised but not seen in 15 days of observation. KEEP IT unless somebody decides to retire it: a relationship that is quiet is not a relationship that is dead, and the rare ones are the ones whose failure hurts most."
+    }
+  ],
+  "unsanctioned_flows": [
+    {
+      "flow": [
+        "web-01",
+        "db-01",
+        5432
+      ],
+      "labels": [
+        "web",
+        "db",
+        5432
+      ],
+      "verdict": "UNSANCTIONED",
+      "why": "observed but not authorised. This is a question for a human: a forgotten dependency, or lateral movement. It is not a reason to write a rule."
+    }
+  ],
+  "unlabelled_endpoints": [
+    {
+      "flow": [
+        "legacy-07",
+        "db-01",
+        5432
+      ],
+      "unlabelled": [
+        "legacy-07"
+      ],
+      "verdict": "UNLABELLED",
+      "why": "no rule can be written about legacy-07 until it is labelled --- and an endpoint nobody labelled is also an endpoint nobody owns"
+    }
+  ],
+  "counts": {
+    "workload_pairs_observed": 7,
+    "candidate_rules": 3,
+    "unobserved_intent": 1,
+    "unsanctioned_flows": 1,
+    "unlabelled": 1
+  }
+}
+The same estate, the same intent, four observation windows:
+
+  days     candidates   unobserved   saw the month-end job?
+  1        3            1            NO
+  7        3            1            NO
+  30       4            0            yes
+  60       4            0            yes
+
+A fortnight of capture makes the month-end backup look like a relationship
+that does not exist. Enforce the fortnight's candidates and it breaks at
+month end --- which is exactly when somebody needs it.
+51 checks, 0 failed

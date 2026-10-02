@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "edition": "RTN-2026-10-01",
+  "edition": "RTN-2026-10-02",
   "tests": {
     "harness/test_netlab.py": {
       "kind": "offline",
@@ -1061,7 +1061,9 @@
       "os": [],
       "root": false,
       "binaries": [],
-      "packages": {},
+      "packages": {
+        "Jinja2": "3.1.6"
+      },
       "basis": "reviewed program inventory; not inferred from adjacent topology files"
     },
     "labs/lab70/test_validation.py": {

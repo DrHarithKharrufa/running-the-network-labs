@@ -1,7 +1,7 @@
 # GNS3 project files
 
 GNS3 alternatives to the Containerlab topologies, for readers who prefer a
-graphical lab or who already run GNS3. Chapter 3 covers both tools and when
+graphical lab or who already run GNS3. Chapter 2 covers both tools and when
 each is the easier choice.
 
 ## Files

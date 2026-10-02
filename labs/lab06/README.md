@@ -84,7 +84,7 @@ References: dnsmasq's maintained manual, RFC 4861, RFC 4862, RFC 8106 and RFC
 9915. Container/image execution and resolver integration must each be recorded;
 neither is implied by a static topology review.
 
-## Explicit graph for the Chapter 6 allocation exercise
+## Explicit graph for the Chapter 5 allocation exercise
 
 `sparse-graph.json` is a separate Kestrel-style teaching scenario with twelve
 routers and sixteen undirected links. Allocate consecutive /31s from the link

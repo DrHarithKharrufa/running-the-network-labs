@@ -1,0 +1,50 @@
+ok    the shipped draft fails  [11]
+ok    the shipped revision passes clean  [([], [])]
+ok    the revision is not simply the draft
+ok    non-overlapping ranges raise nothing
+ok    identical ranges are an error
+ok    a contained range is an error too
+ok    ...and the message names both ranges
+ok    changing one prefix removes the error --- the input is really read
+ok    172.17.0.0/16 collides with a range already in use  [['172.17.0.0/16 overlaps 172.17.0.0/16 (the default Docker bridge on most hosts). This does not fail at the routing layer, which is why it is found late']]
+ok    169.254.0.0/16 collides with a range already in use  [['169.254.0.0/16 overlaps 169.254.0.0/16 (link-local, and where cloud instance metadata lives). This does not fail at the routing layer, which is why it is found late']]
+ok    100.64.0.0/10 collides with a range already in use  [['100.64.0.0/10 overlaps 100.64.0.0/10 (carrier-grade NAT, used inside several managed services). This does not fail at the routing layer, which is why it is found late']]
+ok    a range not on the list is fine
+ok    the reserved list is not empty
+ok    a prefix too small for the stated growth is an error  [['a /25 holds 128 addresses; 100 hosts at 2x growth plus the five the platform takes needs 205, so a /24. A subnet CANNOT be resized after creation --- getting this wrong means building a new subnet and migrating into it']]
+ok    ...and the message says a subnet cannot be resized
+ok    ...and it recommends the prefix that would work  [this wrong means building a new subnet and migrating into it]
+ok    the recommended prefix passes
+ok    lowering the growth also fixes it --- both inputs are used
+ok    a wildly oversized subnet is a warning, not silence  [['a /16 holds 65536 addresses for a requir', 'this plan already commits 100% of 10.0.0']]
+ok    the platform reservation is counted, not ignored
+ok    a subnet given only a host count is allocated a prefix  [{'vpc/a': '/24'}]
+ok    ...and raises no error, because nothing was claimed
+ok    subnets that do not fit the VPC are an error  [['the subnets need 384 addresses but 10.20.0.0/24 holds 256. Some clouds let you add a secondary range later and some do not; none let you enlarge the primary one']]
+ok    ...and the message says the primary range cannot be enlarged
+ok    a VPC filled past three-quarters is a warning  [['the subnets already use 88% of 10.20.0.0']]
+ok    three zones with two subnets is flagged
+ok    ...and adding the third subnet clears it  [[]]
+ok    the warning says the model differs by provider
+ok    committing most of a private range is a warning  [['10.0.0.0/8']]
+ok    a modest plan is not
+ok    rejects {}  [a plan is a non-empty mapping of name to definition]
+ok    rejects 'not a plan'  [a plan is a non-empty mapping of name to definition]
+ok    rejects {'a': {'zones': 1}}  [a has no cidr]
+ok    rejects {'a': '10.10.0.1/16'}  [a: 10.10.0.1/16 has host bits set]
+ok    rejects {'a': 'nonsense'}  [a: 'nonsense' does not appear to be an IPv4 or IPv6 network]
+ok    rejects {'a': {'cidr': '10.0.0.0/8', 'zones': 0}}  [a: zones must be at least 1]
+ok    rejects {'a': {'cidr': '10.0.0.0/8', 'growth': 0}}  [a: growth must be positive]
+ok    rejects {'a': {'cidr': '10.0.0.0/8', 'subnets': []}}  [a: subnets must be a mapping of name to size]
+ok    rejects {'a': {'cidr': '10.0.0.0/8', 'subnets': {'s': 0}}}  [a/s: host count must be a positive integer, got 0]
+ok    rejects {'a': {'cidr': '10.0.0.0/8', 'subnets': {'s': 'big  [a/s: expected a host count or a mapping, got 'big']
+ok    rejects {'a': {'cidr': '10.0.0.0/8', 'subnets': {'s': {'pr  [a/s: needs a host count]
+ok    rejects {'a': {'cidr': '10.0.0.0/8', 'subnets': {'s': {'ho  [a/s: /99 is not a usable prefix length]
+ok    the report prints each network
+ok    the report prints findings
+ok    a clean plan says so
+ok    the script exits 0 when the REVISION is clean  [0]
+ok    ...and says the draft was meant to fail
+ok    --json exits 0  [0]
+
+48/48 checks passed

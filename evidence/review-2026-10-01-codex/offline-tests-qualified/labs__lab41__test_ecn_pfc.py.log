@@ -1,0 +1,45 @@
+ok    an early ECN ramp keeps PFC quiet  [0]
+ok    a late ECN ramp fires PFC  [20]
+ok    the two differ --- the model is not answering by construction
+ok    a late ramp leaves a deeper queue than an early one  [(109.056, 246.0)]
+ok    a buffer too small for the PAUSE reaction time DROPS  [17.0]
+ok    ...and the verdict says so, not "PFC quiet"  [DROPPED --- not lossless at all]
+ok    removing the feedback delay alone makes the same config far better  [(1, 20)]
+ok    ...and leaves a shallower queue  [(208.17599999999993, 246.0)]
+ok    even instant feedback can overshoot, because the ramp starts at p=0  [1]
+ok    the safe threshold falls as the feedback delay grows  [{0: 168.76953125, 8: 155.439453125, 24: 108.974609375, 48: 36.9921875}]
+ok    at zero delay almost the whole range below xoff is safe  [168.76953125]
+ok    at a realistic delay much less of it is  [108.974609375]
+ok    the safe region is an interval, not a point  [108.974609375]
+ok    the predicted net headroom is (offered - service) * pfc_delay  [(48.0, 48.0)]
+ok    the observed overshoot never exceeds the prediction  [(47.0, 48.0)]
+ok    ...and is within a packet or two of it  [(47.0, 48.0)]
+ok    with ECN off the overshoot reaches the prediction exactly  [(48.0, 48.0)]
+ok    headroom above the prediction stays lossless  [0.0]
+ok    headroom below it does not  [9.0]
+ok    pause_asserts counts transitions, not steps above xoff  [(20, 1470)]
+ok    hysteresis means a single assertion covers many steps  [73.5]
+ok    firing never decreases as the ramp is pushed later  [[0, 0, 0, 1, 20]]
+ok    the model is deterministic
+ok    the ramp width changes the outcome --- kmax is a real parameter  [(161.89199999999997, 146.79599999999982)]
+ok    rejects {'kmin': -1}  [kmin must not be negative, got -1.0]
+ok    rejects {'kmax': 10}  [kmax (10) must not be below kmin (60.0)]
+ok    rejects {'xon': 250.0}  [xon (250.0) must be below xoff (200.0) or PFC chatters]
+ok    rejects {'xoff': 300.0}  [xoff (300.0) above capacity (260.0): PAUSE could never be se]
+ok    rejects {'service': 0}  [service must be positive, got 0]
+ok    rejects {'offered': -1}  [offered must be positive, got -1]
+ok    rejects {'delay': -1}  [delays must not be negative]
+ok    rejects {'cut': 0}  [the decrease factor must be between 0 and 1]
+ok    rejects {'cut': 1.5}  [the decrease factor must be between 0 and 1]
+ok    when no threshold keeps PFC quiet it returns None rather than a number
+ok    the report disclaims DCQCN
+ok    the report disclaims being a device
+ok    the report names the constants as arbitrary
+ok    the report shows at least one configuration firing PFC
+ok    the report shows at least one configuration dropping
+ok    the report says the safe threshold belongs to the fabric
+ok    the report shows the headroom arithmetic
+ok    the script exits 0  [0]
+ok    --json exits 0  [0]
+
+43/43 checks passed

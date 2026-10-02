@@ -1,0 +1,6 @@
+# Copy to protected wb-ops05.yaml; replace from the qualified real endpoint.
+address: REPLACE_WITH_VERIFIED_HOSTNAME_AND_PORT
+username: REPLACE_WITH_READ_ONLY_IDENTITY
+password: REPLACE_FROM_PROTECTED_STORE
+tls-ca: /protected/wb-lab-ca.pem
+# Do not add insecure or skip-verify. Verify hostname against certificate SAN.

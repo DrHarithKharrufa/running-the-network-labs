@@ -1,4 +1,4 @@
-# Chapter 60 — security governance
+# Chapter 59 — security governance
 
 Three models that refuse rather than reassure.
 

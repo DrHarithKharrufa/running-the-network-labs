@@ -1,6 +1,6 @@
 # Lab 63.1 / 63.2 / 63.3 — what a selector can see, what a capture path can hold, what a transport promises
 
-Three labs for Chapter 63. All are arithmetic and seeded simulation: no
+Three labs for Chapter 62. All are arithmetic and seeded simulation: no
 exporter, collector, ASIC, capture card, broker or pipeline is executed, and no
 vendor's behaviour is claimed. Ring sizes, splitter losses, sustained write
 rates and broker settings are **inputs** to look up or measure on your own

@@ -1,8 +1,8 @@
 # Running the Network: learning companion
 
-Edition: RTN-2026-10-01, practical route and print proof. Start with Appendix G in the matching book. This directory supplies a learning route and worked guidance for all 500 chapter exercises; the existing `labs/` directory supplies the technical lab files and their environment-specific READMEs.
+Edition: RTN-2026-10-02, practical route and print proof. Start with Appendix G in the matching book. This directory supplies a learning route and worked guidance for all 500 chapter exercises; the existing `labs/` directory supplies the technical lab files and their environment-specific READMEs.
 
-1. Complete the number and terminal entry checks in Appendix G and Chapter 3.
+1. For a Python-only first task, complete the number and terminal checks in Appendix G, then follow the matching print entry route. Use Chapter 2's Linux/Docker/image preparation only when your selected network lab requires it.
 2. Choose the first milestone below that you cannot yet demonstrate.
 3. Read the relevant mechanism, predict a result, then attempt the exercise before consulting an answer.
 4. Keep the actual evidence, including failed attempts and recovery. Label paper calculations and synthetic data accordingly.
@@ -10,15 +10,15 @@ Edition: RTN-2026-10-01, practical route and print proof. Start with Appendix G 
 
 | Milestone | Core reading | Practical submission | Worked guidance |
 | --- | --- | --- | --- |
-| L1: explain | Chapters 1-9 | Packet path, /26 calculation, rate/delay bound | Answers for Chapters 1-9 |
-| L2: change and recover | Chapters 10-18 and 61-66 | Lab 3.2 baseline, return-route fault, restoration and handover | Answers for Chapters 3 and 10-18; the evidence form |
-| L3: deliver a service | Chapters 19-23, chosen service chapters, security 50-53 | Client transaction, platform/configuration record, fault diagnosis and acceptance | Answers for Chapters 19–60; provider, edge, data-centre, transport and security/operations workbooks; capstone steps 2-3; the chosen lab README |
-| L4: defend a design | Chapters 67 and 79-84, Appendix C | Alternative designs, shared-failure and survivor-capacity analysis | Chapters 67 and 79–84 answers; design/leadership workbook; capstone step 4 |
-| L5: govern a decision | Chapters 85-91; 74-78 for automation | Funding memo, staffing, changed assumption and follow-up | Chapters 74–78 and 85–91 answers; modern-operations and design/leadership workbooks; capstone step 5 |
+| L1: explain | Chapters 1-8 | Packet path, /26 calculation, rate/delay bound | Answers for Chapters 1-8 |
+| L2: change and recover | Chapters 9-17 and 60-65 | stable Lab03 routed-extension baseline, return-route fault, restoration and handover | Answers for Chapters 2 and 9-17; the evidence form |
+| L3: deliver a service | Chapters 18-22, chosen service chapters, security 49-52 | Client transaction, platform/configuration record, fault diagnosis and acceptance | Answers for Chapters 18–59; provider, edge, data-centre, transport and security/operations workbooks; capstone steps 2-3; the chosen lab README |
+| L4: defend a design | Chapters 66 and 76-81, Appendix C | Alternative designs, shared-failure and survivor-capacity analysis | Chapters 66 and 76–81 answers; design/leadership workbook; capstone step 4 |
+| L5: govern a decision | Chapters 82-87; 73-75 for automation | Funding memo, staffing, changed assumption and follow-up | Chapters 73–75 and 82–87 answers; modern-operations and design/leadership workbooks; capstone step 5 |
 
-Reading can run alongside practice. Campus (11-16), provider (24-34), data centre (35-42) and transport (43-49) are specialisation routes, not competing levels of seniority. Select them from the service you need to understand. The milestones do not confer production authority or a professional title.
+Reading can run alongside practice. Campus (10-15), provider (23-33), data centre (34-41) and transport (42-48) are specialisation routes, not competing levels of seniority. Select them from the service you need to understand. The milestones do not confer production authority or a professional title.
 
-For the first ten chapters, work through `FOUNDATIONS-WORKBOOK.md`: specify one service, predict a packet and reply, interpret constructed DNS/route evidence, then hand over an unresolved incident. Then use CAMPUS-WORKBOOK.md for a six-session commissioning review through Chapters 11–16. Continue with ROUTING-WORKBOOK.md for seven sessions through Chapters 17–23, ending with a shared-service acceptance plan. PROVIDER-WORKBOOK.md adds seven sessions through Chapters 24–30, from multicast to provider transport and service acceptance. EDGE-WORKBOOK.md adds four sessions linking QoS, subscriber service, billing and routing security in Chapters 31–34. DATACENTRE-WORKBOOK.md adds eight sessions through Chapters 35–42. Continue through TRANSPORT-WORKBOOK.md (43–49), SECURITY-OPERATIONS-WORKBOOK.md (50–67), MODERN-OPERATIONS-WORKBOOK.md (68–78, with monitoring in 62), and DESIGN-LEADERSHIP-WORKBOOK.md (79–91). The paper sessions use constructed inputs and can precede available lab execution.
+For the first nine chapters, work through `FOUNDATIONS-WORKBOOK.md`: specify one service, predict a packet and reply, interpret constructed DNS/route evidence, then hand over an unresolved incident. Then use CAMPUS-WORKBOOK.md for a six-session commissioning review through Chapters 10–15. Continue with ROUTING-WORKBOOK.md for seven sessions through Chapters 16–22, ending with a shared-service acceptance plan. PROVIDER-WORKBOOK.md adds seven sessions through Chapters 23–29, from multicast to provider transport and service acceptance. EDGE-WORKBOOK.md adds four sessions linking QoS, subscriber service, billing and routing security in Chapters 30–33. DATACENTRE-WORKBOOK.md adds eight sessions through Chapters 34–41. Continue through TRANSPORT-WORKBOOK.md (42–48), SECURITY-OPERATIONS-WORKBOOK.md (49–66), MODERN-OPERATIONS-WORKBOOK.md (67–75, with monitoring in 61), and DESIGN-LEADERSHIP-WORKBOOK.md (76–87). The paper sessions use constructed inputs and can precede available lab execution.
 
 ## Files
 
@@ -37,9 +37,9 @@ For the first ten chapters, work through `FOUNDATIONS-WORKBOOK.md`: specify one 
 - `ROUTING-WORKBOOK.md`: seven sessions following a packet, recovering a path, comparing routing information, applying policy and accepting shared services; all supplied observations are constructed.
 
 - `CAMPUS-WORKBOOK.md`: six sessions connecting VLANs, tree selection, flow distribution, wireless, admission and an architecture decision; all supplied observations are constructed.
-- `FOUNDATIONS-WORKBOOK.md`: five guided sessions linking Chapters 1-10, with clearly labelled constructed evidence and model reasoning.
+- `FOUNDATIONS-WORKBOOK.md`: five guided sessions linking Chapters 1-9, with clearly labelled constructed evidence and model reasoning.
 - `CAPSTONE-WORKBOOK.md`: tasks, inputs, model reasoning and review prompts for the standalone fictional Aldergate branch.
-- `SELECTED-ANSWERS.md`: guidance for all 500 numbered end-of-chapter exercises across Chapters 1–91; the historical filename is retained for link compatibility. Empirical exercises have evidence criteria, not invented results.
+- `SELECTED-ANSWERS.md`: guidance for all 500 numbered end-of-chapter exercises across Chapters 1–87; the historical filename is retained for link compatibility. Empirical exercises have evidence criteria, not invented results.
 - `EVIDENCE-FORM.md`: an empty record for actual practice and peer review.
 - `branch-case.json`: machine-readable teaching inputs, separate from the cumulative reference designs in Appendix C.
 - `case_math.py`: offline arithmetic only; no network access, subprocesses or device changes.

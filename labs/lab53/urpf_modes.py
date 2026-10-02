@@ -3,7 +3,7 @@
 
 WHAT THIS RUNS
 --------------
-Four Linux network namespaces joined by veth pairs, a real forwarding router in
+Three Linux network namespaces joined by veth pairs, a real forwarding router in
 the middle, and real UDP datagrams. Nothing here is modelled: `rp_filter` is the
 kernel's own reverse-path check, mode 1 is RFC 3704 strict and mode 2 is RFC 3704
 loose, and the datagrams either arrive at the far namespace or they do not.

@@ -50,13 +50,25 @@ def stamps(ed):
     pages = ed['book']['print_pages']
     colour = ed['book']['colour_pages']
     e = ed['edition']
+    if ed.get('review_revision'):
+        readme_pattern = re.compile(
+            r'^Base edition \*\*RTN-20\d\d-\d\d-\d\d\*\*; supplied local revision\s+'
+            r'\*\*[a-zA-Z0-9.-]+\*\*, matching the\s+'
+            r'\d+-page black-and-white print\s+proof\s+and (?:the\s+)?'
+            r'\d+-page colour edition\.', re.M)
+        readme_stamp = ('Base edition **%s**; supplied local revision\n'
+                        '**%s**, matching the %d-page black-and-white print\n'
+                        'proof and the %d-page colour edition.' %
+                        (e, ed['review_revision'], pages, colour))
+    else:
+        readme_pattern = re.compile(
+            r'^Edition \*\*RTN-20\d\d-\d\d-\d\d\*\*, matching the\s+'
+            r'\d+-page black-and-white print\s+proof\s+and (?:the\s+)?'
+            r'\d+-page colour edition\.', re.M)
+        readme_stamp = ('Edition **%s**, matching the %d-page black-and-white print\n'
+                        'proof and the %d-page colour edition.' % (e, pages, colour))
     return {
-        'README.md': [(
-            re.compile(r'^Edition \*\*RTN-20\d\d-\d\d-\d\d\*\*, matching the\s+'
-                       r'\d+-page black-and-white print\s+proof\s+and (?:the\s+)?'
-                       r'\d+-page colour edition\.', re.M),
-            'Edition **%s**, matching the %d-page black-and-white print\n'
-            'proof and the %d-page colour edition.' % (e, pages, colour))],
+        'README.md': [(readme_pattern, readme_stamp)],
         'INDEX.md': [(re.compile(r'^Edition RTN-20\d\d-\d\d-\d\d\.', re.M),
                       'Edition %s.' % e)],
         'QUALIFICATION.md': [(re.compile(r'^# Qualification of RTN-20\d\d-\d\d-\d\d', re.M),

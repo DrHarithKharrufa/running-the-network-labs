@@ -1,0 +1,46 @@
+ok    a receiver driven past overload has a comfortable sensitivity margin  [10.5]
+ok    ...and is nonetheless reported as FAILING  [['best case stays under overload']]
+ok    ...naming the overload condition specifically  [['best case stays under overload']]
+ok    the verdict text says it fails
+ok    the short verdict says it too
+ok    a passing verdict claims only that the power conditions are met  [power conditions met, 1.50 dB of worst-c]
+ok    ...and denies that this means the link works  [--- which is NOT the same as "the link works"]
+ok    too weak at the worst case fails
+ok    ...on the sensitivity condition, not the overload one  [['worst case clears sensitivity']]
+ok    too strong at the best case fails
+ok    ...even though it has a huge sensitivity margin  [19.0]
+ok    a path varying more than the window fails  [['best case stays under overload', 'the window is wider than the spread']]
+ok    ...and no transmitter power could fix it  [(20.0, 14.0)]
+ok    a link meeting every condition passes  [[]]
+ok    ...and all three conditions are individually reported
+ok    the maximum received power uses the max Tx and the MIN loss  [-10.6]
+ok    the minimum uses the min Tx and the MAX loss  [-20.5]
+ok    an end-of-life allowance lowers the minimum further
+ok    ...and does not move the maximum
+ok    a midpoint would satisfy neither test
+ok    a wider transmitter tolerance widens the spread
+ok    the two conventions give different reserves  [(5.0, 1.0)]
+ok    the design-basis convention omits ageing and repairs  [['ageing', 'repairs']]
+ok    ...leaving only drift
+ok    the commissioning convention counts all three
+ok    each explains itself
+ok    the difference is exactly the double-counted part
+ok    rejects (2.0, 0.0, 1.0, 2.0, -22.0, -8.0)  [the transmitter maximum is below its minimum]
+ok    rejects (0.0, 2.0, 5.0, 1.0, -22.0, -8.0)  [the path maximum loss is below its minimum]
+ok    rejects (0.0, 2.0, -1.0, 2.0, -22.0, -8.0)  [a path loss is not negative, got -1.0]
+ok    rejects (0.0, 2.0, 1.0, 2.0, -8.0, -22.0)  [the overload point (-22.0) must be above the sensitivity (-8]
+ok    rejects (0.0, 2.0, 1.0, 2.0, -22.0, -22.0)  [the overload point (-22.0) must be above the sensitivity (-2]
+ok    rejects a negative end-of-life allowance
+ok    rejects a negative reserve
+ok    some shipped cases pass  [["the chapter's 60 km span", '...the same patch with a 10 dB attenuator']]
+ok    ...and each failure mode is represented  [['the same span, transmitter at +10 dBm', 'a short patch, nobody fitted an attenuator', 'a long span at the edge', 'a path that varies more than the window']]
+ok    the attenuator fixes the short patch  [["the chapter's 60 km span", '...the same patch with a 10 dB attenuator']]
+ok    the report refuses to say the link works
+ok    the report points at the OSNR budget
+ok    the report explains the double-counting trap
+ok    the report shows the failing condition itemised
+ok    the report disclaims equipment
+ok    the script exits 0  [0]
+ok    --json exits 0  [0]
+
+44/44 checks passed

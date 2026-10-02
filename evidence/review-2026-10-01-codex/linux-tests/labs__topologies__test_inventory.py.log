@@ -1,0 +1,13 @@
+test_all_external_policies_attached (__main__.Inventory.test_all_external_policies_attached) ... ok
+test_bound_files_exist (__main__.Inventory.test_bound_files_exist) ... ok
+test_customer_eligibility_and_more_specific_rejection (__main__.Inventory.test_customer_eligibility_and_more_specific_rejection) ... ok
+test_endpoint_uniqueness_and_documented_port_range (__main__.Inventory.test_endpoint_uniqueness_and_documented_port_range) ... ok
+test_external_exports_are_customer_only (__main__.Inventory.test_external_exports_are_customer_only) ... ok
+test_forged_provenance_removed_well_known_preserved (__main__.Inventory.test_forged_provenance_removed_well_known_preserved) ... ok
+test_ibgp_complete_symmetric_eight_node_graph (__main__.Inventory.test_ibgp_complete_symmetric_eight_node_graph) ... ok
+test_synthetic_origins_use_reserved_ranges (__main__.Inventory.test_synthetic_origins_use_reserved_ranges) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.118s
+
+OK

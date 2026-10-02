@@ -1,4 +1,4 @@
-# Chapter 61 — the NOC and the operating model
+# Chapter 60 — the NOC and the operating model
 
 Arithmetic for a chapter with no protocol in it.
 

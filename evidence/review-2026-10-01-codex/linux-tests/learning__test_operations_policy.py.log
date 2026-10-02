@@ -1,0 +1,34 @@
+test_age_boundary (__main__.WorkflowBoundary.test_age_boundary) ... ok
+test_arbitrary_tools_and_parameters_refused (__main__.WorkflowBoundary.test_arbitrary_tools_and_parameters_refused) ... ok
+test_authenticated_identity_required (__main__.WorkflowBoundary.test_authenticated_identity_required) ... ok
+test_body_cannot_claim_authority (__main__.WorkflowBoundary.test_body_cannot_claim_authority) ... ok
+test_claim_checks_deadline_again (__main__.WorkflowBoundary.test_claim_checks_deadline_again) ... ok
+test_conflicting_duplicate_rejected (__main__.WorkflowBoundary.test_conflicting_duplicate_rejected) ... ok
+test_duplicate_keys_rejected (__main__.WorkflowBoundary.test_duplicate_keys_rejected) ... ok
+test_equal_time_distinct_event_needs_reconciliation (__main__.WorkflowBoundary.test_equal_time_distinct_event_needs_reconciliation) ... ok
+test_event_generation_not_coerced (__main__.WorkflowBoundary.test_event_generation_not_coerced) ... ok
+test_evidence_revision_change_refuses (__main__.WorkflowBoundary.test_evidence_revision_change_refuses) ... ok
+test_evidence_text_is_inert (__main__.WorkflowBoundary.test_evidence_text_is_inert) ... ok
+test_expiry_boundary_refuses (__main__.WorkflowBoundary.test_expiry_boundary_refuses) ... ok
+test_grant_cannot_authorise_second_plan (__main__.WorkflowBoundary.test_grant_cannot_authorise_second_plan) ... ok
+test_message_limits (__main__.WorkflowBoundary.test_message_limits) ... ok
+test_old_event_cannot_replace_recovery (__main__.WorkflowBoundary.test_old_event_cannot_replace_recovery) ... ok
+test_outbox_admits_one_action (__main__.WorkflowBoundary.test_outbox_admits_one_action) ... ok
+test_plan_tampering_changes_authority (__main__.WorkflowBoundary.test_plan_tampering_changes_authority) ... ok
+test_recovery_invalidates_queued_down_plan (__main__.WorkflowBoundary.test_recovery_invalidates_queued_down_plan) ... ok
+test_remap_invalidates_queued_plan (__main__.WorkflowBoundary.test_remap_invalidates_queued_plan) ... ok
+test_restart_after_claim_requires_reconciliation (__main__.WorkflowBoundary.test_restart_after_claim_requires_reconciliation) ... ok
+test_restart_preserves_duplicate (__main__.WorkflowBoundary.test_restart_preserves_duplicate) ... ok
+test_reviewer_scope (__main__.WorkflowBoundary.test_reviewer_scope) ... ok
+test_schema_and_size (__main__.WorkflowBoundary.test_schema_and_size) ... ok
+test_sensor_mapping_is_required (__main__.WorkflowBoundary.test_sensor_mapping_is_required) ... ok
+test_stale_evidence_prevents_plan (__main__.WorkflowBoundary.test_stale_evidence_prevents_plan) ... ok
+test_synthetic_result_is_recorded_once (__main__.WorkflowBoundary.test_synthetic_result_is_recorded_once) ... ok
+test_timestamp_range_and_type (__main__.WorkflowBoundary.test_timestamp_range_and_type) ... ok
+test_unknown_state_rejected (__main__.WorkflowBoundary.test_unknown_state_rejected) ... ok
+test_up_and_unknown_do_not_create_down_plan (__main__.WorkflowBoundary.test_up_and_unknown_do_not_create_down_plan) ... ok
+
+----------------------------------------------------------------------
+Ran 29 tests in 0.012s
+
+OK

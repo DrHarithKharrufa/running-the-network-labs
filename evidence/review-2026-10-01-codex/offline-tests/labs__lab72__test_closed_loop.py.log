@@ -1,0 +1,28 @@
+test_actual_rollback_and_observation (__main__.Tests.test_actual_rollback_and_observation) ... ok
+test_breaker_and_manual_recovery (__main__.Tests.test_breaker_and_manual_recovery) ... ok
+test_controls_unavailable_fail_closed (__main__.Tests.test_controls_unavailable_fail_closed) ... ok
+test_duplicate_does_not_act_again (__main__.Tests.test_duplicate_does_not_act_again) ... ok
+test_duplicate_id_collision (__main__.Tests.test_duplicate_id_collision) ... ok
+test_independent_read_detects_no_effect (__main__.Tests.test_independent_read_detects_no_effect) ... ok
+test_kill_after_write_does_not_claim_cancellation (__main__.Tests.test_kill_after_write_does_not_claim_cancellation) ... ok
+test_kill_before_admission (__main__.Tests.test_kill_before_admission) ... ok
+test_kill_reserved_work_before_write (__main__.Tests.test_kill_reserved_work_before_write) ... ok
+test_notification_failure_halts_future_work (__main__.Tests.test_notification_failure_halts_future_work) ... ok
+test_queued_event_expires_before_write (__main__.Tests.test_queued_event_expires_before_write) ... ok
+test_rate_window_actually_expires (__main__.Tests.test_rate_window_actually_expires) ... ok
+test_reset_does_not_erase_rate_budget (__main__.Tests.test_reset_does_not_erase_rate_budget) ... ok
+test_rollback_cannot_overwrite_newer_change (__main__.Tests.test_rollback_cannot_overwrite_newer_change) ... ok
+test_schema_and_fixture_provenance (__main__.Tests.test_schema_and_fixture_provenance) ... ok
+test_shared_process_budget_is_atomic (__main__.Tests.test_shared_process_budget_is_atomic) ... ok
+test_stale_and_future_events (__main__.Tests.test_stale_and_future_events) ... ok
+test_stale_resource_version (__main__.Tests.test_stale_resource_version) ... ok
+test_unavailable_baseline_prevents_write (__main__.Tests.test_unavailable_baseline_prevents_write) ... ok
+test_uncertain_write_reconciles_without_retry (__main__.Tests.test_uncertain_write_reconciles_without_retry) ... ok
+test_unknown_observation_halts (__main__.Tests.test_unknown_observation_halts) ... ok
+test_unsupported_limits_and_faults (__main__.Tests.test_unsupported_limits_and_faults) ... ok
+test_verified_state_and_notification (__main__.Tests.test_verified_state_and_notification) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.002s
+
+OK

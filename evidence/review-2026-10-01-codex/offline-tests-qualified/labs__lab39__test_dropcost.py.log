@@ -1,0 +1,33 @@
+ok    the linear worst case is stack + rules x rule cost
+ok    the constant cost does not depend on the entry count
+ok    the ratio is the two divided
+ok    the early-match case is stack + ONE rule
+ok    the early-match ratio is smaller than the worst case
+ok    ...and the gap widens with the entry count, which is the real point
+ok    the early-match ratio is flat in the entry count at n=10
+ok    the early-match ratio is flat in the entry count at n=100000
+ok    rejects a rule count of 0
+ok    rejects a rule count of -1
+ok    rejects a rule count of 1.5
+ok    rejects a rule count of 'ten'
+ok    rejects a rule count of None
+ok    rejects rule_ns = 0
+ok    rejects stack_ns = 0
+ok    rejects lookup_ns = 0
+ok    the output declares the constants are placeholders
+ok    the output labels the linear column as the WORST case
+ok    the output prints the early-match column
+ok    the output states that no rate was measured
+ok    the output contains no 'drops/sec' rate claim
+ok    the output contains no 'drops per sec' rate claim
+ok    the output contains no 'million' rate claim
+ok    the output contains no 'pps' rate claim
+ok    the docstring names the invented figures it replaced
+ok    the docstring names set-based matching as the missing alternative
+ok    the CLI exits 0
+ok    the CLI rejects a zero constant
+
+28/28 checks passed
+usage: test_dropcost.py [-h] [--rule-ns RULE_NS] [--stack-ns STACK_NS]
+                        [--lookup-ns LOOKUP_NS] [--json]
+test_dropcost.py: error: --rule-ns must be positive

@@ -1,0 +1,9 @@
+test_empty_trace_not_converted_to_pass (__main__.Tests.test_empty_trace_not_converted_to_pass) ... ok
+test_explicit_flow_and_filters (__main__.Tests.test_explicit_flow_and_filters) ... ok
+test_missing_network_not_created (__main__.Tests.test_missing_network_not_created) ... ok
+test_missing_node_and_warnings_retained (__main__.Tests.test_missing_node_and_warnings_retained) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.000s
+
+OK

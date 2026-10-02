@@ -1,0 +1,53 @@
+ok    rejects bonding mode 'lacp-active'
+ok    rejects bonding mode 'static'
+ok    rejects bonding mode 'LACP'
+ok    rejects bonding mode '802.3AD'
+ok    rejects bonding mode 'mode4'
+ok    rejects bonding mode ''
+ok    rejects bonding mode None
+ok    rejects bonding mode 4
+ok    rejects switch side 'port-channel'
+ok    rejects switch side 'LACP'
+ok    rejects switch side 'trunk'
+ok    rejects switch side None
+ok    rejects switch side 1
+ok    rejects an unknown xmit_hash_policy
+ok    all seven Linux bonding modes are known
+ok    mode numbers are 0 to 6
+ok    802.3ad is mode 4 and needs lacp
+ok    active-backup needs NO switch aggregation
+ok    balance-xor needs a switch LAG
+ok    LACP against LACP raises no error
+ok    ...but still says agreement of intent is not a working bond
+ok    LACP against unaggregated ports is an ERROR
+ok    ...and offers more than one possible outcome, not one prediction
+ok    ...including that it may forward nothing at all
+ok    ...and names what to look at on the kit
+ok    a static host mode against an LACP switch is raised
+ok    active-backup against an aggregated switch is an ERROR
+ok    active-backup against independent ports raises no error
+ok    a multi-member hashing bond warns that one flow is not faster
+ok    ...and says the two sides hash independently
+ok    active-backup gets no per-flow hashing finding
+ok    equal NUMBERS are still an error, because they measure different things
+ok    a switch frame with room for the header is fine
+ok    the header allowance is a parameter, not a constant
+ok    the assumed header size is reported in the result
+ok    rejects host MTU 0
+ok    rejects host MTU 67
+ok    rejects host MTU 70000
+ok    rejects host MTU '9000'
+ok    rejects host MTU None
+ok    rejects host MTU 1500.0
+ok    rejects member count 0
+ok    rejects member count -2
+ok    rejects member count '2'
+ok    rejects member count None
+ok    the result declares it is not a running bond
+ok    the docstring says nothing in the book demonstrates LACP state
+ok    the docstring names all three previous errors
+ok    the CLI exits 0
+ok    the CLI shows a rejection, not a silent pass
+ok    the CLI closes by telling the reader to confirm on the kit
+
+51/51 checks passed

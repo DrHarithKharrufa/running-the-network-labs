@@ -1,0 +1,25 @@
+test_absent_owned_interface (__main__.Tests.test_absent_owned_interface) ... ok
+test_acl_does_not_invent_reachability (__main__.Tests.test_acl_does_not_invent_reachability) ... ok
+test_all_and_mixed_telnet_forms (__main__.Tests.test_all_and_mixed_telnet_forms) ... ok
+test_banner_and_ranges_unsupported (__main__.Tests.test_banner_and_ranges_unsupported) ... ok
+test_comment_or_description_is_not_command (__main__.Tests.test_comment_or_description_is_not_command) ... ok
+test_current_and_candidate_both_checked (__main__.Tests.test_current_and_candidate_both_checked) ... ok
+test_hash_binds_exact_input (__main__.Tests.test_hash_binds_exact_input) ... ok
+test_interface_deletion_and_default_not_ignored (__main__.Tests.test_interface_deletion_and_default_not_ignored) ... ok
+test_interface_description_scope (__main__.Tests.test_interface_description_scope) ... ok
+test_invalid_address (__main__.Tests.test_invalid_address) ... ok
+test_last_explicit_transport_state (__main__.Tests.test_last_explicit_transport_state) ... ok
+test_loopback_allocation_and_prefix (__main__.Tests.test_loopback_allocation_and_prefix) ... ok
+test_missing_integrations_block_promotion (__main__.Tests.test_missing_integrations_block_promotion) ... ok
+test_missing_transport_default_is_unknown (__main__.Tests.test_missing_transport_default_is_unknown) ... ok
+test_no_default_and_unknown_transport (__main__.Tests.test_no_default_and_unknown_transport) ... ok
+test_nonconfiguration_rejected (__main__.Tests.test_nonconfiguration_rejected) ... ok
+test_none_disables_input_within_profile (__main__.Tests.test_none_disables_input_within_profile) ... ok
+test_scoped_good_state (__main__.Tests.test_scoped_good_state) ... ok
+test_uncovered_vty_is_unknown (__main__.Tests.test_uncovered_vty_is_unknown) ... ok
+test_unindented_transport_not_ignored (__main__.Tests.test_unindented_transport_not_ignored) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.002s
+
+OK

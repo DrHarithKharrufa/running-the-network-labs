@@ -1,4 +1,4 @@
-# Chapter 66: incident evidence exercises
+# Chapter 65: incident evidence exercises
 
 These standard-library Python 3.10+ exercises run offline. They use synthetic
 data and make no network connections or changes to devices. From this directory:

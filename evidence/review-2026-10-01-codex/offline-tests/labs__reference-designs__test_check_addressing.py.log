@@ -1,0 +1,17 @@
+  ok    unbroken plan passes
+  ok    rejected: site prefix has host bits set
+  ok    rejected: a spare block sits inside a LAN
+  ok    rejected: site taken from another site's reservation
+  ok    rejected: router loopback outside its pool and site
+  ok    rejected: router loopback inside a host LAN
+  ok    rejected: router loopback is not a host route
+  ok    rejected: DHCP range outside its own subnet
+  ok    rejected: DHCP range inverted
+  ok    rejected: DHCP range includes the broadcast address
+  ok    rejected: printed LAN prefix differs from the source
+  ok    rejected: printed DHCP endpoint is impossible
+  ok    rejected: printed spare list differs from the source
+  ok    rejected: printed loopback differs from the source
+  ok    rejected: generated-block markers removed
+
+15 case(s), 0 failure(s)

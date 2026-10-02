@@ -1,0 +1,15 @@
+{
+  "platform": "iosxe",
+  "device": "r1-wb",
+  "interface": "GigabitEthernet1/0/1",
+  "description": "WB-AUT owned description",
+  "allowed_fields": [
+    "platform",
+    "device",
+    "interface",
+    "description"
+  ],
+  "max_observation_age_seconds": 300,
+  "max_description_length": 80,
+  "scope": "one description leaf; no deployment permission"
+}

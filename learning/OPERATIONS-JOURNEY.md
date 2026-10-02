@@ -1,6 +1,6 @@
 # Aldergate: commission, operate, recover, explain
 
-Edition RTN-2026-10-01. This is the connecting route through the existing executable exercises. Allow several sessions; completion time has not been measured with readers. Keep a folder of **your own** observations, not a copy of the author records. Chapters 3–9 teach packet/address reasoning; 17–23 explain routing; 61–67 cover operations; 71–72 develop automation; 85–91 cover decisions.
+Edition RTN-2026-10-02. This is the connecting route through the existing executable exercises. Allow several sessions; completion time has not been measured with readers. Keep a folder of **your own** observations, not a copy of the author records. Chapters 2–8 teach packet/address reasoning; 16–22 explain routing; 60–66 cover operations; 70–71 develop automation; 82–87 cover decisions.
 
 There are two deliberately separate systems: real FRR containers and packet probes on a Linux lab host, and a small Python HTTP/SQLite **device simulator**. The n8n route uses the latter. They are not secretly integrated and passing one does not qualify the other. A real-device monitoring adapter is a later extension with its own acceptance test.
 
@@ -44,7 +44,7 @@ Before opening the author record, predict the result. Then explain one failed hy
 
 Complete sessions 5–7. Save 04_collect.py output before the change; this JSON is a simulator state baseline, **not** a vendor configuration backup. Keep the dry-run plan and generation. Exercise an accepted change, no-op, rejected service check and restoration. Inspect the lost-response test and explain why the program does not retry the write.
 
-A rollback is accepted only when the restored description/generation and simulated service check agree. RECOVERY_SERVICE_FAILED or RECOVERY_UNKNOWN requires investigation. For a real router, use Chapters 65 and 71 plus the platform's backup/restore mechanism, independent service test and approved recovery window; those mechanisms are not supplied by this simulator.
+A rollback is accepted only when the restored description/generation and simulated service check agree. RECOVERY_SERVICE_FAILED or RECOVERY_UNKNOWN requires investigation. For a real router, use Chapters 64 and 70 plus the platform's backup/restore mechanism, independent service test and approved recovery window; those mechanisms are not supplied by this simulator.
 
 ## 6. Receive an alarm and leave an owned case
 

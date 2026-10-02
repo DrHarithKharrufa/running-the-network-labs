@@ -2,7 +2,7 @@
 
 Run `python -m unittest discover -v` here: 4 unit tests with multiple boundary cases.
 `validate_against_model.py` is a strict small Python schema, NOT a YANG parser,
-NETCONF validation RPC or exact device implementation. Read Chapter 70
+NETCONF validation RPC or exact device implementation. Read Chapter 69
 for the separate device capability, transaction and service-test plan. No NOS/API
 runtime was tested in this revision. Use exact advertised modules/features/deviations,
 credentials and verified TLS/SSH identities for any later entitled isolated device work.
@@ -37,4 +37,4 @@ Use `not tested`, `documented`, `parser accepted`, `runtime observed` or
 record with presumed support based on a vendor name or a capabilities response.
 
 Primary references: RFCs 6241, 7950, 8040, 8072, 8200, 8639, 8640 and 8641,
-and the OpenConfig gNMI specification linked in Chapter 70.
+and the OpenConfig gNMI specification linked in Chapter 69.

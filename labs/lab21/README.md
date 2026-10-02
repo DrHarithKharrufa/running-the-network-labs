@@ -8,7 +8,7 @@ and the image build remain a separate, unexecuted adapter on the review host.
 Use an isolated disposable environment. The selected package is Ubuntu 26.04
 frr=10.5.1-1ubuntu4.1. These configurations have no transport authentication;
 they teach routing mechanics, not a production control-plane security profile.
-The short 3/9-second timers are also lab settings. Chapter 33 covers protection.
+The short 3/9-second timers are also lab settings. Chapter 32 covers protection.
 All example ASNs are documentation ASNs; service space is documentation or
 benchmarking space. Do not connect this lab to an external routing domain.
 

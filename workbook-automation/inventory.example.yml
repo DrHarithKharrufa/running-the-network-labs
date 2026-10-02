@@ -1,0 +1,76 @@
+all:
+  children:
+    iosxe:
+      hosts:
+        r1_iosxe:
+          ansible_host: 192.0.2.10
+      vars:
+        platform: iosxe
+        owned_interface: GigabitEthernet1/0/1
+        ansible_user: REPLACE_FROM_PROTECTED_STORE
+        ansible_password: REPLACE_FROM_PROTECTED_STORE
+        ansible_connection: ansible.netcommon.network_cli
+        ansible_network_os: cisco.ios.ios
+        ansible_host_key_checking: true
+    nxos:
+      hosts:
+        r1_nxos:
+          ansible_host: 192.0.2.10
+      vars:
+        platform: nxos
+        owned_interface: Ethernet1/1
+        ansible_user: REPLACE_FROM_PROTECTED_STORE
+        ansible_password: REPLACE_FROM_PROTECTED_STORE
+        ansible_connection: ansible.netcommon.network_cli
+        ansible_network_os: cisco.nxos.nxos
+        ansible_host_key_checking: true
+    eos:
+      hosts:
+        r1_eos:
+          ansible_host: 192.0.2.10
+      vars:
+        platform: eos
+        owned_interface: Ethernet1
+        ansible_user: REPLACE_FROM_PROTECTED_STORE
+        ansible_password: REPLACE_FROM_PROTECTED_STORE
+        ansible_connection: ansible.netcommon.network_cli
+        ansible_network_os: arista.eos.eos
+        ansible_host_key_checking: true
+    junos:
+      hosts:
+        r1_junos:
+          ansible_host: 192.0.2.10
+      vars:
+        platform: junos
+        owned_interface: ge-0/0/0
+        ansible_user: REPLACE_FROM_PROTECTED_STORE
+        ansible_password: REPLACE_FROM_PROTECTED_STORE
+        ansible_connection: juniper.device.pyez
+        host: '{{ ansible_host }}'
+        user: '{{ ansible_user }}'
+        passwd: '{{ ansible_password }}'
+    srl:
+      hosts:
+        r1_srl:
+          ansible_host: 192.0.2.10
+      vars:
+        platform: srl
+        owned_interface: ethernet-1/1
+        ansible_user: REPLACE_FROM_PROTECTED_STORE
+        ansible_password: REPLACE_FROM_PROTECTED_STORE
+        ansible_connection: ansible.netcommon.httpapi
+        ansible_network_os: nokia.srlinux
+        ansible_httpapi_use_ssl: true
+        ansible_httpapi_validate_certs: true
+    vyos:
+      hosts:
+        r1_vyos:
+          ansible_host: 192.0.2.10
+      vars:
+        platform: vyos
+        owned_interface: eth2
+        ansible_user: REPLACE_FROM_PROTECTED_STORE
+        ansible_password: REPLACE_FROM_PROTECTED_STORE
+        ansible_connection: ansible.netcommon.network_cli
+        ansible_network_os: vyos.vyos.vyos
+        ansible_host_key_checking: true

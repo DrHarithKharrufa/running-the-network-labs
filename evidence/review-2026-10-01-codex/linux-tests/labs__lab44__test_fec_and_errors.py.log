@@ -1,0 +1,49 @@
+ok    the overhead costs 10log10(1+overhead) in OSNR  [0.9691001300805642]
+ok    the net gain is the gross less that penalty
+ok    net is always below gross for a real overhead
+ok    a bigger overhead costs more
+ok    zero overhead costs nothing
+ok    the penalty does not depend on the gross gain
+ok    coding gain leaves the POWER margin exactly where it was  [(1.5, 1.5)]
+ok    ...and moves the OSNR margin by the net gain
+ok    applying it to the power side invents margin that is not there  [11.530899869919436]
+ok    ...by exactly the net gain
+ok    the note says what the gain changes
+ok    the error rate falls as SNR rises
+ok    one decibel is worth a large fraction of a decade  [[-0.32, -0.61, -1.17]]
+ok    ...and the slope steepens as the SNR rises  [[-0.32, -0.61, -1.17]]
+ok    the slow case starts healthy
+ok    ...and ends past the threshold
+ok    ...with intermediate readings you could have trended
+ok    the sudden case reaches the SAME end state
+ok    ...with NO intermediate reading at all  [2]
+ok    so the warning is not a property of the error rate
+ok    the margin in dB is what separates the two stories
+ok    the margin falls linearly while the error rate does not
+ok    the threshold SNR is derived, not asserted  [3.2406469649751877]
+ok    a lower threshold BER demands a higher SNR
+ok    proving a low rate needs many bits  [2995732273553989.5]
+ok    the bound is -ln(1-confidence)/BER
+ok    a higher confidence needs more bits
+ok    a higher rate is proved sooner
+ok    at 400 Gb/s a 1e-15 rate takes hours to establish  [7489.330683884974]
+ok    a faster line establishes it sooner
+ok    a five-minute poll is a small fraction of what is needed  [0.040056984083440106]
+ok    rejects net_coding_gain(-1.0, 25.0)  [a coding gain is not negative, got -1.0]
+ok    rejects net_coding_gain(11.0, -5.0)  [an overhead is not negative, got -5.0]
+ok    rejects observation_needed(0.0,)  [a BER is between 0 and 1, got 0.0]
+ok    rejects observation_needed(1.5,)  [a BER is between 0 and 1, got 1.5]
+ok    rejects observation_needed(1e-09, 1.5)  [a confidence is between 0 and 1, got 1.5]
+ok    rejects seconds_needed(1e-09, 0.0)  [a line rate is positive, got 0.0]
+ok    rejects degradation(6.0, 0.0, [0])  [a threshold BER is between 0 and 1, got 0.0]
+ok    rejects degradation(6.0, 1.0, [0])  [a threshold BER is between 0 and 1, got 1.0]
+ok    the report says the power margin does not move
+ok    the report says a post-FEC error is corrupted data
+ok    the report tells you to alarm on any non-zero post-FEC count
+ok    the report says to trend the margin in dB
+ok    the report shows the sudden case with no ramp
+ok    the report disclaims being a transponder measurement
+ok    the script exits 0  [0]
+ok    --json exits 0  [0]
+
+47/47 checks passed

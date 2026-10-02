@@ -1,0 +1,195 @@
+Hardening questionnaire --- ald-core-01 (pe, ios-xe)
+baseline 53-baseline-2026.1 | record asserted, 2026-03-04, 211 days old | assessed 2026-10-01
+
+This reads a description. It verifies nothing.
+
+  [FINDING       ] copp  (§53.3)
+      stated: 'none' --- no control-plane policing, explicit or default
+      would be settled by: per-class conformed and dropped counters read under
+      load, with the rates expressed in the unit the platform polices in
+      (§53.3)
+
+  [FINDING       ] drift_check  (§53.9)
+      stated: 'manual' --- drift is found when somebody looks
+      would be settled by: the interval, the scope it covers, and the register
+      of accepted exceptions it is allowed to ignore (§53.9)
+
+  [FINDING       ] gtsm  (§53.6)
+      stated: 'none' --- no TTL check: an off-path remote source is not
+      filtered
+      would be settled by: the configured hop count and the platform's
+      threshold semantics, which differ between vendors (RFC 5082, §53.6)
+
+  [FINDING       ] iacl_exceptions  (§53.4)
+      stated: 'blanket-deny' --- a filter denying everything to infrastructure
+      space breaks external BGP and black-holes path MTU discovery --- see Lab
+      53.3
+      would be settled by: the permit lines themselves, and a test that an
+      authorised peer establishes while an unauthorised source does not (Lab
+      53.3)
+
+  [FINDING       ] logging_offbox  (§53.8)
+      stated: 'local-only' --- logs live only where an intruder can edit them
+      would be settled by: a deliberately dropped collector, and the alert it
+      raised; plus the clock skew between device and collector (§53.8)
+
+  [FINDING       ] mgmt_reachable_from  (§53.7)
+      stated: 'internet' --- management is reachable from the Internet
+      would be settled by: a scan from outside and from a user segment,
+      dual-stack, dated (chapter 53 §7) --- and the expected-exposure record
+      to compare it to
+
+  [FINDING       ] routing_authentication  (§53.6)
+      stated: 'tcp-md5' --- TCP-MD5 is legacy debt: retire it (§51.4)
+      would be settled by: both ends of the session showing the same
+      mechanism, plus a rollover test and a negative test with the wrong key
+      (§53.6)
+
+  [FINDING       ] source_validation  (§53.5)
+      stated: 'urpf-loose' --- loose uRPF tests only that a route exists: a
+      spoofed source with a route passes it --- measured in Lab 53.2
+      would be settled by: the measured matrix of Lab 53.2 run against this
+      interface: legitimate symmetric, legitimate asymmetric,
+      spoofed-but-routed and unrouted sources
+
+  [FINDING       ] telnet  (§53.1)
+      stated: 'enabled' --- cleartext administration is reachable
+      would be settled by: a configuration read showing no transport input
+      telnet and no ip http server
+
+  [CLAIMED       ] secure_boot  (§53.2)
+      stated: 'enforced' --- record states verified boot is enforced
+      would be settled by: the platform command that reports anchor state and
+      the signing authority, plus the anti-rollback and revocation position
+      (§53.2)
+
+9 FINDING, 0 UNSTATED, 1 CLAIMED, 0 NOT APPLICABLE.
+There is no PASS in this vocabulary, and no total that could be read as a score.
+
+Notes:
+  - the record is 211 days old (limit 180). Hardening is a state that decays;
+  every CLAIMED answer below is a claim about a device as it was on 2026-03-04
+  (§53.9).
+  - record_source is "asserted": somebody stated this; nothing was read or
+  watched. Nothing below is evidence; the CLAIMED answers are the ones to go
+  and check first.
+{
+  "hostname": "ald-core-01",
+  "role": "pe",
+  "platform": "ios-xe",
+  "baseline": "53-baseline-2026.1",
+  "record_source": "asserted",
+  "record_date": "2026-03-04",
+  "record_age_days": 211,
+  "assessed_on": "2026-10-01",
+  "results": [
+    {
+      "key": "telnet",
+      "section": "53.1",
+      "verdict": "FINDING",
+      "stated": "enabled",
+      "why": "cleartext administration is reachable",
+      "evidence": "a configuration read showing no transport input telnet and no ip http server"
+    },
+    {
+      "key": "mgmt_reachable_from",
+      "section": "53.7",
+      "verdict": "FINDING",
+      "stated": "internet",
+      "why": "management is reachable from the Internet",
+      "evidence": "a scan from outside and from a user segment, dual-stack, dated (chapter 53 \u00a77) --- and the expected-exposure record to compare it to"
+    },
+    {
+      "key": "secure_boot",
+      "section": "53.2",
+      "verdict": "CLAIMED",
+      "stated": "enforced",
+      "why": "record states verified boot is enforced",
+      "evidence": "the platform command that reports anchor state and the signing authority, plus the anti-rollback and revocation position (\u00a753.2)"
+    },
+    {
+      "key": "copp",
+      "section": "53.3",
+      "verdict": "FINDING",
+      "stated": "none",
+      "why": "no control-plane policing, explicit or default",
+      "evidence": "per-class conformed and dropped counters read under load, with the rates expressed in the unit the platform polices in (\u00a753.3)"
+    },
+    {
+      "key": "iacl_exceptions",
+      "section": "53.4",
+      "verdict": "FINDING",
+      "stated": "blanket-deny",
+      "why": "a filter denying everything to infrastructure space breaks external BGP and black-holes path MTU discovery --- see Lab 53.3",
+      "evidence": "the permit lines themselves, and a test that an authorised peer establishes while an unauthorised source does not (Lab 53.3)"
+    },
+    {
+      "key": "source_validation",
+      "section": "53.5",
+      "verdict": "FINDING",
+      "stated": "urpf-loose",
+      "why": "loose uRPF tests only that a route exists: a spoofed source with a route passes it --- measured in Lab 53.2",
+      "evidence": "the measured matrix of Lab 53.2 run against this interface: legitimate symmetric, legitimate asymmetric, spoofed-but-routed and unrouted sources"
+    },
+    {
+      "key": "routing_authentication",
+      "section": "53.6",
+      "verdict": "FINDING",
+      "stated": "tcp-md5",
+      "why": "TCP-MD5 is legacy debt: retire it (\u00a751.4)",
+      "evidence": "both ends of the session showing the same mechanism, plus a rollover test and a negative test with the wrong key (\u00a753.6)"
+    },
+    {
+      "key": "gtsm",
+      "section": "53.6",
+      "verdict": "FINDING",
+      "stated": "none",
+      "why": "no TTL check: an off-path remote source is not filtered",
+      "evidence": "the configured hop count and the platform's threshold semantics, which differ between vendors (RFC 5082, \u00a753.6)"
+    },
+    {
+      "key": "logging_offbox",
+      "section": "53.8",
+      "verdict": "FINDING",
+      "stated": "local-only",
+      "why": "logs live only where an intruder can edit them",
+      "evidence": "a deliberately dropped collector, and the alert it raised; plus the clock skew between device and collector (\u00a753.8)"
+    },
+    {
+      "key": "drift_check",
+      "section": "53.9",
+      "verdict": "FINDING",
+      "stated": "manual",
+      "why": "drift is found when somebody looks",
+      "evidence": "the interval, the scope it covers, and the register of accepted exceptions it is allowed to ignore (\u00a753.9)"
+    }
+  ],
+  "notes": [
+    "the record is 211 days old (limit 180). Hardening is a state that decays; every CLAIMED answer below is a claim about a device as it was on 2026-03-04 (\u00a753.9).",
+    "record_source is \"asserted\": somebody stated this; nothing was read or watched. Nothing below is evidence; the CLAIMED answers are the ones to go and check first."
+  ],
+  "counts": {
+    "FINDING": 9,
+    "CLAIMED": 1
+  },
+  "unassessed_keys": []
+}
+Two answers, read by the shipped blocklist and by the rebuilt allowlist.
+Every number below is counted by running both, not typed into this text.
+
+  what the record said              shipped     FINDING  UNSTATED
+  uRPF loose, BGP MD5                     2           2         0
+  uRPF OFF, BGP UNAUTHENTICATED           0           2         0
+  answers the checks never met            0           0         2
+
+The shipped check reported 2 on a device described as middling and 0 on the
+same device described as having no source validation and no routing
+authentication at all. Making the device worse made the report shorter,
+because "none" is not the one string each check recognised.
+
+The rebuilt check reported 2 finding(s) on the first and 2 on the second, and
+on answers it had never met it reported 0 finding(s) and 2 unstated --- which
+is the difference that matters. An allowlist has nowhere to put an answer it
+does not recognise except into the report; a blocklist puts it in the silence,
+where it reads as approval.
+880 checks, 0 failed

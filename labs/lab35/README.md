@@ -1,6 +1,6 @@
 # Lab 35.1 — A fabric's shape is arithmetic
 
-Chapter 35 argues that a Clos fabric is designed, not guessed: the switch radix,
+Chapter 34 argues that a Clos fabric is designed, not guessed: the switch radix,
 the physical cage budget and the oversubscription the workload needs together
 decide how many servers a hall holds. This lab makes that arithmetic runnable.
 
@@ -70,7 +70,7 @@ If you quote only the spine-loss figure, you have quoted the kinder failure.
 - **Radix and cages set hall size.** Downlink cages set servers-per-leaf; uplink
   cages set how many spines you can spread across and at what width.
 - **1:1 at the leaf is necessary, not sufficient**, for a GPU back-end. NIC
-  count, rail assignment and collective topology decide the result — Chapter 41,
+  count, rail assignment and collective topology decide the result — Chapter 40,
   not this one.
 - **You grow by adding spines** (Lab 36.1), which adds capacity and ECMP width
   when leaves have spare uplink capacity and new links are installed to every
@@ -84,8 +84,8 @@ sudo containerlab deploy -t ../topologies/anvil.clab.yml
 
 That inventory is **two spines and four leaves, SR Linux on every node**, and it
 ships with **no underlay or overlay configuration**. It is a shape to inspect,
-not a routed fabric: equal-cost paths are only observable once Chapter 36 builds
-the underlay and Chapter 37 the overlay. It is deliberately not the 8-spine hall
+not a routed fabric: equal-cost paths are only observable once Chapter 35 builds
+the underlay and Chapter 36 the overlay. It is deliberately not the 8-spine hall
 sized above, and it is not a qualified multi-vendor deployment.
 
 ## Make it yours

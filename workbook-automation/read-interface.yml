@@ -1,0 +1,108 @@
+- name: Read the owned iosxe interface
+  hosts: iosxe
+  gather_facts: false
+  serial: 1
+  tasks:
+  - name: Refuse a mismatched platform/interface
+    ansible.builtin.assert:
+      that:
+      - platform == 'iosxe'
+      - owned_interface == 'GigabitEthernet1/0/1'
+      fail_msg: Inventory differs from the fixed owned-interface example; review both
+        before changing it.
+  - name: Read only the declared state
+    cisco.ios.ios_command:
+      commands:
+      - show interfaces GigabitEthernet1/0/1 description
+    register: observed
+    changed_when: false
+- name: Read the owned nxos interface
+  hosts: nxos
+  gather_facts: false
+  serial: 1
+  tasks:
+  - name: Refuse a mismatched platform/interface
+    ansible.builtin.assert:
+      that:
+      - platform == 'nxos'
+      - owned_interface == 'Ethernet1/1'
+      fail_msg: Inventory differs from the fixed owned-interface example; review both
+        before changing it.
+  - name: Read only the declared state
+    cisco.nxos.nxos_command:
+      commands:
+      - show interface ethernet 1/1
+    register: observed
+    changed_when: false
+- name: Read the owned eos interface
+  hosts: eos
+  gather_facts: false
+  serial: 1
+  tasks:
+  - name: Refuse a mismatched platform/interface
+    ansible.builtin.assert:
+      that:
+      - platform == 'eos'
+      - owned_interface == 'Ethernet1'
+      fail_msg: Inventory differs from the fixed owned-interface example; review both
+        before changing it.
+  - name: Read only the declared state
+    arista.eos.eos_command:
+      commands:
+      - show interfaces Ethernet1 description
+    register: observed
+    changed_when: false
+- name: Read the owned junos interface
+  hosts: junos
+  gather_facts: false
+  serial: 1
+  tasks:
+  - name: Refuse a mismatched platform/interface
+    ansible.builtin.assert:
+      that:
+      - platform == 'junos'
+      - owned_interface == 'ge-0/0/0'
+      fail_msg: Inventory differs from the fixed owned-interface example; review both
+        before changing it.
+  - name: Read only the declared state
+    juniper.device.command:
+      commands:
+      - show configuration interfaces ge-0/0/0 description | display set
+    register: observed
+    changed_when: false
+- name: Read the owned srl interface
+  hosts: srl
+  gather_facts: false
+  serial: 1
+  tasks:
+  - name: Refuse a mismatched platform/interface
+    ansible.builtin.assert:
+      that:
+      - platform == 'srl'
+      - owned_interface == 'ethernet-1/1'
+      fail_msg: Inventory differs from the fixed owned-interface example; review both
+        before changing it.
+  - name: Read only the declared state
+    nokia.srlinux.cli:
+      commands:
+      - info from running interface ethernet-1/1 description
+    register: observed
+    changed_when: false
+- name: Read the owned vyos interface
+  hosts: vyos
+  gather_facts: false
+  serial: 1
+  tasks:
+  - name: Refuse a mismatched platform/interface
+    ansible.builtin.assert:
+      that:
+      - platform == 'vyos'
+      - owned_interface == 'eth2'
+      fail_msg: Inventory differs from the fixed owned-interface example; review both
+        before changing it.
+  - name: Read only the declared state
+    vyos.vyos.vyos_command:
+      commands:
+      - show configuration commands
+    register: observed
+    changed_when: false

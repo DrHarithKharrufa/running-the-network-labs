@@ -1,0 +1,16 @@
+test_current_breach_is_not_hidden_by_decline (__main__.TeachingCaseChecks.test_current_breach_is_not_hidden_by_decline) ... ok
+test_host_bits_are_rejected (__main__.TeachingCaseChecks.test_host_bits_are_rejected) ... ok
+test_invalid_and_nonfinite_numbers (__main__.TeachingCaseChecks.test_invalid_and_nonfinite_numbers) ... ok
+test_no_crossing_under_fixed_zero_or_declining_growth (__main__.TeachingCaseChecks.test_no_crossing_under_fixed_zero_or_declining_growth) ... ok
+test_overlapping_management_is_rejected (__main__.TeachingCaseChecks.test_overlapping_management_is_rejected) ... ok
+test_price_shock_leaves_only_two_thousand (__main__.TeachingCaseChecks.test_price_shock_leaves_only_two_thousand) ... ok
+test_printed_address_plan (__main__.TeachingCaseChecks.test_printed_address_plan) ... ok
+test_printed_cash_and_deadline_constraints (__main__.TeachingCaseChecks.test_printed_cash_and_deadline_constraints) ... ok
+test_printed_time_scenarios (__main__.TeachingCaseChecks.test_printed_time_scenarios) ... ok
+test_topology_and_traffic_assumptions_are_enforced (__main__.TeachingCaseChecks.test_topology_and_traffic_assumptions_are_enforced) ... ok
+test_zero_discount_equals_cash_total (__main__.TeachingCaseChecks.test_zero_discount_equals_cash_total) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.002s
+
+OK

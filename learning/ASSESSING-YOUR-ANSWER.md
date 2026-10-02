@@ -14,15 +14,15 @@ before you look at the complete one, and be honest about which it resembles.
 Three artefacts are covered, because they recur across the book and because
 each is something you will be asked for at work:
 
-1. An incident record (Chapter 66)
-2. An architecture decision record (Chapter 79)
-3. A capacity recommendation (Chapter 67)
+1. An incident record (Chapter 65)
+2. An architecture decision record (Chapter 76)
+3. A capacity recommendation (Chapter 66)
 
 ---
 
 ## 1. An incident record
 
-**The task.** Chapter 66's exercises ask you to run the timeline exercise and
+**The task.** Chapter 65's exercises ask you to run the timeline exercise and
 supply a defensible clock bound --- or to say plainly that you cannot, and show
 that the record's conclusions survive without one. Both are complete answers;
 inventing a bound is not. More generally: write the record for an incident you
@@ -67,12 +67,12 @@ which is the thing that already failed.
 > unsupported.
 >
 > So: **no subsecond ordering is claimed below.** The ordering this record
-> actually relies on is the 81 seconds between the change at 09:12:41 and the
-> first probe failure at 09:14:02, which is far outside any plausible bound on a
-> synchronised clock and holds without one. Had the two events been 50 ms apart,
-> the honest entry would have been *order not established* — and the finding
-> would then have depended on the change record and the router's own
-> configuration history instead. The ticket system is browser-timestamped
+> shows an apparent 81-second gap between the change at 09:12:41 and the
+  > first probe failure at 09:14:02. Without a contemporaneous bound for both
+  > clocks, those cross-system timestamps do not establish event order. Treat
+  > them as a useful hypothesis to test. The configuration history and a
+  > controlled replay must supply the causal evidence; synchronisation alone
+  > is not a quantified error bound. The ticket system is browser-timestamped
 > against an unsynchronised client; its times are marked ±60 s as a working
 > assumption and are **not** used to order anything.
 >
@@ -139,7 +139,7 @@ not yet in, `unknown — owned by X, due Y` is a complete entry, not a gap.
 
 **Legitimate variation.** The order of sections. Whether contributing factors
 are separated from the narrative. Whether you rank actions. Whether you keep a
-"root cause" heading at all — many good teams do not, and Chapter 66 explains
+"root cause" heading at all — many good teams do not, and Chapter 65 explains
 why.
 
 **Failure signatures to check your own work for.** Times without sources; a
@@ -158,7 +158,7 @@ no real investigation is.
 
 ## 2. An architecture decision record
 
-**The task.** Chapter 79's exercises ask you to write an ADR for a migration
+**The task.** Chapter 76's exercises ask you to write an ADR for a migration
 you know, including the evidence still missing.
 
 ### Plausible but inadequate
@@ -185,8 +185,8 @@ no cost, no risk and no condition that would make this decision wrong.
 > within 18 months. Three requirements drive this decision:
 > - R-07: a tenant's layer-2 domain may span any leaf pair (product requirement,
 >   confirmed with the platform team 2026-02-18).
-> - R-09: onboarding a tenant onto a leaf pair must not require configuration on
->   any device outside that pair (operational requirement, 2026-02-18).
+> - R-09: onboarding a tenant onto a leaf pair must not require per-tenant
+>   configuration on transit spines (operational requirement, 2026-02-18).
 > - R-11: a leaf failure must not require reconfiguration elsewhere in the
 >   fabric (operational requirement, 2026-02-18).
 > The current design carries VLANs across the fabric on trunks. It satisfies
@@ -202,7 +202,7 @@ no cost, no risk and no condition that would make this decision wrong.
 > |---|---|---|
 > | Keep VLAN trunking | Fails R-09; per-tenant change is fabric-wide | £0 now; an estimated 2 engineer-days per tenant onboarding, rising with leaf count |
 > | VXLAN with a controller | Meets R-07 and R-09; adds a controller to the failure domain and a licence we would have to keep current | Licence ~£28k/yr, plus the controller's own availability design |
-> | EVPN-VXLAN, asymmetric IRB | Meets R-07 and R-09; requires every VNI on every leaf, which we expect to exceed leaf table capacity at the 10-leaf projection | £0 licence; a table-capacity wall we would hit inside the projection window |
+> | EVPN-VXLAN, asymmetric IRB | Meets R-07 and R-09; requires state for all subnets of each tenant IP-VRF on its participating leaves; the assumed host/subnet profile is projected to exceed the selected table budget, pending exact-release verification | £0 licence; a table-capacity wall we would hit inside the projection window |
 >
 > **Consequences we accept.**
 > - Two networks to operate on one fabric: the underlay and the overlay. Chapter
@@ -258,7 +258,7 @@ check the trade. That is the defect, and it is the one you can actually fix.
 
 ## 3. A capacity recommendation
 
-**The task.** Chapter 67's exercise 3, exactly as printed: *a load of 45 grows
+**The task.** Chapter 66's exercise 3, exactly as printed: *a load of 45 grows
 at 20% annually towards an in-service limit of 70, with six months of complete
 delivery time. Derive the crossing and begin dates; explain how the calculation
 changes if 70 is already an order trigger.*
@@ -294,8 +294,9 @@ nothing has been compared with a date.
 > 2.4234 - 0.5 = 1.9234 years = 23.1 months
 > ```
 >
-> So the last honest moment to start the procurement is about **23 months from
-> now**, not 29. "Complete delivery time" is the whole chain — approval, order,
+> Under this fixed scenario, the latest start is about **23 months from
+> now**, rather than 29. This is a conditional deadline, not evidence that the
+> service remains safe until then. "Complete delivery time" is the whole chain — approval, order,
 > lead time, delivery, install, test, in service — and if any link in it is
 > longer than assumed, that date moves earlier, not later.
 >
@@ -307,23 +308,36 @@ nothing has been compared with a date.
 > service actually degrades, to know what you have bought. A trigger with no
 > stated headroom behind it is a date with no consequence attached.
 >
-> **What I am recommending.** Diarise the procurement start at 20 months, three
-> months before the computed 23, and review the growth figure at 12 months.
+> **What I am recommending.** Ask the service owner to commission an evidence
+> review now, with the capacity lead reporting missing measurements and required
+> failure scenarios within two weeks. The supplied arithmetic alone does not
+> establish an immediate purchase need. Provisionally plan a procurement start
+> at 20 months, adding an explicitly proposed three-month contingency before the
+> computed 23; confirm that allowance with procurement and review the inputs at
+> the evidence gate and whenever demand, topology or delivery changes.
 >
-> **The assumption most likely to be wrong.** 20% compound is a fitted
-> parameter, not a mechanism. This growth is driven by branch onboarding; if the
-> onboarding schedule is known, use it and discard the percentage. A straight
-> line through two points is not a forecast.
+> **The assumption most likely to change the decision.** The 20% compound
+> growth is a supplied scenario, not a measured forecast with known coverage.
+> If branch onboarding drives demand, obtain its schedule and compare an event
+> scenario with the smooth curve. Two fitted points alone do not establish
+> forecast reliability. A separate 40% growth sensitivity gives a crossing in
+> 1.31313 years and a latest start in 0.81313 years, about 9.76 months away,
+> under the same six-month delivery allowance.
 
 ### The same question with real-world conditions added
 
 This is **a different exercise**, stated separately because the figures change
-and it is not what Chapter 67 asked. Everything below is an added assumption,
+and it is not what Chapter 66 asked. Everything below is an added assumption,
 labelled as one.
 
-> **Added:** the 45 is busy-hour p95, not a daily mean. The path is two equal
-> members; the in-service limit of 70 is the pair's, so one member's is 35. The
-> service must survive a single member failure.
+> **Added synthetic assumptions:** the 45 is the p95 of one complete aligned
+> total-demand series, not the sum of member percentiles or a daily mean. The
+> path has two equal members, normally sharing that same demand equally. Each
+> member has an independently justified in-service limit of 35; the healthy
+> pair's aggregate limit is therefore 70. After either member fails, the entire
+> demand can reroute to the survivor. The service requirement is to carry that
+> demand within the survivor's limit. Routing, queues and service behaviour
+> have not been tested by this paper example.
 >
 > | Condition | Limit | Load today | Crossing | Begin (−6 months) |
 > |---|---|---|---|---|
@@ -336,15 +350,18 @@ labelled as one.
 > failure — which somebody must decide explicitly and record — or it needs
 > capacity now, and the 23-month date is irrelevant.
 >
-> **What the measure is worth.** If the daily mean were used instead, and the
-> mean runs about 1.6 times below busy-hour p95, the same model starting from
-> 28.1 crosses at 60.0 months rather than 29.1:
+> **A separate statistic sensitivity.** Assume, only for this invented
+> comparison, that the mean of the same demand series is exactly `45/1.6`.
+> Starting the smooth model from that smaller value gives a crossing at 60.0
+> months rather than 29.1:
 >
 > ```text
 > 12 × ln(1.6) / ln(1.2) = 30.9 months of difference
 > ```
 >
-> Two and a half years of false comfort, from the choice of statistic alone.
+> That 30.9-month difference illustrates how the statistic changes the
+> calculation. Neither statistic alone proves a service-performance envelope;
+> the relevant peak durations, bursts, loss and latency remain evidence needs.
 
 ### Rubric
 
@@ -365,9 +382,10 @@ a reserve counts the same headroom twice.
 **Legitimate variation.** Whether you model N−1 or N−2. Whether growth is
 compounded or driven by a known schedule — the second is better where it
 exists, and saying so is part of a good answer. **Which statistic you use:**
-Chapter 67 teaches that the measure follows the service objective and the
-sampling model, so busy-hour p95 is a good default for a shared link and the
-wrong default for, say, a table-occupancy limit. State the measure and why.
+Chapter 66 teaches that the measure follows the service objective and the
+sampling model. Busy-hour p95 is one possible input; maximum interval load,
+tail duration or a state-table occupancy measure may answer a different
+question. State the measure and why.
 
 **Failure signatures.** One date where the question asked for two; a lead time
 mentioned but never subtracted; a threshold whose denominator is not written

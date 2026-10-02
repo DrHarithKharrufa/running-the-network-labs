@@ -1,0 +1,22 @@
+test_initial_london_allocations_fill_20 (__main__.AddressPlanTests.test_initial_london_allocations_fill_20) ... ok
+test_invalid_child_sizes (__main__.AddressPlanTests.test_invalid_child_sizes) ... ok
+test_invalid_reservation_rejected (__main__.AddressPlanTests.test_invalid_reservation_rejected) ... ok
+test_ipv4_sites_disjoint_and_contained (__main__.AddressPlanTests.test_ipv4_sites_disjoint_and_contained) ... ok
+test_ipv6_site_capacity (__main__.AddressPlanTests.test_ipv6_site_capacity) ... ok
+test_ipv6_sites_disjoint_and_contained (__main__.AddressPlanTests.test_ipv6_sites_disjoint_and_contained) ... ok
+test_kestrel_child_capacities (__main__.AddressPlanTests.test_kestrel_child_capacities) ... ok
+test_mesh_count (__main__.AddressPlanTests.test_mesh_count) ... ok
+test_noncanonical_ipv6_is_rejected (__main__.AddressPlanTests.test_noncanonical_ipv6_is_rejected) ... ok
+test_outside_parent_is_rejected (__main__.AddressPlanTests.test_outside_parent_is_rejected) ... ok
+test_overlap_is_rejected (__main__.AddressPlanTests.test_overlap_is_rejected) ... ok
+test_point_to_point_addresses (__main__.AddressPlanTests.test_point_to_point_addresses) ... ok
+test_public_subscriber_capacity (__main__.AddressPlanTests.test_public_subscriber_capacity) ... ok
+test_reserved_space_plus_sites_exhaust_parent (__main__.AddressPlanTests.test_reserved_space_plus_sites_exhaust_parent) ... ok
+test_supplied_sparse_graph (__main__.AddressPlanTests.test_supplied_sparse_graph) ... ok
+test_voice_cannot_fit_in_24 (__main__.AddressPlanTests.test_voice_cannot_fit_in_24) ... ok
+test_wireless_headroom (__main__.AddressPlanTests.test_wireless_headroom) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.004s
+
+OK

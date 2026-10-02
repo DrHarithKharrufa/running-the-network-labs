@@ -100,7 +100,7 @@ sudo containerlab destroy -t kestrel.clab.yml --cleanup
 The device configurations in `topologies/configs/` are **generated**, not
 hand-written — see `configs/generate.py`. Edit the data table at the top of
 that script and re-run it; never edit a `.cfg` file directly. This is the
-book's own advice from Chapter 68 applied to its own lab.
+book's own advice from Chapter 67 applied to its own lab.
 
 ### The three reference networks
 
@@ -152,7 +152,7 @@ creates anything.
 
 Startup configurations are **not** pushed — GNS3 appliances differ too much for
 that to be reliable. Apply `topologies/configs/*` by console, or with the
-Ansible playbooks from Chapter 69.
+Ansible playbooks from Chapter 68.
 
 ---
 

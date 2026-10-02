@@ -1,7 +1,7 @@
 # Lab 43 — three numbers the physical layer will hold you to
 
 Three calculators. None touches a fibre, a light source, a power meter or an
-OTDR. What they do is take the three claims Chapter 43 rests on and put them
+OTDR. What they do is take the three claims Chapter 42 rests on and put them
 where a plausible design can be shown to **fail on paper**, which is the only
 place a fibre decision is cheap to change.
 

@@ -1,0 +1,130 @@
+Lab 56.2 --- tunnel-mode ESP overhead, computed from the frame formats
+========================================================================
+
+Path MTU assumed: 1500 bytes (the ordinary Ethernet case).
+
+  transform                      NAT-T   overhead inner MTU  TCP MSS
+  aes-gcm-256                    no            54      1446     1406
+  aes-gcm-256                    yes           62      1438     1398
+  chacha20-poly1305              no            54      1446     1406
+  chacha20-poly1305              yes           62      1438     1398
+  aes-cbc-256+hmac-sha1-96       no            58      1438     1398
+  aes-cbc-256+hmac-sha1-96       yes           66      1422     1382
+  aes-cbc-256+hmac-sha256-128    no            62      1438     1398
+  aes-cbc-256+hmac-sha256-128    yes           70      1422     1382
+
+Why this is a search and not a subtraction. ESP pads the ciphertext to the
+cipher's boundary, so several different inner sizes produce the SAME total:
+
+    inner 1444  ->  total 1500   <- the largest that fits
+    inner 1445  ->  total 1500   <- the largest that fits
+    inner 1446  ->  total 1500   <- the largest that fits
+    inner 1447  ->  total 1504   (too big)
+    inner 1448  ->  total 1504   (too big)
+    inner 1449  ->  total 1504   (too big)
+    inner 1450  ->  total 1504   (too big)
+    inner 1451  ->  total 1508   (too big)
+
+MACsec, for comparison, is link-layer and its cost lands on the
+Ethernet frame: SecTAG 16 bytes with SCI (8 without) plus a 16-byte
+ICV, so 32 bytes in the common case. A switch that cannot carry an
+oversized frame passes that cost straight on to the IP MTU.
+
+An MSS clamp set from the inner MTU protects TCP and only TCP.
+{
+ "table": [
+  {
+   "transform": "aes-gcm-256",
+   "nat_traversal": false,
+   "inner_mtu": 1446,
+   "overhead": 54,
+   "tcp_mss": 1406
+  },
+  {
+   "transform": "aes-gcm-256",
+   "nat_traversal": true,
+   "inner_mtu": 1438,
+   "overhead": 62,
+   "tcp_mss": 1398
+  },
+  {
+   "transform": "chacha20-poly1305",
+   "nat_traversal": false,
+   "inner_mtu": 1446,
+   "overhead": 54,
+   "tcp_mss": 1406
+  },
+  {
+   "transform": "chacha20-poly1305",
+   "nat_traversal": true,
+   "inner_mtu": 1438,
+   "overhead": 62,
+   "tcp_mss": 1398
+  },
+  {
+   "transform": "aes-cbc-256+hmac-sha1-96",
+   "nat_traversal": false,
+   "inner_mtu": 1438,
+   "overhead": 58,
+   "tcp_mss": 1398
+  },
+  {
+   "transform": "aes-cbc-256+hmac-sha1-96",
+   "nat_traversal": true,
+   "inner_mtu": 1422,
+   "overhead": 66,
+   "tcp_mss": 1382
+  },
+  {
+   "transform": "aes-cbc-256+hmac-sha256-128",
+   "nat_traversal": false,
+   "inner_mtu": 1438,
+   "overhead": 62,
+   "tcp_mss": 1398
+  },
+  {
+   "transform": "aes-cbc-256+hmac-sha256-128",
+   "nat_traversal": true,
+   "inner_mtu": 1422,
+   "overhead": 70,
+   "tcp_mss": 1382
+  }
+ ],
+ "step": [
+  {
+   "inner": 1444,
+   "total": 1500
+  },
+  {
+   "inner": 1445,
+   "total": 1500
+  },
+  {
+   "inner": 1446,
+   "total": 1500
+  },
+  {
+   "inner": 1447,
+   "total": 1504
+  },
+  {
+   "inner": 1448,
+   "total": 1504
+  },
+  {
+   "inner": 1449,
+   "total": 1504
+  },
+  {
+   "inner": 1450,
+   "total": 1504
+  },
+  {
+   "inner": 1451,
+   "total": 1508
+  }
+ ],
+ "macsec_with_sci": 32,
+ "macsec_without_sci": 24
+}
+105 checks, 0 failed

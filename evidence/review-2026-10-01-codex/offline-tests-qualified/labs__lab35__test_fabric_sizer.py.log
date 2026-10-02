@@ -1,0 +1,67 @@
+PASS  2 uplinks cannot serve 8 spines
+PASS  6 uplinks cannot serve 4 spines evenly
+PASS  8 uplinks over 8 spines is one link per spine
+PASS  8 uplinks over 4 spines is two links per spine
+PASS  zero spines rejected
+PASS  negative downlinks rejected
+PASS  non-integer port count rejected
+PASS  zero rate rejected
+PASS  cannot fail more spines than exist
+PASS  zero lanes per cage rejected
+PASS  booleans are not accepted as a spine count
+PASS  booleans are not accepted as a port count
+PASS  48x25 down = 1200 Gb/s
+PASS  8x100 up = 800 Gb/s
+PASS  normal ratio is exactly 3:2
+PASS  one spine lost leaves 700 Gb/s
+PASS  failure ratio is exactly 12:7
+PASS  leaf is not uplink-oversubscribed only when down<=up
+PASS  all spines lost isolates the leaf
+PASS  isolated leaf reports no failure ratio
+PASS  24 logical ports in 4-lane cages need 6 cages
+PASS  breakout rounds up, it does not truncate
+PASS  native ports are one cage each
+PASS  zero ports need zero cages
+PASS  leaf cage budget is enforced
+PASS  spine cage budget is enforced
+PASS  downlinks must cover whole servers
+PASS  dual-NIC servers halve the homogeneous server count
+PASS  hall has 8 spines
+PASS  hall has 32 leaves
+PASS  32 leaves x 8 uplinks = 256 logical fabric links
+PASS  leaf pools sum to the stated leaf count
+PASS  server interfaces sum to 608
+PASS  64 GPU nodes matches the front reference network
+PASS  GPU service leaves carry exactly the 64 GPU node attachments
+PASS  general normal ratio is exactly 3
+PASS  general one-spine-loss ratio is exactly 24/7
+PASS  general one-cage-loss ratio is exactly 6
+PASS  general has one link per spine
+PASS  storage normal ratio is exactly 2
+PASS  storage one-spine-loss ratio is exactly 16/7
+PASS  storage one-cage-loss ratio is exactly 4
+PASS  storage has one link per spine
+PASS  gpu_service normal ratio is exactly 1
+PASS  gpu_service one-spine-loss ratio is exactly 8/7
+PASS  gpu_service one-cage-loss ratio is exactly 8/7
+PASS  gpu_service has one link per spine
+PASS  a shared breakout cage loses 4 links at once, worse than one spine
+PASS  native-cage GPU uplinks lose only one link per cage
+PASS  per-spine logical links equal the leaf count
+PASS  per-spine cages are 6 breakout + 8 native = 14
+PASS  per-spine link capacity is 24x25 + 8x100 = 1400 Gb/s
+PASS  server-facing total is 20 Tb/s
+PASS  uplink total is 11.2 Tb/s
+PASS  the hall is server-oversubscribed overall
+PASS  2000-port exercise reaches 2016 server interfaces
+PASS  4000-port exercise reaches 4032 server interfaces
+PASS  2000-port exercise is 3:1
+PASS  4000-port exercise is 3:1
+PASS  max uniform leaves is bounded by spine cages and breakout
+PASS  exercise fabrics stay inside their spine cage budget
+PASS  4000-port exercise uses four spines
+PASS  4000-port exercise retains 12 free leaf cages
+PASS  examples() is strict-JSON serialisable
+
+64/64 checks passed
+Scope: offline arithmetic and validation only. No device, no Containerlab, no ASIC, no throughput measurement.

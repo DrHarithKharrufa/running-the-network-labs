@@ -1,0 +1,21 @@
+test_cleanup_does_not_touch_unowned_namespaces (__main__.InstrumentationTests.test_cleanup_does_not_touch_unowned_namespaces) ... ok
+test_cli_failure_is_not_empty_state (__main__.InstrumentationTests.test_cli_failure_is_not_empty_state) ... ok
+test_empty_cli_is_not_clean_configuration (__main__.InstrumentationTests.test_empty_cli_is_not_clean_configuration) ... ok
+test_exact_peer_set_is_healthy (__main__.InstrumentationTests.test_exact_peer_set_is_healthy) ... ok
+test_fdb_exact_row_passes (__main__.InstrumentationTests.test_fdb_exact_row_passes) ... ok
+test_fdb_external_flag_belongs_to_matched_row (__main__.InstrumentationTests.test_fdb_external_flag_belongs_to_matched_row) ... ok
+test_fdb_requires_mac_and_vtep_on_same_row (__main__.InstrumentationTests.test_fdb_requires_mac_and_vtep_on_same_row) ... ok
+test_fib_reads_actual_kernel (__main__.InstrumentationTests.test_fib_reads_actual_kernel) ... ok
+test_invalid_json_is_not_route_absence (__main__.InstrumentationTests.test_invalid_json_is_not_route_absence) ... ok
+test_list_json_is_not_expected_object (__main__.InstrumentationTests.test_list_json_is_not_expected_object) ... ok
+test_namespaces_are_distinct_between_labs (__main__.InstrumentationTests.test_namespaces_are_distinct_between_labs) ... ok
+test_ping_invocation_error_is_not_negative_delivery (__main__.InstrumentationTests.test_ping_invocation_error_is_not_negative_delivery) ... ok
+test_setup_error_calls_owned_cleanup (__main__.InstrumentationTests.test_setup_error_calls_owned_cleanup) ... ok
+test_unrelated_or_dead_fib_path_excluded (__main__.InstrumentationTests.test_unrelated_or_dead_fib_path_excluded) ... ok
+test_wait_does_not_hide_instrument_failure (__main__.InstrumentationTests.test_wait_does_not_hide_instrument_failure) ... ok
+test_wrong_peer_set_is_not_healthy (__main__.InstrumentationTests.test_wrong_peer_set_is_not_healthy) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.002s
+
+OK

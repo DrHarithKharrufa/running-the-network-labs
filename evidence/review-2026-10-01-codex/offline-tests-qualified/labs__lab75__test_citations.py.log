@@ -1,0 +1,18 @@
+test_conflict_not_resolved_by_citation_count (__main__.Tests.test_conflict_not_resolved_by_citation_count) ... ok
+test_corpus_labels_are_annotations_and_hashes_bind_passages (__main__.Tests.test_corpus_labels_are_annotations_and_hashes_bind_passages) ... ok
+test_derived_claim_requires_review_even_with_inputs (__main__.Tests.test_derived_claim_requires_review_even_with_inputs) ... ok
+test_exact_is_not_truth (__main__.Tests.test_exact_is_not_truth) ... ok
+test_fabricated_quote (__main__.Tests.test_fabricated_quote) ... ok
+test_invalid_citation_types (__main__.Tests.test_invalid_citation_types) ... ok
+test_invalid_claim_types (__main__.Tests.test_invalid_claim_types) ... ok
+test_invalid_quotes (__main__.Tests.test_invalid_quotes) ... ok
+test_missing (__main__.Tests.test_missing) ... ok
+test_negation_not_certified (__main__.Tests.test_negation_not_certified) ... ok
+test_no_case_returns_semantic_success (__main__.Tests.test_no_case_returns_semantic_success) ... ok
+test_unknown (__main__.Tests.test_unknown) ... ok
+test_wrong_target_number_device_release_and_qualification_not_certified (__main__.Tests.test_wrong_target_number_device_release_and_qualification_not_certified) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.000s
+
+OK

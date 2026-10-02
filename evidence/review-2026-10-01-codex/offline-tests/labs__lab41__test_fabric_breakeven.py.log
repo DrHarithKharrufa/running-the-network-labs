@@ -1,0 +1,58 @@
+ok    same communication ratio, opposite answers  [(True, False)]
+ok    ...and the ratio really was identical
+ok    a LOW ratio can justify the premium and a HIGH one fail to  [(0.1, 0.45)]
+ok    the old 25% rule of thumb would have got both of those wrong
+ok    premium is f_A - f_B  [0.19999999999999998]
+ok    wall-clock removed is c * s  [0.1]
+ok    the saved time is worth (g + f_A) * c * s
+ok    A is cheaper exactly when the premium is below that worth
+ok    the verdict agrees with the cost-per-work comparison
+ok    both forms agree at c=0.00 s=0.00
+ok    both forms agree at c=0.00 s=0.10
+ok    both forms agree at c=0.00 s=0.50
+ok    both forms agree at c=0.00 s=1.00
+ok    both forms agree at c=0.05 s=0.00
+ok    both forms agree at c=0.05 s=0.10
+ok    both forms agree at c=0.05 s=0.50
+ok    both forms agree at c=0.05 s=1.00
+ok    both forms agree at c=0.20 s=0.00
+ok    both forms agree at c=0.20 s=0.10
+ok    both forms agree at c=0.20 s=0.50
+ok    both forms agree at c=0.20 s=1.00
+ok    both forms agree at c=0.50 s=0.00
+ok    both forms agree at c=0.50 s=0.10
+ok    both forms agree at c=0.50 s=0.50
+ok    both forms agree at c=0.50 s=1.00
+ok    both forms agree at c=0.90 s=0.00
+ok    both forms agree at c=0.90 s=0.10
+ok    both forms agree at c=0.90 s=0.50
+ok    both forms agree at c=0.90 s=1.00
+ok    both forms agree at c=1.00 s=0.00
+ok    both forms agree at c=1.00 s=0.10
+ok    both forms agree at c=1.00 s=0.50
+ok    both forms agree at c=1.00 s=1.00
+ok    just above the break-even removal, A wins  [0.08695652173913043]
+ok    just below it, A loses  [0.08695652173913043]
+ok    the break-even removal is premium / (g + f_A)  [0.08695652173913043]
+ok    the break-even speedup accounts for the ratio  [(0.34782608695652173, 0.08695652173913043)]
+ok    a fabric that removes nothing is never worth a premium
+ok    a job with no communication is never worth a premium
+ok    with no premium the faster fabric always wins  [0.0]
+ok    ...because its premium is zero
+ok    a cheaper AND faster fabric wins outright
+ok    a dearer GPU makes the fabric premium easier to justify  [(0.8299999999999983, -0.1200000000000001)]
+ok    ...which is the real reason AI fabrics are bought expensive
+ok    rejects (2.0, 0.3, 0.1, 1.5, 0.4)  [the communication fraction must be between 0 and 1, got 1.5]
+ok    rejects (2.0, 0.3, 0.1, -0.1, 0.4)  [the communication fraction must be between 0 and 1, got -0.1]
+ok    rejects (2.0, 0.3, 0.1, 0.4, 1.5)  [the removed fraction must be between 0 and 1, got 1.5]
+ok    rejects (2.0, 0.3, 0.1, 0.4, -0.1)  [the removed fraction must be between 0 and 1, got -0.1]
+ok    rejects (-1, 0.3, 0.1, 0.4, 0.4)  [costs must not be negative]
+ok    rejects (2.0, -1, 0.1, 0.4, 0.4)  [costs must not be negative]
+ok    the report says the inputs are illustrative, not prices
+ok    the report says no vendor quotation was available
+ok    the report states that a ratio alone decides nothing
+ok    the report shows the fixed-ratio sweep flipping
+ok    the script exits 0  [0]
+ok    --json exits 0  [0]
+
+56/56 checks passed

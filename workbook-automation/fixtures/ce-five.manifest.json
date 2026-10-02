@@ -1,0 +1,17 @@
+{
+  "mode": "SYNTHETIC_OFFLINE_PACKET_FIXTURE",
+  "kind": "ce-five",
+  "packet_count": 5,
+  "packet_lengths": [
+    60,
+    60,
+    60,
+    60,
+    60
+  ],
+  "ethernet_fcs_included": false,
+  "minimum_frame_padding": "CE/WJH frames padded to 60 bytes before FCS; SRv6 frames larger",
+  "pcap_sha256": "c9462b947c5720d4305f1b7f6a116cae5fc3f9dbaf9db916764af26ac738487c",
+  "device_execution": false,
+  "generated_packets_are_not_captures": true
+}

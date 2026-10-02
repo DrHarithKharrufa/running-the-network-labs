@@ -1,0 +1,154 @@
+{
+  "scope": "Boundaries and counterexamples for the offline model; no network execution.",
+  "passed": 37,
+  "checks": [
+    {
+      "name": "exact",
+      "passed": true
+    },
+    {
+      "name": "wrong origin",
+      "passed": true
+    },
+    {
+      "name": "strict length",
+      "passed": true
+    },
+    {
+      "name": "unknown",
+      "passed": true
+    },
+    {
+      "name": "broad authorisation",
+      "passed": true
+    },
+    {
+      "name": "one match overrides nonmatches",
+      "passed": true
+    },
+    {
+      "name": "AS0 cannot match real origin",
+      "passed": true
+    },
+    {
+      "name": "other valid record with AS0",
+      "passed": true
+    },
+    {
+      "name": "IPv6 exact",
+      "passed": true
+    },
+    {
+      "name": "IPv6 too long",
+      "passed": true
+    },
+    {
+      "name": "address families independent",
+      "passed": true
+    },
+    {
+      "name": "empty data",
+      "passed": true
+    },
+    {
+      "name": "all covering records retained",
+      "passed": true
+    },
+    {
+      "name": "rightmost plain sequence origin",
+      "passed": true
+    },
+    {
+      "name": "asdot input",
+      "passed": true
+    },
+    {
+      "name": "empty path uses local AS",
+      "passed": true
+    },
+    {
+      "name": "optional AS prefix",
+      "passed": true
+    },
+    {
+      "name": "missing",
+      "passed": true
+    },
+    {
+      "name": "AS_SET",
+      "passed": true
+    },
+    {
+      "name": "confederation",
+      "passed": true
+    },
+    {
+      "name": "empty without local",
+      "passed": true
+    },
+    {
+      "name": "invalid text",
+      "passed": true
+    },
+    {
+      "name": "bad asdot",
+      "passed": true
+    },
+    {
+      "name": "invalid origin 0",
+      "passed": true
+    },
+    {
+      "name": "invalid origin -1",
+      "passed": true
+    },
+    {
+      "name": "invalid origin 4294967296",
+      "passed": true
+    },
+    {
+      "name": "invalid origin True",
+      "passed": true
+    },
+    {
+      "name": "invalid origin 1.5",
+      "passed": true
+    },
+    {
+      "name": "max too short",
+      "passed": true
+    },
+    {
+      "name": "max too long",
+      "passed": true
+    },
+    {
+      "name": "max string",
+      "passed": true
+    },
+    {
+      "name": "host bits",
+      "passed": true
+    },
+    {
+      "name": "bad tuple",
+      "passed": true
+    },
+    {
+      "name": "invalid VRP ASN",
+      "passed": true
+    },
+    {
+      "name": "report counts empty and unsupported separately",
+      "passed": true
+    },
+    {
+      "name": "unsupported path explains scope",
+      "passed": true
+    },
+    {
+      "name": "checkpoint exactly four /48s",
+      "passed": true
+    }
+  ]
+}

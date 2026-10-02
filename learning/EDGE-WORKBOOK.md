@@ -1,12 +1,12 @@
 # From a subscriber complaint to an interconnection decision
 
-Four paper sessions for Chapters 31–34. All observations below are **constructed teaching inputs**, not measured network results. Keep your predictions separate from supplied inputs and from anything you later execute. The arithmetic uses decimal units. The billing CSV is the book's existing synthetic fixture.
+Four paper sessions for Chapters 30–33. All observations below are **constructed teaching inputs**, not measured network results. Keep your predictions separate from supplied inputs and from anything you later execute. The arithmetic uses decimal units. The billing CSV is the book's existing synthetic fixture.
 
-Prerequisites: packet/return-path reasoning, rate and delay units, prefix lengths, ordinary BGP import/export policy and Chapters 24–30's service boundaries. If a step is unfamiliar, return to Chapters 7, 8 and 22. Use `EVIDENCE-FORM.md` for actual practice and `SELECTED-ANSWERS.md` after making your own attempt.
+Prerequisites: packet/return-path reasoning, rate and delay units, prefix lengths, ordinary BGP import/export policy and Chapters 23–29's service boundaries. If a step is unfamiliar, return to Chapters 6, 7 and 21. Use `EVIDENCE-FORM.md` for actual practice and `SELECTED-ANSWERS.md` after making your own attempt.
 
 ## Session 1 — The busy instant
 
-**Read:** Chapter 31. **Submit:** a service-allocation calculation and an acceptance matrix.
+**Read:** Chapter 30. **Submit:** a service-allocation calculation and an acceptance matrix.
 
 A fictional 100-Mb/s bottleneck carries 8 Mb/s of admitted priority traffic. Business and default queues are both continuously backlogged at residual weights 60:40. A failure leaves 50 Mb/s usable capacity; the priority workload stays at 8 Mb/s and within its envelope. Business service needs at least 30 Mb/s during that failure. Assume an ideal work-conserving scheduler, matching byte accounting and no other ceiling.
 
@@ -20,7 +20,7 @@ A fictional 100-Mb/s bottleneck carries 8 Mb/s of admitted priority traffic. Bus
 
 ## Session 2 — Authorised, addressed, still broken
 
-**Read:** Chapter 32. **Submit:** the first contradictory boundary and a recovery/negative-test plan.
+**Read:** Chapter 31. **Submit:** the first contradictory boundary and a recovery/negative-test plan.
 
 Constructed observations for an isolated subscriber fixture:
 
@@ -43,7 +43,7 @@ Constructed observations for an isolated subscriber fixture:
 
 ## Session 3 — The cheapest row loses packets
 
-**Read:** Chapter 33 and `labs/lab33/README.md`. **Submit:** one page separating invoice arithmetic, capacity and service evidence.
+**Read:** Chapter 32 and `labs/lab33/README.md`. **Submit:** one page separating invoice arithmetic, capacity and service evidence.
 
 Use the retained synthetic June fixture. From the lab directory, run:
 
@@ -61,7 +61,7 @@ Next use Answer 33.2's commit scenario. Identify A's remaining excess charge, B'
 
 ## Session 4 — Valid is one answer, not every answer
 
-**Read:** Chapter 34. **Submit:** a route-state table, policy decision and recovery test.
+**Read:** Chapter 33. **Submit:** a route-state table, policy decision and recovery test.
 
 Constructed VRPs:
 

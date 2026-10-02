@@ -1,0 +1,43 @@
+ok    the cheapest option changes with demand  [['leased 400G waves', 'leased 400G waves', 'IRU, 20 years', 'IRU, 20 years', 'IRU, 20 years', 'IRU, 20 years']]
+ok    a bought wavelength wins at low demand  [leased 400G waves]
+ok    a route wins at high demand  [IRU, 20 years]
+ok    there is a real crossover between them  [{'build vs leased waves': 800.0000962428749, 'IRU vs leased waves': 449.99990675225854, 'dark fibre vs leased waves': 710.0002178139985, 'build vs IRU': None}]
+ok    a route's cost per bit falls as demand rises  [(2700.0, 56.25)]
+ok    ...and its annual cost does not move at all
+ok    a wavelength service's annual cost DOES follow demand
+ok    ...in whole waves, so 401 Gb/s costs what 800 does
+ok    ...and 400 Gb/s costs one wave
+ok    the sawtooth is real: cost per bit is worse just past a boundary
+ok    the envelope compares at full waves, not on the sawtooth
+ok    the dearer route crosses over at a higher demand  [(800.0000962428749, 449.99990675225854)]
+ok    the crossover is where the two rates are equal  [449.99990675225854]
+ok    below it the wavelength is cheaper
+ok    above it the route is cheaper
+ok    halving the wave price moves the crossover out  [(1800.0003183372319, 449.99990675225854)]
+ok    two options of identical shape never cross
+ok    an IRU shorter than the comparison is renewed, not free
+ok    ...so its capex is counted twice over forty years
+ok    an owned route is not renewed
+ok    the O&M charge is part of the IRU, not an extra
+ok    a longer term spreads an owned route further
+ok    the term effect is reported for both
+ok    demand beyond a route's capacity is flagged
+ok    ...and such an option is not offered as cheapest
+ok    within capacity it is not flagged
+ok    rejects annualised_fixed(...)  [the term is a positive number of years]
+ok    rejects annualised_fixed(...)  [x: costs must not be negative]
+ok    rejects annualised_fixed(...)  [x: capacity must be positive]
+ok    rejects annualised_fixed(...)  [option 'x' has no capacity_gbps]
+ok    rejects cost_per_gbps_year(...)  [demand is positive, got 0]
+ok    rejects annual_cost(...)  [demand is not negative, got -1]
+ok    rejects compare(...)  [nothing to compare]
+ok    the report says the figures are illustrative, not prices
+ok    the report says no quotation was available
+ok    the report names the sawtooth
+ok    the report says an IRU is a right of use with an end date
+ok    the report warns that leased capacity is not automatically diverse
+ok    the report gives the non-cost reasons to build
+ok    the script exits 0  [0]
+ok    --json exits 0  [0]
+
+41/41 checks passed

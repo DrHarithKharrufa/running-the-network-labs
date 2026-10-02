@@ -1,0 +1,35 @@
+test_apply_verify_and_rollback (__main__.HTTPTests.test_apply_verify_and_rollback) ... ok
+test_authentication_failure (__main__.HTTPTests.test_authentication_failure) ... ok
+test_duplicate_form_fields (__main__.HTTPTests.test_duplicate_form_fields) ... ok
+test_failed_readback_is_explicitly_unknown (__main__.HTTPTests.test_failed_readback_is_explicitly_unknown) ... ok
+test_fixed_local_client_rejects_redirect (__main__.HTTPTests.test_fixed_local_client_rejects_redirect) ... ok
+test_form_wire_conversion (__main__.HTTPTests.test_form_wire_conversion) ... ok
+test_lost_write_response_not_retried (__main__.HTTPTests.test_lost_write_response_not_retried) ... ok
+test_oversized_and_malformed (__main__.HTTPTests.test_oversized_and_malformed) ... ok
+test_real_http_read (__main__.HTTPTests.test_real_http_read) ... ok
+test_restored_configuration_requires_recovered_service (__main__.HTTPTests.test_restored_configuration_requires_recovered_service) ... ok
+test_unknown_recovery_service_never_reports_success (__main__.HTTPTests.test_unknown_recovery_service_never_reports_success) ... ok
+test_advice_schema_and_citation (__main__.RouteTests.test_advice_schema_and_citation) ... ok
+test_ai_unavailable_keeps_case (__main__.RouteTests.test_ai_unavailable_keeps_case) ... ok
+test_clear_is_separate_observation (__main__.RouteTests.test_clear_is_separate_observation) ... ok
+test_collector_failure_is_retryable_not_healthy (__main__.RouteTests.test_collector_failure_is_retryable_not_healthy) ... ok
+test_concurrent_duplicate (__main__.RouteTests.test_concurrent_duplicate) ... ok
+test_conflicting_id (__main__.RouteTests.test_conflicting_id) ... ok
+test_dry_plan_does_not_write (__main__.RouteTests.test_dry_plan_does_not_write) ... ok
+test_future_nonfinite_and_boolean (__main__.RouteTests.test_future_nonfinite_and_boolean) ... ok
+test_generation_compare_and_swap (__main__.RouteTests.test_generation_compare_and_swap) ... ok
+test_human_decision_and_replay (__main__.RouteTests.test_human_decision_and_replay) ... ok
+test_inventory_and_duplicates (__main__.RouteTests.test_inventory_and_duplicates) ... ok
+test_no_containment_action (__main__.RouteTests.test_no_containment_action) ... ok
+test_normal_event_and_duplicate (__main__.RouteTests.test_normal_event_and_duplicate) ... ok
+test_restart_deduplicates (__main__.RouteTests.test_restart_deduplicates) ... ok
+test_snapshot_missing_and_duplicate (__main__.RouteTests.test_snapshot_missing_and_duplicate) ... ok
+test_snapshot_types (__main__.RouteTests.test_snapshot_types) ... ok
+test_stale_and_out_of_order (__main__.RouteTests.test_stale_and_out_of_order) ... ok
+test_unknown_mapping_and_injected_url (__main__.RouteTests.test_unknown_mapping_and_injected_url) ... ok
+test_zero_denominator_unknown (__main__.RouteTests.test_zero_denominator_unknown) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 1.249s
+
+OK

@@ -1,0 +1,42 @@
+ok    shipped Anvil topology parses
+ok    two spines are identified
+ok    four leaves are identified
+ok    four servers are not counted as fabric nodes
+ok    every leaf is wired to both spines
+ok    shipped topology reports 2 candidate paths for every pair
+ok    shipped topology has six leaf pairs
+ok    shipped topology reports no cabling gaps
+ok    shipped topology passes at maximum-paths 8
+ok    a removed leaf-spine link reduces the candidate path count
+ok    the missing link is named in the cabling gaps
+ok    a broken topology does not report ok
+ok    the intact version of the same file reports 2 paths
+ok    the intact version reports no gaps
+ok    maximum-paths below the candidate count is not ok
+ok    maximum-paths equal to the candidate count is ok
+ok    a leaf with no spine link yields zero candidate paths
+ok    zero candidate paths is not ok
+ok    the fallback parser finds the same links as PyYAML
+ok    the fallback parser finds the same nodes as PyYAML
+ok    --multipath 0 is rejected
+ok    a one-endpoint link is rejected
+ok    available parser one endpoint
+ok    available parser three endpoints
+ok    available parser unknown node
+ok    available parser missing interface
+ok    available parser no interface separator
+ok    available parser reused interface
+ok    available parser self link
+ok    available parser numeric endpoint
+ok    fallback one endpoint
+ok    fallback three endpoints
+ok    fallback unknown node
+ok    fallback missing interface
+ok    fallback no interface separator
+ok    fallback reused interface
+ok    fallback self link
+ok    fallback numeric endpoint
+
+38/38 checks passed
+usage: test_ecmp_check.py [-h] [--multipath MULTIPATH] [--json] [topology]
+test_ecmp_check.py: error: --multipath must be at least 1

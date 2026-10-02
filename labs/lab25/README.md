@@ -2,7 +2,7 @@
 
 Begin with a **static inventory**, then a separately identified deployment
 stage. The shared topology is a legacy IPv4 teaching configuration; its full
-provider/service integration is not yet validated. Chapter 25's diagram is a
+provider/service integration is not yet validated. Chapter 24's diagram is a
 logical planning view, not a port map or a production fleet. Do not infer
 readiness from the topology or the checks below passing.
 

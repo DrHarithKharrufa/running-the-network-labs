@@ -1,29 +1,62 @@
-# Qualification of RTN-2026-10-01
+# Qualification of RTN-2026-10-02
 
-**Which runs belong to this edition, and which are carried forward.** The test
-and topology runs described below were executed on 26 September 2026 and have
-**not** been repeated for this edition; the dated evidence folder
-`evidence/revision-2026-09-26/` is where they live and that date is part of the
-claim. What is new in RTN-2026-10-01 is three further FRR 10.2.1 topology runs
-executed on 1 October 2026, in `evidence/revision-2026-10-01/`: `ospf-mask-p2p`,
-`ospf-mask-broadcast` and `ospf-oneway-init`, 19 captures, all declared checks
-passing. Nothing below should be read as a statement that an earlier run was
-re-executed for this edition.
+**Which runs belong to this edition, and which are carried forward.** One
+test run was made for this edition, on 2 October 2026, and it is described
+first. The FRR topology runs below were executed on 26 September and 1 October
+2026 and have **not** been repeated for this edition; their dated evidence
+folders, `evidence/revision-2026-09-26/` and `evidence/revision-2026-10-01/`,
+are where they live and those dates are part of the claim. Nothing below should
+be read as a statement that an earlier run was re-executed for this edition.
 
-**This edition's run, 1 October 2026.** **107 of 109 declared test programs pass;
-two are NOT_RUN.** Linux, Python 3.11.15, in the container the evidence records name.
-Results in `test-results-2026-10-01/`. The count rose from 108 to 109 because
-`labs/reference-designs/test_check_addressing.py` was added this edition.
+**This edition's run, 2 October 2026.** **All 109 declared test programs pass in
+one run on one host**, including the two privileged Lab53 suites that earlier
+runs reported as NOT_RUN: Linux 6.18 in a container, as root, Python 3.11.15,
+iproute2 6.1.0 and nftables 1.0.9, using `python run-all-tests.py --include-live`.
+The uRPF suite reported 79 checks and the infrastructure-ACL suite 46, none
+failed. Results, with the SHA-256 of every test program, are in
+`test-results-2026-10-02/execution.json`. This is the first single-host run of
+the complete declared set; it is still 109 programs, not 109 network
+deployments, and only Lab53 uses real privileged packet filters.
 
-**The previous run, 26 September 2026, retained for comparison.** 106 of 108
-passed, two NOT_RUN. That run was on Windows Python 3.12.14 for 102 of them, with
-four additional Linux/Python 3.14.4 fixtures; two changed suites were rerun after
+**Earlier runs, retained for comparison.** On 1 October 2026, 107 of 109 passed
+with the two Lab53 suites NOT_RUN (Linux, Python 3.11.15;
+`test-results-2026-10-01/`). On 26 September 2026, 106 of 108 passed, two
+NOT_RUN; that run was on Windows Python 3.12.14 for 102 of them, with four
+additional Linux/Python 3.14.4 fixtures, and two changed suites were rerun after
 corrections and not counted twice (15 harness tests, 30 practical-route tests).
 See `evidence/test-programs-2026-09-26.json`; full logs are in the author
-package's QA/completion. The two runs are on different operating systems and
-different Python versions and are not a measurement of the same thing twice.
+package's QA/completion. These runs are on different operating systems and
+Python versions and are not a measurement of the same thing twice.
 
-The two NOT_RUN programs are labs/lab53/test_iacl_exceptions.py and labs/lab53/test_urpf_modes.py. Their privileged Linux packet-filter environment was not available in this run. Do not convert this into “all tests pass”. Other lab hardware/service requirements remain per-lab; these 109 programs are not 109 network deployments.
+The count rose from 108 to 109 in the earlier edition RTN-2026-10-01, when
+`labs/reference-designs/test_check_addressing.py` was added. Other lab
+hardware/service requirements remain per-lab.
+
+## Independent AI review execution, 1–2 October 2026
+
+The two previously NOT_RUN Lab53 suites were executed as root on WSL2 Linux
+6.18.33.2, Python 3.14.4, nftables 1.1.6 and iproute2 6.19.0. The uRPF suite
+reported **79 checks, 0 failed**; the infrastructure ACL suite reported
+**46 checks, 0 failed**, with no privileged skips. The raw logs, environment,
+source hashes and empty post-run namespace listing are in
+`evidence/review-2026-10-01-codex/lab53/`. This is new Linux namespace evidence,
+not commercial forwarding-plane qualification and not a relabelling of earlier
+109-program runs. The earlier NOT_RUN entries remain historical records.
+
+**Additional suite coverage.** This review ran 108 declared programs on
+Linux/Python 3.14.4 (one NOT_RUN for absent pinned Lab71 packages), and ran that
+remaining Lab71 program separately on Windows/Python 3.12.10: 19 tests passed.
+Thus every one of the 109 declared programs had a successful run across those
+two environments; that review did not claim a single-host 109/109 run (this
+edition's run, above, is one). The Windows quick run
+also passed 102 programs with seven NOT_RUN. The first Windows run's missing
+Jinja2 failure is retained; its prerequisite declaration was corrected.
+Only Lab53 uses real privileged packet filters; many other suites use synthetic
+inputs, fixtures or command doubles. Anonymous public-tag acquisition and the
+three printed entry tasks succeeded. See this review's evidence folder.
+
+Three independent AI reader reviews and simulated reader walkthroughs were
+performed. They are not human participant trials or a physical bound proof.
 
 ## Fresh routing and workflow execution
 
@@ -43,4 +76,20 @@ No fresh commercial NOS, hardware, ASIC, RF/optical, cloud-platform, alarm-storm
 
 READ workbook panels remain documentation examples. Their complete Nokia SR Linux 24.10 baseline and official source URLs are supplied, but no new SR Linux run is claimed. A virtual FRR pass is not vendor or hardware acceptance.
 
-No real novice/engineer/leader reader trial or independent subject review was performed in this correction pass. The route is implemented and locally tested; its teaching effectiveness and reader enjoyment still need observation. The matching public release, Amazon Previewer and physical proof remain publication gates.
+No real novice/engineer/leader reader trial or independent subject review was performed in this correction pass. The route is implemented and locally tested; its teaching effectiveness and reader enjoyment still need observation. Amazon's previewer and a physical bound proof remain publication gates; this tag is the matching public release.
+
+## The Configuration Workbook
+
+The workbook has 120 tasks across ten parts, 714 documentary
+READ panels and six explicit NO_PANEL outcomes. The dated official syntax
+provenance is in the source QA ledger and reader baseline register. All six
+planned outcomes were pursued for each task. None of these new panels is
+promoted to RUN by the controller checks.
+
+The new workbook kit passed 196 synthetic offline guard/XML checks and 21
+counter checks. Local TCP/UDP services and CA-verified HTTPS were exercised,
+including incomplete-message, wrong-server-name and absolute-deadline
+negatives. Packet files were generated and decoded without transmitting them
+to a device. The author QA reports record the precise scope and hashes.
+Three independent AI readers reviewed the continuation and performed simulated
+walkthroughs; these are not human teaching trials or specialist acceptance.

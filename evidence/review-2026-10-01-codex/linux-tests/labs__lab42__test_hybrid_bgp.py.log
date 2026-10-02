@@ -1,0 +1,42 @@
+ok    for one prefix, the higher preference wins
+ok    ...and the loser is recorded, not discarded silently
+ok    a clean design raises no findings  [[]]
+ok    traffic follows the preferred path
+ok    a more-specific on the WORSE path still wins the forwarding decision  [vpn]
+ok    ...even though its local-preference is a quarter of the other's
+ok    ...while an address outside it still takes the circuit
+ok    ...and the model REPORTS it rather than leaving you to notice  [['10.10.1.0/24 is a more-specific of 10.10.0.0/16 an']]
+ok    the report names both the specific and the summary
+ok    raising the circuit preference to 4000 changes nothing
+ok    removing the more-specific is what fixes it
+ok    on equal preference the shorter AS-path wins
+ok    ...but preference is checked first
+ok    with the circuit down the VPN carries the prefix
+ok    ...and everything is still reachable
+ok    with both down nothing reaches the cloud
+ok    ...and that is reported as an error
+ok    exceeding the accept limit is an error
+ok    ...and the consequence modelled is TOTAL loss, not a trimmed table  [[]]
+ok    ...with the count and the limit both named
+ok    exactly at the limit is fine
+ok    a supernet swallowing the cloud range is flagged  [['the data centre advertises 10.0.0.0/8, which contains the cl']]
+ok    a properly scoped advertisement is not flagged
+ok    two different prefixes both survive best path
+ok    ...each keeping its own path
+ok    rejects ('10.10.0.1/16', 'x')  [10.10.0.1/16 is not a usable prefix: 10.10.0.1/16 has host b]
+ok    rejects ('not-a-prefix', 'x')  [not-a-prefix is not a usable prefix: 'not-a-prefix' does not]
+ok    rejects a negative local-preference
+ok    rejects an AS-path given as a string
+ok    rejects identical ASNs on both sides
+ok    rejects an accept limit of zero
+ok    rejects a malformed probe address
+ok    rejects an empty route set
+ok    a lookup that matches nothing returns None
+ok    the report says both sessions stay up
+ok    the report names the fix as advertisement policy
+ok    the report disclaims being a router
+ok    the report shows the same preference producing two answers
+ok    the script exits 0  [0]
+ok    --json exits 0  [0]
+
+40/40 checks passed

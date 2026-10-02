@@ -1,0 +1,19 @@
+# Optional GitHub Actions adaptation. Offline only: no deployment or device secrets.
+name: workbook-offline-fixtures
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned offline dependencies
+        run: python -m pip install -r Companion/workbook-automation/requirements-controller.txt
+      - name: Test offline artifacts
+        run: python Companion/workbook-automation/ci.py
+# Pin external actions to reviewed immutable commit SHAs before operational use.
+# This example assumes the source archive repository root, not Companion root.

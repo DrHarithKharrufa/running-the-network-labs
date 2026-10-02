@@ -1,0 +1,6 @@
+case,interface_before,interface_after,width_bits,seconds,uptime_before,uptime_after,discontinuity_before,discontinuity_after,octets_before,octets_after,max_bit_rate,expected
+ordinary,eth1,eth1,64,2,100,102,boot-A,boot-A,1000,1600,1000000,2400 bit/s
+reset,eth1,eth1,64,2,100,1,boot-A,boot-B,10000,200,1000000,REFUSE reset/discontinuity
+bounded-wrap,eth1,eth1,32,1,100,101,boot-A,boot-A,4294967200,200,10000,2368 bit/s
+ambiguous-wrap,eth1,eth1,32,4000,100,4100,boot-A,boot-A,4294967200,200,10000000000,REFUSE possible multiple wraps
+changed-interface,eth1,eth2,64,2,100,102,boot-A,boot-A,1000,1600,1000000,REFUSE changed identity

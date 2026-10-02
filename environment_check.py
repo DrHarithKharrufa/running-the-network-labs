@@ -20,12 +20,12 @@ def inspect(contract):
             'status':'MISSING' if missing else 'MANUAL_CHECK_REQUIRED' if contract.get('manual') or not contract.get('fully_declared',True) else 'DECLARED_PREREQUISITES_DETECTED'}
 
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--chapter',type=int)
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--lab-id','--chapter',dest='chapter',type=int,help='Stable companion lab identifier; --chapter is a legacy alias, not the current printed chapter number.')
     p.add_argument('--mode',choices=['offline','live'],default='offline');p.add_argument('--json',action='store_true');a=p.parse_args()
     manifest=json.loads((HERE/'prerequisites.json').read_text());chosen=manifest['labs']
     if a.chapter is not None:
         name=f'lab{a.chapter:02}'
-        if name not in chosen:p.error('chapter has no lab directory')
+        if name not in chosen:p.error('stable lab identifier has no lab directory')
         chosen={name:chosen[name]}
     results={}
     for name,modes in chosen.items():

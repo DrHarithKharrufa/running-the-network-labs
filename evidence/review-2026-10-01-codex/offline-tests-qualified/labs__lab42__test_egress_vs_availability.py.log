@@ -1,0 +1,43 @@
+ok    the bill is volume times rate  [19.0]
+ok    intra-zone transfer costs nothing here
+ok    every line is itemised
+ok    a custom tariff is used, not the default
+ok    one zone is down when its zone is
+ok    two zones are down only when both are  [1e-06]
+ok    so two zones expect far less downtime
+ok    downtime cost is hours times the rate
+ok    three zones are better than two
+ok    two zones with NO failover are worse than one zone  [(0.001998999999999973, 0.001)]
+ok    ...and by very nearly the factor you would expect  [0.001998999999999973]
+ok    partial failover lands between the two
+ok    perfect failover is the best case
+ok    collapsing really does cut the transfer bill  [(2150.0, 1750.0)]
+ok    ...and really does raise expected downtime  [(3.65, 3650.0)]
+ok    the total counts both sides
+ok    at a high downtime cost, collapsing is NOT the saving it looks like  [(2153.65, 5400.0)]
+ok    at a low downtime cost the answer flips --- it is a trade, not a rule
+ok    ...so the model is not answering by construction
+ok    with zones that never fail, collapsing is simply cheaper
+ok    ...and no design has any expected downtime
+ok    exactly one design is marked cheapest
+ok    the cheapest keeps both zones AND stops shipping raw data out  [two zones, analytics kept cloud-side]
+ok    ...beating the collapsed design outright
+ok    ...and it saves more than collapsing did
+ok    rejects availability_cost(0, 0.1, 100)  [a tier occupies at least one zone, got 0]
+ok    rejects availability_cost(2, 1.5, 100)  [a probability is between 0 and 1, got 1.5]
+ok    rejects availability_cost(2, -0.1, 100)  [a probability is between 0 and 1, got -0.1]
+ok    rejects availability_cost(2, 0.1, -1)  [the cost of an hour down must not be negative]
+ok    rejects availability_cost(2, 0.1, 100, 2.0)  [failover effectiveness is between 0 and 1, got 2.0]
+ok    rejects transfer_bill([('x', 'no_such_kind', 1)],)  [no tariff for 'no_such_kind'; the kinds are cross_region, cr]
+ok    rejects transfer_bill([('x', 'internet', -5)],)  [x: volume must not be negative]
+ok    rejects a negative tariff
+ok    the report says the figures are the reader's inputs
+ok    the report disclaims having a price list
+ok    the report calls it a trade, not a saving
+ok    the report states the saving that costs nothing
+ok    the report shows the hours of downtime, not just the money
+ok    the script exits 0  [0]
+ok    --json exits 0  [0]
+ok    the downtime cost is settable from the command line
+
+41/41 checks passed

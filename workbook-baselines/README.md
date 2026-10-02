@@ -1,6 +1,23 @@
 # Workbook baselines and platform boundaries
 
-Edition RTN-2026-10-01. The workbook is a selected IGP/BGP sample, not equal tested coverage of every vendor. Its task pages are fragments; the complete FRR starting configurations and addressing are in `harness/topologies/`. Do not concatenate r1 and r2 panels into one router session.
+Edition RTN-2026-10-02.
+
+The current workbook contains 120 tasks across ten parts, with six vendor
+outcomes per task. Its 714 READ panels establish returned documentation syntax;
+six NO_PANEL results preserve unresolved source qualification. READ is not a
+device execution claim. Each task's context and acceptance experiment define
+its preparation. Additional core/EVPN preparation contracts are in
+`../workbook-fixtures/README.md`; bounded stimuli and offline automation are in
+`../workbook-automation/`. Do not concatenate different nodes or task fragments
+into one router session.
+
+## Historical IGP/BGP execution baselines
+
+The table below belongs to the retained RTN-2026-10-01 historical sample,
+identified as H-IGP/H-BGP in the current workbook. It does not certify current
+tasks with the same original numbers. Complete FRR starting configurations and
+addressing are in `harness/topologies/`. Preserve the historical records and
+their exact image/version before attempting a new qualification.
 
 | Task family | FRR baseline / node |
 | --- | --- |

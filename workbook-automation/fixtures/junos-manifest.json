@@ -1,0 +1,15 @@
+{
+  "platform": "junos",
+  "device": "r1-wb",
+  "interface": "ge-0/0/0",
+  "description": "WB-AUT owned description",
+  "allowed_fields": [
+    "platform",
+    "device",
+    "interface",
+    "description"
+  ],
+  "max_observation_age_seconds": 300,
+  "max_description_length": 80,
+  "scope": "one description leaf; no deployment permission"
+}

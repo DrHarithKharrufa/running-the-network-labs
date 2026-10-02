@@ -53,7 +53,7 @@ The observation method is independent of the actuator's returned success value,
 but both use the same simulated device object; it is not an independent physical
 measurement. The `healthy` flag is injected test state, not a real health probe.
 
-Timeouts are injected exceptions here; Chapter 71 separately exercises real
+Timeouts are injected exceptions here; Chapter 70 separately exercises real
 local coroutine deadlines. Remote cancellation, long-running writes and device
 rollback are not modelled. The before-write hook represents admitted work waiting
 to act. The after-write hook shows why stopping a worker cannot undo an already

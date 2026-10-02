@@ -1,0 +1,57 @@
+ok    a one-way measurement can be NEGATIVE across a lossy splice  [(-0.09, 0.2)]
+ok    the true loss is the mean of the two directions  [0.2]
+ok    the backscatter term is half the difference
+ok    the one-way error is reported, not hidden
+ok    a symmetric event needs no correction
+ok    ...and is not a gainer
+ok    averaging is order-independent
+ok    the sign of the backscatter term reverses with direction
+ok    loss + d reconstructs the A->B reading at (0, 0)
+ok    loss + d reconstructs the A->B reading at (1, -0.4)
+ok    loss + d reconstructs the A->B reading at (-0.3, 0.9)
+ok    loss + d reconstructs the A->B reading at (2.5, 2.5)
+ok    a 100 ns pulse has a dead zone of about ten metres  [10.209523838714073]
+ok    a longer pulse resolves less
+ok    a shorter pulse resolves more
+ok    the dead zone scales linearly with pulse width
+ok    a higher index shortens it
+ok    events closer than the dead zone merge
+ok    ...and further apart do not
+ok    the same separation resolves at a shorter pulse
+ok    the overlap note does not claim separately measured losses
+ok    the route position is SHORTER than the optical distance
+ok    the error is hundreds of metres, not "within metres"  [374.84607745779067]
+ok    more closures push the route position back further
+ok    slack is counted per closure
+ok    a launch lead is removed as well
+ok    with no slack, no lead and no helix the two agree
+ok    the helix allowance alone still shifts it
+ok    a larger helix allowance shifts it further
+ok    a sub-one-per-cent index error is hundreds of metres at 43 km  [200.08173273396324]
+ok    ...and is under half a per cent  [0.46315215910639473]
+ok    the right index gives no error
+ok    a lower actual index reads short
+ok    the error scales with distance
+ok    a splice and a bend can read ALIKE at 1550 nm  [(0.31, 0.32)]
+ok    ...and are told apart by the second wavelength
+ok    ...which one trace cannot supply
+ok    reflectance identifies a connector
+ok    a loss worse at the SHORTER wavelength is called out as odd
+ok    the delta is reported
+ok    rejects true_event_loss('0.1', 0.2)  [a measured loss is a number in dB, got '0.1']
+ok    rejects dead_zone_m(0,)  [a pulse width is positive, got 0]
+ok    rejects dead_zone_m(-5,)  [a pulse width is positive, got -5]
+ok    rejects dead_zone_m(100, 0.9)  [a group index is greater than 1, got 0.9]
+ok    rejects dig_position(-1,)  [a distance is not negative, got -1]
+ok    rejects index_error(10, 1.0, 1.46)  [a group index is greater than 1, got 1.0]
+ok    rejects index_error(10, 1.46, 0.5)  [a group index is greater than 1, got 0.5]
+ok    rejects a negative closure count
+ok    the report disclaims having an OTDR
+ok    the report says a splice cannot amplify
+ok    the report rejects "within metres"
+ok    the report says the pulse width is a choice you made
+ok    the report names the second wavelength as the discriminator
+ok    the script exits 0  [0]
+ok    --json exits 0  [0]
+
+55/55 checks passed

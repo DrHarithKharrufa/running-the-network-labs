@@ -1,7 +1,7 @@
 # Lab 42 — the hybrid edge, the addressing, and the trade nobody prices
 
 Three calculators. None touches a cloud account, an API or a router, and none
-validates a configuration. What they do is take the three claims Chapter 42
+validates a configuration. What they do is take the three claims Chapter 41
 rests on and put them somewhere they can be checked — and, more to the point,
 somewhere a plausible design can **fail**.
 

@@ -1,10 +1,10 @@
 # Provider services: seven paper sessions
 
-Use Chapters 24–30 after the routing workbook. These sessions follow one invented provider review from receiver interest to an accepted customer service. **Every observation below is constructed for teaching. None is a new lab result, device capture or measurement.** The packet identifiers and numerical inputs are local to this workbook; they do not amend the shared Kestrel lab topology.
+Use Chapters 23–29 after the routing workbook. These sessions follow one invented provider review from receiver interest to an accepted customer service. **Every observation below is constructed for teaching. None is a new lab result, device capture or measurement.** The packet identifiers and numerical inputs are local to this workbook; they do not amend the shared Kestrel lab topology.
 
 Spend roughly 25–40 minutes on each session. First submit your prediction and the next observation you would collect; then read the model reasoning. Keep unperformed tests under that name. For actual execution, select a supported lab adapter and its validation record, agree a bounded test, and use EVIDENCE-FORM.md. Linux, Containerlab and vendor/hardware results remain separate evidence.
 
-## 1. The joined receiver with no picture — Chapter 24
+## 1. The joined receiver with no picture — Chapter 23
 
 **Constructed observations.** Source S=10.1.0.10 sends to G=232.1.1.1. At the last-hop router, the effective RPF interface for S is A. Receiver interest exists on B; a snooping entry includes the receiver's switch port. A capture shows stream packets arriving at the router on C. No matching packets leave B. The address and interfaces are teaching identifiers, not a deployable configuration.
 
@@ -14,7 +14,7 @@ Spend roughly 25–40 minutes on each session. First submit your prediction and 
 
 **Change the input.** The RPF check now agrees, but the outgoing list is empty. Which receiver/membership transition must you inspect next? Explain why this is a new fault boundary.
 
-## 2. The provider map earns its keep — Chapter 25
+## 2. The provider map earns its keep — Chapter 24
 
 **Inputs.** Use the chapter's 50,000 subscriptions, 900 business circuits and artificial graph exposure model. Two candidate failure pairs both expose 50,900 units: the borders, or the represented PE plus BNG. The shared graph implements neither subscriber authentication nor CGN.
 
@@ -24,7 +24,7 @@ Spend roughly 25–40 minutes on each session. First submit your prediction and 
 
 **Change the input.** A second “independent” circuit uses the first circuit's building entrance and duct. Update the failure model before adding the bandwidths.
 
-## 3. Follow the service label — Chapter 26
+## 3. Follow the service label — Chapter 25
 
 **Constructed observations.** The predicted stack is [1002,24002] on PE1–P1, [2003,24002] on P1–P2 and [24002] on P2–PE2 after PHP, top first. A capture agrees on the first link but shows unlabelled IP leaving P1. A small ping to PE2's loopback succeeds. These are invented observations, not a revision to the book's historical MPLS execution.
 
@@ -34,7 +34,7 @@ Spend roughly 25–40 minutes on each session. First submit your prediction and 
 
 **Change the input.** The same numeric frame limit includes FCS. The answers become 1,472 and 1,444. Explain why a four-byte accounting change can create an apparently intermittent large-packet fault.
 
-## 4. The resilience slide loses a path — Chapter 27
+## 4. The resilience slide loses a path — Chapter 26
 
 **Inputs.** Two 10 Gb/s paths carry 8 Gb/s sensitive and 6 Gb/s flexible demand. Delays are 4 ms through Manchester and 9 ms through Birmingham. A fictional service owner requires the sensitive traffic's path delay to remain at most 6 ms under either specified single-path failure.
 
@@ -44,7 +44,7 @@ Spend roughly 25–40 minutes on each session. First submit your prediction and 
 
 **Change the input.** Require 1 Gb/s extra survivor headroom and permit 10 ms path delay. The model's flexible allowance falls to 1 Gb/s; the stated path-delay contradiction disappears. Packet loss, queueing and total application delay still require acceptance.
 
-## 5. Fit the SRv6 packet — Chapter 28
+## 5. Fit the SRv6 packet — Chapter 27
 
 **Inputs.** The service needs a 1,500-byte inner IP packet. Full encapsulation stores five SIDs with no TLVs. The candidate outer-IP path MTU is 1,600. A second proposal claims “compression means only 40 extra bytes” but gives no SID layout or service behaviour.
 
@@ -54,7 +54,7 @@ Spend roughly 25–40 minutes on each session. First submit your prediction and 
 
 **Change the input.** Six transport instructions and one service instruction each need a 16-bit slot after a 32-bit block. Six slots cannot contain seven instructions; revise the encoding and then the MTU budget.
 
-## 6. Accept the VPN in both directions — Chapter 29
+## 6. Accept the VPN in both directions — Chapter 28
 
 **Constructed observations.** The egress PE has learned the remote customer prefix. The ingress VPN table receives its route, but the intended VRF does not import it. Underlay loopback probes succeed. An unrelated tenant uses the same customer address in a separate VRF.
 
@@ -64,7 +64,7 @@ Spend roughly 25–40 minutes on each session. First submit your prediction and 
 
 **Change the input.** Both overlapping /24s now belong to one routed customer VPN. Explain why different RDs alone do not solve the customer's destination ambiguity; propose a service-level addressing/context remedy.
 
-## 7. A green multihoming screen is not the sign-off — Chapter 30
+## 7. A green multihoming screen is not the sign-off — Chapter 29
 
 **Constructed observations.** The CE has a two-member LAG. Matching ESI and DF election are visible. A numbered remote broadcast reaches the CE twice; one known-unicast flow succeeds. A large inner-IP test of 1,500 bytes is planned over untagged IPv4 VXLAN with outer-IP MTU 1,500.
 
@@ -78,4 +78,4 @@ Spend roughly 25–40 minutes on each session. First submit your prediction and 
 
 Keep seven predictions, their calculations, each first contradictory observation, a restoration/acceptance plan and one decision memo. Score mechanism/units, evidence/limits, service/recovery and ownership/communication from 0 to 2 each. Aim for at least 6/8 with no zero and no unresolved material technical or recovery error. A peer should change an input and ask you to revise the conclusion. Without a peer, explain the change aloud and retain your first and corrected answers.
 
-Chapters 31–34 continue provider operation with QoS, subscriber services, peering and provider security. Real service acceptance still requires execution in the relevant environment, observation of failure and recovery, and the service owner's criteria. This workbook supplies practice in reasoning and test design.
+Chapters 30–33 continue provider operation with QoS, subscriber services, peering and provider security. Real service acceptance still requires execution in the relevant environment, observation of failure and recovery, and the service owner's criteria. This workbook supplies practice in reasoning and test design.

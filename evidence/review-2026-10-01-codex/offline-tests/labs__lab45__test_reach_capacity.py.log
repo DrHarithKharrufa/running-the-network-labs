@@ -1,0 +1,71 @@
+ok    line rate is baud x bits x two polarisations  [944.0]
+ok    client rate is the line rate less the FEC overhead  [786.6666666666667]
+ok    the two differ by a useful amount
+ok    zero overhead makes them equal
+ok    every shipped mode carries its own baud, bits, overhead and requirement
+ok    two modes share a modulation name and differ in requirement
+ok    a longer path has less OSNR  [(42.08970004336018, 17.920599913279627)]
+ok    distance is an input that does something
+ok    N identical sections cost 10log10(N)
+ok    more launch power raises OSNR one for one
+ok    a quieter amplifier raises it one for one
+ok    ROADM passes cost OSNR  [(42.08970004336018, 21.194627725147722)]
+ok    ...a lot of it
+ok    each pass is counted as a section, not only as a penalty  [10]
+ok    the filtering penalty is separate from the noise
+ok    and is reported separately
+ok    a section breakdown is returned
+ok    a 480 km path can have MORE OSNR than a 40 km one  [(480, 22.41728195535137, 40, 21.13079110900872)]
+ok    ...so distance alone does not decide the modulation
+ok    more gain at the same points changes the OSNR by exactly zero  [0.0]
+ok    halving every span DOES help  [4.723227891075473]
+ok    ...and the note says why the two differ
+ok    a quieter amplifier helps
+ok    one fewer ROADM pass helps
+ok    raising launch power helps against ASE alone
+ok    ...and its note warns about the nonlinear optimum
+ok    every option reports which modes it would make feasible
+ok    a high OSNR makes every mode feasible
+ok    ...and the best is the highest client rate, not the highest order
+ok    a low OSNR makes none feasible
+ok    the margin is subtracted before the comparison
+ok    a higher-baud lower-order mode can beat a lower-baud higher-order one
+ok    rejects {'launch_dbm': 0, 'fibre_spans': 0, 'span_km': 80}  [a path has at least one fibre span, got 0]
+ok    rejects {'launch_dbm': 0, 'fibre_spans': 1, 'span_km': 0}  [a span length is positive, got 0]
+ok    rejects {'launch_dbm': 0, 'fibre_spans': 1, 'span_km': 80, 'roadm_passes': -1}  [ROADM passes is not negative]
+ok    rejects {'launch_dbm': 0, 'fibre_spans': 1, 'span_km': 80, 'amp_nf_db': -1}  [the noise figure, attenuation and node loss must b]
+ok    rejects mode('m', 0, 4, 20.0, 20.0)  [m: baud must be positive]
+ok    rejects mode('m', 118, 0, 20.0, 20.0)  [m: bits per symbol must be positive]
+ok    rejects mode('m', 118, 4, -1.0, 20.0)  [m: FEC overhead is not negative]
+ok    rejects a negative margin
+ok    the report distinguishes line rate from client rate
+ok    the report says the ROADM count can decide more than the kilometres
+ok    the report shows a longer path with more OSNR
+ok    the report separates the two meanings of "add amplification"
+ok    the report disclaims equipment
+ok    the report says no mode is a vendor's
+ok    the script exits 0  [0]
+ok    --json exits 0  [0]
+ok    the published table has seven rows  [7]
+ok    every row carries rate, modulation, baud, FEC and required OSNR
+ok    two FEC types appear
+ok    the FEC alone moves required OSNR by 2 dB  [2.0]
+ok    at the same rate
+ok    the same modulation
+ok    and a baud rate within one per cent
+ok    so a mode named only by its modulation is not named
+ok    every oFEC mode quotes the same figure
+ok    across four different rates  [[100, 200, 300, 400]]
+ok    including both QPSK and 16QAM
+ok    the illustrative set does vary, as physics would
+ok    so the published figure reads as a floor, not a per-mode requirement
+ok    CD tolerance varies by more than forty times across the modes  [42]
+ok    the cFEC mode has the least CD tolerance
+ok    the report prints the published table
+ok    it states the FEC finding
+ok    it states the floor reading
+ok    it warns against designing on the difference
+ok    it calls the figures manufacturer claims
+ok    it does not present them as properties of ZR or ZR+
+
+69/69 checks passed

@@ -1,6 +1,6 @@
 # Lab 64.1 / 64.2 / 64.3 — what a method buys, what a questionnaire is worth, and where a correct control plane still drops your packet
 
-Three labs for Chapter 64. All are offline calculation and enumeration, with
+Three labs for Chapter 63. All are offline calculation and enumeration, with
 one seeded simulation used only to cross-check a closed form. No device was
 queried, no NOS was executed and no vendor's behaviour is claimed. The
 pipeline in 64.3 is a teaching model of forwarding, not anyone's silicon; the
@@ -55,8 +55,12 @@ chance of having missed it.
 
 The same question in the time domain closes the chapter's intermittent-fault
 section. A fault that has stopped recurring is unobserved, not fixed: against a
-link flapping twice a day, three quiet days leave odds of about 1 in 404 that it
-is still broken, and 95 % confidence arrives after about a day and a half. For
+link flapping twice a day, assume stationary Poisson events, perfect observation,
+no such events after a successful repair, and a prior repair probability of 0.5.
+Three quiet days then leave a posterior probability of about 1 in 404 that it is
+still broken; 95% posterior confidence arrives after about 1.472 days. The chance
+of that silence if it is still broken is a different quantity, exp(−6). Changing
+the prior, workload or observation model changes these confidence values. For
 something that happens twice a year the same confidence would need roughly **537
 days** of silence, which is why rare faults are closed on evidence of the cause
 rather than on evidence of the silence. The residual doubt is carried in
@@ -99,7 +103,7 @@ beforehand that configuration errors cause more than **55 %** of all faults.
 
 It also prices the correlation everybody quotes. If changes arrive steadily and
 the fault's start time is independent of them, an unrelated change lands inside
-a quarter-hour window anyway with probability 1 − e^(−rate × window):
+a symmetric ±15-minute window (30 minutes in total) anyway with probability 1 − e^(−rate × window):
 
 | changes/day | coincidence | likelihood ratio | a 70 % prior becomes |
 |---|---|---|---|

@@ -78,7 +78,7 @@ sudo python3 urpf_modes.py
 sudo python3 test_urpf_modes.py
 ```
 
-Four namespaces, a real forwarding router, real UDP datagrams, and the kernel's
+Three namespaces, a real forwarding router, real UDP datagrams, and the kernel's
 own `rp_filter` — mode 1 is RFC 3704 strict, mode 2 is RFC 3704 loose. The
 customer is allocated `10.20.0.0/24`, the router's best route to it points out
 link A, and the customer also sends traffic in on link B.
@@ -170,9 +170,11 @@ itself.
 - A script that reads a dictionary is reading a description. It can sort that
   description and say what evidence would settle each claim. It cannot certify a
   control, and it should not print a word that suggests it has.
-- uRPF asks whether a source is *reachable*. Only a per-customer prefix filter
-  (or feasible-path uRPF, RFC 8704) asks whether the customer is *entitled* to
-  it.
+- Loose uRPF asks whether a source is *reachable*. A per-customer prefix filter
+  can enforce the customer's declared allocation. Feasible-path uRPF uses
+  additional routing information to tolerate legitimate asymmetric paths;
+  its protection depends on the correctness and admission policy of that
+  information. It is not an independent ownership check.
 - The infrastructure ACL is right and its one-line form is an outage. The
   exception list is the part worth writing down.
 - These labs run on Linux namespaces. `rp_filter` and nftables are not a Cisco

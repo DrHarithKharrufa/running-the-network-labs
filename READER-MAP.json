@@ -1,0 +1,6435 @@
+{
+  "edition": "RTN-2026-10-02",
+  "chapters": [
+    {
+      "chapter": 1,
+      "title": "From theory to service: the book, the industry and your career",
+      "source": "NetBook/parts/00-orientation/ch01-why-this-book.tex"
+    },
+    {
+      "chapter": 2,
+      "title": "Building the lab: Containerlab and GNS3",
+      "source": "NetBook/parts/00-orientation/ch03-building-the-lab.tex"
+    },
+    {
+      "chapter": 3,
+      "title": "Signals, cables and optics",
+      "source": "NetBook/parts/01-foundations/ch04-signals-cables-optics.tex"
+    },
+    {
+      "chapter": 4,
+      "title": "Ethernet and the local network",
+      "source": "NetBook/parts/01-foundations/ch05-ethernet-and-the-lan.tex"
+    },
+    {
+      "chapter": 5,
+      "title": "IP addressing, subnetting and IPv6 done properly",
+      "source": "NetBook/parts/01-foundations/ch06-ip-and-subnetting.tex"
+    },
+    {
+      "chapter": 6,
+      "title": "The transport layer: TCP, UDP and QUIC",
+      "source": "NetBook/parts/01-foundations/ch07-transport-layer.tex"
+    },
+    {
+      "chapter": 7,
+      "title": "The services that make a network usable",
+      "source": "NetBook/parts/01-foundations/ch08-network-services.tex"
+    },
+    {
+      "chapter": 8,
+      "title": "Following a packet from application to application",
+      "source": "NetBook/parts/01-foundations/ch09-packet-journey.tex"
+    },
+    {
+      "chapter": 9,
+      "title": "Living on the command line: network operating systems",
+      "source": "NetBook/parts/01-foundations/ch10-living-on-the-cli.tex"
+    },
+    {
+      "chapter": 10,
+      "title": "VLANs, trunks and the access layer",
+      "source": "NetBook/parts/02-campus/ch11-vlans-and-access.tex"
+    },
+    {
+      "chapter": 11,
+      "title": "Spanning tree and the loop problem",
+      "source": "NetBook/parts/02-campus/ch12-spanning-tree.tex"
+    },
+    {
+      "chapter": 12,
+      "title": "Link aggregation, MLAG and redundant gateways",
+      "source": "NetBook/parts/02-campus/ch13-lag-and-gateways.tex"
+    },
+    {
+      "chapter": 13,
+      "title": "Wireless: Wi-Fi 6E, Wi-Fi 7 and RF planning",
+      "source": "NetBook/parts/02-campus/ch14-wireless.tex"
+    },
+    {
+      "chapter": 14,
+      "title": "Controlling who gets on: 802.1X, NAC, PoE and IoT",
+      "source": "NetBook/parts/02-campus/ch15-access-control.tex"
+    },
+    {
+      "chapter": 15,
+      "title": "Campus architectures and overlays",
+      "source": "NetBook/parts/02-campus/ch16-campus-architecture.tex"
+    },
+    {
+      "chapter": 16,
+      "title": "How a router actually forwards",
+      "source": "NetBook/parts/03-routing/ch17-how-routers-forward.tex"
+    },
+    {
+      "chapter": 17,
+      "title": "Static routing and the routing table under pressure",
+      "source": "NetBook/parts/03-routing/ch18-static-routing.tex"
+    },
+    {
+      "chapter": 18,
+      "title": "OSPF",
+      "source": "NetBook/parts/03-routing/ch19-ospf.tex"
+    },
+    {
+      "chapter": 19,
+      "title": "IS-IS",
+      "source": "NetBook/parts/03-routing/ch20-isis.tex"
+    },
+    {
+      "chapter": 20,
+      "title": "BGP I: the protocol",
+      "source": "NetBook/parts/03-routing/ch21-bgp-protocol.tex"
+    },
+    {
+      "chapter": 21,
+      "title": "BGP II: policy, scale and control",
+      "source": "NetBook/parts/03-routing/ch22-bgp-policy.tex"
+    },
+    {
+      "chapter": 22,
+      "title": "VRFs, redistribution and route leaking",
+      "source": "NetBook/parts/03-routing/ch23-vrfs-and-leaking.tex"
+    },
+    {
+      "chapter": 23,
+      "title": "Multicast",
+      "source": "NetBook/parts/03-routing/ch24-multicast.tex"
+    },
+    {
+      "chapter": 24,
+      "title": "Anatomy of an ISP",
+      "source": "NetBook/parts/04-provider/ch25-anatomy-of-isp.tex"
+    },
+    {
+      "chapter": 25,
+      "title": "MPLS foundations",
+      "source": "NetBook/parts/04-provider/ch26-mpls-foundations.tex"
+    },
+    {
+      "chapter": 26,
+      "title": "Traffic engineering: RSVP-TE to Segment Routing",
+      "source": "NetBook/parts/04-provider/ch27-te-and-sr.tex"
+    },
+    {
+      "chapter": 27,
+      "title": "SRv6 and the modern core",
+      "source": "NetBook/parts/04-provider/ch28-srv6.tex"
+    },
+    {
+      "chapter": 28,
+      "title": "L3VPN",
+      "source": "NetBook/parts/04-provider/ch29-l3vpn.tex"
+    },
+    {
+      "chapter": 29,
+      "title": "L2VPN and EVPN",
+      "source": "NetBook/parts/04-provider/ch30-l2vpn-evpn.tex"
+    },
+    {
+      "chapter": 30,
+      "title": "Quality of service",
+      "source": "NetBook/parts/04-provider/ch31-qos.tex"
+    },
+    {
+      "chapter": 31,
+      "title": "The subscriber edge: BNG, CGNAT and IPv6 for customers",
+      "source": "NetBook/parts/04-provider/ch32-subscriber-edge.tex"
+    },
+    {
+      "chapter": 32,
+      "title": "Peering, transit and the economics of the Internet",
+      "source": "NetBook/parts/04-provider/ch33-peering-and-transit.tex"
+    },
+    {
+      "chapter": 33,
+      "title": "Internet routing security: RPKI, IRR and MANRS",
+      "source": "NetBook/parts/04-provider/ch34-routing-security.tex"
+    },
+    {
+      "chapter": 34,
+      "title": "Data centre fabric design",
+      "source": "NetBook/parts/05-datacentre/ch35-dc-fabric-design.tex"
+    },
+    {
+      "chapter": 35,
+      "title": "BGP in the data centre",
+      "source": "NetBook/parts/05-datacentre/ch36-bgp-in-the-dc.tex"
+    },
+    {
+      "chapter": 36,
+      "title": "VXLAN/EVPN fabrics and data centre interconnect",
+      "source": "NetBook/parts/05-datacentre/ch37-vxlan-evpn.tex"
+    },
+    {
+      "chapter": 37,
+      "title": "Whitebox, SONiC and disaggregation",
+      "source": "NetBook/parts/05-datacentre/ch38-whitebox-sonic.tex"
+    },
+    {
+      "chapter": 38,
+      "title": "Programmable data planes: P4, eBPF/XDP and DPUs",
+      "source": "NetBook/parts/05-datacentre/ch39-programmable-dataplanes.tex"
+    },
+    {
+      "chapter": 39,
+      "title": "Where the server meets the network",
+      "source": "NetBook/parts/05-datacentre/ch40-server-meets-network.tex"
+    },
+    {
+      "chapter": 40,
+      "title": "Fabrics for AI and HPC",
+      "source": "NetBook/parts/05-datacentre/ch41-ai-fabrics.tex"
+    },
+    {
+      "chapter": 41,
+      "title": "Cloud networking and hybrid interconnect",
+      "source": "NetBook/parts/05-datacentre/ch42-cloud-networking.tex"
+    },
+    {
+      "chapter": 42,
+      "title": "Fibre plant and the outside world",
+      "source": "NetBook/parts/06-optical/ch43-fibre-plant.tex"
+    },
+    {
+      "chapter": 43,
+      "title": "Optical transmission and link budgets",
+      "source": "NetBook/parts/06-optical/ch44-optical-transmission.tex"
+    },
+    {
+      "chapter": 44,
+      "title": "DWDM, coherent optics and ROADMs",
+      "source": "NetBook/parts/06-optical/ch45-dwdm-coherent.tex"
+    },
+    {
+      "chapter": 45,
+      "title": "Open line systems and packet-optical convergence",
+      "source": "NetBook/parts/06-optical/ch46-packet-optical.tex"
+    },
+    {
+      "chapter": 46,
+      "title": "Timing and synchronisation",
+      "source": "NetBook/parts/06-optical/ch47-timing.tex"
+    },
+    {
+      "chapter": 47,
+      "title": "Mobile transport: 4G, 5G, backhaul, fronthaul and slicing",
+      "source": "NetBook/parts/06-optical/ch48-mobile-transport.tex"
+    },
+    {
+      "chapter": 48,
+      "title": "Microwave, satellite and fixed wireless access",
+      "source": "NetBook/parts/06-optical/ch49-microwave-satellite.tex"
+    },
+    {
+      "chapter": 49,
+      "title": "A working threat model for network operators",
+      "source": "NetBook/parts/07-security/ch50-threat-model.tex"
+    },
+    {
+      "chapter": 50,
+      "title": "Cryptography for network engineers",
+      "source": "NetBook/parts/07-security/ch51-crypto-for-engineers.tex"
+    },
+    {
+      "chapter": 51,
+      "title": "Identity, access and the management plane",
+      "source": "NetBook/parts/07-security/ch52-identity-and-management-plane.tex"
+    },
+    {
+      "chapter": 52,
+      "title": "Hardening the device and the control plane",
+      "source": "NetBook/parts/07-security/ch53-hardening-control-plane.tex"
+    },
+    {
+      "chapter": 53,
+      "title": "Firewalls, zones and segmentation",
+      "source": "NetBook/parts/07-security/ch54-firewalls-segmentation.tex"
+    },
+    {
+      "chapter": 54,
+      "title": "Micro-segmentation, zero trust and SASE",
+      "source": "NetBook/parts/07-security/ch55-zero-trust-sase.tex"
+    },
+    {
+      "chapter": 55,
+      "title": "VPNs and encrypted transport",
+      "source": "NetBook/parts/07-security/ch56-vpns-encrypted-transport.tex"
+    },
+    {
+      "chapter": 56,
+      "title": "DDoS: surviving the flood",
+      "source": "NetBook/parts/07-security/ch57-ddos.tex"
+    },
+    {
+      "chapter": 57,
+      "title": "DNS and the Internet edge as an attack surface",
+      "source": "NetBook/parts/07-security/ch58-dns-edge-security.tex"
+    },
+    {
+      "chapter": 58,
+      "title": "Detection, response and network forensics",
+      "source": "NetBook/parts/07-security/ch59-detection-response.tex"
+    },
+    {
+      "chapter": 59,
+      "title": "Security governance, compliance and assurance",
+      "source": "NetBook/parts/07-security/ch60-security-governance.tex"
+    },
+    {
+      "chapter": 60,
+      "title": "The NOC and the operating model",
+      "source": "NetBook/parts/08-operations/ch61-the-noc.tex"
+    },
+    {
+      "chapter": 61,
+      "title": "Monitoring, telemetry and observability",
+      "source": "NetBook/parts/08-operations/ch62-monitoring-telemetry.tex"
+    },
+    {
+      "chapter": 62,
+      "title": "Flow, logs and packet capture",
+      "source": "NetBook/parts/08-operations/ch63-flow-logs-capture.tex"
+    },
+    {
+      "chapter": 63,
+      "title": "Troubleshooting as a discipline",
+      "source": "NetBook/parts/08-operations/ch64-troubleshooting.tex"
+    },
+    {
+      "chapter": 64,
+      "title": "Change management",
+      "source": "NetBook/parts/08-operations/ch65-change-management.tex"
+    },
+    {
+      "chapter": 65,
+      "title": "Incidents, outages and post-incident review",
+      "source": "NetBook/parts/08-operations/ch66-incidents-and-reviews.tex"
+    },
+    {
+      "chapter": 66,
+      "title": "Capacity planning and traffic forecasting",
+      "source": "NetBook/parts/08-operations/ch67-capacity-planning.tex"
+    },
+    {
+      "chapter": 67,
+      "title": "Source of truth: documentation as data",
+      "source": "NetBook/parts/09-automation/ch68-source-of-truth.tex"
+    },
+    {
+      "chapter": 68,
+      "title": "Configuration management with Ansible and Jinja",
+      "source": "NetBook/parts/09-automation/ch69-ansible-and-templates.tex"
+    },
+    {
+      "chapter": 69,
+      "title": "Models and management APIs",
+      "source": "NetBook/parts/09-automation/ch70-models-and-apis.tex"
+    },
+    {
+      "chapter": 70,
+      "title": "Python for network engineers",
+      "source": "NetBook/parts/09-automation/ch71-python-for-neteng.tex"
+    },
+    {
+      "chapter": 71,
+      "title": "Event-driven automation and closed loops",
+      "source": "NetBook/parts/09-automation/ch72-event-driven.tex"
+    },
+    {
+      "chapter": 72,
+      "title": "CI/CD, pre-change validation and digital twins",
+      "source": "NetBook/parts/09-automation/ch73-cicd-and-twins.tex"
+    },
+    {
+      "chapter": 73,
+      "title": "AI in network operations: models, language and evidence",
+      "source": "NetBook/parts/09-automation/ch74-ml-for-netops.tex"
+    },
+    {
+      "chapter": 74,
+      "title": "Controlled automation: agents, intent and autonomy",
+      "source": "NetBook/parts/09-automation/ch76-agents-and-guardrails.tex"
+    },
+    {
+      "chapter": 75,
+      "title": "Governing automation and AI",
+      "source": "NetBook/parts/09-automation/ch78-governing-automation.tex"
+    },
+    {
+      "chapter": 76,
+      "title": "The design method",
+      "source": "NetBook/parts/10-design/ch79-design-method.tex"
+    },
+    {
+      "chapter": 77,
+      "title": "Availability, resilience and failure domains",
+      "source": "NetBook/parts/10-design/ch80-availability-and-failure.tex"
+    },
+    {
+      "chapter": 78,
+      "title": "Addressing, naming and numbering plans",
+      "source": "NetBook/parts/10-design/ch81-addressing-and-naming.tex"
+    },
+    {
+      "chapter": 79,
+      "title": "Scaling: what breaks at ten times the size",
+      "source": "NetBook/parts/10-design/ch82-scaling.tex"
+    },
+    {
+      "chapter": 80,
+      "title": "Multi-site, multi-region and hybrid",
+      "source": "NetBook/parts/10-design/ch83-multi-site-hybrid.tex"
+    },
+    {
+      "chapter": 81,
+      "title": "Migrations, cutovers and brownfield reality",
+      "source": "NetBook/parts/10-design/ch84-migrations.tex"
+    },
+    {
+      "chapter": 82,
+      "title": "Network economics: CAPEX, OPEX and unit cost",
+      "source": "NetBook/parts/11-business/ch85-network-economics.tex"
+    },
+    {
+      "chapter": 83,
+      "title": "Buying and promising a service: suppliers, lifecycle and SLAs",
+      "source": "NetBook/parts/11-business/ch86-vendor-management.tex"
+    },
+    {
+      "chapter": 84,
+      "title": "Regulation, compliance and obligation",
+      "source": "NetBook/parts/11-business/ch88-regulation.tex"
+    },
+    {
+      "chapter": 85,
+      "title": "Building and leading a network team",
+      "source": "NetBook/parts/11-business/ch89-leading-a-team.tex"
+    },
+    {
+      "chapter": 86,
+      "title": "Strategy, roadmaps and build-versus-buy",
+      "source": "NetBook/parts/11-business/ch90-strategy-roadmaps.tex"
+    },
+    {
+      "chapter": 87,
+      "title": "The CTO's dashboard",
+      "source": "NetBook/parts/11-business/ch91-cto-dashboard.tex"
+    }
+  ],
+  "tasks": [
+    {
+      "task": "DEV-01",
+      "part": 1,
+      "book_chapters": "9, 51",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.x; chapter updated 2023-08-21"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-18; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.3"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "DEV-02",
+      "part": 1,
+      "book_chapters": "9, 51",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9500"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-18; no release qualification",
+            "Junos OS; guide revision 2026-06-26; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "DEV-03",
+      "part": 1,
+      "book_chapters": "9, 64",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-18; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "DEV-04",
+      "part": 1,
+      "book_chapters": "9, 51",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-26; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "DEV-05",
+      "part": 1,
+      "book_chapters": "9, 51, 52",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-26; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "fortios",
+          "status": "READ",
+          "versions": [
+            "FortiOS 7.6.6; CLI Reference"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "DEV-06",
+      "part": 1,
+      "book_chapters": "9, 51, 52",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-26; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "fortios",
+          "status": "READ",
+          "versions": [
+            "FortiOS 7.6.6; CLI Reference"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "DEV-07",
+      "part": 1,
+      "book_chapters": "51, 52",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-26; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "fortios",
+          "status": "READ",
+          "versions": [
+            "FortiOS 7.6.6; CLI Reference"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "DEV-08",
+      "part": 1,
+      "book_chapters": "51, 52, 61",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9500"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-17; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "fortios",
+          "status": "READ",
+          "versions": [
+            "FortiOS 7.6.6; CLI Reference"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "DEV-09",
+      "part": 1,
+      "book_chapters": "61, 62",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9500"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-07-06; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "DEV-10",
+      "part": 1,
+      "book_chapters": "9, 64",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-09-08; no release qualification",
+            "Junos OS; base command predates 7.4; maintained command reference; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "fortios",
+          "status": "READ",
+          "versions": [
+            "FortiOS 7.6.6; CLI Reference"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "L2-01",
+      "part": 2,
+      "book_chapters": "5, 9, 16",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-17; no release qualification",
+            "Junos OS; guide revision 2026-06-26; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "fortios",
+          "status": "READ",
+          "versions": [
+            "FortiOS 7.6.6; CLI Reference"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "L2-02",
+      "part": 2,
+      "book_chapters": "3, 4, 16",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-17; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "fortios",
+          "status": "READ",
+          "versions": [
+            "FortiOS 7.6.6; CLI Reference"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "L2-03",
+      "part": 2,
+      "book_chapters": "4, 10",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-09-23; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "fsw",
+          "status": "READ",
+          "versions": [
+            "FortiSwitchOS 7.6.2; CLI Reference"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "L2-04",
+      "part": 2,
+      "book_chapters": "10",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-09-23; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "fsw",
+          "status": "READ",
+          "versions": [
+            "FortiSwitchOS 7.6.2; CLI Reference"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "L2-05",
+      "part": 2,
+      "book_chapters": "10",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-09-23; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "fsw",
+          "status": "READ",
+          "versions": [
+            "FortiSwitchOS 7.6.2; CLI Reference"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "L2-06",
+      "part": 2,
+      "book_chapters": "11",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2025-12-11; no release qualification"
+          ]
+        },
+        {
+          "vendor": "sros",
+          "status": "READ",
+          "versions": [
+            "SR OS 25.3.R1"
+          ]
+        },
+        {
+          "vendor": "aoscx",
+          "status": "READ",
+          "versions": [
+            "AOS-CX 10.13; 6300/6400 guide, March 2024, version 2"
+          ]
+        },
+        {
+          "vendor": "fsw",
+          "status": "READ",
+          "versions": [
+            "FortiSwitchOS 7.6.2; CLI Reference"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "L2-07",
+      "part": 2,
+      "book_chapters": "11, 52",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2025-12-11; no release qualification"
+          ]
+        },
+        {
+          "vendor": "fsw",
+          "status": "READ",
+          "versions": [
+            "FortiSwitchOS 7.6.2; CLI Reference"
+          ]
+        },
+        {
+          "vendor": "aoscx",
+          "status": "READ",
+          "versions": [
+            "AOS-CX 10.13.1000; April 2024, edition 1",
+            "AOS-CX 10.13; 6300/6400 guide, March 2024, version 2"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "NO_PANEL",
+          "versions": []
+        }
+      ]
+    },
+    {
+      "task": "L2-08",
+      "part": 2,
+      "book_chapters": "11",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2025-12-11; no release qualification"
+          ]
+        },
+        {
+          "vendor": "sros",
+          "status": "READ",
+          "versions": [
+            "SR OS 25.3.R1"
+          ]
+        },
+        {
+          "vendor": "fsw",
+          "status": "READ",
+          "versions": [
+            "FortiSwitchOS 7.6.2; CLI Reference"
+          ]
+        },
+        {
+          "vendor": "aoscx",
+          "status": "READ",
+          "versions": [
+            "AOS-CX 10.13; 6300/6400 guide, March 2024, version 2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "L2-09",
+      "part": 2,
+      "book_chapters": "12",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-26; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "fsw",
+          "status": "READ",
+          "versions": [
+            "FortiSwitchOS 7.6.2; CLI Reference"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "L2-10",
+      "part": 2,
+      "book_chapters": "12, 34",
+      "vendors": [
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x); Nexus 9000"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-23; no release qualification"
+          ]
+        },
+        {
+          "vendor": "fsw",
+          "status": "READ",
+          "versions": [
+            "FortiSwitchOS 7.6.2; CLI Reference"
+          ]
+        },
+        {
+          "vendor": "aoscx",
+          "status": "READ",
+          "versions": [
+            "AOS-CX 10.13; VSX guide, 6400/8xxx/9300/10000"
+          ]
+        },
+        {
+          "vendor": "sros",
+          "status": "READ",
+          "versions": [
+            "SR OS 25.3.R1"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "L2-11",
+      "part": 2,
+      "book_chapters": "10, 30, 52",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x); Nexus 9000"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision not stated; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "fsw",
+          "status": "READ",
+          "versions": [
+            "FortiSwitchOS 7.6.2; CLI Reference"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "L2-12",
+      "part": 2,
+      "book_chapters": "12, 17, 64",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-29; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "fortios",
+          "status": "READ",
+          "versions": [
+            "FortiOS 7.6.6; CLI Reference"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "IGP-01",
+      "part": 3,
+      "book_chapters": "16, 18",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300",
+            "IOS XE 17.x; maintained OSPF configuration chapter"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-18; no release qualification",
+            "Junos OS; guide revision not stated; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "IGP-02",
+      "part": 3,
+      "book_chapters": "5, 16, 17",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-18; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "IGP-03",
+      "part": 3,
+      "book_chapters": "16, 17",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision not stated; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "IGP-04",
+      "part": 3,
+      "book_chapters": "16, 17, 64",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-02-17; no release qualification"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        },
+        {
+          "vendor": "fortios",
+          "status": "READ",
+          "versions": [
+            "FortiOS 7.6.6; CLI Reference"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "IGP-05",
+      "part": 3,
+      "book_chapters": "16, 18",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-18; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "IGP-06",
+      "part": 3,
+      "book_chapters": "18",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "Cisco IOS OSPF maintained command reference; base syntax history in source; no target-release qualification"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-18; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "IGP-07",
+      "part": 3,
+      "book_chapters": "16, 18",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.x; maintained OSPF configuration chapter"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-18; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "IGP-08",
+      "part": 3,
+      "book_chapters": "18",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.x; maintained OSPF configuration chapter"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-18; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "IGP-09",
+      "part": 3,
+      "book_chapters": "18, 50, 52",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.x; maintained OSPF configuration chapter"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-18; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "IGP-10",
+      "part": 3,
+      "book_chapters": "5, 18, 52",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-18; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "IGP-11",
+      "part": 3,
+      "book_chapters": "16, 19, 24",
+      "vendors": [
+        {
+          "vendor": "iosxr",
+          "status": "READ",
+          "versions": [
+            "IOS XR 24.1.x\u201324.4.x; ASR 9000, chapter updated 2024-12-16"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-16; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "IGP-12",
+      "part": 3,
+      "book_chapters": "19, 24",
+      "vendors": [
+        {
+          "vendor": "iosxr",
+          "status": "READ",
+          "versions": [
+            "IOS XR 24.1.x\u201324.4.x; ASR 9000, chapter updated 2024-12-16"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-16; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "IGP-13",
+      "part": 3,
+      "book_chapters": "16, 17, 19, 64",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-18; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "IGP-14",
+      "part": 3,
+      "book_chapters": "16, 18, 52",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-18; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "BGP-01",
+      "part": 4,
+      "book_chapters": "20, 21, 52",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-07-08; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "BGP-02",
+      "part": 4,
+      "book_chapters": "20, 21, 52",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-07-08; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "BGP-03",
+      "part": 4,
+      "book_chapters": "20, 21, 24, 52",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300",
+            "IOS XE 17.x; maintained external-service-provider BGP chapter"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-07-08; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "BGP-04",
+      "part": 4,
+      "book_chapters": "20, 21, 24, 52",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.x; maintained Basic BGP chapter"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-07-08; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "BGP-05",
+      "part": 4,
+      "book_chapters": "20, 21, 24, 52",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300",
+            "IOS XE 17.x; maintained Basic BGP chapter"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-07-08; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "BGP-06",
+      "part": 4,
+      "book_chapters": "20, 21, 24, 64",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.x; maintained external-service-provider BGP chapter",
+            "IOS XE 17.x; maintained Basic BGP chapter"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-07-08; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "BGP-07",
+      "part": 4,
+      "book_chapters": "20, 21, 24, 52",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.x; maintained external-service-provider BGP chapter"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-07-08; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "BGP-08",
+      "part": 4,
+      "book_chapters": "20, 21, 24, 32",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.x; maintained Catalyst9000 BGP guide; individual feature minimum releases stated in source"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-07-08; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "BGP-09",
+      "part": 4,
+      "book_chapters": "20, 21, 24, 64",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.x; maintained Catalyst9000 BGP guide; individual feature minimum releases stated in source"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision not stated; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "BGP-10",
+      "part": 4,
+      "book_chapters": "20, 21, 24, 52",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.x; maintained Catalyst9000 BGP guide; individual feature minimum releases stated in source"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision not stated; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "BGP-11",
+      "part": 4,
+      "book_chapters": "20, 21, 32, 34, 64",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.x; maintained Catalyst9000 BGP guide; individual feature minimum releases stated in source"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-07-08; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "BGP-12",
+      "part": 4,
+      "book_chapters": "20, 21, 24, 64, 67",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.x; BGP graceful-restart per-neighbor guide"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision not stated; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.5.x (circinus) documented variant; not1.4 qualification"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "BGP-13",
+      "part": 4,
+      "book_chapters": "20, 21, 24, 52, 64",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.x; maintained origin-AS-validation chapter",
+            "IOS XE 17.x; maintained Basic BGP chapter"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-07-08; no release qualification",
+            "Junos OS; guide revision not stated; no release qualification"
+          ]
+        },
+        {
+          "vendor": "sros",
+          "status": "READ",
+          "versions": [
+            "SR OS 25.3.R1"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "NO_PANEL",
+          "versions": []
+        }
+      ]
+    },
+    {
+      "task": "BGP-14",
+      "part": 4,
+      "book_chapters": "20, 21, 24, 52, 64",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.x; maintained external-service-provider BGP chapter",
+            "IOS XE 17.x; maintained Basic BGP chapter"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-07-08; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "VPN-01",
+      "part": 5,
+      "book_chapters": "22, 23, 27, 32",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-09-23; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "Linux kernel 6.6 documentation; VRF/l3mdev and iproute2 command examples",
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "VPN-02",
+      "part": 5,
+      "book_chapters": "22, 23, 27, 32",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 16.12.x/17.x; Cisco lab article revised2026-06-08",
+            "IOS XE 17.x; maintained Basic BGP chapter"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; instance-import introduced before7.4; maintained reference",
+            "Junos OS; Juniper virtual-router example2022; no target-release qualification",
+            "Junos OS; guide revision not stated; no release qualification",
+            "Junos OS; guide revision 2026-02-17; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "VPN-03",
+      "part": 5,
+      "book_chapters": "23, 24, 25, 52",
+      "vendors": [
+        {
+          "vendor": "iosxr",
+          "status": "READ",
+          "versions": [
+            "IOS XR 24.1.x\u201324.4.x; ASR 9000 MPLS guide"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-08-23; no release qualification"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "sros",
+          "status": "READ",
+          "versions": [
+            "SR OS 25.3.R1"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "VPN-04",
+      "part": 5,
+      "book_chapters": "24, 25, 26, 52",
+      "vendors": [
+        {
+          "vendor": "iosxr",
+          "status": "READ",
+          "versions": [
+            "IOS XR 24.1.x\u201324.4.x; ASR 9000 MPLS guide",
+            "IOS XR ASR 9000 maintained MPLS OAM command reference; exact target image separately qualified"
+          ]
+        },
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17 MPLS Traffic Engineering guide",
+            "IOS XE 17.x maintained MPLS LSP Ping guide",
+            "IOS XE 17 SR guide; SRv6 feature minimum17.12.1a"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-08-23; no release qualification"
+          ]
+        },
+        {
+          "vendor": "sros",
+          "status": "READ",
+          "versions": [
+            "SR OS 25.3.R1",
+            "SR OS 23.3.R1 classic CLI command reference; target release separately qualified"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "NO_PANEL",
+          "versions": []
+        }
+      ]
+    },
+    {
+      "task": "VPN-05",
+      "part": 5,
+      "book_chapters": "24, 25, 26, 52",
+      "vendors": [
+        {
+          "vendor": "iosxr",
+          "status": "READ",
+          "versions": [
+            "IOS XR 24.1.x\u201324.4.x; ASR9000 segment routing guide"
+          ]
+        },
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17 access/edge router segment routing guide"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-08-23; no release qualification"
+          ]
+        },
+        {
+          "vendor": "sros",
+          "status": "READ",
+          "versions": [
+            "SR OS 25.3.R1"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "VPN-06",
+      "part": 5,
+      "book_chapters": "25, 26, 27, 52",
+      "vendors": [
+        {
+          "vendor": "iosxr",
+          "status": "READ",
+          "versions": [
+            "IOS XR 24.1.x\u201324.4.x ASR9000 SR guide"
+          ]
+        },
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17; SRv6 introduced17.12.1a, supported access/edge models"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS20.3R1 or later; MX MPC7E/8E/9E documented example"
+          ]
+        },
+        {
+          "vendor": "sros",
+          "status": "READ",
+          "versions": [
+            "SR OS 25.3.R1"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        },
+        {
+          "vendor": "linux",
+          "status": "READ",
+          "versions": [
+            "iproute2 v6.6.0 upstream tagged manual",
+            "Linux kernel 6.6 SRv6 sysctl documentation"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "VPN-07",
+      "part": 5,
+      "book_chapters": "22, 23, 24, 27, 52",
+      "vendors": [
+        {
+          "vendor": "iosxr",
+          "status": "READ",
+          "versions": [
+            "IOS XR 24.1.x\u201324.4.x; ASR 9000 L3VPN guide"
+          ]
+        },
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17; Multiprotocol BGP MPLS VPN guide"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-17; no release qualification"
+          ]
+        },
+        {
+          "vendor": "sros",
+          "status": "READ",
+          "versions": [
+            "SR OS 25.3.R1"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "VPN-08",
+      "part": 5,
+      "book_chapters": "22, 23, 27, 52",
+      "vendors": [
+        {
+          "vendor": "iosxr",
+          "status": "READ",
+          "versions": [
+            "IOS XR 24.1.x\u201324.4.x; ASR 9000 L3VPN guide"
+          ]
+        },
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17; Multiprotocol BGP MPLS VPN guide"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-17; no release qualification"
+          ]
+        },
+        {
+          "vendor": "sros",
+          "status": "READ",
+          "versions": [
+            "SR OS 25.3.R1",
+            "SR OS 24.3.R2 MD-CLI advanced configuration guide"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "VPN-09",
+      "part": 5,
+      "book_chapters": "24, 27, 28, 52",
+      "vendors": [
+        {
+          "vendor": "iosxr",
+          "status": "READ",
+          "versions": [
+            "IOS XR 24.1.x\u201324.4.x ASR9000 L2VPN guide"
+          ]
+        },
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17 AToM maintained configuration chapter"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-17; no release qualification"
+          ]
+        },
+        {
+          "vendor": "sros",
+          "status": "READ",
+          "versions": [
+            "SR OS 25.3.R2 classic CLI example"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "VPN-10",
+      "part": 5,
+      "book_chapters": "28, 29, 52",
+      "vendors": [
+        {
+          "vendor": "iosxr",
+          "status": "READ",
+          "versions": [
+            "IOS XR 24.1.x\u201324.4.x ASR9000 L2VPN guide"
+          ]
+        },
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17 maintained VPLS chapter"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-17; no release qualification"
+          ]
+        },
+        {
+          "vendor": "sros",
+          "status": "READ",
+          "versions": [
+            "SR OS 25.3.R2 classic CLI example",
+            "SR OS 25.3.R1"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "NO_PANEL",
+          "versions": []
+        }
+      ]
+    },
+    {
+      "task": "VPN-11",
+      "part": 5,
+      "book_chapters": "29, 30, 31, 52",
+      "vendors": [
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x) Nexus9000 VXLAN EVPN chapter, updated2025-04-23"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-09-02; no release qualification"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "sros",
+          "status": "READ",
+          "versions": [
+            "SR OS 25.3.R1"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "VPN-12",
+      "part": 5,
+      "book_chapters": "29, 32, 33, 52",
+      "vendors": [
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x) Nexus9000 VXLAN EVPN chapter, updated2025-04-23"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-09-02; no release qualification"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "sros",
+          "status": "READ",
+          "versions": [
+            "SR OS 25.3.R1"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "DC-01",
+      "part": 6,
+      "book_chapters": "30, 31, 34, 52",
+      "vendors": [
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x) Nexus9000 BGP chapter"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-07-08; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        },
+        {
+          "vendor": "nvue",
+          "status": "READ",
+          "versions": [
+            "Cumulus Linux 5.9 NVUE documented configuration"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "DC-02",
+      "part": 6,
+      "book_chapters": "20, 30, 34, 52",
+      "vendors": [
+        {
+          "vendor": "nvue",
+          "status": "READ",
+          "versions": [
+            "Cumulus Linux 5.9 NVUE documented configuration"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS21.1R1+ feature; maintained auto-discovery reference; target image not qualified"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "DC-03",
+      "part": 6,
+      "book_chapters": "30, 31, 34, 52",
+      "vendors": [
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x) Nexus9000 VXLAN EVPN chapter, updated2025-04-23"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-09-02; no release qualification"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "sros",
+          "status": "READ",
+          "versions": [
+            "SR OS 25.3.R1"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "DC-04",
+      "part": 6,
+      "book_chapters": "29, 30, 31, 52",
+      "vendors": [
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x) Nexus9000 VXLAN EVPN chapter, updated2025-04-23"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-09-02; no release qualification"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "sros",
+          "status": "READ",
+          "versions": [
+            "SR OS 25.3.R1"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "DC-05",
+      "part": 6,
+      "book_chapters": "30, 31, 34, 52",
+      "vendors": [
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x) Nexus9000 external VRF/EVPN chapter",
+            "NX-OS 10.5(x) Nexus9000 BGP chapter",
+            "NX-OS 10.5(x) Nexus9000 VXLAN EVPN chapter, updated2025-04-23"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-09-02; no release qualification"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "sros",
+          "status": "READ",
+          "versions": [
+            "SR OS 25.3.R1"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "DC-06",
+      "part": 6,
+      "book_chapters": "30, 31, 34, 52",
+      "vendors": [
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x) Nexus9000 VXLAN EVPN chapter, updated2025-04-23"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-09-02; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        },
+        {
+          "vendor": "nvue",
+          "status": "READ",
+          "versions": [
+            "Cumulus Linux 5.9 NVUE VRR reference"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "DC-07",
+      "part": 6,
+      "book_chapters": "23, 30, 31, 34, 52",
+      "vendors": [
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x); Nexus 9000"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-23; no release qualification"
+          ]
+        },
+        {
+          "vendor": "fsw",
+          "status": "READ",
+          "versions": [
+            "FortiSwitchOS 7.6.2; CLI Reference"
+          ]
+        },
+        {
+          "vendor": "aoscx",
+          "status": "READ",
+          "versions": [
+            "AOS-CX 10.13; VSX guide, 6400/8xxx/9300/10000"
+          ]
+        },
+        {
+          "vendor": "sros",
+          "status": "READ",
+          "versions": [
+            "SR OS 25.3.R1"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "DC-08",
+      "part": 6,
+      "book_chapters": "20, 21, 30, 32, 34, 64",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.x; maintained Catalyst9000 BGP guide; individual feature minimum releases stated in source"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-07-08; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "DC-09",
+      "part": 6,
+      "book_chapters": "9, 23, 30, 34, 52",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-17; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "fortios",
+          "status": "READ",
+          "versions": [
+            "FortiOS 7.6.6; CLI Reference"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "DC-10",
+      "part": 6,
+      "book_chapters": "9, 30, 36, 52, 81",
+      "vendors": [
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x); Nexus 9000"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-18; no release qualification"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        },
+        {
+          "vendor": "sonic",
+          "status": "READ",
+          "versions": [
+            "SONiC sonic-utilities release branch202405; target vendor image unqualified"
+          ]
+        },
+        {
+          "vendor": "nvue",
+          "status": "READ",
+          "versions": [
+            "Cumulus Linux 5.9 NVUE documented configuration"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "DC-11",
+      "part": 6,
+      "book_chapters": "30, 34, 37, 52, 61",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-23; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "linux",
+          "status": "READ",
+          "versions": [
+            "nft official manual revision2026-07-02; installed executable version must be recorded"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "DC-12",
+      "part": 6,
+      "book_chapters": "30, 32, 34, 36, 52, 64",
+      "vendors": [
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x) Nexus9000 QoS guide"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision not stated; no release qualification",
+            "Junos OS; guide revision 2026-06-16; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 25.10 documented PFC variant; exact ASIC support required",
+            "SR Linux 25.10 queue-management profile variant"
+          ]
+        },
+        {
+          "vendor": "nvue",
+          "status": "READ",
+          "versions": [
+            "Cumulus Linux 5.9 NVUE QoS guide"
+          ]
+        },
+        {
+          "vendor": "sonic",
+          "status": "READ",
+          "versions": [
+            "SONiC sonic-utilities release branch202405; target vendor image unqualified",
+            "SONiC sonic-buildimage release branch202405 WRED schema"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "QOS-01",
+      "part": 7,
+      "book_chapters": "32, 34, 52, 64",
+      "vendors": [
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x) Nexus9000 QoS guide"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-16; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 25.10; documented model and hardware constraints apply"
+          ]
+        },
+        {
+          "vendor": "nvue",
+          "status": "READ",
+          "versions": [
+            "Cumulus Linux 5.9 NVUE QoS guide"
+          ]
+        },
+        {
+          "vendor": "linux",
+          "status": "READ",
+          "versions": [
+            "iproute2 v6.6.0 upstream tagged manual; kernel/hardware capability separately qualified"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "QOS-02",
+      "part": 7,
+      "book_chapters": "32, 34, 37, 52, 64",
+      "vendors": [
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x) Nexus9000 QoS guide"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-16; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 25.10; documented model and hardware constraints apply"
+          ]
+        },
+        {
+          "vendor": "nvue",
+          "status": "READ",
+          "versions": [
+            "Cumulus Linux 5.9 NVUE QoS guide"
+          ]
+        },
+        {
+          "vendor": "linux",
+          "status": "READ",
+          "versions": [
+            "iproute2 v6.6.0 upstream tagged manual; kernel/hardware capability separately qualified"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "QOS-03",
+      "part": 7,
+      "book_chapters": "32, 34, 52, 64",
+      "vendors": [
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x) Nexus9000 QoS guide"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-16; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 25.10; documented model and hardware constraints apply"
+          ]
+        },
+        {
+          "vendor": "nvue",
+          "status": "READ",
+          "versions": [
+            "Cumulus Linux 5.9 NVUE QoS guide"
+          ]
+        },
+        {
+          "vendor": "linux",
+          "status": "READ",
+          "versions": [
+            "iproute2 v6.6.0 upstream tagged manual; kernel/hardware capability separately qualified"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "QOS-04",
+      "part": 7,
+      "book_chapters": "32, 34, 52, 64",
+      "vendors": [
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x) Nexus9000 QoS guide"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-16; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 25.10; documented model and hardware constraints apply"
+          ]
+        },
+        {
+          "vendor": "nvue",
+          "status": "READ",
+          "versions": [
+            "Cumulus Linux 5.9 NVUE QoS guide"
+          ]
+        },
+        {
+          "vendor": "linux",
+          "status": "READ",
+          "versions": [
+            "iproute2 v6.6.0 upstream tagged manual; kernel/hardware capability separately qualified"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "QOS-05",
+      "part": 7,
+      "book_chapters": "32, 34, 37, 52, 64",
+      "vendors": [
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x) Nexus9000 QoS guide"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-23; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 25.10; documented model and hardware constraints apply"
+          ]
+        },
+        {
+          "vendor": "nvue",
+          "status": "READ",
+          "versions": [
+            "Cumulus Linux 5.9 NVUE QoS guide",
+            "Cumulus Linux 5.9 ACL configuration; cl-acltool owner variant"
+          ]
+        },
+        {
+          "vendor": "linux",
+          "status": "READ",
+          "versions": [
+            "iproute2 v6.6.0 upstream tagged manual; kernel/hardware capability separately qualified"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "QOS-06",
+      "part": 7,
+      "book_chapters": "32, 34, 52, 64",
+      "vendors": [
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x) Nexus9000 QoS guide"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-16; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 25.10; documented model and hardware constraints apply"
+          ]
+        },
+        {
+          "vendor": "nvue",
+          "status": "READ",
+          "versions": [
+            "Cumulus Linux 5.9 NVUE QoS guide"
+          ]
+        },
+        {
+          "vendor": "linux",
+          "status": "READ",
+          "versions": [
+            "iproute2 v6.6.0 upstream tagged manual; kernel/hardware capability separately qualified"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "QOS-07",
+      "part": 7,
+      "book_chapters": "32, 34, 52, 64",
+      "vendors": [
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x) Nexus9000 QoS guide"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-16; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 25.10; documented model and hardware constraints apply"
+          ]
+        },
+        {
+          "vendor": "nvue",
+          "status": "READ",
+          "versions": [
+            "Cumulus Linux 5.9 NVUE QoS guide"
+          ]
+        },
+        {
+          "vendor": "linux",
+          "status": "READ",
+          "versions": [
+            "iproute2 v6.6.0 upstream tagged manual; kernel/hardware capability separately qualified"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "QOS-08",
+      "part": 7,
+      "book_chapters": "32, 34, 52, 64, 80",
+      "vendors": [
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x) Nexus9000 QoS guide"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-16; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 25.10; documented model and hardware constraints apply"
+          ]
+        },
+        {
+          "vendor": "nvue",
+          "status": "READ",
+          "versions": [
+            "Cumulus Linux 5.9 NVUE QoS guide"
+          ]
+        },
+        {
+          "vendor": "linux",
+          "status": "READ",
+          "versions": [
+            "iproute2 v6.6.0 upstream tagged manual; kernel/hardware capability separately qualified"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "SEC-01",
+      "part": 8,
+      "book_chapters": "37, 52, 61",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-23; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "linux",
+          "status": "READ",
+          "versions": [
+            "nft official manual revision2026-07-02; installed executable version must be recorded"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "SEC-02",
+      "part": 8,
+      "book_chapters": "37, 52, 61",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-23; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "linux",
+          "status": "READ",
+          "versions": [
+            "nft official manual revision2026-07-02; installed executable version must be recorded"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "SEC-03",
+      "part": 8,
+      "book_chapters": "9, 37, 51, 52, 61",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-23; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "linux",
+          "status": "READ",
+          "versions": [
+            "nft official manual revision2026-07-02; installed executable version must be recorded"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "SEC-04",
+      "part": 8,
+      "book_chapters": "51, 52, 57, 61",
+      "vendors": [
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x) Nexus9000 CoPP chapter"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-23; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "linux",
+          "status": "READ",
+          "versions": [
+            "nft official manual revision2026-07-02; installed executable version must be recorded"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "SEC-05",
+      "part": 8,
+      "book_chapters": "5, 16, 51, 57",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x) Nexus9000 security guide"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-23; no release qualification"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "linux",
+          "status": "READ",
+          "versions": [
+            "Linux kernel v6.6 tagged sysctl documentation"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "SEC-06",
+      "part": 8,
+      "book_chapters": "4, 10, 51, 52, 57",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x) Nexus9000 security guide"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision not stated; no release qualification"
+          ]
+        },
+        {
+          "vendor": "fsw",
+          "status": "READ",
+          "versions": [
+            "FortiSwitchOS 7.6.2; CLI Reference"
+          ]
+        },
+        {
+          "vendor": "aoscx",
+          "status": "READ",
+          "versions": [
+            "AOS-CX 10.13.1000; April 2024, edition 1",
+            "AOS-CX10.13.1000 Hardening Guide; official PDF page44"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "SEC-07",
+      "part": 8,
+      "book_chapters": "4, 10, 51, 57",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x) Nexus9000 security guide"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision not stated; no release qualification"
+          ]
+        },
+        {
+          "vendor": "fsw",
+          "status": "READ",
+          "versions": [
+            "FortiSwitchOS 7.6.2; CLI Reference"
+          ]
+        },
+        {
+          "vendor": "aoscx",
+          "status": "READ",
+          "versions": [
+            "AOS-CX10.13 Security Guide; 6200/6300/6400"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "SEC-08",
+      "part": 8,
+      "book_chapters": "7, 51, 52, 57, 61",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x) Nexus9000 security guide"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision not stated; no release qualification"
+          ]
+        },
+        {
+          "vendor": "fsw",
+          "status": "READ",
+          "versions": [
+            "FortiSwitchOS 7.6.2; CLI Reference"
+          ]
+        },
+        {
+          "vendor": "aoscx",
+          "status": "READ",
+          "versions": [
+            "AOS-CX10.13 Security Guide; 6200/6300/6400"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "SEC-09",
+      "part": 8,
+      "book_chapters": "7, 51, 52, 57",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17 maintained zone-based firewall chapter",
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-07-10; no release qualification"
+          ]
+        },
+        {
+          "vendor": "fortios",
+          "status": "READ",
+          "versions": [
+            "FortiOS7.6.6 CLI Reference"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "linux",
+          "status": "READ",
+          "versions": [
+            "nft official manual revision2026-07-02; installed executable version must be recorded"
+          ]
+        },
+        {
+          "vendor": "routeros",
+          "status": "READ",
+          "versions": [
+            "RouterOS7 documentation, frozen maintained page; image version separately recorded",
+            "RouterOS7 common firewall matcher reference; image version separately recorded"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "SEC-10",
+      "part": 8,
+      "book_chapters": "5, 7, 51, 53",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17 maintained NAT address-conservation chapter"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision not stated; no release qualification"
+          ]
+        },
+        {
+          "vendor": "fortios",
+          "status": "READ",
+          "versions": [
+            "FortiOS7.6.6 CLI Reference"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "linux",
+          "status": "READ",
+          "versions": [
+            "nft official manual revision2026-07-02; installed executable version must be recorded"
+          ]
+        },
+        {
+          "vendor": "routeros",
+          "status": "READ",
+          "versions": [
+            "RouterOS7 NAT documented variant; image version separately recorded"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "SEC-11",
+      "part": 8,
+      "book_chapters": "7, 51, 54, 55, 57",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17 IKEv2 profile/keyring chapter",
+            "IOS XE 17 maintained VTI chapter"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-09-08; no release qualification"
+          ]
+        },
+        {
+          "vendor": "fortios",
+          "status": "READ",
+          "versions": [
+            "FortiOS 7.6.6; CLI Reference"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "linux",
+          "status": "READ",
+          "versions": [
+            "strongSwan5.9 swanctl.conf reference",
+            "strongSwan 5.9 documentation branch; strongswan.conf file syntax"
+          ]
+        },
+        {
+          "vendor": "routeros",
+          "status": "READ",
+          "versions": [
+            "RouterOS7 IPsec documented variant; image version separately recorded",
+            "RouterOS7 IKEv2 interoperability example, published2024; target image separately qualified"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "SEC-12",
+      "part": 8,
+      "book_chapters": "7, 51, 54, 55, 62",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17 IKEv2 profile/keyring chapter",
+            "IOS XE 17 maintained VTI chapter"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-09-08; no release qualification"
+          ]
+        },
+        {
+          "vendor": "fortios",
+          "status": "READ",
+          "versions": [
+            "FortiOS 7.6.6; CLI Reference"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "linux",
+          "status": "READ",
+          "versions": [
+            "strongSwan5.9 SA listing reference; child filter since5.9.6",
+            "iproute2v6.6.0 tagged XFRM manual"
+          ]
+        },
+        {
+          "vendor": "routeros",
+          "status": "READ",
+          "versions": [
+            "RouterOS7 IPsec documented variant; image version separately recorded"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "SEC-13",
+      "part": 8,
+      "book_chapters": "20, 21, 32, 33, 51, 57",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300",
+            "IOS XE 17.x; maintained external-service-provider BGP chapter"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-07-08; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "SEC-14",
+      "part": 8,
+      "book_chapters": "21, 32, 33, 51, 57",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "Cisco IOS RTBH design note, 2005; mechanism reference paired with IOS XE 17.15 syntax",
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-23; no release qualification"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        },
+        {
+          "vendor": "sros",
+          "status": "READ",
+          "versions": [
+            "SR OS 24.3.R2 MD-CLI advanced configuration guide"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "OPS-01",
+      "part": 9,
+      "book_chapters": "42, 52, 64, 65",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-07-06; no release qualification"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "fortios",
+          "status": "READ",
+          "versions": [
+            "FortiOS 7.6.6; CLI Reference"
+          ]
+        },
+        {
+          "vendor": "linux",
+          "status": "READ",
+          "versions": [
+            "Net-SNMP maintained snmpd.conf manual; exact installed build/version required"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "OPS-02",
+      "part": 9,
+      "book_chapters": "42, 52, 64, 65",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9500"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-07-06; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.3"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "frr",
+          "status": "READ",
+          "versions": [
+            "FRR 10.2"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "OPS-03",
+      "part": 9,
+      "book_chapters": "42, 64, 65",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x Catalyst9500 Flexible NetFlow; exact model/ASIC restrictions apply"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision not stated; no release qualification"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "fortios",
+          "status": "READ",
+          "versions": [
+            "FortiOS 7.6.6; CLI Reference"
+          ]
+        },
+        {
+          "vendor": "routeros",
+          "status": "READ",
+          "versions": [
+            "RouterOS7 Traffic Flow reference; target image and offload path separately qualified"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "OPS-04",
+      "part": 9,
+      "book_chapters": "42, 64, 65",
+      "vendors": [
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-07-06; no release qualification"
+          ]
+        },
+        {
+          "vendor": "nvue",
+          "status": "READ",
+          "versions": [
+            "Cumulus Linux 5.9 host sFlow manual configuration; NVUE ownership separately checked"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "fortios",
+          "status": "READ",
+          "versions": [
+            "FortiOS 7.6.6; CLI Reference"
+          ]
+        },
+        {
+          "vendor": "sonic",
+          "status": "READ",
+          "versions": [
+            "SONiC sonic-utilities release branch202405; target vendor image unqualified"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "OPS-05",
+      "part": 9,
+      "book_chapters": "42, 64, 65, 69",
+      "vendors": [
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x) Nexus9000 Programmability Guide"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "Arista official Open Management configuration; target EOS 4.36.2F separately qualified"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS telemetry guide; maintained revision and exact sensor support separately qualified"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "sros",
+          "status": "READ",
+          "versions": [
+            "SR OS 25.3.R1 MD-CLI system model"
+          ]
+        },
+        {
+          "vendor": "nvue",
+          "status": "READ",
+          "versions": [
+            "Cumulus Linux 5.9 NetQ gNMI streaming variant",
+            "OpenConfig gNMIc maintained file-configuration reference; installed client version recorded"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "OPS-06",
+      "part": 9,
+      "book_chapters": "68, 69, 70",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x NETCONF programmability guide"
+          ]
+        },
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x) Nexus9000 Programmability Guide"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS maintained NETCONF guide; installed release/capabilities required"
+          ]
+        },
+        {
+          "vendor": "sros",
+          "status": "READ",
+          "versions": [
+            "SR OS 25.3.R1 MD-CLI system model"
+          ]
+        },
+        {
+          "vendor": "iosxr",
+          "status": "READ",
+          "versions": [
+            "IOS XR 24.1.x\u201324.4.x ASR 9000 System Management guide"
+          ]
+        },
+        {
+          "vendor": "linux",
+          "status": "READ",
+          "versions": [
+            "CESNET Netopeer2 upstream master command source captured2026-10-02; hash pinned, installed client version separately recorded"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "OPS-07",
+      "part": 9,
+      "book_chapters": "68, 69, 70",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x RESTCONF programmability guide"
+          ]
+        },
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x) Nexus9000 Programmability Guide"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "Arista official Open Management RESTCONF configuration; target EOS 4.36.2F separately qualified"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS maintained REST API guide; target release/HTTPS configuration separately qualified"
+          ]
+        },
+        {
+          "vendor": "fortios",
+          "status": "READ",
+          "versions": [
+            "FortiOS7.6.6 API administration guide"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "NO_PANEL",
+          "versions": []
+        }
+      ]
+    },
+    {
+      "task": "OPS-08",
+      "part": 9,
+      "book_chapters": "42, 64, 66",
+      "vendors": [
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x) Nexus9000 system management guide"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS maintained timing guide; exact hardware/profile support required"
+          ]
+        },
+        {
+          "vendor": "sros",
+          "status": "READ",
+          "versions": [
+            "SR OS 25.3.R1 Basic System Configuration Guide"
+          ]
+        },
+        {
+          "vendor": "nvue",
+          "status": "READ",
+          "versions": [
+            "Cumulus Linux 5.9 PTP guide; NVUE owner/Spectrum hardware variant"
+          ]
+        },
+        {
+          "vendor": "linux",
+          "status": "READ",
+          "versions": [
+            "LinuxPTP maintained ptp4l manual; installed version required",
+            "LinuxPTP maintained pmc manual; installed version required"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "OPS-09",
+      "part": 9,
+      "book_chapters": "42, 64, 66",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17 maintained SyncE/ESMC/SSM chapter; timing-capable router required"
+          ]
+        },
+        {
+          "vendor": "iosxr",
+          "status": "READ",
+          "versions": [
+            "IOS XR 24.1.x\u201324.4.x ASR9000 frequency-synchronisation chapter"
+          ]
+        },
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x) Nexus9000 system management guide"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS maintained timing guide; exact hardware/profile support required"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10 Network Synchronization Guide"
+          ]
+        },
+        {
+          "vendor": "sros",
+          "status": "READ",
+          "versions": [
+            "SR OS 23.10.R2 classic CLI SyncE example; not25.3 MD-CLI qualification"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "OPS-10",
+      "part": 9,
+      "book_chapters": "42, 52, 64, 65",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x) Nexus9000 system management guide"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-07-06; no release qualification"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation"
+          ]
+        },
+        {
+          "vendor": "linux",
+          "status": "READ",
+          "versions": [
+            "iproute2 v6.6.0 upstream tagged manual; kernel/hardware capability separately qualified"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "OPS-11",
+      "part": 9,
+      "book_chapters": "42, 52, 64, 65",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x) Nexus9000 Troubleshooting Guide"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F",
+            "tcpdump maintained manual; exact installed binary/libpcap version recorded"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-07-06; no release qualification"
+          ]
+        },
+        {
+          "vendor": "fortios",
+          "status": "READ",
+          "versions": [
+            "FortiOS 7.6.6; CLI Reference"
+          ]
+        },
+        {
+          "vendor": "linux",
+          "status": "READ",
+          "versions": [
+            "tcpdump maintained manual; exact installed binary/libpcap version recorded"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "OPS-12",
+      "part": 9,
+      "book_chapters": "42, 52, 64, 65",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300"
+          ]
+        },
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x); Nexus 9000"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-07-06; no release qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10"
+          ]
+        },
+        {
+          "vendor": "linux",
+          "status": "READ",
+          "versions": [
+            "iproute2v6.6.0 tagged ip-link manual"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "AUT-01",
+      "part": 10,
+      "book_chapters": "52, 68\u201372",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300",
+            "Ansible collection 11.5.1; runtime separately pinned/qualified"
+          ]
+        },
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x); Nexus 9000",
+            "Ansible collection 11.2.0; runtime separately pinned/qualified"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F",
+            "Ansible collection 12.2.0; runtime separately pinned/qualified"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-17; no release qualification",
+            "Junos Ansible guide revision 2026-08-24; juniper.device migration; device image separately qualified"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10",
+            "Nokia srlinux collection main revision; fetched source SHA-256 pins syntax; version_added 0.1.0 is not installed version"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation",
+            "Ansible collection 6.0.0; runtime separately pinned/qualified"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "AUT-02",
+      "part": 10,
+      "book_chapters": "52, 68\u201372",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300",
+            "Ansible collection 11.5.1; runtime separately pinned/qualified",
+            "Maintained upstream API; retrieval/hash pins reference; installed runtime must be recorded"
+          ]
+        },
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x); Nexus 9000",
+            "Ansible collection 11.2.0; runtime separately pinned/qualified",
+            "Maintained upstream API; retrieval/hash pins reference; installed runtime must be recorded"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F",
+            "Ansible collection 12.2.0; runtime separately pinned/qualified",
+            "Maintained upstream API; retrieval/hash pins reference; installed runtime must be recorded"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-17; no release qualification",
+            "Junos Ansible guide revision 2026-08-24; juniper.device migration; device image separately qualified",
+            "Maintained upstream API; retrieval/hash pins reference; installed runtime must be recorded"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10",
+            "Nokia srlinux collection main revision; fetched source SHA-256 pins syntax; version_added 0.1.0 is not installed version",
+            "Maintained upstream API; retrieval/hash pins reference; installed runtime must be recorded"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation",
+            "Ansible collection 6.0.0; runtime separately pinned/qualified",
+            "Maintained upstream API; retrieval/hash pins reference; installed runtime must be recorded"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "AUT-03",
+      "part": 10,
+      "book_chapters": "52, 68\u201372",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300",
+            "Ansible collection 11.5.1; runtime separately pinned/qualified"
+          ]
+        },
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x); Nexus 9000",
+            "Ansible collection 11.2.0; runtime separately pinned/qualified"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F",
+            "Ansible collection 12.2.0; runtime separately pinned/qualified"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-17; no release qualification",
+            "Junos Ansible guide revision 2026-08-24; juniper.device migration; device image separately qualified"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10",
+            "Nokia srlinux collection main revision; fetched source SHA-256 pins syntax; version_added 0.1.0 is not installed version"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation",
+            "Ansible collection 6.0.0; runtime separately pinned/qualified"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "AUT-04",
+      "part": 10,
+      "book_chapters": "52, 68\u201372",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300",
+            "NAPALM 3 documentation; supported-driver matrix, not current binary qualification"
+          ]
+        },
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x); Nexus 9000",
+            "NAPALM 3 documentation; supported-driver matrix, not current binary qualification"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F",
+            "NAPALM 3 documentation; supported-driver matrix, not current binary qualification"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-17; no release qualification",
+            "NAPALM 3 documentation; supported-driver matrix, not current binary qualification"
+          ]
+        },
+        {
+          "vendor": "iosxr",
+          "status": "READ",
+          "versions": [
+            "IOS XR 24.1.x\u201324.4.x ASR 9000 Programmability guide",
+            "NAPALM 3 documentation; supported-driver matrix, not current binary qualification"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "Nokia srlinux collection main revision; fetched source SHA-256 pins syntax; version_added 0.1.0 is not installed version",
+            "napalm-srlinux community driver maintained documentation; retrieval/hash pins reference, not installed binary",
+            "NAPALM 3 documentation; supported-driver matrix, not current binary qualification"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "AUT-05",
+      "part": 10,
+      "book_chapters": "52, 68\u201372",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x NETCONF programmability guide",
+            "Cisco IOS XE 17.15.1 vendor YANG model",
+            "ncclient maintained API documentation; installed package version must be recorded"
+          ]
+        },
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x) Nexus9000 Programmability Guide",
+            "ncclient maintained API documentation; installed package version must be recorded"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS maintained NETCONF guide; installed release/capabilities required",
+            "Junos OS; guide revision 2026-06-17; no release qualification",
+            "ncclient maintained API documentation; installed package version must be recorded"
+          ]
+        },
+        {
+          "vendor": "iosxr",
+          "status": "READ",
+          "versions": [
+            "IOS XR 24.1.x\u201324.4.x ASR 9000 Programmability guide",
+            "Cisco IOS XR 24.1.1 vendor YANG model",
+            "ncclient maintained API documentation; installed package version must be recorded"
+          ]
+        },
+        {
+          "vendor": "sros",
+          "status": "READ",
+          "versions": [
+            "SR OS 25.3.R1 System Management Guide",
+            "Nokia SR OS 25.3 vendor YANG system submodule; fetched hash pins maintained revision",
+            "ncclient maintained API documentation; installed package version must be recorded"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "NO_PANEL",
+          "versions": []
+        }
+      ]
+    },
+    {
+      "task": "AUT-06",
+      "part": 10,
+      "book_chapters": "52, 68\u201372",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300",
+            "Ansible collection 11.5.1; runtime separately pinned/qualified"
+          ]
+        },
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x); Nexus 9000",
+            "Ansible collection 11.2.0; runtime separately pinned/qualified"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F",
+            "Ansible collection 12.2.0; runtime separately pinned/qualified"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-17; no release qualification",
+            "Junos Ansible guide revision 2026-08-24; juniper.device migration; device image separately qualified"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10",
+            "Nokia srlinux collection main revision; fetched source SHA-256 pins syntax; version_added 0.1.0 is not installed version"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation",
+            "Ansible collection 6.0.0; runtime separately pinned/qualified"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "AUT-07",
+      "part": 10,
+      "book_chapters": "52, 68\u201372",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300",
+            "Ansible collection 11.5.1; runtime separately pinned/qualified"
+          ]
+        },
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x); Nexus 9000",
+            "Ansible collection 11.2.0; runtime separately pinned/qualified"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F",
+            "Ansible collection 12.2.0; runtime separately pinned/qualified"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-17; no release qualification",
+            "Junos Ansible guide revision 2026-08-24; juniper.device migration; device image separately qualified"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10",
+            "Nokia srlinux collection main revision; fetched source SHA-256 pins syntax; version_added 0.1.0 is not installed version"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation",
+            "Ansible collection 6.0.0; runtime separately pinned/qualified"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "AUT-08",
+      "part": 10,
+      "book_chapters": "52, 68\u201372",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300",
+            "Ansible collection 11.5.1; runtime separately pinned/qualified"
+          ]
+        },
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x); Nexus 9000",
+            "Ansible collection 11.2.0; runtime separately pinned/qualified"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F",
+            "Ansible collection 12.2.0; runtime separately pinned/qualified"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-17; no release qualification",
+            "Junos Ansible guide revision 2026-08-24; juniper.device migration; device image separately qualified"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10",
+            "Nokia srlinux collection main revision; fetched source SHA-256 pins syntax; version_added 0.1.0 is not installed version"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation",
+            "Ansible collection 6.0.0; runtime separately pinned/qualified"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "AUT-09",
+      "part": 10,
+      "book_chapters": "52, 68\u201372",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300",
+            "Ansible collection 11.5.1; runtime separately pinned/qualified"
+          ]
+        },
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x); Nexus 9000",
+            "Ansible collection 11.2.0; runtime separately pinned/qualified"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F",
+            "Ansible collection 12.2.0; runtime separately pinned/qualified"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-17; no release qualification",
+            "Junos Ansible guide revision 2026-08-24; juniper.device migration; device image separately qualified"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10",
+            "Nokia srlinux collection main revision; fetched source SHA-256 pins syntax; version_added 0.1.0 is not installed version"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation",
+            "Ansible collection 6.0.0; runtime separately pinned/qualified"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "AUT-10",
+      "part": 10,
+      "book_chapters": "52, 68\u201372",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300",
+            "Ansible collection 11.5.1; runtime separately pinned/qualified"
+          ]
+        },
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x); Nexus 9000",
+            "Ansible collection 11.2.0; runtime separately pinned/qualified"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F",
+            "Ansible collection 12.2.0; runtime separately pinned/qualified"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-17; no release qualification",
+            "Junos Ansible guide revision 2026-08-24; juniper.device migration; device image separately qualified"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10",
+            "Nokia srlinux collection main revision; fetched source SHA-256 pins syntax; version_added 0.1.0 is not installed version"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation",
+            "Ansible collection 6.0.0; runtime separately pinned/qualified"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "AUT-11",
+      "part": 10,
+      "book_chapters": "52, 68\u201372",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300",
+            "Ansible collection 11.5.1; runtime separately pinned/qualified"
+          ]
+        },
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x); Nexus 9000",
+            "Ansible collection 11.2.0; runtime separately pinned/qualified"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F",
+            "Ansible collection 12.2.0; runtime separately pinned/qualified"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-17; no release qualification",
+            "Junos Ansible guide revision 2026-08-24; juniper.device migration; device image separately qualified"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10",
+            "Nokia srlinux collection main revision; fetched source SHA-256 pins syntax; version_added 0.1.0 is not installed version"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation",
+            "Ansible collection 6.0.0; runtime separately pinned/qualified"
+          ]
+        }
+      ]
+    },
+    {
+      "task": "AUT-12",
+      "part": 10,
+      "book_chapters": "52, 68\u201372",
+      "vendors": [
+        {
+          "vendor": "iosxe",
+          "status": "READ",
+          "versions": [
+            "IOS XE 17.15.x / Catalyst 9300",
+            "Ansible collection 11.5.1; runtime separately pinned/qualified"
+          ]
+        },
+        {
+          "vendor": "nxos",
+          "status": "READ",
+          "versions": [
+            "NX-OS 10.5(x); Nexus 9000",
+            "Ansible collection 11.2.0; runtime separately pinned/qualified"
+          ]
+        },
+        {
+          "vendor": "eos",
+          "status": "READ",
+          "versions": [
+            "EOS 4.36.2F",
+            "Ansible collection 12.2.0; runtime separately pinned/qualified"
+          ]
+        },
+        {
+          "vendor": "junos",
+          "status": "READ",
+          "versions": [
+            "Junos OS; guide revision 2026-06-17; no release qualification",
+            "Junos Ansible guide revision 2026-08-24; juniper.device migration; device image separately qualified"
+          ]
+        },
+        {
+          "vendor": "srl",
+          "status": "READ",
+          "versions": [
+            "SR Linux 24.10",
+            "Nokia srlinux collection main revision; fetched source SHA-256 pins syntax; version_added 0.1.0 is not installed version"
+          ]
+        },
+        {
+          "vendor": "vyos",
+          "status": "READ",
+          "versions": [
+            "VyOS 1.4.x (sagitta) documentation",
+            "Ansible collection 6.0.0; runtime separately pinned/qualified"
+          ]
+        }
+      ]
+    }
+  ]
+}

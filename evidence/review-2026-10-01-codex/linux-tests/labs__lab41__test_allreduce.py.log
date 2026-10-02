@@ -1,0 +1,53 @@
+ok    14 steps for an 8-rank ring  [14]
+ok    latency term is 2(n-1)*alpha  [7e-05]
+ok    transfer term is 2(n-1)/n * S / B  [0.15032385536]
+ok    total is the sum of the two
+ok    a 4 GiB gradient is bandwidth-bound
+ok    a 64 KiB gradient is latency-bound  [latency-bound]
+ok    ...and its latency share is the majority  [0.9682716737931462]
+ok    alpha=0 reproduces the old script exactly  [0.15032385536]
+ok    alpha=0 calls everything bandwidth-bound
+ok    busbw = algbw * 2(n-1)/n
+ok    busbw approaches the link rate for a large gradient  [49.97672777260998]
+ok    a 400 Gb/s link cannot give a busbw in the hundreds of GB/s  [49.97672777260998]
+ok    the ring is paced by the slowest link
+ok    ...and not by the mean  [362.5]
+ok    one slow link costs the same as every link being slow
+ok    the straggler penalty depends on the gradient size  [{65536: 1.095, 1048576: 2.032, 67108864: 3.913, 4294967296: 3.999}]
+ok    ...it rises with the gradient size  [[1.0951849786205614, 2.0318679934500565, 3.9131804568513817, 3.998603666356599]]
+ok    ...tends to the bandwidth ratio for a huge gradient  [3.998603666356599]
+ok    ...and is far below it for a small one  [1.0951849786205614]
+ok    a 4x bandwidth cut is NOT a 4x slowdown at every size
+ok    penalty stays within the bandwidth ratio at 1024 B  [(1.0015352139704472, 4.0)]
+ok    penalty stays within the bandwidth ratio at 4096 B  [(1.0061314428051351, 4.0)]
+ok    penalty stays within the bandwidth ratio at 1048576 B  [(2.0318679934500565, 4.0)]
+ok    penalty stays within the bandwidth ratio at 1073741824 B  [(3.994422453542161, 4.0)]
+ok    penalty stays within the bandwidth ratio at 8589934592 B  [(3.9993016706615077, 4.0)]
+ok    with no per-step cost the penalty is 4x at every size --- the old bug  [[4.0, 4.0, 4.0]]
+ok    at the crossover the two terms are equal  [(7e-05, 7e-05)]
+ok    the crossover scales with alpha
+ok    the crossover scales with bandwidth
+ok    the crossover scales with rank count
+ok    400 Gb/s is 50 GB/s in one direction
+ok    a bidirectional figure is halved for one direction
+ok    the scale-up path is 9x the back-end path per GPU  [9.0]
+ok    a whole 8-GPU node aggregates 400 GB/s onto the fabric
+ok    350 GB/s per GPU is impossible on a 400 Gb/s NIC
+ok    ...and is within reach of the scale-up path
+ok    rejects (1, 1024, 400)  [a ring needs at least 2 ranks, got 1]
+ok    rejects (8, 0, 400)  [gradient size must be positive, got 0]
+ok    rejects (8, -1, 400)  [gradient size must be positive, got -1]
+ok    rejects (8, 1024, 0)  [every link bandwidth must be positive, got [0, 0, 0, 0, 0, 0]
+ok    rejects (8, 1024, [400, 400, 400, 400, 400, 400, 400])  [a ring of 8 ranks has 8 links, got 7]
+ok    rejects (8, 1024, [400, 400, 400, 400, 400, 400, 400, 0])  [every link bandwidth must be positive, got [400, 400, 400, 4]
+ok    rejects (8.5, 1024, 400)  [a ring needs at least 2 ranks, got 8.5]
+ok    rejects a negative alpha
+ok    rejects a straggler faster than the rest
+ok    the report refuses a single slowdown number
+ok    the report names the regime of every row
+ok    the report separates scale-up from back-end
+ok    the report scopes the budget to its one-NIC inter-node ring
+ok    the script exits 0  [0]
+ok    --json exits 0  [0]
+
+51/51 checks passed

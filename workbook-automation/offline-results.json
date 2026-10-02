@@ -1,0 +1,843 @@
+{
+  "mode": "SYNTHETIC_OFFLINE",
+  "device_execution": false,
+  "platform_guards": [
+    {
+      "mode": "SYNTHETIC_OFFLINE",
+      "platform": "iosxe",
+      "checks": [
+        {
+          "test": "owned proposal",
+          "result": "PASS"
+        },
+        {
+          "test": "deterministic render",
+          "result": "PASS"
+        },
+        {
+          "test": "newline",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "single quote",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "double quote",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "backslash",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "yaml marker",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "control byte",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "unowned interface",
+          "result": "PASS",
+          "refusal": "UNOWNED_INTERFACE"
+        },
+        {
+          "test": "unowned device",
+          "result": "PASS",
+          "refusal": "UNOWNED_DEVICE"
+        },
+        {
+          "test": "extra field",
+          "result": "PASS",
+          "refusal": "UNKNOWN_OR_MISSING_FIELD"
+        },
+        {
+          "test": "missing variable",
+          "result": "PASS",
+          "refusal": "UNKNOWN_OR_MISSING_FIELD"
+        },
+        {
+          "test": "management_ok",
+          "result": "PASS",
+          "refusal": "PRECONDITION_MANAGEMENT_OK"
+        },
+        {
+          "test": "service_ok",
+          "result": "PASS",
+          "refusal": "PRECONDITION_SERVICE_OK"
+        },
+        {
+          "test": "restoration_ready",
+          "result": "PASS",
+          "refusal": "PRECONDITION_RESTORATION_READY"
+        },
+        {
+          "test": "stale baseline",
+          "result": "PASS",
+          "refusal": "BASELINE_CHANGED"
+        },
+        {
+          "test": "stale observation",
+          "result": "PASS",
+          "refusal": "STALE_OR_FUTURE_OBSERVATION"
+        },
+        {
+          "test": "golden positive",
+          "result": "PASS"
+        },
+        {
+          "test": "golden drift",
+          "result": "PASS",
+          "refusal": "GOLDEN_DESCRIPTION_DRIFT"
+        },
+        {
+          "test": "golden absent",
+          "result": "PASS",
+          "refusal": "GOLDEN_DESCRIPTION_DRIFT"
+        },
+        {
+          "test": "fresh event read-only",
+          "result": "PASS"
+        },
+        {
+          "test": "event replay",
+          "result": "PASS",
+          "refusal": "EVENT_DUPLICATE"
+        },
+        {
+          "test": "event burst",
+          "result": "PASS",
+          "refusal": "EVENT_COOLDOWN"
+        },
+        {
+          "test": "event command injection",
+          "result": "PASS",
+          "refusal": "EVENT_SCHEMA"
+        },
+        {
+          "test": "event wrong target",
+          "result": "PASS",
+          "refusal": "EVENT_UNOWNED_TARGET"
+        },
+        {
+          "test": "event stale",
+          "result": "PASS",
+          "refusal": "EVENT_STALE_OR_FUTURE"
+        }
+      ],
+      "passed": 26,
+      "device_execution": false
+    },
+    {
+      "mode": "SYNTHETIC_OFFLINE",
+      "platform": "nxos",
+      "checks": [
+        {
+          "test": "owned proposal",
+          "result": "PASS"
+        },
+        {
+          "test": "deterministic render",
+          "result": "PASS"
+        },
+        {
+          "test": "newline",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "single quote",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "double quote",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "backslash",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "yaml marker",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "control byte",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "unowned interface",
+          "result": "PASS",
+          "refusal": "UNOWNED_INTERFACE"
+        },
+        {
+          "test": "unowned device",
+          "result": "PASS",
+          "refusal": "UNOWNED_DEVICE"
+        },
+        {
+          "test": "extra field",
+          "result": "PASS",
+          "refusal": "UNKNOWN_OR_MISSING_FIELD"
+        },
+        {
+          "test": "missing variable",
+          "result": "PASS",
+          "refusal": "UNKNOWN_OR_MISSING_FIELD"
+        },
+        {
+          "test": "management_ok",
+          "result": "PASS",
+          "refusal": "PRECONDITION_MANAGEMENT_OK"
+        },
+        {
+          "test": "service_ok",
+          "result": "PASS",
+          "refusal": "PRECONDITION_SERVICE_OK"
+        },
+        {
+          "test": "restoration_ready",
+          "result": "PASS",
+          "refusal": "PRECONDITION_RESTORATION_READY"
+        },
+        {
+          "test": "stale baseline",
+          "result": "PASS",
+          "refusal": "BASELINE_CHANGED"
+        },
+        {
+          "test": "stale observation",
+          "result": "PASS",
+          "refusal": "STALE_OR_FUTURE_OBSERVATION"
+        },
+        {
+          "test": "golden positive",
+          "result": "PASS"
+        },
+        {
+          "test": "golden drift",
+          "result": "PASS",
+          "refusal": "GOLDEN_DESCRIPTION_DRIFT"
+        },
+        {
+          "test": "golden absent",
+          "result": "PASS",
+          "refusal": "GOLDEN_DESCRIPTION_DRIFT"
+        },
+        {
+          "test": "fresh event read-only",
+          "result": "PASS"
+        },
+        {
+          "test": "event replay",
+          "result": "PASS",
+          "refusal": "EVENT_DUPLICATE"
+        },
+        {
+          "test": "event burst",
+          "result": "PASS",
+          "refusal": "EVENT_COOLDOWN"
+        },
+        {
+          "test": "event command injection",
+          "result": "PASS",
+          "refusal": "EVENT_SCHEMA"
+        },
+        {
+          "test": "event wrong target",
+          "result": "PASS",
+          "refusal": "EVENT_UNOWNED_TARGET"
+        },
+        {
+          "test": "event stale",
+          "result": "PASS",
+          "refusal": "EVENT_STALE_OR_FUTURE"
+        }
+      ],
+      "passed": 26,
+      "device_execution": false
+    },
+    {
+      "mode": "SYNTHETIC_OFFLINE",
+      "platform": "eos",
+      "checks": [
+        {
+          "test": "owned proposal",
+          "result": "PASS"
+        },
+        {
+          "test": "deterministic render",
+          "result": "PASS"
+        },
+        {
+          "test": "newline",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "single quote",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "double quote",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "backslash",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "yaml marker",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "control byte",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "unowned interface",
+          "result": "PASS",
+          "refusal": "UNOWNED_INTERFACE"
+        },
+        {
+          "test": "unowned device",
+          "result": "PASS",
+          "refusal": "UNOWNED_DEVICE"
+        },
+        {
+          "test": "extra field",
+          "result": "PASS",
+          "refusal": "UNKNOWN_OR_MISSING_FIELD"
+        },
+        {
+          "test": "missing variable",
+          "result": "PASS",
+          "refusal": "UNKNOWN_OR_MISSING_FIELD"
+        },
+        {
+          "test": "management_ok",
+          "result": "PASS",
+          "refusal": "PRECONDITION_MANAGEMENT_OK"
+        },
+        {
+          "test": "service_ok",
+          "result": "PASS",
+          "refusal": "PRECONDITION_SERVICE_OK"
+        },
+        {
+          "test": "restoration_ready",
+          "result": "PASS",
+          "refusal": "PRECONDITION_RESTORATION_READY"
+        },
+        {
+          "test": "stale baseline",
+          "result": "PASS",
+          "refusal": "BASELINE_CHANGED"
+        },
+        {
+          "test": "stale observation",
+          "result": "PASS",
+          "refusal": "STALE_OR_FUTURE_OBSERVATION"
+        },
+        {
+          "test": "golden positive",
+          "result": "PASS"
+        },
+        {
+          "test": "golden drift",
+          "result": "PASS",
+          "refusal": "GOLDEN_DESCRIPTION_DRIFT"
+        },
+        {
+          "test": "golden absent",
+          "result": "PASS",
+          "refusal": "GOLDEN_DESCRIPTION_DRIFT"
+        },
+        {
+          "test": "fresh event read-only",
+          "result": "PASS"
+        },
+        {
+          "test": "event replay",
+          "result": "PASS",
+          "refusal": "EVENT_DUPLICATE"
+        },
+        {
+          "test": "event burst",
+          "result": "PASS",
+          "refusal": "EVENT_COOLDOWN"
+        },
+        {
+          "test": "event command injection",
+          "result": "PASS",
+          "refusal": "EVENT_SCHEMA"
+        },
+        {
+          "test": "event wrong target",
+          "result": "PASS",
+          "refusal": "EVENT_UNOWNED_TARGET"
+        },
+        {
+          "test": "event stale",
+          "result": "PASS",
+          "refusal": "EVENT_STALE_OR_FUTURE"
+        }
+      ],
+      "passed": 26,
+      "device_execution": false
+    },
+    {
+      "mode": "SYNTHETIC_OFFLINE",
+      "platform": "junos",
+      "checks": [
+        {
+          "test": "owned proposal",
+          "result": "PASS"
+        },
+        {
+          "test": "deterministic render",
+          "result": "PASS"
+        },
+        {
+          "test": "newline",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "single quote",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "double quote",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "backslash",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "yaml marker",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "control byte",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "unowned interface",
+          "result": "PASS",
+          "refusal": "UNOWNED_INTERFACE"
+        },
+        {
+          "test": "unowned device",
+          "result": "PASS",
+          "refusal": "UNOWNED_DEVICE"
+        },
+        {
+          "test": "extra field",
+          "result": "PASS",
+          "refusal": "UNKNOWN_OR_MISSING_FIELD"
+        },
+        {
+          "test": "missing variable",
+          "result": "PASS",
+          "refusal": "UNKNOWN_OR_MISSING_FIELD"
+        },
+        {
+          "test": "management_ok",
+          "result": "PASS",
+          "refusal": "PRECONDITION_MANAGEMENT_OK"
+        },
+        {
+          "test": "service_ok",
+          "result": "PASS",
+          "refusal": "PRECONDITION_SERVICE_OK"
+        },
+        {
+          "test": "restoration_ready",
+          "result": "PASS",
+          "refusal": "PRECONDITION_RESTORATION_READY"
+        },
+        {
+          "test": "stale baseline",
+          "result": "PASS",
+          "refusal": "BASELINE_CHANGED"
+        },
+        {
+          "test": "stale observation",
+          "result": "PASS",
+          "refusal": "STALE_OR_FUTURE_OBSERVATION"
+        },
+        {
+          "test": "golden positive",
+          "result": "PASS"
+        },
+        {
+          "test": "golden drift",
+          "result": "PASS",
+          "refusal": "GOLDEN_DESCRIPTION_DRIFT"
+        },
+        {
+          "test": "golden absent",
+          "result": "PASS",
+          "refusal": "GOLDEN_DESCRIPTION_DRIFT"
+        },
+        {
+          "test": "fresh event read-only",
+          "result": "PASS"
+        },
+        {
+          "test": "event replay",
+          "result": "PASS",
+          "refusal": "EVENT_DUPLICATE"
+        },
+        {
+          "test": "event burst",
+          "result": "PASS",
+          "refusal": "EVENT_COOLDOWN"
+        },
+        {
+          "test": "event command injection",
+          "result": "PASS",
+          "refusal": "EVENT_SCHEMA"
+        },
+        {
+          "test": "event wrong target",
+          "result": "PASS",
+          "refusal": "EVENT_UNOWNED_TARGET"
+        },
+        {
+          "test": "event stale",
+          "result": "PASS",
+          "refusal": "EVENT_STALE_OR_FUTURE"
+        }
+      ],
+      "passed": 26,
+      "device_execution": false
+    },
+    {
+      "mode": "SYNTHETIC_OFFLINE",
+      "platform": "srl",
+      "checks": [
+        {
+          "test": "owned proposal",
+          "result": "PASS"
+        },
+        {
+          "test": "deterministic render",
+          "result": "PASS"
+        },
+        {
+          "test": "newline",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "single quote",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "double quote",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "backslash",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "yaml marker",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "control byte",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "unowned interface",
+          "result": "PASS",
+          "refusal": "UNOWNED_INTERFACE"
+        },
+        {
+          "test": "unowned device",
+          "result": "PASS",
+          "refusal": "UNOWNED_DEVICE"
+        },
+        {
+          "test": "extra field",
+          "result": "PASS",
+          "refusal": "UNKNOWN_OR_MISSING_FIELD"
+        },
+        {
+          "test": "missing variable",
+          "result": "PASS",
+          "refusal": "UNKNOWN_OR_MISSING_FIELD"
+        },
+        {
+          "test": "management_ok",
+          "result": "PASS",
+          "refusal": "PRECONDITION_MANAGEMENT_OK"
+        },
+        {
+          "test": "service_ok",
+          "result": "PASS",
+          "refusal": "PRECONDITION_SERVICE_OK"
+        },
+        {
+          "test": "restoration_ready",
+          "result": "PASS",
+          "refusal": "PRECONDITION_RESTORATION_READY"
+        },
+        {
+          "test": "stale baseline",
+          "result": "PASS",
+          "refusal": "BASELINE_CHANGED"
+        },
+        {
+          "test": "stale observation",
+          "result": "PASS",
+          "refusal": "STALE_OR_FUTURE_OBSERVATION"
+        },
+        {
+          "test": "golden positive",
+          "result": "PASS"
+        },
+        {
+          "test": "golden drift",
+          "result": "PASS",
+          "refusal": "GOLDEN_DESCRIPTION_DRIFT"
+        },
+        {
+          "test": "golden absent",
+          "result": "PASS",
+          "refusal": "GOLDEN_DESCRIPTION_DRIFT"
+        },
+        {
+          "test": "fresh event read-only",
+          "result": "PASS"
+        },
+        {
+          "test": "event replay",
+          "result": "PASS",
+          "refusal": "EVENT_DUPLICATE"
+        },
+        {
+          "test": "event burst",
+          "result": "PASS",
+          "refusal": "EVENT_COOLDOWN"
+        },
+        {
+          "test": "event command injection",
+          "result": "PASS",
+          "refusal": "EVENT_SCHEMA"
+        },
+        {
+          "test": "event wrong target",
+          "result": "PASS",
+          "refusal": "EVENT_UNOWNED_TARGET"
+        },
+        {
+          "test": "event stale",
+          "result": "PASS",
+          "refusal": "EVENT_STALE_OR_FUTURE"
+        }
+      ],
+      "passed": 26,
+      "device_execution": false
+    },
+    {
+      "mode": "SYNTHETIC_OFFLINE",
+      "platform": "vyos",
+      "checks": [
+        {
+          "test": "owned proposal",
+          "result": "PASS"
+        },
+        {
+          "test": "deterministic render",
+          "result": "PASS"
+        },
+        {
+          "test": "newline",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "single quote",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "double quote",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "backslash",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "yaml marker",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "control byte",
+          "result": "PASS",
+          "refusal": "UNSAFE_DESCRIPTION"
+        },
+        {
+          "test": "unowned interface",
+          "result": "PASS",
+          "refusal": "UNOWNED_INTERFACE"
+        },
+        {
+          "test": "unowned device",
+          "result": "PASS",
+          "refusal": "UNOWNED_DEVICE"
+        },
+        {
+          "test": "extra field",
+          "result": "PASS",
+          "refusal": "UNKNOWN_OR_MISSING_FIELD"
+        },
+        {
+          "test": "missing variable",
+          "result": "PASS",
+          "refusal": "UNKNOWN_OR_MISSING_FIELD"
+        },
+        {
+          "test": "management_ok",
+          "result": "PASS",
+          "refusal": "PRECONDITION_MANAGEMENT_OK"
+        },
+        {
+          "test": "service_ok",
+          "result": "PASS",
+          "refusal": "PRECONDITION_SERVICE_OK"
+        },
+        {
+          "test": "restoration_ready",
+          "result": "PASS",
+          "refusal": "PRECONDITION_RESTORATION_READY"
+        },
+        {
+          "test": "stale baseline",
+          "result": "PASS",
+          "refusal": "BASELINE_CHANGED"
+        },
+        {
+          "test": "stale observation",
+          "result": "PASS",
+          "refusal": "STALE_OR_FUTURE_OBSERVATION"
+        },
+        {
+          "test": "golden positive",
+          "result": "PASS"
+        },
+        {
+          "test": "golden drift",
+          "result": "PASS",
+          "refusal": "GOLDEN_DESCRIPTION_DRIFT"
+        },
+        {
+          "test": "golden absent",
+          "result": "PASS",
+          "refusal": "GOLDEN_DESCRIPTION_DRIFT"
+        },
+        {
+          "test": "fresh event read-only",
+          "result": "PASS"
+        },
+        {
+          "test": "event replay",
+          "result": "PASS",
+          "refusal": "EVENT_DUPLICATE"
+        },
+        {
+          "test": "event burst",
+          "result": "PASS",
+          "refusal": "EVENT_COOLDOWN"
+        },
+        {
+          "test": "event command injection",
+          "result": "PASS",
+          "refusal": "EVENT_SCHEMA"
+        },
+        {
+          "test": "event wrong target",
+          "result": "PASS",
+          "refusal": "EVENT_UNOWNED_TARGET"
+        },
+        {
+          "test": "event stale",
+          "result": "PASS",
+          "refusal": "EVENT_STALE_OR_FUTURE"
+        }
+      ],
+      "passed": 26,
+      "device_execution": false
+    }
+  ],
+  "xml_checks": [
+    {
+      "platform": "iosxe",
+      "checks": 8,
+      "result": "PASS",
+      "scope": "offline XML wrapper, keyed parent existence, leaf/presence/inverse/escaping; not YANG validation"
+    },
+    {
+      "platform": "nxos",
+      "checks": 8,
+      "result": "PASS",
+      "scope": "offline XML wrapper, keyed parent existence, leaf/presence/inverse/escaping; not YANG validation"
+    },
+    {
+      "platform": "junos",
+      "checks": 8,
+      "result": "PASS",
+      "scope": "offline XML wrapper, keyed parent existence, leaf/presence/inverse/escaping; not YANG validation"
+    },
+    {
+      "platform": "iosxr",
+      "checks": 8,
+      "result": "PASS",
+      "scope": "offline XML wrapper, keyed parent existence, leaf/presence/inverse/escaping; not YANG validation"
+    },
+    {
+      "platform": "sros",
+      "checks": 8,
+      "result": "PASS",
+      "scope": "offline XML wrapper, keyed parent existence, leaf/presence/inverse/escaping; not YANG validation"
+    }
+  ],
+  "total_checks": 196
+}

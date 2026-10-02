@@ -9,7 +9,7 @@ python3 airtime.py --activity-multiplier 2
 ```
 
 The model.json populations, rates, activity, band eligibility and useful
-capacities reproduce Chapter 14. Rates combine upstream/downstream payload.
+capacities reproduce Chapter 13. Rates combine upstream/downstream payload.
 Capacity already includes the assumed protocol efficiency; do not subtract
 the same overhead again. The 60% budget reserves additional room for load
 variation and latency. It is a design assumption, not an industry guarantee.

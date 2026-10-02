@@ -1,4 +1,4 @@
-# Chapter 91: reconcile executive metrics
+# Chapter 87: reconcile executive metrics
 
 Run `python dashboard_metrics.py` and `python -m unittest -v` with Python 3.12+.
 Only the standard library is required. There are no network calls or credentials.

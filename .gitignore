@@ -9,3 +9,6 @@ venv/
 clab-*/
 .clab.*
 *.log
+# Dated evidence keeps its raw logs; SHA256SUMS.txt lists them, so a checkout
+# without them would fail its own manifest.
+!evidence/**/*.log

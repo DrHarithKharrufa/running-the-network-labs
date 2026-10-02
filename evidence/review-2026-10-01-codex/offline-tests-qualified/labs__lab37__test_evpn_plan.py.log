@@ -1,0 +1,30 @@
+ok    the shipped plan validates
+ok    the shipped plan has no errors
+ok    red-vrf learns from shared-vrf
+ok    shared-vrf does NOT learn from red-vrf --- the leak is one way
+ok    the one-way cross-tenant relationship is reported
+ok    red-web and blue-web learn nothing from each other
+ok    a multi-leaf service is not flagged for exporting its own target
+ok    adding one import makes blue-vrf learn from red-vrf
+ok    ...and that new relationship is reported as one way
+ok    red-vrf still does not learn from blue-vrf
+ok    a mutual cross-tenant path is raised for review
+ok    an import that nothing exports is an error
+ok    the mistyped import removes the shared-services relationship
+ok    a service that imports nothing learns nothing
+ok    exporting a target nothing imports --- not even itself --- is a warning
+ok    ...and importing a target nothing exports is still an error
+ok    rejects {'vni': 0} for red-web
+ok    rejects {'vni': 16777216} for red-web
+ok    rejects {'leaves': []} for red-web
+ok    rejects {'kind': 'magic'} for red-web
+ok    rejects {'export': ['not-a-target']} for red-web
+ok    a reused VNI is rejected
+ok    an empty plan is rejected
+ok    a missing export list is rejected
+ok    the report names what it is not
+ok    the report prints the directional relationships
+ok    a clean plan exits 0
+ok    a plan with an error exits non-zero
+
+28/28 checks passed
