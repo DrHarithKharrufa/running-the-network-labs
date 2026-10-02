@@ -1,24 +1,25 @@
-# Qualification of RTN-2026-10-02
+# Qualification of RTN-2026-10-03
 
 **Which runs belong to this edition, and which are carried forward.** One
-test run was made for this edition, on 2 October 2026, and it is described
+test run was made for this edition, on 3 October 2026, and it is described
 first. The FRR topology runs below were executed on 26 September and 1 October
 2026 and have **not** been repeated for this edition; their dated evidence
 folders, `evidence/revision-2026-09-26/` and `evidence/revision-2026-10-01/`,
 are where they live and those dates are part of the claim. Nothing below should
 be read as a statement that an earlier run was re-executed for this edition.
 
-**This edition's run, 2 October 2026.** **All 109 declared test programs pass in
-one run on one host**, including the two privileged Lab53 suites that earlier
-runs reported as NOT_RUN: Linux 6.18 in a container, as root, Python 3.11.15,
-iproute2 6.1.0 and nftables 1.0.9, using `python run-all-tests.py --include-live`.
-The uRPF suite reported 79 checks and the infrastructure-ACL suite 46, none
-failed. Results, with the SHA-256 of every test program, are in
-`test-results-2026-10-02/execution.json`. This is the first single-host run of
-the complete declared set; it is still 109 programs, not 109 network
-deployments, and only Lab53 uses real privileged packet filters.
+**This edition's run, 3 October 2026.** **All 109 declared test programs pass in
+one run on one host**, including the two privileged Lab53 suites: Linux 6.18 in a
+container, as root, Python 3.11.15, iproute2 6.1.0 and nftables 1.0.9, using
+`python run-all-tests.py --include-live`. The uRPF suite reported 79 checks and
+the infrastructure-ACL suite 46, none failed. Results, with the SHA-256 of every
+test program, are in `test-results-2026-10-03/execution.json`. It is still 109
+programs, not 109 network deployments, and only Lab53 uses real privileged
+packet filters. The programs are byte-identical to the previous edition's.
 
-**Earlier runs, retained for comparison.** On 1 October 2026, 107 of 109 passed
+**Earlier runs, retained for comparison.** On 2 October 2026 the same complete
+set passed on the same host in the earlier edition RTN-2026-10-02, the first
+single-host run of all 109 (`test-results-2026-10-02/`). On 1 October 2026, 107 of 109 passed
 with the two Lab53 suites NOT_RUN (Linux, Python 3.11.15;
 `test-results-2026-10-01/`). On 26 September 2026, 106 of 108 passed, two
 NOT_RUN; that run was on Windows Python 3.12.14 for 102 of them, with four

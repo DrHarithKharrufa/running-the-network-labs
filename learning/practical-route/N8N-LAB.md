@@ -1,6 +1,6 @@
 # Run the monitoring workflow in n8n
 
-Edition RTN-2026-10-02. Pinned execution target: **n8n 2.40.7**, image `docker.n8n.io/n8nio/n8n:2.40.7`, digest `sha256:ffeb52485f78b1b06c9a832205853cf75da72a07a514c9a27724df85979d6c34`. The accompanying execution report identifies what was actually run. A version pin makes the exercise reproducible; review maintained releases and advisories before any deployment. This is an isolated teaching instance, not a supported production installation recipe.
+Edition RTN-2026-10-03. Pinned execution target: **n8n 2.40.7**, image `docker.n8n.io/n8nio/n8n:2.40.7`, digest `sha256:ffeb52485f78b1b06c9a832205853cf75da72a07a514c9a27724df85979d6c34`. The accompanying execution report identifies what was actually run. A version pin makes the exercise reproducible; review maintained releases and advisories before any deployment. This is an isolated teaching instance, not a supported production installation recipe.
 
 Prerequisites: sessions 1–8, a Linux lab host with Docker, a browser, and the Python service on that same host. Windows users can use a WSL2 Linux host. Docker Desktop networking differs from Linux host networking: do not assume `127.0.0.1` in a normal container reaches the host. The commands below deliberately use **Linux `--network host`**. Keep the editor and adapter bound to loopback and use an SSH tunnel if working remotely. No commercial monitoring licence or model credential is needed for the local exercise.
 

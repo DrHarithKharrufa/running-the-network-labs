@@ -1,6 +1,6 @@
 # Configuration Workbook task navigator
 
-Edition **RTN-2026-10-02**. Generated from the authoritative task ledgers.
+Edition **RTN-2026-10-03**. Generated from the authoritative task ledgers.
 
 Start with Part 1 and proceed in order, or select a task whose prerequisites you can demonstrate.
 Session estimates cover one panel on a prepared lab. They exclude provisioning and comparison; they are not measured completion times.

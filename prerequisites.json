@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "edition": "RTN-2026-10-02",
+  "edition": "RTN-2026-10-03",
   "tests": {
     "harness/test_netlab.py": {
       "kind": "offline",

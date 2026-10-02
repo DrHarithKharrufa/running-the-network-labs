@@ -1,6 +1,6 @@
 # Build the same review outcome in Microsoft Power Automate
 
-Edition RTN-2026-10-02. This is a complete **cloud-flow construction and acceptance guide**, not a tenant export or a claim of cloud execution. The author package includes no tenant, connection or approval-recipient credentials. Use a development environment and your own test account as the approval recipient. The manual-trigger route below uses synthetic monitoring and device observations; moving to a live monitor is a separate acceptance step.
+Edition RTN-2026-10-03. This is a complete **cloud-flow construction and acceptance guide**, not a tenant export or a claim of cloud execution. The author package includes no tenant, connection or approval-recipient credentials. Use a development environment and your own test account as the approval recipient. The manual-trigger route below uses synthetic monitoring and device observations; moving to a live monitor is a separate acceptance step.
 
 The outcome is the same as the n8n route: a validated event, an owned asset, preserved evidence, one durable case identity and an explicit human decision. The mechanisms differ. Here SharePoint holds the teaching journal and Approvals supplies the human decision. The exercise does not change a device, send a security containment command or prove incident recovery.
 

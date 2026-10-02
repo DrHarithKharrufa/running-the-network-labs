@@ -1,0 +1,1560 @@
+{
+  "python": "3.11.15 (main, Mar  3 2026, 09:26:23) [GCC 13.3.0]",
+  "results": [
+    {
+      "path": "harness/test_netlab.py",
+      "sha256": "278a72401dfc757d01a1360e1461909649ee78ec6abb0b599d9af264029397ea",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.138,
+      "log": "harness__test_netlab.py.log"
+    },
+    {
+      "path": "labs/gns3/test_preflight.py",
+      "sha256": "593ac0c1e9eb566441af90483ede41442dca426d79c954247a7ec0b0e66d56a8",
+      "prerequisites": {
+        "missing": [],
+        "detected": {
+          "PyYAML": "6.0.3"
+        },
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.19,
+      "log": "labs__gns3__test_preflight.py.log"
+    },
+    {
+      "path": "labs/lab03/test_verify.py",
+      "sha256": "3cae3b7993cd8c589c01b91fe7b8f136a635df77ca7fd58775c1c29543497ece",
+      "prerequisites": {
+        "missing": [],
+        "detected": {
+          "bash": "/usr/bin/bash"
+        },
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 2.193,
+      "log": "labs__lab03__test_verify.py.log"
+    },
+    {
+      "path": "labs/lab04/test_budget.py",
+      "sha256": "49e61a71c8c9efd838a4ca3d6da6c3bd184f3f22deaa5cc90f3650baec35647c",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.083,
+      "log": "labs__lab04__test_budget.py.log"
+    },
+    {
+      "path": "labs/lab06/test_address_plan.py",
+      "sha256": "e43c41a853fdf6cc32e21325af100b022fb15144030b8525ce5058ed2d419a2b",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.08,
+      "log": "labs__lab06__test_address_plan.py.log"
+    },
+    {
+      "path": "labs/lab07/test_impair.py",
+      "sha256": "9ac536c90e3417b175fec8077632bc6be4542093772e0f5f66c867bf7f68e286",
+      "prerequisites": {
+        "missing": [],
+        "detected": {
+          "bash": "/usr/bin/bash"
+        },
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 4.805,
+      "log": "labs__lab07__test_impair.py.log"
+    },
+    {
+      "path": "labs/lab08/test_probe.py",
+      "sha256": "ef3af9439f7e4304b91a42328de0836c503b708287574aa5768748f8844477fd",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.118,
+      "log": "labs__lab08__test_probe.py.log"
+    },
+    {
+      "path": "labs/lab09/test_fault.py",
+      "sha256": "66935ec48156aa65b27b225cc99f9969067a9812be13596b3da4f2ca9ad3b6cf",
+      "prerequisites": {
+        "missing": [],
+        "detected": {
+          "bash": "/usr/bin/bash"
+        },
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 1.01,
+      "log": "labs__lab09__test_fault.py.log"
+    },
+    {
+      "path": "labs/lab33/test_percentile.py",
+      "sha256": "2912ceba7a1a08bf941fb3f75ad38a0b7a0886c291ce5094fa15e50191d5970e",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.066,
+      "log": "labs__lab33__test_percentile.py.log"
+    },
+    {
+      "path": "labs/lab34/test_validate.py",
+      "sha256": "a90ff4c9d3b8b311da99a013f0ea38bef4ca013cfb8adbc71972e7ce5e1458c0",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.05,
+      "log": "labs__lab34__test_validate.py.log"
+    },
+    {
+      "path": "labs/lab35/test_fabric_sizer.py",
+      "sha256": "ae35427871d57b93cd00081afe30198e6ece7d02b32f16ed7ae406b6a34f1b5c",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.032,
+      "log": "labs__lab35__test_fabric_sizer.py.log"
+    },
+    {
+      "path": "labs/lab36/test_ecmp_check.py",
+      "sha256": "25b69692a14fc15b7b3b51606812111f65430980a520433aa137140a74e70256",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.113,
+      "log": "labs__lab36__test_ecmp_check.py.log"
+    },
+    {
+      "path": "labs/lab37/test_evpn_plan.py",
+      "sha256": "d47d2350c66a54857a55db23408ee4a43385c68ae46c68428f2ad820469ee815",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.047,
+      "log": "labs__lab37__test_evpn_plan.py.log"
+    },
+    {
+      "path": "labs/lab38/test_dbwalk.py",
+      "sha256": "f8543e63ae4cbc05dbb2fdb60c9fe3ddfc157cf2bf681d0f0c0bce10f27e8bcf",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.044,
+      "log": "labs__lab38__test_dbwalk.py.log"
+    },
+    {
+      "path": "labs/lab39/test_dropcost.py",
+      "sha256": "2a06534ca9a6d4274c3ea3a28cf2f85250338739406cb2f3b0281cda1c96312a",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.063,
+      "log": "labs__lab39__test_dropcost.py.log"
+    },
+    {
+      "path": "labs/lab40/test_bondcheck.py",
+      "sha256": "cb2627febbb17d7ccc7e44d9b68ba3252ea8eafce2144249ab16f27c5cc35d85",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.047,
+      "log": "labs__lab40__test_bondcheck.py.log"
+    },
+    {
+      "path": "labs/lab41/test_allreduce.py",
+      "sha256": "b34ccff0b79bf64ef11a9697b4ea21aeae6b600071624a3053c624a5de83c743",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.049,
+      "log": "labs__lab41__test_allreduce.py.log"
+    },
+    {
+      "path": "labs/lab41/test_ecn_pfc.py",
+      "sha256": "a9eaea8b1c1d1a721becb28671b4cc8d411525cee7708697272923104ea0ce10",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 1.087,
+      "log": "labs__lab41__test_ecn_pfc.py.log"
+    },
+    {
+      "path": "labs/lab41/test_fabric_breakeven.py",
+      "sha256": "76f8e09d011b307d61a22fc8ab336d70f133e9936f295daa2f498aafd3e5d363",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.045,
+      "log": "labs__lab41__test_fabric_breakeven.py.log"
+    },
+    {
+      "path": "labs/lab42/test_egress_vs_availability.py",
+      "sha256": "1a1ae270face66cd98d0169b9ca6563ae6bd038eadcb737e3aa241b8d5ded82a",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.045,
+      "log": "labs__lab42__test_egress_vs_availability.py.log"
+    },
+    {
+      "path": "labs/lab42/test_hybrid_bgp.py",
+      "sha256": "43cc2b331bf940de271212eb9553dbccb2355a5cb4933847c25e80aef9025d5c",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.053,
+      "log": "labs__lab42__test_hybrid_bgp.py.log"
+    },
+    {
+      "path": "labs/lab42/test_landingzone.py",
+      "sha256": "5bfc58e8fb0184edf38cd40d18edc18ba1be8a956a2cb275869db23b1b6b5e1e",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.064,
+      "log": "labs__lab42__test_landingzone.py.log"
+    },
+    {
+      "path": "labs/lab43/test_loss_budget.py",
+      "sha256": "e563a77f65e9e7eb88cc74cb9ecf98c30d2c4225835e951b99e109b43e47bbe5",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.048,
+      "log": "labs__lab43__test_loss_budget.py.log"
+    },
+    {
+      "path": "labs/lab43/test_otdr_events.py",
+      "sha256": "e5d945b2e25021b9a5508c651ce9b4465fff1b15d18a353f14082fe0b1e787f2",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.05,
+      "log": "labs__lab43__test_otdr_events.py.log"
+    },
+    {
+      "path": "labs/lab43/test_route_procurement.py",
+      "sha256": "5c91d83fdecb38ebede576e9ef1dfac8693f61f5bfcda5697832626451191286",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.049,
+      "log": "labs__lab43__test_route_procurement.py.log"
+    },
+    {
+      "path": "labs/lab44/test_fec_and_errors.py",
+      "sha256": "b5f41a67737dd8c8a4c07d60252f1f59887179eeee9a76c945ea1267a90733f8",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.048,
+      "log": "labs__lab44__test_fec_and_errors.py.log"
+    },
+    {
+      "path": "labs/lab44/test_link_budget.py",
+      "sha256": "1aed3010186f5aa047cf2ad3a2d5c2f0b9344a64f8b9b96f8fe1410a69f27cb7",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.049,
+      "log": "labs__lab44__test_link_budget.py.log"
+    },
+    {
+      "path": "labs/lab44/test_osnr_budget.py",
+      "sha256": "1c0c9ba83c3c4a60df10c5d500322f24966f6353e808e1730ff04f39b072ba30",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 7.44,
+      "log": "labs__lab44__test_osnr_budget.py.log"
+    },
+    {
+      "path": "labs/lab45/test_reach_capacity.py",
+      "sha256": "5aa26da0a9934598fa9b7c0e9992da6ecbcd5f70638521ea396901d0e8356c2a",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.05,
+      "log": "labs__lab45__test_reach_capacity.py.log"
+    },
+    {
+      "path": "labs/lab45/test_spectrum_plan.py",
+      "sha256": "cd48af320805ceae79a72a997b1dcaaeda2769705c82d49377e1540d4861665e",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.087,
+      "log": "labs__lab45__test_spectrum_plan.py.log"
+    },
+    {
+      "path": "labs/lab46/test_ols_contract.py",
+      "sha256": "0bb798f257af45dec3439f43548d29c22fb84372f7d2194b4c5bbe715aa6736c",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.04,
+      "log": "labs__lab46__test_ols_contract.py.log"
+    },
+    {
+      "path": "labs/lab46/test_path_budget.py",
+      "sha256": "08141799dc6f9678c6edffaf39322b4e50b95140e87b99e2107e04a8b6c1194b",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.041,
+      "log": "labs__lab46__test_path_budget.py.log"
+    },
+    {
+      "path": "labs/lab46/test_recovery_policy.py",
+      "sha256": "bec586dc5bde609973be7429f7dca2adb926dd83c1b0932a84d990ff407a2d38",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.038,
+      "log": "labs__lab46__test_recovery_policy.py.log"
+    },
+    {
+      "path": "labs/lab47/test_time_error_budget.py",
+      "sha256": "a86af152d255205c4f10a8c335c44fafbfaa41e70670f61a4e1f0d34a51cf0fe",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.05,
+      "log": "labs__lab47__test_time_error_budget.py.log"
+    },
+    {
+      "path": "labs/lab48/test_fronthaul_budget.py",
+      "sha256": "d87d27c4e2bdcdea6c42ae87b8d95dcb7575f37f268897e6007cedcc0d2bff7c",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.041,
+      "log": "labs__lab48__test_fronthaul_budget.py.log"
+    },
+    {
+      "path": "labs/lab48/test_fronthaul_rate.py",
+      "sha256": "86b611430aae818420346843934de1e2078f0b0370af623309a9321c23723e23",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.065,
+      "log": "labs__lab48__test_fronthaul_rate.py.log"
+    },
+    {
+      "path": "labs/lab48/test_segment_contract.py",
+      "sha256": "fd68a723028e92167a93aac1c6765128dc1d1638b6c670255b14317d68b50c4a",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.064,
+      "log": "labs__lab48__test_segment_contract.py.log"
+    },
+    {
+      "path": "labs/lab49/test_availability.py",
+      "sha256": "894c3a163acf51804626a42a5743e401e06d4d3f8152c78a898307fc9a92ecb7",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.054,
+      "log": "labs__lab49__test_availability.py.log"
+    },
+    {
+      "path": "labs/lab49/test_band_choice.py",
+      "sha256": "3348299f457cbb6d119766934900bb5a75d3f8843ea8a26eb3e0004b19cdb863",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.238,
+      "log": "labs__lab49__test_band_choice.py.log"
+    },
+    {
+      "path": "labs/lab49/test_latency_by_path.py",
+      "sha256": "d6b018dfe1e6de5160939afbc03011acea51260d935f9c144fee97b98961fe3e",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.054,
+      "log": "labs__lab49__test_latency_by_path.py.log"
+    },
+    {
+      "path": "labs/lab49/test_shared_risk.py",
+      "sha256": "66665ca2cb93fd7d983734842a1917a824283daa20c4c87f9bfc7e1f845ded61",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.045,
+      "log": "labs__lab49__test_shared_risk.py.log"
+    },
+    {
+      "path": "labs/lab50/test_control_coverage.py",
+      "sha256": "c68a2fca738cb5c3268fc7a78a41b6c1b1c8c9f22fe9880c790bf97c2bc66fdc",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.138,
+      "log": "labs__lab50__test_control_coverage.py.log"
+    },
+    {
+      "path": "labs/lab50/test_scoring_resolution.py",
+      "sha256": "e99ce8868070771214ecfa011c548b92544b7b40cbeee6c9ba62b04d30f290f8",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 1.722,
+      "log": "labs__lab50__test_scoring_resolution.py.log"
+    },
+    {
+      "path": "labs/lab50/test_threat_model.py",
+      "sha256": "8ca56c2245e17b27b21112b994edd7ea76825f287c957983f446f8f09109b2ae",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.153,
+      "log": "labs__lab50__test_threat_model.py.log"
+    },
+    {
+      "path": "labs/lab51/test_forward_secrecy.py",
+      "sha256": "a110b1bdde168b82f5f02dfbc811d2f6dc896090b5ec234f86d205d4df980d74",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.344,
+      "log": "labs__lab51__test_forward_secrecy.py.log"
+    },
+    {
+      "path": "labs/lab51/test_pqc_inventory.py",
+      "sha256": "c57129ce68839c85bda0856a5e3e56fe1ad56394237fedcbd5b04ccd68d11bca",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.159,
+      "log": "labs__lab51__test_pqc_inventory.py.log"
+    },
+    {
+      "path": "labs/lab51/test_primitives.py",
+      "sha256": "5aaa72cf5a0009570d3648d53c26774dc8123d63b2ebf0bd0a163eacbc86941c",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.34,
+      "log": "labs__lab51__test_primitives.py.log"
+    },
+    {
+      "path": "labs/lab51/test_tls_validation.py",
+      "sha256": "6f5ff40bdd2b7049b540a4cf0824e2f030dd2febb6239f21189155cd3a3369bb",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.5,
+      "log": "labs__lab51__test_tls_validation.py.log"
+    },
+    {
+      "path": "labs/lab52/test_access_audit.py",
+      "sha256": "69fc9c33bb1663de752dc5473cfb1fa8a8982d0151db12f3eb99bef2d817e2ed",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.136,
+      "log": "labs__lab52__test_access_audit.py.log"
+    },
+    {
+      "path": "labs/lab52/test_ssh_revocation.py",
+      "sha256": "c2c40b0570032298c61a092addcf7f3131f4905f323fea346d120e802ed6d925",
+      "prerequisites": {
+        "missing": [],
+        "detected": {
+          "ssh-keygen": "/usr/bin/ssh-keygen"
+        },
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.9,
+      "log": "labs__lab52__test_ssh_revocation.py.log"
+    },
+    {
+      "path": "labs/lab52/test_tacacs_obfuscation.py",
+      "sha256": "712602ac974613c962e7eb7a9773fc3d6e49edf854c34382a813a4eb93cc3af4",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.149,
+      "log": "labs__lab52__test_tacacs_obfuscation.py.log"
+    },
+    {
+      "path": "labs/lab53/test_harden_check.py",
+      "sha256": "26e1696cb7e1047fba86d3185c43f99752523605a66bdc198dd367fae5a6aa7d",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.058,
+      "log": "labs__lab53__test_harden_check.py.log"
+    },
+    {
+      "path": "labs/lab53/test_iacl_exceptions.py",
+      "sha256": "5c2d13d313223933624f295ff7387910becf805460308d7fa6f62bf80d8d7dd7",
+      "prerequisites": {
+        "missing": [],
+        "detected": {
+          "ip": "/usr/sbin/ip",
+          "nft": "/usr/sbin/nft",
+          "ping": "/usr/bin/ping"
+        },
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 11.353,
+      "log": "labs__lab53__test_iacl_exceptions.py.log"
+    },
+    {
+      "path": "labs/lab53/test_urpf_modes.py",
+      "sha256": "6283d9f4da4f2577aae53d0fdde6290c96ab418b2f8a77d755df42ce9fc7274f",
+      "prerequisites": {
+        "missing": [],
+        "detected": {
+          "ip": "/usr/sbin/ip",
+          "nft": "/usr/sbin/nft",
+          "ping": "/usr/bin/ping"
+        },
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 23.639,
+      "log": "labs__lab53__test_urpf_modes.py.log"
+    },
+    {
+      "path": "labs/lab54/test_ruleorder.py",
+      "sha256": "d89e7b8936d57fa17a0acccf96aa88b2683a44cc64a147bf0ae57337b82ee336",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 1.724,
+      "log": "labs__lab54__test_ruleorder.py.log"
+    },
+    {
+      "path": "labs/lab55/test_microseg_policy.py",
+      "sha256": "2bb78bd21dbc445b1654e78ea6ab143c93b5f39fb5e8782e53345f83b5af0ad9",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.041,
+      "log": "labs__lab55__test_microseg_policy.py.log"
+    },
+    {
+      "path": "labs/lab56/test_ipsec_overhead.py",
+      "sha256": "d0720c26a690ac5438129bd2e4681d9fcec74d04ccaaa48c6dc562b58e9cba99",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.031,
+      "log": "labs__lab56__test_ipsec_overhead.py.log"
+    },
+    {
+      "path": "labs/lab56/test_tunnel_triage.py",
+      "sha256": "901bde5935304fc41f90f1760bd1fa603aadfc90a9bc669931fc777d7f6b0d2c",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.061,
+      "log": "labs__lab56__test_tunnel_triage.py.log"
+    },
+    {
+      "path": "labs/lab57/test_anycast_catchment.py",
+      "sha256": "7424d716887fb2c3091f1392efd90d17afdc8f1aff5b0659ec9d8d42c994e4f5",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.04,
+      "log": "labs__lab57__test_anycast_catchment.py.log"
+    },
+    {
+      "path": "labs/lab57/test_ddos_triage.py",
+      "sha256": "14425195af7bfd06e74db29ded5e846e217876d4fd1a107ef517a057c5f3453e",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.037,
+      "log": "labs__lab57__test_ddos_triage.py.log"
+    },
+    {
+      "path": "labs/lab57/test_detection_budget.py",
+      "sha256": "8306acfb83f020dc70e94f6a4919488fe05cc94ee39c01e33b06d7e2aea6701a",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.034,
+      "log": "labs__lab57__test_detection_budget.py.log"
+    },
+    {
+      "path": "labs/lab58/test_dkim_alignment.py",
+      "sha256": "b81f4ba521bf029371b9b4eef2de53f2d2cc3d6f01835ad103b1a6c2ca25d885",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 1.066,
+      "log": "labs__lab58__test_dkim_alignment.py.log"
+    },
+    {
+      "path": "labs/lab58/test_dmarc_check.py",
+      "sha256": "1280f99454c325b07fc9a4b3c7323dad926a35e08063601d3888e3a7c61491e6",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.033,
+      "log": "labs__lab58__test_dmarc_check.py.log"
+    },
+    {
+      "path": "labs/lab59/test_detector_quality.py",
+      "sha256": "70df735564b955d302085b3b53511f4224144459540c55dfa2ec83f89b75c503",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.055,
+      "log": "labs__lab59__test_detector_quality.py.log"
+    },
+    {
+      "path": "labs/lab59/test_flow_hunt.py",
+      "sha256": "259241129cbe81366cf0acc12773d1553b39e4015eb0867e00fec1ec8a34920c",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.043,
+      "log": "labs__lab59__test_flow_hunt.py.log"
+    },
+    {
+      "path": "labs/lab59/test_telemetry_limits.py",
+      "sha256": "a8741f20f69e2acf759235cb62f2bbb6607d6bd9e32dce8a0fb5af444c1073c5",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.032,
+      "log": "labs__lab59__test_telemetry_limits.py.log"
+    },
+    {
+      "path": "labs/lab60/test_exception_register.py",
+      "sha256": "aa38780b321cd0f2fbb1c389e0d803bcf79c30ec782a3fc966a155c2bb90ddf3",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.036,
+      "log": "labs__lab60__test_exception_register.py.log"
+    },
+    {
+      "path": "labs/lab60/test_metric_honesty.py",
+      "sha256": "48442cc46e005f5c10fe09ad1ef36c0ccfdcf3f062a73504c4e4a12c1a092b31",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.042,
+      "log": "labs__lab60__test_metric_honesty.py.log"
+    },
+    {
+      "path": "labs/lab60/test_reporting_clock.py",
+      "sha256": "5a0d6c8bd72d11def016fb47292fcbe2211db232efe825ebd50404d5540bf0ed",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.034,
+      "log": "labs__lab60__test_reporting_clock.py.log"
+    },
+    {
+      "path": "labs/lab61/test_coverage_models.py",
+      "sha256": "464e7db8f849d02286259c318a3d85e3616df6c6b9440f357f03ad1c8e084254",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.034,
+      "log": "labs__lab61__test_coverage_models.py.log"
+    },
+    {
+      "path": "labs/lab61/test_incident_record.py",
+      "sha256": "84b5d70d5e7a4aab4e536e7298df05d66e4dda2b60b3ca616f2a98feb2f75f46",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.037,
+      "log": "labs__lab61__test_incident_record.py.log"
+    },
+    {
+      "path": "labs/lab61/test_rota_arithmetic.py",
+      "sha256": "67a9b9fd2bf518826eb45f9cea5f609e4628c053fb9645b3f4c973ffcb51bbc9",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.035,
+      "log": "labs__lab61__test_rota_arithmetic.py.log"
+    },
+    {
+      "path": "labs/lab62/test_alert_storm.py",
+      "sha256": "52fd8de71f134c4ada7a4996ee15d2142b7b481f74402e607e9a750f0dbcb71d",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.043,
+      "log": "labs__lab62__test_alert_storm.py.log"
+    },
+    {
+      "path": "labs/lab62/test_cardinality_check.py",
+      "sha256": "697fbd811e16f030e7f52568e25f294d115af6cadaf60d2cd1ce2b8cc71686df",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.031,
+      "log": "labs__lab62__test_cardinality_check.py.log"
+    },
+    {
+      "path": "labs/lab62/test_sampling_limits.py",
+      "sha256": "b0cd7e801777efcc60eaa9c244b29e7f429481e93095c926e09ddc3e5e6606e7",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.031,
+      "log": "labs__lab62__test_sampling_limits.py.log"
+    },
+    {
+      "path": "labs/lab63/test_capture_budget.py",
+      "sha256": "2ca92d1cb77fd3ebc8cdde33e042bbeb2bea714a595d5810612a933a47b0c6b9",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.062,
+      "log": "labs__lab63__test_capture_budget.py.log"
+    },
+    {
+      "path": "labs/lab63/test_log_delivery.py",
+      "sha256": "7b6b3480a1f33c3b90debbcddec10315b698f3ab8faa1ccb696322ad2aa44aab",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.064,
+      "log": "labs__lab63__test_log_delivery.py.log"
+    },
+    {
+      "path": "labs/lab63/test_sampling.py",
+      "sha256": "b7bfc9ad185e6557a6d4d95cc850a818463a3cfe0cb02a6342c51f892b3db696",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 4.123,
+      "log": "labs__lab63__test_sampling.py.log"
+    },
+    {
+      "path": "labs/lab64/test_bisect.py",
+      "sha256": "b908218384787960c1a454f6dfcb6c82eba3389178162ef9ebddae10dcbbae7b",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 5.95,
+      "log": "labs__lab64__test_bisect.py.log"
+    },
+    {
+      "path": "labs/lab64/test_control_vs_data_plane.py",
+      "sha256": "84bb7143b3007a1f6d5336593ee3e656247ea58d47b9d60e2f312826d7d8d64b",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.356,
+      "log": "labs__lab64__test_control_vs_data_plane.py.log"
+    },
+    {
+      "path": "labs/lab64/test_four_questions.py",
+      "sha256": "95b8890d307ccf564d370d7e2a2e94f7854c56d6c6b5cbf1ae8fa4796b08cdc6",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.087,
+      "log": "labs__lab64__test_four_questions.py.log"
+    },
+    {
+      "path": "labs/lab65/test_change_models.py",
+      "sha256": "a0396ca83f63986ca9bbd1b2aea867b6bc3090d532a834b49fcf8e949a369e25",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.084,
+      "log": "labs__lab65__test_change_models.py.log"
+    },
+    {
+      "path": "labs/lab66/test_incident_models.py",
+      "sha256": "8515cb6959691cf0ae1a2a20db6205f54a68c61636f949ecdc661de345cd8a97",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.087,
+      "log": "labs__lab66__test_incident_models.py.log"
+    },
+    {
+      "path": "labs/lab67/test_capacity_case.py",
+      "sha256": "505726d0adfac158f096386f1684c428c42cd52e583a69f67938154af4a91987",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.073,
+      "log": "labs__lab67__test_capacity_case.py.log"
+    },
+    {
+      "path": "labs/lab68/test_sot.py",
+      "sha256": "38c5bc1df003e61064195f0b0f04f46211163d4746bb7b2c7f6a38f2b6147ba0",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.105,
+      "log": "labs__lab68__test_sot.py.log"
+    },
+    {
+      "path": "labs/lab69/test_rendering.py",
+      "sha256": "548c343783f68c23edc85371ac6bae65acf16874bf364e2ca798f40e1f4c4434",
+      "prerequisites": {
+        "missing": [],
+        "detected": {
+          "Jinja2": "3.1.6"
+        },
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.125,
+      "log": "labs__lab69__test_rendering.py.log"
+    },
+    {
+      "path": "labs/lab70/test_validation.py",
+      "sha256": "6fbb40ddd10755320bf8e33be2a8e52b1527a4314e9d6edada8a41313a886b83",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.06,
+      "log": "labs__lab70__test_validation.py.log"
+    },
+    {
+      "path": "labs/lab71/test_lab.py",
+      "sha256": "ba2e3801c3b727b15b286a2682c14c6be65443112b314062cd6be8a8bf55c272",
+      "prerequisites": {
+        "missing": [],
+        "detected": {
+          "netmiko": "4.8.0",
+          "ntc-templates": "9.3.0",
+          "textfsm": "2.1.0"
+        },
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 1.422,
+      "log": "labs__lab71__test_lab.py.log"
+    },
+    {
+      "path": "labs/lab72/test_closed_loop.py",
+      "sha256": "873e02542e7aa1980db1bcb71431792881da378b9f01bf3c974432daa54ef6c5",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.084,
+      "log": "labs__lab72__test_closed_loop.py.log"
+    },
+    {
+      "path": "labs/lab73/test_batfish_probe.py",
+      "sha256": "58a8802c7e67ab309b598ecce50bb2765fe2bf8543e1c1c65aee920375a3eb38",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.145,
+      "log": "labs__lab73__test_batfish_probe.py.log"
+    },
+    {
+      "path": "labs/lab73/test_policy.py",
+      "sha256": "21bf8c89d8b72514ea738c365a1d42c4c3dbdcb399d767dfdba440056a1feed5",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.084,
+      "log": "labs__lab73__test_policy.py.log"
+    },
+    {
+      "path": "labs/lab74/test_base_rate.py",
+      "sha256": "c897721d490eddd90944b1ddb92659d2591ec6b0b98e24b04065f82a3d08dad0",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.075,
+      "log": "labs__lab74__test_base_rate.py.log"
+    },
+    {
+      "path": "labs/lab75/test_citations.py",
+      "sha256": "ab37690ca069aff98f657195fd0e0d813526b7432579b0ea5db6b2614cbf5c1c",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.066,
+      "log": "labs__lab75__test_citations.py.log"
+    },
+    {
+      "path": "labs/lab76/agent/test_verifier.py",
+      "sha256": "68cb1925bb4d269713eac93a6d1719128263c0c5f77e9baa08fc23cc78d37a8b",
+      "prerequisites": {
+        "missing": [],
+        "detected": {
+          "PyYAML": "6.0.3"
+        },
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.976,
+      "log": "labs__lab76__agent__test_verifier.py.log"
+    },
+    {
+      "path": "labs/lab77/test_assurance.py",
+      "sha256": "c6111ebc6390127acb118848f393c5d8fddc90a8921c1d9bc234a649ecc0774c",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.081,
+      "log": "labs__lab77__test_assurance.py.log"
+    },
+    {
+      "path": "labs/lab80/test_availability.py",
+      "sha256": "168fb8175a0f11e2fe1473a156b94244b333329e96cb5da12f3b1c7f8b7d966f",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.07,
+      "log": "labs__lab80__test_availability.py.log"
+    },
+    {
+      "path": "labs/lab81/test_aggregation.py",
+      "sha256": "eba2416f9a1ae00bb50af495664ec36f3cc5095bda35907772d7cfaf395b312e",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.11,
+      "log": "labs__lab81__test_aggregation.py.log"
+    },
+    {
+      "path": "labs/lab82/test_scaling.py",
+      "sha256": "c1d1b7f0049ab0e1d4f19a93b3cfe569dd9df5604ccd770a009e58e7b8e852a6",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.081,
+      "log": "labs__lab82__test_scaling.py.log"
+    },
+    {
+      "path": "labs/lab83/test_latency.py",
+      "sha256": "1f362f86f1a2b1c099a22646e61fee81555af0cf8b94ff733c5c438163efe4f9",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.069,
+      "log": "labs__lab83__test_latency.py.log"
+    },
+    {
+      "path": "labs/lab85/test_economics.py",
+      "sha256": "8f6001c382f4a01e1ac329786b31abb5d695ec463aa4ead5ef2fbf3c6dc29181",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.065,
+      "log": "labs__lab85__test_economics.py.log"
+    },
+    {
+      "path": "labs/lab87/test_sla_report.py",
+      "sha256": "74b4e37900aca3e211d50297ab927d2ae653a8f3937da11801d38682e1b74964",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.066,
+      "log": "labs__lab87__test_sla_report.py.log"
+    },
+    {
+      "path": "labs/lab91/test_dashboard_metrics.py",
+      "sha256": "01e3be98594ebd4862ffb1a4818733d5d0cf5c4b64a246e622ad8d72f001644b",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.066,
+      "log": "labs__lab91__test_dashboard_metrics.py.log"
+    },
+    {
+      "path": "labs/reference-designs/test_check_addressing.py",
+      "sha256": "7462646377f990c9c0adc4a8ed7b87846163987a23731460c4567f0d9ea0877f",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.567,
+      "log": "labs__reference-designs__test_check_addressing.py.log"
+    },
+    {
+      "path": "labs/reference-designs/test_designs.py",
+      "sha256": "905f88fa52ef6010d21517e8d91adc7e2d0a2f29984c7ca78b80a2166ee09f42",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.067,
+      "log": "labs__reference-designs__test_designs.py.log"
+    },
+    {
+      "path": "labs/test_frr_harness_audit.py",
+      "sha256": "0b8fb57b67e2fa2f304fbee19f2b6f0435388883ff038cfb16fc18ade0a9fb53",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.156,
+      "log": "labs__test_frr_harness_audit.py.log"
+    },
+    {
+      "path": "labs/topologies/test_inventory.py",
+      "sha256": "447cdd091db8dc348b2638cdc64c550d8a73356085ca382d0bedb12d270cc3c2",
+      "prerequisites": {
+        "missing": [],
+        "detected": {
+          "PyYAML": "6.0.3",
+          "Jinja2": "3.1.6"
+        },
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.157,
+      "log": "labs__topologies__test_inventory.py.log"
+    },
+    {
+      "path": "learning/practical-route/test_route.py",
+      "sha256": "cc1345f49a37f3953fba2c5c3b7f7d7da3040e8756e9ddd9ab762ccbd9d7c63f",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.961,
+      "log": "learning__practical-route__test_route.py.log"
+    },
+    {
+      "path": "learning/test_case_math.py",
+      "sha256": "0e010e0c128234c9622d3a95490d78f79b2e0587cb0595cdb8861023109f3bee",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.069,
+      "log": "learning__test_case_math.py.log"
+    },
+    {
+      "path": "learning/test_operations_policy.py",
+      "sha256": "9fc4adcb5c37575f3421f1233bbb204fec5820a0e177f002d0341b7176437f2e",
+      "prerequisites": {
+        "missing": [],
+        "detected": {},
+        "manual": [],
+        "status": "DECLARED_PREREQUISITES_DETECTED"
+      },
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.346,
+      "log": "learning__test_operations_policy.py.log"
+    }
+  ]
+}

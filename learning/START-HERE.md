@@ -1,6 +1,6 @@
 # Running the Network: learning companion
 
-Edition: RTN-2026-10-02, practical route and print proof. Start with Appendix G in the matching book. This directory supplies a learning route and worked guidance for all 500 chapter exercises; the existing `labs/` directory supplies the technical lab files and their environment-specific READMEs.
+Edition: RTN-2026-10-03, practical route and print proof. Start with Appendix G in the matching book. This directory supplies a learning route and worked guidance for all 500 chapter exercises; the existing `labs/` directory supplies the technical lab files and their environment-specific READMEs.
 
 1. For a Python-only first task, complete the number and terminal checks in Appendix G, then follow the matching print entry route. Use Chapter 2's Linux/Docker/image preparation only when your selected network lab requires it.
 2. Choose the first milestone below that you cannot yet demonstrate.

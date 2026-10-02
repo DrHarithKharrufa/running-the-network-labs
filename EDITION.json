@@ -1,17 +1,17 @@
 {
-  "edition": "RTN-2026-10-02",
-  "date": "2026-10-02",
-  "status": "Public edition: book, Configuration Workbook and companion released together",
+  "edition": "RTN-2026-10-03",
+  "date": "2026-10-03",
+  "status": "Public edition: book, Configuration Workbook and companion released together; cover illustration at print resolution",
   "book": {
     "print_pages": 714,
     "colour_pages": 713,
-    "print_sha256": "50d1ab78b69f376f889267d3a8eff36788200db02317c6496b2b71e3f9c55334",
-    "colour_sha256": "1ecc1f0edeff1b3fad516c30536a753f5667f54173a5072cbacab7625d5a21f1",
+    "print_sha256": "d43f156998b891d6e78709bde82014b5baea04b4fdabe51fd2832c81e3da34ea",
+    "colour_sha256": "4db50d7d561714a6a5cb3e89c6c44f82e57e2e628a1dbd43ea76cdb0bfc68fb1",
     "chapters": 87
   },
   "workbook": {
     "pages": 528,
-    "sha256": "c0b0e29d1038d2b2f8db3852e00c410d66e63922ae960bd08f810c287a9ac2ed",
+    "sha256": "8e406bcee799bd05269f610c5cbeeb89979ad8cb22cb9f7fe85143d3e9364945",
     "tasks": 120,
     "planned_vendor_outcomes": 720,
     "READ": 714,
@@ -43,13 +43,13 @@
   },
   "hash_manifest": "SHA256SUMS.txt in this release lists every file except itself",
   "qualification": "QUALIFICATION.md",
-  "hashes_are_of": "The RTN-2026-10-02 PDFs: Running-the-Network-print-BW.pdf, Running-the-Network-colour-linked.pdf, Configuration-Workbook.pdf and Running-the-Network-cover.pdf",
-  "supersedes": "RTN-2026-10-01 (which superseded RTN-2026-09-27 and RTN-2026-09-26)",
-  "release": "https://github.com/DrHarithKharrufa/running-the-network-labs/releases/tag/RTN-2026-10-02",
-  "review_date": "2026-10-02",
+  "hashes_are_of": "The RTN-2026-10-03 PDFs: Running-the-Network-print-BW.pdf, Running-the-Network-colour-linked.pdf, Configuration-Workbook.pdf and Running-the-Network-cover.pdf",
+  "supersedes": "RTN-2026-10-02 (which superseded RTN-2026-10-01, RTN-2026-09-27 and RTN-2026-09-26)",
+  "release": "https://github.com/DrHarithKharrufa/running-the-network-labs/releases/tag/RTN-2026-10-03",
+  "review_date": "2026-10-03",
   "cover": {
     "pages": 1,
-    "sha256": "b7ddf44f59e6ccdfabacc60ea7ff8df39111f069cf5a78d16f9f5655a5979a4c",
+    "sha256": "0667d98beb1d19584e6b544b7a46728c763aa53c7c11602c91d2e65d22902dd3",
     "interior_pages": 714,
     "paper": "white",
     "ink": "black",
@@ -58,8 +58,17 @@
       11.69
     ],
     "spine_mm": 40.841,
-    "artwork_effective_dpi": 125.55,
-    "qualification": "Approved design; original raster resolution below 300 dpi; printer proof required"
+    "artwork_effective_dpi": 313.9,
+    "qualification": "Approved design at print resolution (every placed raster at or above 300 ppi); printer proof required",
+    "artwork": {
+      "original": "cover/network-journey-v2.png, 1054 x 1492 px",
+      "master": "cover/network-journey-v3.png, 2635 x 3730 px: Real-ESRGAN x4plus enlargement resampled to exactly 2.5x the original",
+      "placed_ppi": {
+        "cover": 313.9,
+        "print_title_page": 403.2,
+        "colour_front_page": 318.7
+      }
+    }
   },
   "workbook_software": {
     "offline_guard_xml_checks": 196,
@@ -69,7 +78,7 @@
   },
   "actual_size_proof": {
     "pages": 43,
-    "sha256": "02374f762603ee2e66d12ec88b2693ba4a249c6e4f033d21cdd36be06bb19ea9"
+    "sha256": "297f14f072cc7a9245180a0de9e76bfb99c0b641730652050d25ca0bf71d3011"
   },
   "condensation": {
     "previous_edition": "RTN-2026-10-01",
@@ -93,11 +102,11 @@
     "sha256": "ea1741d2150c4dda49189458917c94c961c27fff51cd7bbe72a3106161c5d3e6"
   },
   "tests": {
-    "date": "2026-10-02",
+    "date": "2026-10-03",
     "declared_test_programs": 109,
     "passed": 109,
     "not_run": 0,
     "host": "Linux 6.18 container, root, Python 3.11.15, iproute2 6.1.0, nftables 1.0.9",
-    "record": "test-results-2026-10-02/execution.json"
+    "record": "test-results-2026-10-03/execution.json"
   }
 }

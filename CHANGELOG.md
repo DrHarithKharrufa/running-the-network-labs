@@ -4,6 +4,24 @@ Editions of the companion, newest first. A tagged release is frozen; this file
 in the repository's current state records what moved between tags. Corrections
 made after an edition was printed go in `ERRATA.md`.
 
+## RTN-2026-10-03
+
+The print-resolution cover. RTN-2026-10-02 is unchanged and stays available
+under its own tag.
+
+- **The cover illustration is now above 300 ppi wherever it is printed.** The
+  approved image was 1054 × 1492 pixels, about 126 ppi across the printed front
+  cover and 161 ppi on the book's title page. It was enlarged with the Real-ESRGAN
+  x4plus super-resolution model and resampled to 2635 × 3730 pixels — exactly
+  2.5 times the original, so the composition, framing and colours are unchanged —
+  giving about 314 ppi on the cover, 403 ppi on the print title page and 319 ppi
+  on the colour edition's first page.
+- The book, workbook, cover and companion carry the new identifier and
+  `EDITION.json` records the SHA-256 of the new PDFs. The companion's labs,
+  programs and evidence are byte-identical to RTN-2026-10-02; the learning
+  guides and `prerequisites.json` change only in their edition line.
+- This edition's test run is recorded in `test-results-2026-10-03/`.
+
 ## RTN-2026-10-02
 
 The reader edition of the book, with the 120-task Configuration Workbook and
