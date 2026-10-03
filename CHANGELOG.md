@@ -4,6 +4,31 @@ Editions of the companion, newest first. A tagged release is frozen; this file
 in the repository's current state records what moved between tags. Corrections
 made after an edition was printed go in `ERRATA.md`.
 
+## RTN-2026-10-04
+
+The workbook's first page. RTN-2026-10-03 is unchanged and stays available
+under its own tag.
+
+- **The Configuration Workbook now opens with the cover design.** Its first page
+  was still the earlier title page with a drawn network diagram. It now uses the
+  same print-resolution illustration and type as the book's cover and the colour
+  edition's first page, under the workbook's own title, so the two volumes read
+  as a pair and cannot be mistaken for each other. The picture is placed at about
+  319 ppi. The workbook keeps its 528 pages; no task, panel or evidence mark
+  changed.
+- **The identifier is RTN-2026-10-04 although the edition was built and published
+  on 3 October 2026.** RTN-2026-10-03 had already been published that day, and a
+  published tag is never changed; `EDITION.json` says so in `identifier_note`.
+- The book, workbook, cover and companion carry the new identifier and
+  `EDITION.json` records the SHA-256 of the new PDFs. In the book, only the
+  companion page (page xii) changed in content. The cover is byte-identical to
+  RTN-2026-10-03's. The companion's labs, programs and evidence are byte-identical
+  to RTN-2026-10-03; the learning guides and `prerequisites.json` change only in
+  their edition line.
+- This edition's test run is `test-results-2026-10-03/execution-RTN-2026-10-04.json`.
+  The earlier run of the same day, made for RTN-2026-10-03, stays beside it as
+  `execution.json`.
+
 ## RTN-2026-10-03
 
 The print-resolution cover. RTN-2026-10-02 is unchanged and stays available

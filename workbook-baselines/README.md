@@ -1,6 +1,6 @@
 # Workbook baselines and platform boundaries
 
-Edition RTN-2026-10-03.
+Edition RTN-2026-10-04.
 
 The current workbook contains 120 tasks across ten parts, with six vendor
 outcomes per task. Its 714 READ panels establish returned documentation syntax;

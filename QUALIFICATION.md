@@ -1,4 +1,4 @@
-# Qualification of RTN-2026-10-03
+# Qualification of RTN-2026-10-04
 
 **Which runs belong to this edition, and which are carried forward.** One
 test run was made for this edition, on 3 October 2026, and it is described
@@ -11,14 +11,17 @@ be read as a statement that an earlier run was re-executed for this edition.
 **This edition's run, 3 October 2026.** **All 109 declared test programs pass in
 one run on one host**, including the two privileged Lab53 suites: Linux 6.18 in a
 container, as root, Python 3.11.15, iproute2 6.1.0 and nftables 1.0.9, using
-`python run-all-tests.py --include-live`. The uRPF suite reported 79 checks and
-the infrastructure-ACL suite 46, none failed. Results, with the SHA-256 of every
-test program, are in `test-results-2026-10-03/execution.json`. It is still 109
+`python run-all-tests.py --include-live` in a copy of this edition's payload. The
+uRPF suite reported 79 checks and the infrastructure-ACL suite 46, none failed.
+Results, with the SHA-256 of every test program, are in
+`test-results-2026-10-03/execution-RTN-2026-10-04.json`. It is still 109
 programs, not 109 network deployments, and only Lab53 uses real privileged
 packet filters. The programs are byte-identical to the previous edition's.
 
-**Earlier runs, retained for comparison.** On 2 October 2026 the same complete
-set passed on the same host in the earlier edition RTN-2026-10-02, the first
+**Earlier runs, retained for comparison.** Earlier the same day the same complete
+set passed on the same host for the earlier edition RTN-2026-10-03; that record
+is `execution.json` in the same dated folder and is unchanged. On 2 October 2026
+the same set passed for the earlier edition RTN-2026-10-02, the first
 single-host run of all 109 (`test-results-2026-10-02/`). On 1 October 2026, 107 of 109 passed
 with the two Lab53 suites NOT_RUN (Linux, Python 3.11.15;
 `test-results-2026-10-01/`). On 26 September 2026, 106 of 108 passed, two

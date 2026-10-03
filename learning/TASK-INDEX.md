@@ -1,6 +1,6 @@
 # Operational task index
 
-Edition RTN-2026-10-03. Predict, perform, retain failure/recovery evidence, then
+Edition RTN-2026-10-04. Predict, perform, retain failure/recovery evidence, then
 explain the result's limits. Paper sessions contain constructed teaching inputs.
 
 | Job | Read | Practise | Required evidence |

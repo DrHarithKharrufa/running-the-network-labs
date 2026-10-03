@@ -1,6 +1,6 @@
 # Aldergate: commission, operate, recover, explain
 
-Edition RTN-2026-10-03. This is the connecting route through the existing executable exercises. Allow several sessions; completion time has not been measured with readers. Keep a folder of **your own** observations, not a copy of the author records. Chapters 2–8 teach packet/address reasoning; 16–22 explain routing; 60–66 cover operations; 70–71 develop automation; 82–87 cover decisions.
+Edition RTN-2026-10-04. This is the connecting route through the existing executable exercises. Allow several sessions; completion time has not been measured with readers. Keep a folder of **your own** observations, not a copy of the author records. Chapters 2–8 teach packet/address reasoning; 16–22 explain routing; 60–66 cover operations; 70–71 develop automation; 82–87 cover decisions.
 
 There are two deliberately separate systems: real FRR containers and packet probes on a Linux lab host, and a small Python HTTP/SQLite **device simulator**. The n8n route uses the latter. They are not secretly integrated and passing one does not qualify the other. A real-device monitoring adapter is a later extension with its own acceptance test.
 

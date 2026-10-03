@@ -1,17 +1,18 @@
 {
-  "edition": "RTN-2026-10-03",
+  "edition": "RTN-2026-10-04",
   "date": "2026-10-03",
-  "status": "Public edition: book, Configuration Workbook and companion released together; cover illustration at print resolution",
+  "identifier_note": "Built and published on 3 October 2026. The earlier edition, RTN-2026-10-03, had already been published that day and a published tag is never changed, so this edition takes the next free identifier in the date format.",
+  "status": "Public edition: book, Configuration Workbook and companion released together; cover illustration at print resolution; the workbook opens with the cover design",
   "book": {
     "print_pages": 714,
     "colour_pages": 713,
-    "print_sha256": "d43f156998b891d6e78709bde82014b5baea04b4fdabe51fd2832c81e3da34ea",
-    "colour_sha256": "4db50d7d561714a6a5cb3e89c6c44f82e57e2e628a1dbd43ea76cdb0bfc68fb1",
+    "print_sha256": "961e97baf8c967e07cdde83b3d7bcd82b702cafad1f7511660f0ac6406950a15",
+    "colour_sha256": "06b1b5be3e626d4f659bcb569f51e66d95f18274acf2fb84dd95b78da8ab82af",
     "chapters": 87
   },
   "workbook": {
     "pages": 528,
-    "sha256": "8e406bcee799bd05269f610c5cbeeb89979ad8cb22cb9f7fe85143d3e9364945",
+    "sha256": "962f09c243d172bcfd2e9f91e4b0baf324eebab666165389af84cae3c5a57a98",
     "tasks": 120,
     "planned_vendor_outcomes": 720,
     "READ": 714,
@@ -43,9 +44,9 @@
   },
   "hash_manifest": "SHA256SUMS.txt in this release lists every file except itself",
   "qualification": "QUALIFICATION.md",
-  "hashes_are_of": "The RTN-2026-10-03 PDFs: Running-the-Network-print-BW.pdf, Running-the-Network-colour-linked.pdf, Configuration-Workbook.pdf and Running-the-Network-cover.pdf",
-  "supersedes": "RTN-2026-10-02 (which superseded RTN-2026-10-01, RTN-2026-09-27 and RTN-2026-09-26)",
-  "release": "https://github.com/DrHarithKharrufa/running-the-network-labs/releases/tag/RTN-2026-10-03",
+  "hashes_are_of": "The RTN-2026-10-04 PDFs: Running-the-Network-print-BW.pdf, Running-the-Network-colour-linked.pdf, Configuration-Workbook.pdf and Running-the-Network-cover.pdf",
+  "supersedes": "RTN-2026-10-03 (which superseded RTN-2026-10-02, RTN-2026-10-01, RTN-2026-09-27 and RTN-2026-09-26)",
+  "release": "https://github.com/DrHarithKharrufa/running-the-network-labs/releases/tag/RTN-2026-10-04",
   "review_date": "2026-10-03",
   "cover": {
     "pages": 1,
@@ -66,7 +67,8 @@
       "placed_ppi": {
         "cover": 313.9,
         "print_title_page": 403.2,
-        "colour_front_page": 318.7
+        "colour_front_page": 318.7,
+        "workbook_front_page": 318.7
       }
     }
   },
@@ -78,7 +80,7 @@
   },
   "actual_size_proof": {
     "pages": 43,
-    "sha256": "297f14f072cc7a9245180a0de9e76bfb99c0b641730652050d25ca0bf71d3011"
+    "sha256": "a8be1c19c7398ac90bc991eae2d1aedb4e07d5f45a08167cc7b338ca64dc474f"
   },
   "condensation": {
     "previous_edition": "RTN-2026-10-01",
@@ -107,6 +109,6 @@
     "passed": 109,
     "not_run": 0,
     "host": "Linux 6.18 container, root, Python 3.11.15, iproute2 6.1.0, nftables 1.0.9",
-    "record": "test-results-2026-10-03/execution.json"
+    "record": "test-results-2026-10-03/execution-RTN-2026-10-04.json"
   }
 }
